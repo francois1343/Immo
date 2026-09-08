@@ -15,7 +15,7 @@ Le site comprend :
 
 ## Lancer le site
 
-Ce projet ne nécessite aucune installation. Ouvrez simplement `index.html` dans un navigateur, ou utilisez l'extension **Live Server** de Visual Studio Code pour un aperçu local.
+Ce site ne nécessite aucune installation. Ouvrez simplement `index.html` dans un navigateur, ou utilisez l'extension **Live Server** de Visual Studio Code pour un aperçu local.
 
 ## Structure
 
@@ -24,7 +24,7 @@ Ce projet ne nécessite aucune installation. Ouvrez simplement `index.html` dans
 ├── index.html  # contenu et formulaire
 ├── index.css   # styles et règles responsive
 ├── assets/     # identité visuelle Connexion Immo
-└── README.md   # documentation du projet
+└── README.md   # documentation du site
 ```
 
 ## Photo de l'agent

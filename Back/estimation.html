@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#073f63">
+    <title>Estimer mon bien | Martin Snauwaert</title>
+    <meta name="description" content="Obtenez une première estimation indicative de votre bien dans la région de Beaumont.">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <link rel="stylesheet" href="estimation.css">
+</head>
+<body>
+    <a class="back-link" href="../index.html" aria-label="Retour au site principal">
+        <span aria-hidden="true">←</span> Retour au site
+    </a>
+
+    <main class="estimation-layout">
+        <section class="estimation-intro">
+            <img
+                class="intro-watermark"
+                src="../assets/logo-plus-grand.png"
+                width="800"
+                height="852"
+                alt=""
+                aria-hidden="true"
+            >
+
+            <div class="intro-copy">
+                <img
+                    class="intro-logo"
+                    src="../assets/logo-connexion.png"
+                    width="595"
+                    height="285"
+                    alt="Connexion Immo"
+                >
+                <p class="eyebrow">Votre estimation à Beaumont et alentour</p>
+                <h1>Combien vaut votre bien&nbsp;?</h1>
+                <p class="intro-text">
+                    Donnez-nous quelques informations sur le bien. Vous recevrez
+                    une première fourchette, que Martin pourra ensuite préciser avec vous.
+                </p>
+                <p class="intro-signature">
+                    <strong>Martin Snauwaert</strong>
+                    <span>Votre conseiller immobilier</span>
+                </p>
+            </div>
+
+            <estimation-chatbot></estimation-chatbot>
+
+            <ul class="trust-list assistant-trust-list">
+                <li>Gratuit et sans engagement</li>
+                <li>En moins de trois minutes</li>
+                <li>Données traitées confidentiellement</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="estimation.js" defer></script>
+</body>
+</html>

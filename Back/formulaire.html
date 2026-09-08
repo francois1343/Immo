@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#073f63" />
+    <title>Échanger avec Martin Snauwaert | Connexion Immo</title>
+    <meta
+      name="description"
+      content="Parlez de votre vente immobilière avec Martin Snauwaert, conseiller Connexion Immo à Beaumont et dans sa région."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32.png"
+    />
+    <link rel="stylesheet" href="formulaire.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../index.html">
+      <span aria-hidden="true">←</span> Retour au site
+    </a>
+
+    <main class="contact-layout">
+      <section class="form-container" aria-label="Formulaire de contact">
+        <header class="form-header">
+          <img
+            class="form-logo"
+            src="../assets/logo-connexion.png"
+            width="595"
+            height="285"
+            alt="Connexion Immo"
+          />
+          <span class="badge">Échange direct et confidentiel</span>
+          <h2>Quelques mots suffisent</h2>
+          <div class="progress-bar-container" aria-hidden="true">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </header>
+
+        <form id="conversationalForm">
+          <!-- Étape 1 : Choix par Cartes (Lisibilité 100% responsive) -->
+          <div class="form-step active" data-step="1">
+            <p class="question">
+              Quelle situation vous correspond le mieux aujourd’hui&nbsp;?
+            </p>
+
+            <div class="cards-grid">
+              <label class="card-option">
+                <input
+                  type="radio"
+                  name="profil"
+                  value="vente_concrete"
+                  required
+                />
+                <div class="card-content">
+                  <span class="card-icon">🎯</span>
+                  <div>
+                    <strong>Vente prochaine</strong>
+                    <p>
+                      Je souhaite vendre prochainement et je cherche un
+                      accompagnement local de confiance.
+                    </p>
+                  </div>
+                </div>
+              </label>
+
+              <label class="card-option">
+                <input
+                  type="radio"
+                  name="profil"
+                  value="estimation_curiosite"
+                />
+                <div class="card-content">
+                  <span class="card-icon">🔍</span>
+                  <div>
+                    <strong>Estimation indicative</strong>
+                    <p>
+                      Je souhaite simplement connaître la valeur actuelle de mon
+                      bien sans engagement.
+                    </p>
+                  </div>
+                </div>
+              </label>
+
+              <label class="card-option">
+                <input type="radio" name="profil" value="situation_complexe" />
+                <div class="card-content">
+                  <span class="card-icon">⚖️</span>
+                  <div>
+                    <strong>Situation spécifique</strong>
+                    <p>
+                      Héritage, séparation ou bien particulier : j'ai besoin de
+                      conseils stratégiques.
+                    </p>
+                  </div>
+                </div>
+              </label>
+
+              <label class="card-option">
+                <input type="radio" name="profil" value="projet_futur" />
+                <div class="card-content">
+                  <span class="card-icon">🗓️</span>
+                  <div>
+                    <strong>Réflexion à moyen terme</strong>
+                    <p>
+                      Je prépare progressivement un changement de vie d'ici 6 à
+                      12 mois.
+                    </p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Étape 2 : Message Libre -->
+          <div class="form-step" data-step="2">
+            <label for="message" class="question"
+              >Souhaitez-vous préciser votre situation ou décrire votre bien
+              ?</label
+            >
+            <div class="textarea-group">
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                maxlength="300"
+                placeholder="Commune, type de bien, questions particulières (facultatif)..."
+              ></textarea>
+              <div class="char-counter">
+                <span id="charCount">0</span> / 300 caractères
+              </div>
+            </div>
+          </div>
+
+          <!-- Étape 3 : Coordonnées -->
+          <div class="form-step" data-step="3">
+            <p class="question">
+              Comment Martin peut-il vous recontacter&nbsp;?
+            </p>
+
+            <div class="input-group">
+              <label for="nom">Prénom et nom</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Votre prénom et nom"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="input-group">
+              <label for="telephone">Téléphone</label>
+              <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                placeholder="Votre numéro de téléphone"
+                required
+                autocomplete="tel"
+                inputmode="tel"
+              />
+            </div>
+            <div class="input-group">
+              <label for="email">Adresse e-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Votre adresse e-mail"
+                required
+                autocomplete="email"
+                inputmode="email"
+              />
+            </div>
+          </div>
+
+          <!-- Étape 4 : Écran de confirmation -->
+          <div class="form-step" data-step="4" id="successStep">
+            <div class="success-card">
+              <div class="check-icon">✓</div>
+              <h2>Demande bien reçue !</h2>
+              <p>
+                Merci pour votre confiance. Je prends connaissance de votre
+                situation et je vous recontacte très rapidement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="nav-buttons" id="navButtons">
+            <button
+              type="button"
+              id="btnPrev"
+              class="btn btn-secondary"
+              style="display: none"
+            >
+              Précédent
+            </button>
+            <button type="button" id="btnNext" class="btn btn-primary">
+              Continuer
+            </button>
+            <button
+              type="submit"
+              id="btnSubmit"
+              class="btn btn-primary"
+              style="display: none"
+            >
+              Envoyer la demande
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="formulaire.js" defer></script>
+  </body>
+</html>
