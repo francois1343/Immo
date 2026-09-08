@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#17263c" />
+    <meta name="theme-color" content="#073f63" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Martin Immo" />
     <title>Estimation immobilière à Beaumont | Martin Snauwaert</title>
     <meta
       name="description"
       content="Obtenez une estimation personnalisée de votre maison ou terrain à Beaumont, Chimay et Cerfontaine avec Martin Snauwaert, agent chez Connexion Immo."
     />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="index.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -21,10 +29,7 @@
           height="285"
           alt="Connexion Immo"
         />
-        <span>
-          <strong>Martin Snauwaert</strong>
-          <small>Votre conseiller immobilier</small>
-        </span>
+        <strong>Martin Snauwaert</strong>
       </a>
 
       <nav aria-label="Navigation principale">
@@ -267,5 +272,28 @@
       <p>© 2026 Martin Snauwaert Immobilier</p>
       <p>Agent chez Connexion Immo · Région de Beaumont</p>
     </footer>
+
+    <aside
+      id="install-banner"
+      class="install-banner"
+      aria-label="Installer l'application"
+      aria-live="polite"
+      hidden
+    >
+      <img src="assets/icon-192.png" width="48" height="48" alt="" />
+      <div>
+        <strong>Gardez Martin Immo à portée de main</strong>
+        <p>Installez l’application sur votre appareil.</p>
+      </div>
+      <button id="install-app" class="install-button" type="button">Installer</button>
+      <button
+        id="dismiss-install"
+        class="dismiss-install"
+        type="button"
+        aria-label="Fermer la proposition d'installation"
+      >
+        ×
+      </button>
+    </aside>
   </body>
 </html>

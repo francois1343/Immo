@@ -38,3 +38,15 @@ Le formulaire envoie actuellement les données vers `/api/submit-lead`. Cette ro
 ## Responsive
 
 L'interface s'adapte aux tablettes et aux téléphones : navigation simplifiée, contenu en une colonne, formulaire placé directement sous l'introduction et champs faciles à utiliser au doigt.
+
+## Installation comme application
+
+Le site est configuré comme une Progressive Web App (PWA). Le manifeste, les icônes et le service worker permettent de l'installer et de consulter l'interface déjà chargée sans connexion.
+
+La proposition d'installation apparaît uniquement lorsque le navigateur confirme que l'application est installable. Le choix est mémorisé dans le navigateur après installation ou fermeture de la notification. Pour réinitialiser ce choix pendant le développement :
+
+```js
+localStorage.removeItem("martin-immo-install-state");
+```
+
+Les fonctionnalités PWA nécessitent un hébergement en HTTPS en production. Elles fonctionnent également sur `localhost` pendant le développement.
