@@ -342,6 +342,44 @@ footer {
    RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 768px) {
+  header {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.35rem 0;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding: 4.5rem 0 3.5rem;
+  }
+
   .hero-section h2 {
     font-size: 2.2rem;
   }
@@ -350,17 +388,60 @@ footer {
     font-size: 1.1rem;
   }
 
-  header {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+  .trust-section h2,
+  .stats-section h2,
+  .lead-generation-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
 
-  nav ul {
+  .features {
+    grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .features article,
+  .stats-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .stats-section {
+    margin: 1rem 0;
+  }
+
+  .lead-generation-section > p {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
   }
 
   #lead-form {
     padding: 1.5rem;
+  }
+
+  fieldset label {
+    display: flex;
+    width: 100%;
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-button,
+  #lead-form button[type="submit"] {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero-section p,
+  .lead-generation-section > p,
+  .stats-section p {
+    font-size: 1rem;
+  }
+
+  #lead-form {
+    padding: 1.25rem 1rem;
   }
 }
