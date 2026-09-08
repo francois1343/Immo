@@ -14,16 +14,23 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#hero" aria-label="Retour à l'accueil">
-        <span class="brand-mark" aria-hidden="true">MS</span>
+        <img
+          class="brand-logo"
+          src="assets/logo-connexion.png"
+          width="595"
+          height="285"
+          alt="Connexion Immo"
+        />
         <span>
           <strong>Martin Snauwaert</strong>
-          <small>Conseiller immobilier · Connexion Immo</small>
+          <small>Votre conseiller immobilier</small>
         </span>
       </a>
 
       <nav aria-label="Navigation principale">
         <ul>
           <li><a href="#accompagnement">Accompagnement</a></li>
+          <li><a href="#agent">Votre conseiller</a></li>
           <li><a href="#marche-local">Secteur</a></li>
           <li>
             <a class="nav-cta" href="#formulaire-estimation">Estimer mon bien</a>
@@ -183,8 +190,67 @@
         </div>
       </section>
 
+      <section id="agent" class="agent-section">
+        <div class="agent-card">
+          <div class="agent-visual">
+            <img
+              class="agent-watermark"
+              src="assets/logo-plus-grand.png"
+              width="800"
+              height="852"
+              alt=""
+              aria-hidden="true"
+            />
+            <!-- Remplacer ce bloc par la future photo de l'agent. -->
+            <div
+              class="agent-photo-placeholder"
+              role="img"
+              aria-label="Emplacement réservé à la future photo de Martin Snauwaert"
+            >
+              <span>Photo de l’agent</span>
+            </div>
+          </div>
+
+          <div class="agent-content">
+            <p class="eyebrow">Votre conseiller</p>
+            <h2>Un contact humain, du premier avis à la vente.</h2>
+            <p class="agent-intro">
+              Je suis Martin Snauwaert, conseiller immobilier chez Connexion
+              Immo. J’accompagne les propriétaires de la région avec une
+              approche directe, attentive et fondée sur une connaissance réelle
+              du marché local.
+            </p>
+
+            <div class="agent-identity">
+              <div>
+                <strong>Martin Snauwaert</strong>
+                <span>Conseiller immobilier</span>
+              </div>
+              <img
+                src="assets/logo-connexion.png"
+                width="595"
+                height="285"
+                alt="Connexion Immo"
+              />
+            </div>
+
+            <a class="agent-cta" href="#formulaire-estimation">
+              Échanger sur mon projet <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="marche-local" class="local-section">
-        <div>
+        <img
+          class="local-pin"
+          src="assets/images.png"
+          width="463"
+          height="663"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="local-heading">
           <p class="eyebrow">Beaumont et sa région</p>
           <h2>Une valeur ancrée dans le marché local.</h2>
         </div>
