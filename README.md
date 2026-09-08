@@ -9,6 +9,7 @@ Le site comprend :
 - une présentation de l'accompagnement proposé ;
 - une section dédiée au marché immobilier local ;
 - un formulaire de demande d'estimation ;
+- un formulaire d'estimation visible dès le premier écran ;
 - une mise en page adaptée aux écrans d'ordinateur et de mobile.
 
 ## Lancer le site
@@ -30,4 +31,4 @@ Le formulaire envoie actuellement les données vers `/api/submit-lead`. Cette ro
 
 ## Responsive
 
-L'interface s'adapte notamment aux écrans de moins de 768 px : navigation sur plusieurs lignes, contenu en une colonne, champs du formulaire faciles à utiliser au doigt et tailles de texte réduites.
+L'interface s'adapte aux tablettes et aux téléphones : navigation simplifiée, contenu en une colonne, formulaire placé directement sous l'introduction et champs faciles à utiliser au doigt.
