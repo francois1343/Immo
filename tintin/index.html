@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Estimation de votre maison à Beaumont | Martin Snauwaert Immobilier
+    </title>
+    <meta
+      name="description"
+      content="Vous souhaitez vendre votre maison ou terrain dans la région de Beaumont ? Obtenez une estimation personnalisée et un accompagnement de confiance avec Martin Snauwaert, agent chez Connexion Immo."
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <!-- Espace pour le futur branding mémorisable -->
+        <h1>Martin Snauwaert Immobilier</h1>
+        <p>En partenariat avec Connexion Immo</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#avantages">Mon accompagnement</a></li>
+          <li><a href="#marche-local">Le marché local</a></li>
+          <li><a href="#formulaire-estimation">Demander une estimation</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero-section">
+        <h2>
+          Vendez votre bien dans les meilleures conditions dans la région de
+          Beaumont
+        </h2>
+        <p>
+          Découvrez la vraie valeur de votre maison ou terrain. Une analyse
+          précise, rapide et sans engagement par un expert de votre région.
+        </p>
+        <a href="#formulaire-estimation" class="cta-button"
+          >Estimer mon bien maintenant</a
+        >
+      </section>
+
+      <section id="avantages" class="trust-section">
+        <h2>Pourquoi me confier votre projet de vente ?</h2>
+        <div class="features">
+          <article>
+            <h3>Expertise Locale</h3>
+            <p>
+              Une connaissance pointue du marché immobilier dans un rayon de 30
+              km autour de Beaumont, Chimay et Cerfontaine.
+            </p>
+          </article>
+          <article>
+            <h3>Réactivité Absolue</h3>
+            <p>
+              Dès votre demande via notre formulaire, je vous recontacte en
+              direct pour discuter de votre projet de vente.
+            </p>
+          </article>
+          <article>
+            <h3>Accompagnement Sur-Mesure</h3>
+            <p>
+              Une estimation personnalisée tenant compte de l'état, de la
+              situation et des caractéristiques uniques de votre bien, au-delà
+              des simples statistiques.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section préparée pour les données locales (Statbel/IWEPS) -->
+      <section id="marche-local" class="stats-section">
+        <h2>Tendances immobilières dans votre commune</h2>
+        <p>
+          Informez-vous sur les dynamiques du marché avant de prendre une
+          décision. (Les données statistiques de la commune viendront s'insérer
+          ici).
+        </p>
+      </section>
+
+      <!-- Base pour le formulaire conversationnel de qualification -->
+      <section id="formulaire-estimation" class="lead-generation-section">
+        <h2>Parlez-moi de votre projet vendeur</h2>
+        <p>
+          Répondez à quelques questions simples pour que je puisse préparer une
+          première analyse indicative.
+        </p>
+
+        <form action="/api/submit-lead" method="POST" id="lead-form">
+          <fieldset>
+            <legend>Quel type de bien souhaitez-vous vendre ?</legend>
+            <label
+              ><input type="radio" name="type_bien" value="maison" required />
+              Maison</label
+            >
+            <label
+              ><input type="radio" name="type_bien" value="terrain" />
+              Terrain</label
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Où se situe votre bien ?</legend>
+            <input
+              type="text"
+              name="localisation"
+              placeholder="Ex: Beaumont, Cerfontaine, Chimay..."
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Quel est votre délai de vente envisagé ?</legend>
+            <select name="delai">
+              <option value="immediat">Dès que possible</option>
+              <option value="3_mois">Dans les 3 mois</option>
+              <option value="6_mois">Dans les 6 mois ou plus</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Vos coordonnées pour un contact rapide</legend>
+            <input type="text" name="nom" placeholder="Votre nom" required />
+            <input
+              type="tel"
+              name="telephone"
+              placeholder="Numéro de téléphone"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse e-mail"
+              required
+            />
+          </fieldset>
+
+          <button type="submit">Demander mon estimation personnalisée</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Martin Snauwaert Immobilier. Agent chez Connexion Immo.</p>
+    </footer>
+  </body>
+</html>
