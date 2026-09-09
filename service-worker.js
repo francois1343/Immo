@@ -1,8 +1,8 @@
-const CACHE_NAME = "martin-immo-v1";
+const CACHE_NAME = "martin-immo-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./index.css",
+  "./index.css?v=20260909",
   "./app.js",
   "./manifest.webmanifest",
   "./assets/favicon-32.png",
@@ -64,10 +64,7 @@ self.addEventListener("fetch", (event) => {
     return response;
   });
 
-  event.waitUntil(updateFromNetwork.catch(() => undefined));
   event.respondWith(
-    caches
-      .match(request)
-      .then((cachedResponse) => cachedResponse || updateFromNetwork)
+    updateFromNetwork.catch(() => caches.match(request))
   );
 });
