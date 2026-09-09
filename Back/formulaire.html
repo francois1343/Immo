@@ -15,7 +15,22 @@
       sizes="32x32"
       href="../assets/favicon-32.png"
     />
-    <link rel="stylesheet" href="formulaire.css" />
+    <link
+      rel="preload"
+      href="../assets/fonts/manrope-latin-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../assets/fonts/lora-latin-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="../fonts.css?v=20260909" />
+    <link rel="stylesheet" href="formulaire.css?v=20260909" />
   </head>
   <body>
     <a class="back-link" href="../index.html">
@@ -55,7 +70,13 @@
                   required
                 />
                 <div class="card-content">
-                  <span class="card-icon">🎯</span>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M3.5 10.5 12 3l8.5 7.5" />
+                      <path d="M5.5 9.2V21h13V9.2" />
+                      <path d="m9 15.5 2 2 4.2-4.4" />
+                    </svg>
+                  </span>
                   <div>
                     <strong>Vente prochaine</strong>
                     <p>
@@ -73,7 +94,13 @@
                   value="estimation_curiosite"
                 />
                 <div class="card-content">
-                  <span class="card-icon">🔍</span>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <circle cx="10.5" cy="10.5" r="6.5" />
+                      <path d="m15.3 15.3 5.2 5.2" />
+                      <path d="M7.8 12.8V10M10.5 12.8V7.7M13.2 12.8v-4" />
+                    </svg>
+                  </span>
                   <div>
                     <strong>Estimation indicative</strong>
                     <p>
@@ -87,7 +114,13 @@
               <label class="card-option">
                 <input type="radio" name="profil" value="situation_complexe" />
                 <div class="card-content">
-                  <span class="card-icon">⚖️</span>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 3v18M7 21h10M5 6h14" />
+                      <path d="m5 6-3 6h6L5 6Zm14 0-3 6h6l-3-6Z" />
+                      <path d="M2 12a3 3 0 0 0 6 0M16 12a3 3 0 0 0 6 0" />
+                    </svg>
+                  </span>
                   <div>
                     <strong>Situation spécifique</strong>
                     <p>
@@ -101,7 +134,14 @@
               <label class="card-option">
                 <input type="radio" name="profil" value="projet_futur" />
                 <div class="card-content">
-                  <span class="card-icon">🗓️</span>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <rect x="3" y="5" width="18" height="16" rx="2.5" />
+                      <path d="M7 3v4M17 3v4M3 9.5h18" />
+                      <circle cx="15.5" cy="15.5" r="3" />
+                      <path d="M15.5 14v1.7l1.2.8" />
+                    </svg>
+                  </span>
                   <div>
                     <strong>Réflexion à moyen terme</strong>
                     <p>

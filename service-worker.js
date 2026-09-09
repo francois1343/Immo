@@ -1,11 +1,14 @@
-const CACHE_NAME = "martin-immo-v2";
+const CACHE_NAME = "martin-immo-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./index.css?v=20260909",
+  "./fonts.css?v=20260909",
+  "./index.css?v=20260909-2",
   "./app.js",
   "./manifest.webmanifest",
   "./assets/favicon-32.png",
+  "./assets/fonts/manrope-latin-variable.woff2",
+  "./assets/fonts/lora-latin-variable.woff2",
   "./assets/apple-touch-icon.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
