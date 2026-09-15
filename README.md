@@ -1,52 +1,80 @@
 # Martin Snauwaert Immobilier
 
-Landing page en français pour présenter un service d'estimation immobilière à Beaumont et dans les communes voisines.
+Site vitrine en français consacré à l’estimation et à l’accompagnement immobilier de proximité dans la Botte du Hainaut et le Sud namurois.
 
-## Aperçu
+## Fonctionnalités
 
-Le site comprend :
+- formulaire d’estimation accessible dès la page d’accueil ;
+- informations adaptées au type de bien sélectionné (maison ou terrain) ;
+- présentation de l’expertise locale et de la méthode d’accompagnement ;
+- carte de contact personnalisée avec la photo de Martin Snauwaert ;
+- parcours conversationnels dédiés à l’estimation et à la prise de contact ;
+- pages de mentions légales et de politique de confidentialité ;
+- interface responsive pour ordinateur, tablette et téléphone ;
+- installation possible en tant que Progressive Web App (PWA).
 
-- une présentation de l'accompagnement proposé ;
-- une section dédiée au marché immobilier local ;
-- un formulaire de demande d'estimation ;
-- une carte de présentation prête à recevoir la photo de l'agent ;
-- un formulaire d'estimation visible dès le premier écran ;
-- une mise en page adaptée aux écrans d'ordinateur et de mobile.
+## Lancer le site localement
 
-## Lancer le site
+Le projet ne nécessite ni compilation ni installation de dépendances. Il est toutefois préférable de le servir avec un serveur HTTP local afin de tester correctement le service worker, la PWA et les chemins de navigation.
 
-Ce site ne nécessite aucune installation. Ouvrez simplement `index.html` dans un navigateur, ou utilisez l'extension **Live Server** de Visual Studio Code pour un aperçu local.
+Avec l’extension **Live Server** de Visual Studio Code, ouvrez `index.html`, puis choisissez **Open with Live Server**.
 
-## Structure
+## Structure du projet
 
 ```text
 .
-├── index.html  # contenu et formulaire
-├── index.css   # styles et règles responsive
-├── assets/     # identité visuelle Connexion Immo
-└── README.md   # documentation du site
+├── index.html                    # page d’accueil et formulaire principal
+├── index.css                     # styles principaux et responsive
+├── app.js                        # formulaire progressif et installation PWA
+├── fonts.css                     # polices locales
+├── mentions-legales.html         # informations légales
+├── politique-confidentialite.html
+├── legal.css                     # styles des pages légales
+├── manifest.webmanifest          # configuration PWA
+├── service-worker.js             # cache et fonctionnement hors connexion
+├── Back/
+│   ├── estimation.html           # assistant d’estimation
+│   ├── estimation.css
+│   ├── estimation.js
+│   ├── formulaire.html           # parcours de prise de contact
+│   ├── formulaire.css
+│   └── formulaire.js
+└── assets/                       # logos, photo, icônes et polices
 ```
 
-## Photo de l'agent
+## Identité visuelle
 
-La carte de présentation contient actuellement un emplacement réservé. Lorsque la photo sera disponible, ajoutez-la dans `assets/`, puis remplacez le bloc `.agent-photo-placeholder` dans `index.html` par une balise `<img>` utilisant la classe `agent-photo`.
+La photo de Martin est stockée dans `assets/ms.jpg`. Les logos Connexion Immo, les favicons, les icônes PWA et les polices locales se trouvent également dans `assets/`.
 
-## Formulaire
+La carte de présentation est limitée à `430px` de hauteur sur ordinateur. Elle redevient automatiquement fluide sur tablette et mobile afin de conserver une lecture confortable.
 
-Le formulaire envoie actuellement les données vers `/api/submit-lead`. Cette route doit être implémentée côté serveur avant une mise en production, afin de traiter les demandes de manière sécurisée.
+## Formulaires
 
-## Responsive
+Le formulaire principal de `index.html` envoie ses données en `POST` vers `/api/submit-lead`. Cette route doit être créée côté serveur avant la mise en production afin de valider, protéger et transmettre les demandes.
 
-L'interface s'adapte aux tablettes et aux téléphones : navigation simplifiée, contenu en une colonne, formulaire placé directement sous l'introduction et champs faciles à utiliser au doigt.
+Les parcours présents dans `Back/formulaire.html` et `Back/estimation.html` fonctionnent actuellement côté navigateur : ils simulent la progression et la confirmation, mais n’envoient pas encore les données à un service distant.
+
+## Responsive et accessibilité
+
+La mise en page passe en une colonne sur les écrans étroits. La photo de l’agent, les formulaires, les cartes de contenu et la navigation disposent de règles spécifiques pour la tablette et le mobile.
+
+Les formulaires utilisent des libellés explicites, des champs adaptés au clavier mobile, des attributs d’autocomplétion et des zones cliquables dimensionnées pour un usage tactile.
 
 ## Installation comme application
 
-Le site est configuré comme une Progressive Web App (PWA). Le manifeste, les icônes et le service worker permettent de l'installer et de consulter l'interface déjà chargée sans connexion.
+Le manifeste et le service worker permettent d’installer le site comme une PWA et de retrouver les ressources déjà mises en cache hors connexion.
 
-La proposition d'installation apparaît uniquement lorsque le navigateur confirme que l'application est installable. Le choix est mémorisé dans le navigateur après installation ou fermeture de la notification. Pour réinitialiser ce choix pendant le développement :
+La proposition d’installation apparaît uniquement lorsque le navigateur confirme que l’application est installable. Le choix de l’utilisateur est mémorisé dans le navigateur. Pour le réinitialiser pendant le développement :
 
 ```js
 localStorage.removeItem("martin-immo-install-state");
 ```
 
-Les fonctionnalités PWA nécessitent un hébergement en HTTPS en production. Elles fonctionnent également sur `localhost` pendant le développement.
+En production, les fonctionnalités PWA nécessitent un hébergement en HTTPS. Elles fonctionnent également sur `localhost` pendant le développement.
+
+## Avant la mise en production
+
+- implémenter et sécuriser la route `/api/submit-lead` ;
+- connecter les deux parcours de `Back/` au système de traitement retenu ;
+- compléter les informations encore signalées comme manquantes dans les mentions légales ;
+- vérifier les liens, le cache PWA et les formulaires sur l’URL définitive.
