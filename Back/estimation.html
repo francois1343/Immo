@@ -1,12 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#073f63">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#073f63" />
     <title>Estimer mon bien | Martin Snauwaert</title>
-    <meta name="description" content="Obtenez une première estimation indicative de votre bien dans la région de Beaumont.">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <meta
+      name="description"
+      content="Obtenez une première estimation indicative de votre bien dans la région de Beaumont."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32.png"
+    />
     <link
       rel="preload"
       href="../assets/fonts/manrope-latin-variable.woff2"
@@ -23,53 +31,78 @@
     />
     <link rel="stylesheet" href="../fonts.css?v=20260909" />
     <link rel="stylesheet" href="estimation.css?v=20260909" />
-</head>
-<body>
-    <a class="back-link" href="../index.html" aria-label="Retour au site principal">
-        <span aria-hidden="true">←</span> Retour au site
+  </head>
+  <body>
+    <a
+      class="back-link"
+      href="../index.html"
+      aria-label="Retour au site principal"
+    >
+      <span aria-hidden="true">←</span> Retour au site
     </a>
 
     <main class="estimation-layout">
-        <section class="estimation-intro">
-            <img
-                class="intro-watermark"
-                src="../assets/logo-plus-grand.png"
-                width="800"
-                height="852"
-                alt=""
-                aria-hidden="true"
-            >
+      <section class="estimation-intro">
+        <img
+          class="intro-watermark"
+          src="../assets/logo-plus-grand.png"
+          width="800"
+          height="852"
+          alt=""
+          aria-hidden="true"
+        />
 
-            <div class="intro-copy">
-                <img
-                    class="intro-logo"
-                    src="../assets/logo-connexion.png"
-                    width="595"
-                    height="285"
-                    alt="Connexion Immo"
-                >
-                <p class="eyebrow">Votre estimation à Beaumont et alentour</p>
-                <h1>Combien vaut votre bien&nbsp;?</h1>
-                <p class="intro-text">
-                    Donnez-nous quelques informations sur le bien. Vous recevrez
-                    une première fourchette, que Martin pourra ensuite préciser avec vous.
-                </p>
-                <p class="intro-signature">
-                    <strong>Martin Snauwaert</strong>
-                    <span>Votre conseiller immobilier</span>
-                </p>
-            </div>
+        <div class="intro-copy">
+          <img
+            class="intro-logo"
+            src="../assets/logo-connexion.png"
+            width="595"
+            height="285"
+            alt="Connexion Immo"
+          />
+          <p class="eyebrow">Votre estimation à Beaumont et alentour</p>
+          <h1>Combien vaut votre bien&nbsp;?</h1>
+          <p class="intro-lead">
+            Une estimation juste pour prendre la bonne décision.
+          </p>
+          <p class="intro-text">
+            Vous souhaitez vendre votre maison ou votre terrain, vous y pensez
+            pour plus tard ou vous êtes simplement curieux de connaître sa
+            valeur&nbsp;? Quelle que soit l’avancée de votre projet, je vous
+            propose une estimation personnalisée et réaliste, basée sur votre
+            bien et sur la réalité du marché. Vous restez entièrement libre de
+            la suite.
+          </p>
+          <ul
+            class="intro-benefits"
+            aria-label="Les avantages de votre estimation"
+          >
+            <li>Estimation offerte et sans engagement</li>
+            <li>Analyse personnalisée de votre bien</li>
+            <li>Connaissance concrète du marché local</li>
+            <li>Retour personnel sous 24&nbsp;h ouvrées</li>
+          </ul>
+          <p class="intro-prompt">
+            Quelques informations suffisent pour commencer.
+          </p>
+          <p class="intro-signature">
+            <strong>Martin Snauwaert</strong>
+            <span>Votre conseiller immobilier</span>
+          </p>
+        </div>
 
-            <estimation-chatbot></estimation-chatbot>
+        <div class="assistant-panel">
+          <estimation-chatbot></estimation-chatbot>
 
-            <ul class="trust-list assistant-trust-list">
-                <li>Gratuit et sans engagement</li>
-                <li>En moins de trois minutes</li>
-                <li>Données traitées confidentiellement</li>
-            </ul>
-        </section>
+          <ul class="trust-list assistant-trust-list">
+            <li>Gratuit et sans engagement</li>
+            <li>En moins de trois minutes</li>
+            <li>Données traitées confidentiellement</li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <script src="estimation.js" defer></script>
-</body>
+  </body>
 </html>
