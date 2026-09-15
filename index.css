@@ -627,9 +627,46 @@ select:focus {
   height: auto;
 }
 
-.local-section > p {
+.local-copy {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid rgba(243, 115, 33, 0.3);
+}
+
+.local-copy p {
+  margin: 0;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 0.9rem;
+}
+
+.local-copy .local-lead {
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.local-question {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(7, 63, 99, 0.08);
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(240, 245, 247, 0.9), rgba(255, 255, 255, 0.75));
+}
+
+.local-question strong,
+.local-question span {
+  display: block;
+}
+
+.local-question strong {
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.local-question span {
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
 }
 
 .local-section > a {
@@ -980,7 +1017,7 @@ select:focus {
     grid-column: 2;
   }
 
-  .local-section > p {
+  .local-copy {
     grid-column: 3;
   }
 
@@ -1061,7 +1098,7 @@ select:focus {
 
   .features article:last-child,
   .local-heading,
-  .local-section > p,
+  .local-copy,
   .local-section > a {
     grid-column: auto;
   }
