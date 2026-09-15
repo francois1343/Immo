@@ -10,20 +10,20 @@ class EstimationChatbot extends HTMLElement {
         Chimay: { baseMaison: 1380, baseAppart: 1580, baseTerrain: 30 },
         Cerfontaine: { baseMaison: 1400, baseAppart: 1600, baseTerrain: 32 },
         Thuin: { baseMaison: 1550, baseAppart: 1750, baseTerrain: 40 },
-        Froidchapelle: { baseMaison: 1350, baseAppart: 1500, baseTerrain: 28 }
+        Froidchapelle: { baseMaison: 1350, baseAppart: 1500, baseTerrain: 28 },
       },
       coeffsEtat: {
         a_renover: 0.82,
         bon: 1.0,
-        excellent: 1.15
+        excellent: 1.15,
       },
       coeffsPEB: {
         A: 1.08,
         B: 1.04,
         C: 1.0,
         D: 0.96,
-        E_F_G: 0.9
-      }
+        E_F_G: 0.9,
+      },
     };
 
     // État de la conversation
@@ -40,7 +40,7 @@ class EstimationChatbot extends HTMLElement {
       tel: "",
       email: "",
       estimationMin: 0,
-      estimationMax: 0
+      estimationMax: 0,
     };
   }
 
@@ -51,13 +51,11 @@ class EstimationChatbot extends HTMLElement {
   // Calcul de la fourchette d'estimation
   calculateEstimation() {
     const data =
-      this.config.communes[this.state.commune] ||
-      this.config.communes.Beaumont;
+      this.config.communes[this.state.commune] || this.config.communes.Beaumont;
     let baseVal = 0;
 
     if (this.state.type === "maison") {
-      const valHabitable =
-        this.state.surfaceHabitable * data.baseMaison;
+      const valHabitable = this.state.surfaceHabitable * data.baseMaison;
       const valTerrain =
         (this.state.surfaceTerrain || 0) * (data.baseTerrain * 0.5);
       baseVal =
@@ -113,7 +111,7 @@ class EstimationChatbot extends HTMLElement {
       3: "Surfaces",
       4: "Caractéristiques",
       5: "Recevoir le rapport",
-      6: "Votre estimation"
+      6: "Votre estimation",
     };
     const progressPercent = [0, 17, 33, 50, 67, 83, 100][progressStep];
 
@@ -199,7 +197,7 @@ class EstimationChatbot extends HTMLElement {
               ${Object.keys(this.config.communes)
                 .map(
                   (commune) =>
-                    `<option value="${commune}" ${this.state.commune === commune ? "selected" : ""}>${commune}</option>`
+                    `<option value="${commune}" ${this.state.commune === commune ? "selected" : ""}>${commune}</option>`,
                 )
                 .join("")}
             </select>
@@ -278,7 +276,7 @@ class EstimationChatbot extends HTMLElement {
               <label for="lead-email">Adresse e-mail</label>
               <input type="email" id="lead-email" name="email" placeholder="vous@exemple.be" autocomplete="email" inputmode="email" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Valider et envoyer à Martin</button>
+            <button type="submit" class="btn btn-primary btn-block">Connaître la valeur de mon bien</button>
           </form>
         `;
 
@@ -316,14 +314,14 @@ class EstimationChatbot extends HTMLElement {
     const fieldType = shadow.querySelector("#field-type");
     if (fieldType) {
       fieldType.addEventListener("change", (event) =>
-        this.updateField("type", event.target.value)
+        this.updateField("type", event.target.value),
       );
     }
 
     const fieldCommune = shadow.querySelector("#field-commune");
     if (fieldCommune) {
       fieldCommune.addEventListener("change", (event) =>
-        this.updateField("commune", event.target.value)
+        this.updateField("commune", event.target.value),
       );
     }
 
@@ -332,32 +330,29 @@ class EstimationChatbot extends HTMLElement {
       fieldSurfHab.addEventListener("change", (event) =>
         this.updateField(
           "surfaceHabitable",
-          parseFloat(event.target.value) || 0
-        )
+          parseFloat(event.target.value) || 0,
+        ),
       );
     }
 
     const fieldSurfTer = shadow.querySelector("#field-surfaceTer");
     if (fieldSurfTer) {
       fieldSurfTer.addEventListener("change", (event) =>
-        this.updateField(
-          "surfaceTerrain",
-          parseFloat(event.target.value) || 0
-        )
+        this.updateField("surfaceTerrain", parseFloat(event.target.value) || 0),
       );
     }
 
     const fieldEtat = shadow.querySelector("#field-etat");
     if (fieldEtat) {
       fieldEtat.addEventListener("change", (event) =>
-        this.updateField("etat", event.target.value)
+        this.updateField("etat", event.target.value),
       );
     }
 
     const fieldPeb = shadow.querySelector("#field-peb");
     if (fieldPeb) {
       fieldPeb.addEventListener("change", (event) =>
-        this.updateField("peb", event.target.value)
+        this.updateField("peb", event.target.value),
       );
     }
 
@@ -375,7 +370,7 @@ class EstimationChatbot extends HTMLElement {
 
         console.log(
           "Données qualifiées prêtes à être envoyées à l'API/Backend :",
-          payload
+          payload,
         );
 
         this.render();
