@@ -191,6 +191,11 @@ main {
   line-height: 1.7;
 }
 
+.hero-intro strong {
+  color: var(--navy);
+  font-weight: 750;
+}
+
 .reassurance-list {
   display: grid;
   gap: 0.65rem;
@@ -454,13 +459,32 @@ select:focus {
 }
 
 .features article {
+  position: relative;
+  overflow: hidden;
   padding: 2rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: linear-gradient(145deg, #fff, rgba(240, 245, 247, 0.55));
+  box-shadow: 0 12px 28px rgba(7, 63, 99, 0.05);
+}
+
+.features article::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), rgba(243, 115, 33, 0.12));
+  content: "";
 }
 
 .feature-number {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--accent-soft);
   color: var(--gold);
   font-family: var(--font-display);
   font-size: 0.88rem;
@@ -476,6 +500,25 @@ select:focus {
   margin-top: 0.65rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.features .feature-lead {
+  margin-top: 0.8rem;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.features .feature-detail {
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.feature-detail strong {
+  color: var(--navy-soft);
+  font-weight: 750;
 }
 
 .agent-section {
