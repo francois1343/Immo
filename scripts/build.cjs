@@ -46,7 +46,7 @@ if (fs.existsSync(out)) {
       const relative = path
         .relative(out, path.join(entry.parentPath, entry.name))
         .replaceAll("\\", "/");
-      if (!files.includes(relative))
+      if (!files.includes(relative) && relative !== "sitemap.xml")
         throw Error("Unexpected output: " + relative);
     }
   }
@@ -56,11 +56,13 @@ for (const name of files) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(path.join(root, name), dest);
 }
+const seo = require("./seo.cjs").build(root, out);
 console.log(
   JSON.stringify({
     files: files.length,
     output: "public-dist",
     automaticReception: false,
     indexing: false,
+    seo,
   }),
 );

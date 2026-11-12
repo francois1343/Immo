@@ -1,0 +1,13 @@
+{
+  "origin": "https://martin-immo.vercel.app",
+  "mode": "preview",
+  "reviewedOn": "2026-11-12",
+  "socialImage": "/assets/ms.jpg",
+  "publicationChecks": {
+    "businessIdentityConfirmed": false,
+    "brandAndPhotoRightsConfirmed": false,
+    "privacyAndRetentionConfirmed": false,
+    "realMobileMailJourneyConfirmed": false,
+    "commercialHostingConfirmed": false
+  }
+}
