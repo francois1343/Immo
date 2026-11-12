@@ -1,73 +1,75 @@
-const CACHE_NAME = "martin-immo-v3";
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./fonts.css?v=20260909",
-  "./index.css?v=20260909-2",
-  "./app.js",
-  "./manifest.webmanifest",
-  "./assets/favicon-32.png",
-  "./assets/fonts/manrope-latin-variable.woff2",
-  "./assets/fonts/lora-latin-variable.woff2",
-  "./assets/apple-touch-icon.png",
-  "./assets/icon-192.png",
-  "./assets/icon-512.png",
-  "./assets/icon-maskable-192.png",
-  "./assets/icon-maskable-512.png",
-  "./assets/logo-connexion.png",
-  "./assets/logo-plus-grand.png",
-  "./assets/images.png"
+const CACHE = "martin-immo-v4";
+const FILES = [
+  "/",
+  "/index.html",
+  "/site.css",
+  "/site.js",
+  "/fonts.css",
+  "/manifest.webmanifest",
+  "/assets/icon-192.png",
+  "/assets/icon-512.png",
+  "/assets/icon-maskable-192.png",
+  "/assets/icon-maskable-512.png",
+  "/estimation/",
+  "/preparer-ma-vente/",
+  "/vendre-beaumont-barbencon/",
+  "/Back/estimation.html",
+  "/Back/formulaire.html",
+  "/politique-confidentialite.html",
+  "/mentions-legales.html",
+  "/legal.css",
+  "/assets/ms.jpg",
+  "/assets/logo-connexion.png",
+  "/assets/favicon-32.png",
+  "/assets/fonts/manrope-latin-variable.woff2",
+  "/assets/fonts/lora-latin-variable.woff2",
 ];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
-  );
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
+self.addEventListener("install", (e) =>
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))),
+);
+self.addEventListener("activate", (e) =>
+  e.waitUntil(
     caches
       .keys()
       .then((keys) =>
         Promise.all(
-          keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
-        )
-      )
-  );
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) {
+          keys
+            .filter((k) => k.startsWith("martin-immo-") && k !== CACHE)
+            .map((k) => caches.delete(k)),
+        ),
+      ),
+  ),
+);
+self.addEventListener("fetch", (e) => {
+  const u = new URL(e.request.url);
+  if (
+    e.request.method !== "GET" ||
+    u.origin !== location.origin ||
+    !FILES.includes(u.pathname)
+  )
     return;
-  }
-
-  if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
-          return response;
-        })
-        .catch(() => caches.match("./index.html"))
-    );
-    return;
-  }
-
-  const updateFromNetwork = fetch(request).then((response) => {
-    if (response.ok) {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-    }
-    return response;
-  });
-
-  event.respondWith(
-    updateFromNetwork.catch(() => caches.match(request))
+  e.respondWith(
+    fetch(e.request)
+      .then((r) => {
+        if (r.ok && r.type === "basic") {
+          const copy = r.clone();
+          e.waitUntil(
+            caches
+              .open(CACHE)
+              .then((c) => c.put(u.pathname, copy))
+              .catch(() => {}),
+          );
+        }
+        return r;
+      })
+      .catch(() =>
+        caches
+          .match(u.pathname)
+          .then(
+            (r) =>
+              r ||
+              new Response("Page indisponible hors connexion", { status: 503 }),
+          ),
+      ),
   );
 });

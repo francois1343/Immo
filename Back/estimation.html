@@ -1,108 +1,218 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#073f63" />
-    <title>Estimer mon bien | Martin Snauwaert</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Préparer votre demande d’estimation | Martin Snauwaert</title>
     <meta
       name="description"
-      content="Obtenez une première estimation indicative de votre bien dans la région de Beaumont."
+      content="Préparez votre projet immobilier avec Martin Snauwaert, Connexion Immo, à Beaumont, Barbençon et dans les environs."
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/favicon-32.png"
-    />
-    <link
-      rel="preload"
-      href="../assets/fonts/manrope-latin-variable.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="../assets/fonts/lora-latin-variable.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link rel="stylesheet" href="../fonts.css?v=20260909" />
-    <link rel="stylesheet" href="estimation.css?v=20260909" />
+    <link rel="icon" href="/assets/favicon-32.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/site.css" />
+    <script src="/site.js" defer></script>
   </head>
-  <body>
-    <a
-      class="back-link"
-      href="../index.html"
-      aria-label="Retour au site principal"
-    >
-      <span aria-hidden="true">←</span> Retour au site
-    </a>
-
-    <main class="estimation-layout">
-      <section class="estimation-intro">
-        <img
-          class="intro-watermark"
-          src="../assets/logo-plus-grand.png"
-          width="800"
-          height="852"
-          alt=""
-          aria-hidden="true"
-        />
-
-        <div class="intro-copy">
-          <img
-            class="intro-logo"
-            src="../assets/logo-connexion.png"
+  <body class="">
+    <a class="skip" href="#main">Aller au contenu</a>
+    <div class="draft">
+      Aperçu de travail · contenu à valider avant diffusion
+    </div>
+    <div class="shell">
+      <header class="top">
+        <a href="/" class="identity"
+          ><img
+            src="/assets/logo-connexion.png"
             width="595"
             height="285"
             alt="Connexion Immo"
-          />
-          <p class="eyebrow">Votre estimation à Beaumont et alentour</p>
-          <h1>Combien vaut votre bien&nbsp;?</h1>
-          <p class="intro-lead">
-            Une estimation juste pour prendre la bonne décision.
-          </p>
-          <p class="intro-text">
-            Vous souhaitez vendre votre maison ou votre terrain, vous y pensez
-            pour plus tard ou vous êtes simplement curieux de connaître sa
-            valeur&nbsp;? Quelle que soit l’avancée de votre projet, je vous
-            propose une estimation personnalisée et réaliste, basée sur votre
-            bien et sur la réalité du marché. Vous restez entièrement libre de
-            la suite.
-          </p>
-          <ul
-            class="intro-benefits"
-            aria-label="Les avantages de votre estimation"
+          /><span>Martin<br />Snauwaert</span></a
+        >
+        <nav aria-label="Navigation principale">
+          <a href="/preparer-ma-vente/">Préparer ma vente</a
+          ><a href="/vendre-beaumont-barbencon/">Mon secteur</a
+          ><a href="/estimation/" aria-current="page" class="nav-estimate"
+            >Votre projet ↗</a
           >
-            <li>Estimation offerte et sans engagement</li>
-            <li>Analyse personnalisée de votre bien</li>
-            <li>Connaissance concrète du marché local</li>
-            <li>Retour personnel sous 24&nbsp;h ouvrées</li>
-          </ul>
-          <p class="intro-prompt">
-            Quelques informations suffisent pour commencer.
+        </nav>
+      </header>
+      <main id="main">
+        <section class="page-intro">
+          <p class="eyebrow">Votre projet · premier échange</p>
+          <h1>Commençons par <span class="serif">votre bien.</span></h1>
+          <p class="intro">
+            Quelques informations pour préparer votre message à Martin. Vous le
+            relisez, puis vous l’envoyez depuis votre messagerie.
           </p>
-          <p class="intro-signature">
-            <strong>Martin Snauwaert</strong>
-            <span>Votre conseiller immobilier</span>
-          </p>
+        </section>
+        <div class="form-layout">
+          <section class="form-card">
+            <ol class="steps" aria-label="Étapes">
+              <li aria-current="step">01 · Projet</li>
+              <li>02 · Contact</li>
+              <li>03 · Relecture</li>
+            </ol>
+            <form id="project-form" novalidate>
+              <fieldset data-step="0">
+                <legend>Parlez-nous de votre projet</legend>
+                <label
+                  >Votre commune<input
+                    name="commune"
+                    autocomplete="address-level2"
+                    maxlength="80"
+                    required
+                    placeholder="Ex. Beaumont"
+                /></label>
+                <div class="two">
+                  <label
+                    >Type de bien<select name="type" required>
+                      <option value="">Choisir</option>
+                      <option>Maison</option>
+                      <option>Appartement</option>
+                      <option>Terrain</option>
+                      <option>Autre bien</option>
+                    </select></label
+                  ><label
+                    >Votre calendrier<select name="delai" required>
+                      <option value="">Choisir</option>
+                      <option>Dès que possible</option>
+                      <option>Dans les six mois</option>
+                      <option>Plus tard</option>
+                      <option>Je me renseigne</option>
+                    </select></label
+                  >
+                </div>
+                <button class="button" type="submit">Continuer ↗</button>
+              </fieldset>
+              <fieldset data-step="1" hidden disabled>
+                <legend>Comment vous recontacter ?</legend>
+                <label
+                  >Votre prénom<input
+                    name="prenom"
+                    autocomplete="given-name"
+                    maxlength="60"
+                    required /></label
+                ><label
+                  >Votre préférence<select name="canal">
+                    <option value="email">E-mail</option>
+                    <option value="telephone">Téléphone</option>
+                  </select></label
+                ><label id="contact-label"
+                  >Votre adresse e-mail<input
+                    name="contact"
+                    type="email"
+                    autocomplete="email"
+                    maxlength="120"
+                    required /></label
+                ><label
+                  >Une précision ?
+                  <span class="quiet"
+                    >Facultatif · pas de document personnel</span
+                  ><textarea name="message" maxlength="300" rows="3"></textarea>
+                </label>
+                <div class="actions">
+                  <button class="button secondary" type="button" data-back>
+                    Retour</button
+                  ><button class="button" type="submit">
+                    Relire mon message ↗
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset data-step="2" hidden disabled>
+                <legend>Votre message est prêt</legend>
+                <p class="quiet">
+                  Il n’est pas encore envoyé. Votre messagerie s’ouvrira avec ce
+                  texte : vous pourrez le modifier puis l’envoyer.
+                </p>
+                <pre class="summary" id="message-preview"></pre>
+                <div class="actions">
+                  <a
+                    id="send-mail"
+                    class="button"
+                    href="mailto:martin.s@connexionimmo.be"
+                    >Ouvrir ma messagerie ↗</a
+                  ><button
+                    class="button secondary"
+                    id="copy-message"
+                    type="button"
+                  >
+                    Copier le message
+                  </button>
+                </div>
+                <button class="button secondary" type="button" data-back>
+                  Modifier
+                </button>
+                <p class="quiet">
+                  Si aucune messagerie ne s’ouvre : copiez le texte et
+                  adressez-le à
+                  <a href="mailto:martin.s@connexionimmo.be"
+                    >martin.s@connexionimmo.be</a
+                  >, ou appelez le <a href="tel:+32493057184">0493 05 71 84</a>.
+                </p>
+              </fieldset>
+              <p
+                class="error"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+            <p class="quiet">
+              Aucune inscription à une newsletter. Les champs restent dans cette
+              page jusqu’à votre départ ; aucun envoi au serveur.
+              <a href="/politique-confidentialite.html">Vos données</a>.
+            </p>
+            <noscript
+              ><p class="noscript">
+                Pour préparer le message, activez JavaScript ou contactez
+                directement Martin au
+                <a href="tel:+32493057184">0493 05 71 84</a>.
+              </p></noscript
+            >
+          </section>
+          <aside class="aside">
+            <img
+              src="/assets/ms.jpg"
+              width="1000"
+              height="776"
+              alt="Martin Snauwaert"
+            />
+            <h2>Un échange, puis la suite.</h2>
+            <p>
+              Votre message permet de préciser le bien et votre calendrier. Une
+              estimation nécessite ensuite d’examiner les informations utiles
+              avec Martin.
+            </p>
+            <p>
+              Vous n’avez pas encore tous les documents ? Vous pouvez déjà poser
+              vos questions.
+            </p>
+            <a href="/preparer-ma-vente/">Les premières étapes d’une vente ↗</a>
+          </aside>
         </div>
-
-        <div class="assistant-panel">
-          <estimation-chatbot></estimation-chatbot>
-
-          <ul class="trust-list assistant-trust-list">
-            <li>Gratuit et sans engagement</li>
-            <li>En moins de trois minutes</li>
-            <li>Données traitées confidentiellement</li>
-          </ul>
+      </main>
+      <footer>
+        <strong>Martin Snauwaert · Connexion Immo</strong>
+        <p>
+          Barbençon & ses environs ·
+          <a href="tel:+32493057184">0493 05 71 84</a> ·
+          <a href="mailto:martin.s@connexionimmo.be"
+            >martin.s@connexionimmo.be</a
+          >
+        </p>
+        <div class="footer-links">
+          <a href="/mentions-legales.html">Mentions légales</a
+          ><a href="/politique-confidentialite.html">Vos données</a
+          ><a
+            href="https://connexionimmo.be/fr/notre-equipe/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Le réseau Connexion Immo ↗</a
+          >
         </div>
-      </section>
-    </main>
-
-    <script src="estimation.js" defer></script>
+      </footer>
+    </div>
   </body>
 </html>

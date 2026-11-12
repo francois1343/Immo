@@ -1,0 +1,7 @@
+{
+  "name": "martin-immo",
+  "version": "0.2.0",
+  "private": true,
+  "engines": {"node": "24.x"},
+  "scripts": {"build": "node scripts/build.cjs", "test": "node --test tests/site.test.cjs"}
+}
