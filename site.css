@@ -593,3 +593,5 @@ footer .footer-links {
     background: white;
   }
 }
+
+.hero-person{font-size:14px;font-weight:650;color:var(--blue,#073f63);margin:0 0 12px}
