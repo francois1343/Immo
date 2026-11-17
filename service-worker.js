@@ -1,4 +1,4 @@
-const CACHE = "martin-immo-v5";
+const CACHE = "martin-immo-v6";
 const FILES = [
   "/",
   "/index.html",

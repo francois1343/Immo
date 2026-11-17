@@ -350,3 +350,59 @@
     padding: 16px 12px 18px;
   }
 }
+
+/* ── Harmonisation avec l'identité actualisée du site (aucun changement de logique) ── */
+.estimate input:not([type="radio"]),
+.estimate textarea,
+.chip,
+.estimate-recap,
+.estimate-failure {
+  border-radius: 2px;
+}
+.chip:has(input:checked) {
+  background: var(--sand);
+}
+.chip:has(input:focus-visible) {
+  outline-color: var(--blue);
+}
+.estimate-recap {
+  background: var(--sand);
+}
+.estimate [data-step] > legend,
+#estimate-result h2 {
+  font-weight: 750;
+}
+.estimate .button {
+  text-transform: uppercase;
+}
+.form-layout > *,
+.estimate fieldset,
+.chip {
+  min-width: 0;
+}
+.chip span {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 300px) {
+  .aside h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 300px) {
+  .estimate .button {
+    padding: 12px 6px;
+    font-size: 12px;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+  .estimate-recap,
+  .field-hint,
+  .field-error {
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 300px) {
+  .optional {
+    white-space: normal;
+  }
+}

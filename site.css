@@ -595,3 +595,403 @@ footer .footer-links {
 }
 
 .hero-person{font-size:14px;font-weight:650;color:var(--blue,#073f63);margin:0 0 12px}
+
+/* ── Harmonisation du 17 novembre 2026 : en-tête, logo, portrait ─────────── */
+/* Logo : +30 % (116 → 150 px ; 102 → 132 px sur mobile), proportions d'origine.
+   La hauteur de l'en-tête ne change pas : son espacement vertical est réduit d'autant. */
+.top {
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 16px 0;
+}
+.identity {
+  min-width: 0;
+}
+.identity img {
+  width: 150px;
+  max-width: 100%;
+}
+.top nav {
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-left: auto;
+}
+.top nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 6px;
+}
+.top nav a:hover {
+  background: #eef2f3;
+}
+.top nav .nav-estimate {
+  padding: 0 14px;
+  border: 1px solid currentColor;
+}
+/* Portrait : emprise réduite d'environ 19 % (539 × 460 → 480 × 420 px). */
+.hero {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 480px);
+  gap: 64px;
+}
+.portrait {
+  width: 100%;
+  max-width: 480px;
+  justify-self: end;
+}
+.portrait img {
+  height: 420px;
+}
+.intro {
+  max-width: 52ch;
+}
+h1,
+h2,
+h3,
+p,
+a,
+li,
+dd,
+strong {
+  overflow-wrap: break-word;
+}
+@media (max-width: 760px) {
+  .top {
+    padding: 11px 0;
+  }
+  .identity img {
+    width: 132px;
+  }
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 10.6vw, 42px);
+  }
+  .portrait {
+    max-width: none;
+    justify-self: stretch;
+  }
+  .portrait img {
+    height: 280px;
+  }
+  .portrait-caption {
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+  }
+}
+/* Très petites largeurs (zoom de 200 % sur téléphone) : rien ne force le défilement horizontal. */
+@media (max-width: 300px) {
+  .shell {
+    width: calc(100% - 20px);
+  }
+  .identity img {
+    width: 112px;
+  }
+  .top nav {
+    margin-left: 0;
+  }
+  .hero h1,
+  .page-intro h1 {
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    hyphens: auto;
+  }
+  .section h2,
+  .section-head h2 {
+    font-size: 22px;
+  }
+  .eyebrow {
+    letter-spacing: 1px;
+  }
+  .button {
+    gap: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .hero .actions .button,
+  .mobile-contact a {
+    flex: 1 1 100%;
+  }
+  .mobile-contact {
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .has-dock {
+    padding-bottom: 140px;
+  }
+  .ribbon > div {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .card,
+  .callout,
+  .form-card {
+    padding: 16px;
+  }
+  .circle {
+    display: none;
+  }
+  .steps {
+    flex-direction: column;
+  }
+}
+
+/* ── Harmonisation avec l'identité du réseau Connexion Immo ──────────────
+   Marine #00314a, orange #f66e18, blanc cassé #f7f4f0, fond blanc, formes
+   plates et peu arrondies, titres gras. La police Manrope, auto-hébergée,
+   est conservée : celle du réseau (Poppins) est servie par un service tiers.
+   L'orange du réseau n'atteint pas le contraste requis pour du texte sur
+   blanc (2,9 pour 1) : le texte orange utilise une teinte plus foncée. */
+:root {
+  --ink: #00314a;
+  --blue: #00314a;
+  --paper: #ffffff;
+  --sand: #f7f4f0;
+  --muted: #4d6170;
+  --line: #dde3e6;
+  --orange: #f66e18;
+  --orange-text: #b9490a;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+.draft {
+  background: var(--sand);
+  color: var(--muted);
+}
+.top {
+  border-bottom-color: var(--line);
+}
+.top nav {
+  font-size: 13px;
+  font-weight: 700;
+}
+.top nav a:hover {
+  background: var(--sand);
+  color: var(--orange-text);
+}
+.top nav a[aria-current="page"] {
+  color: var(--orange-text);
+}
+/* Titres : gras, comme sur le site du réseau ; l'italique reste la touche personnelle de Martin. */
+.hero h1 {
+  font-size: clamp(34px, 3.9vw, 54px);
+  font-weight: 750;
+  line-height: 1.14;
+  letter-spacing: -1.2px;
+}
+.page-intro h1 {
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+.section h2,
+.callout h2,
+.aside h2,
+legend {
+  font-weight: 750;
+}
+.serif {
+  color: var(--orange-text);
+  font-weight: 500;
+}
+.eyebrow,
+.card .number {
+  color: var(--orange-text);
+}
+.hero-person {
+  font-weight: 750;
+}
+/* Boutons : appel principal orange à texte marine (contraste 4,7 pour 1), survol marine. */
+.button {
+  min-height: 50px;
+  padding: 13px 22px;
+  border-radius: 2px;
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+}
+.button:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.button.secondary {
+  background: transparent;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.button.secondary:hover {
+  background: var(--blue);
+  color: #fff;
+}
+/* Portrait : à plat sur le marine du réseau, sans ombre décalée. */
+.portrait {
+  border-radius: 2px;
+  background: var(--blue);
+  box-shadow: none;
+}
+.portrait-caption small {
+  color: #dbe6ec;
+}
+.portrait-caption strong {
+  color: #fff;
+}
+.circle {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.ribbon {
+  margin: 0 -24px;
+  padding: 22px 24px;
+  border: 0;
+  background: var(--sand);
+}
+/* Cartes : plates, sans ombre ; le survol change la bordure, sans déplacement. */
+.card {
+  border-radius: 2px;
+  border-color: var(--line);
+  border-top: 3px solid var(--blue);
+}
+.card:hover {
+  transform: none;
+  border-color: var(--line);
+  border-top-color: var(--orange);
+}
+.card a {
+  color: var(--blue);
+}
+.card a:hover,
+footer a:hover,
+.aside a:hover {
+  color: var(--orange-text);
+}
+.callout {
+  border-radius: 2px;
+  background: var(--blue);
+  color: #fff;
+}
+.callout .intro {
+  color: #dbe6ec;
+}
+.callout .button:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--blue);
+}
+.form-card {
+  border-radius: 2px;
+}
+input,
+select,
+textarea {
+  border-radius: 2px;
+}
+.summary {
+  border-radius: 2px;
+  background: var(--sand);
+}
+.steps li[aria-current="step"] {
+  border-color: var(--orange);
+}
+.aside img {
+  border-radius: 2px;
+}
+.mobile-contact {
+  background: #fffffff2;
+}
+.noscript {
+  background: var(--sand);
+}
+@media (max-width: 760px) {
+  .ribbon {
+    margin: 0 -18px;
+    padding: 20px 18px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 9.4vw, 38px);
+    letter-spacing: -0.8px;
+  }
+  .mobile-contact .button {
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 300px) {
+  .ribbon {
+    margin: 0 -10px;
+    padding: 16px 10px;
+  }
+  .button {
+    letter-spacing: 0.2px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .card {
+    transition: none;
+  }
+}
+@media print {
+  .callout {
+    background: none;
+    color: var(--ink);
+  }
+}
+/* Tablette : le portrait ne dépasse jamais 42 % de la largeur, le texte garde la priorité. */
+@media (min-width: 761px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, min(480px, 42%));
+    gap: clamp(28px, 5vw, 64px);
+  }
+}
+@media (min-width: 761px) and (max-width: 1000px) {
+  .portrait img {
+    height: 360px;
+  }
+  .top nav {
+    font-size: 12px;
+  }
+}
+/* Mobile : les deux appels du haut de page s'empilent, chacun sur une ligne. */
+@media (max-width: 480px) {
+  .hero .actions .button {
+    flex: 1 1 100%;
+  }
+}
+/* Très petites largeurs : la barre de contact rejoint le flux de la page au lieu de masquer le contenu. */
+@media (max-width: 300px) {
+  .mobile-contact {
+    position: static;
+    border-top: 0;
+    padding: 0 10px 16px;
+  }
+  .has-dock {
+    padding-bottom: 0;
+  }
+}
+/* Le portrait de la colonne latérale garde ses proportions (il était étiré en hauteur). */
+.aside img {
+  height: auto;
+}
