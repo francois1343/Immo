@@ -14,6 +14,10 @@ const files = [
   "politique-confidentialite.html",
   "site.css",
   "site.js",
+  "estimation.css",
+  "estimation.js",
+  "inquiry-core.js",
+  "inquiry-config.js",
   "legal.css",
   "fonts.css",
   "service-worker.js",
@@ -31,6 +35,11 @@ const files = [
     .filter((n) => /^[a-zA-Z0-9_.-]+\.(woff2|txt)$/.test(n))
     .map((n) => "assets/fonts/" + n),
 ];
+/* Third-party browser bundle, copied from the installed package at build time. */
+const vendor = {
+  "vendor/libphonenumber-min.js":
+    "node_modules/libphonenumber-js/bundle/libphonenumber-min.js",
+};
 for (const name of files) {
   const source = path.join(root, name);
   if (fs.lstatSync(source).isSymbolicLink() || !fs.statSync(source).isFile())
@@ -46,7 +55,11 @@ if (fs.existsSync(out)) {
       const relative = path
         .relative(out, path.join(entry.parentPath, entry.name))
         .replaceAll("\\", "/");
-      if (!files.includes(relative) && relative !== "sitemap.xml")
+      if (
+        !files.includes(relative) &&
+        !(relative in vendor) &&
+        relative !== "sitemap.xml"
+      )
         throw Error("Unexpected output: " + relative);
     }
   }
@@ -55,6 +68,11 @@ for (const name of files) {
   const dest = path.join(out, name);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(path.join(root, name), dest);
+}
+for (const [name, from] of Object.entries(vendor)) {
+  const dest = path.join(out, name);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.copyFileSync(path.join(root, from), dest);
 }
 const seo = require("./seo.cjs").build(root, out);
 console.log(

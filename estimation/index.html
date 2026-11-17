@@ -8,7 +8,7 @@
     <title>Préparer votre demande d’estimation | Martin Snauwaert</title>
     <meta
       name="description"
-      content="Préparez votre demande d’échange immobilier en trois étapes, puis envoyez-la à Martin depuis votre messagerie."
+      content="Préparez votre demande d’échange immobilier en deux étapes, puis envoyez-la à Martin depuis votre messagerie."
     />
     <meta
       name="description"
@@ -17,6 +17,10 @@
     <link rel="icon" href="/assets/favicon-32.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="/estimation.css" />
+    <script src="/inquiry-config.js" defer></script>
+    <script src="/inquiry-core.js" defer></script>
+    <script src="/estimation.js" defer></script>
     <script src="/site.js" defer></script>
   </head>
   <body class="">
@@ -43,160 +47,136 @@
         </nav>
       </header>
       <main id="main">
-        <section class="page-intro">
-          <p class="eyebrow">Votre projet · premier échange</p>
-          <h1>Commençons par <span class="serif">votre bien.</span></h1>
-          <p class="intro">
-            Quelques informations pour préparer votre message à Martin. Vous le
-            relisez, puis vous l’envoyez depuis votre messagerie.
-          </p>
+      <section class="page-intro">
+        <p class="eyebrow">Votre projet · premier échange</p>
+        <h1>Commençons par <span class="serif">votre bien.</span></h1>
+        <p class="intro">Deux étapes, moins d’une minute. Aucun document à fournir.</p>
+      </section>
+      <div class="form-layout">
+        <section class="form-card estimate" aria-label="Demande d’estimation">
+          <p class="estimate-progress" id="estimate-progress" role="status" data-step="1">Étape 1 sur 2 · Votre bien</p>
+          <div class="estimate-bar" aria-hidden="true"><span></span><span></span></div>
+          <form id="estimate-form" novalidate>
+            <input type="hidden" name="origine" value="/estimation/" />
+            <div class="estimate-hp" aria-hidden="true">
+              <label>Laissez ce champ vide<input name="website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            <fieldset data-step="0">
+              <legend>Votre bien</legend>
+              <div class="field" data-field>
+                <label for="f-commune">Commune du bien</label>
+                <input id="f-commune" name="commune" list="communes" autocomplete="address-level2" autocapitalize="words" enterkeyhint="next" maxlength="80" required aria-describedby="err-commune" placeholder="Ex. Beaumont" />
+                <datalist id="communes"><option value="Beaumont"></option><option value="Barbençon"></option></datalist>
+                <p class="field-error" id="err-commune" hidden></p>
+              </div>
+              <fieldset class="choice" data-field aria-describedby="err-type">
+                <legend>Type de bien</legend>
+                <div class="chips chips-icons">
+                  <label class="chip"><input type="radio" name="type" value="Maison" required /><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10M10 19.5v-5h4v5" /></svg><span>Maison</span></label>
+                  <label class="chip"><input type="radio" name="type" value="Appartement" /><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5v-17h14v17M3 20.5h18M9 7.5h2M13 7.5h2M9 11.5h2M13 11.5h2M9 15.5h2M13 15.5h2" /></svg><span>Appartement</span></label>
+                  <label class="chip"><input type="radio" name="type" value="Terrain" /><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18.5h18M5 18.5l3-6 3 3 4-8 4 11M17 6.5h.01" /></svg><span>Terrain</span></label>
+                  <label class="chip"><input type="radio" name="type" value="Autre bien" /><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5v-11l8-5 8 5v11M4 20.5h16M9 20.5v-6h6v6" /></svg><span>Autre bien</span></label>
+                </div>
+                <p class="field-error" id="err-type" hidden></p>
+              </fieldset>
+              <fieldset class="choice" data-field aria-describedby="err-delai">
+                <legend>Votre calendrier</legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="delai" value="Dès que possible" required /><span>Dès que possible</span></label>
+                  <label class="chip"><input type="radio" name="delai" value="Dans les six mois" /><span>Dans les six mois</span></label>
+                  <label class="chip"><input type="radio" name="delai" value="Plus tard" /><span>Plus tard</span></label>
+                  <label class="chip"><input type="radio" name="delai" value="Je me renseigne" /><span>Je me renseigne</span></label>
+                </div>
+                <p class="field-error" id="err-delai" hidden></p>
+              </fieldset>
+              <button class="button estimate-main" type="submit">Continuer</button>
+            </fieldset>
+            <fieldset data-step="1" hidden disabled>
+              <legend>Vos coordonnées</legend>
+              <p class="estimate-recap"><span id="recap-bien"></span> <button type="button" class="link-button" data-back="0">Modifier</button></p>
+              <div class="field" data-field>
+                <label for="f-prenom">Prénom</label>
+                <input id="f-prenom" name="prenom" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" maxlength="60" required aria-describedby="err-prenom" />
+                <p class="field-error" id="err-prenom" hidden></p>
+              </div>
+              <div class="field" data-field>
+                <label for="f-telephone">Téléphone</label>
+                <input id="f-telephone" name="telephone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" maxlength="30" required aria-describedby="hint-telephone err-telephone" placeholder="0493 12 34 56" />
+                <p class="field-hint" id="hint-telephone" aria-live="polite">Numéro belge ou français.</p>
+                <p class="field-error" id="err-telephone" hidden></p>
+              </div>
+              <div class="field" data-field>
+                <label for="f-email">E-mail <span class="optional">facultatif</span></label>
+                <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" enterkeyhint="done" maxlength="120" aria-describedby="err-email" />
+                <p class="field-error" id="err-email" hidden></p>
+              </div>
+              <fieldset class="choice" data-field aria-describedby="note-rappel err-rappel">
+                <legend>Quand préférez-vous être rappelé ? <span class="optional">facultatif</span></legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="rappel" value="Matin" /><span>Matin</span></label>
+                  <label class="chip"><input type="radio" name="rappel" value="Après-midi" /><span>Après-midi</span></label>
+                  <label class="chip"><input type="radio" name="rappel" value="Soirée" /><span>Soirée</span></label>
+                  <label class="chip"><input type="radio" name="rappel" value="Peu importe" /><span>Peu importe</span></label>
+                </div>
+                <p class="field-hint" id="note-rappel">C’est une préférence, pas un rendez-vous : le moment exact sera convenu avec vous.</p>
+                <p class="field-error" id="err-rappel" hidden></p>
+              </fieldset>
+              <details class="estimate-more" data-field>
+                <summary>Ajouter une précision <span class="optional">facultatif</span></summary>
+                <label for="f-message">Votre précision <span class="optional">pas de document personnel</span></label>
+                <textarea id="f-message" name="message" maxlength="300" rows="3" aria-describedby="err-message"></textarea>
+                <p class="field-error" id="err-message" hidden></p>
+              </details>
+              <div id="turnstile-slot" class="estimate-turnstile" hidden></div>
+              <div id="send-failure" class="estimate-failure" role="alert" hidden>
+                <p id="send-failure-text"></p>
+                <div class="actions">
+                  <a class="button secondary" href="tel:+32493057184">Appeler le 0493 05 71 84</a>
+                  <button class="button secondary" type="button" id="use-mail">Préparer un e-mail à la place</button>
+                </div>
+              </div>
+              <div class="actions estimate-actions">
+                <button class="button secondary" type="button" data-back="0">Retour</button>
+                <button class="button estimate-main" type="submit" id="estimate-submit">Préparer mon message</button>
+              </div>
+              <p class="quiet" data-when="mail">Rien n’est envoyé par ce site : vous relisez votre message, puis vous l’envoyez depuis votre messagerie. <a href="/politique-confidentialite.html">Vos données</a>.</p>
+              <p class="quiet" data-when="api" hidden>Votre demande est transmise à Martin Snauwaert pour vous rappeler au sujet de votre bien. Aucune inscription à une newsletter. <a href="/politique-confidentialite.html">Vos données</a>.</p>
+            </fieldset>
+            <p class="error" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div id="estimate-result" hidden>
+            <section data-result="mail" hidden>
+              <h2>Votre message est prêt</h2>
+              <p class="quiet">Il n’est pas encore envoyé. Votre messagerie s’ouvrira avec ce texte : vous pourrez le modifier puis l’envoyer.</p>
+              <pre class="summary" id="message-preview"></pre>
+              <div class="actions">
+                <a id="send-mail" class="button estimate-main" href="mailto:martin.s@connexionimmo.be">Ouvrir ma messagerie</a>
+                <button class="button secondary" id="copy-message" type="button">Copier le message</button>
+              </div>
+              <p class="quiet" id="mail-status" role="status" aria-live="polite"></p>
+              <p><button class="link-button" type="button" data-back="1">Modifier mes réponses</button></p>
+              <p class="quiet">Si aucune messagerie ne s’ouvre : copiez le texte et adressez-le à <a href="mailto:martin.s@connexionimmo.be">martin.s@connexionimmo.be</a>, ou appelez le <a href="tel:+32493057184">0493 05 71 84</a>.</p>
+            </section>
+            <section data-result="sent" hidden>
+              <svg class="estimate-check" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" /><path d="m15 24.5 6.5 6.5L34 18" /></svg>
+              <h2>Votre demande est enregistrée</h2>
+              <p id="sent-recap" class="estimate-recap"></p>
+              <p>Martin vous rappellera au numéro indiqué pour parler de votre bien.</p>
+              <p class="quiet" id="sent-callback"></p>
+              <a class="button secondary" href="/preparer-ma-vente/">Les premières étapes d’une vente</a>
+            </section>
+          </div>
+          <noscript><p class="noscript">Pour préparer votre demande, activez JavaScript ou contactez directement Martin au <a href="tel:+32493057184">0493 05 71 84</a>.</p></noscript>
         </section>
-        <div class="form-layout">
-          <section class="form-card">
-            <ol class="steps" aria-label="Étapes">
-              <li aria-current="step">01 · Projet</li>
-              <li>02 · Contact</li>
-              <li>03 · Relecture</li>
-            </ol>
-            <form id="project-form" novalidate>
-              <fieldset data-step="0">
-                <legend>Parlez-nous de votre projet</legend>
-                <label
-                  >Votre commune<input
-                    name="commune"
-                    autocomplete="address-level2"
-                    maxlength="80"
-                    required
-                    placeholder="Ex. Beaumont"
-                /></label>
-                <div class="two">
-                  <label
-                    >Type de bien<select name="type" required>
-                      <option value="">Choisir</option>
-                      <option>Maison</option>
-                      <option>Appartement</option>
-                      <option>Terrain</option>
-                      <option>Autre bien</option>
-                    </select></label
-                  ><label
-                    >Votre calendrier<select name="delai" required>
-                      <option value="">Choisir</option>
-                      <option>Dès que possible</option>
-                      <option>Dans les six mois</option>
-                      <option>Plus tard</option>
-                      <option>Je me renseigne</option>
-                    </select></label
-                  >
-                </div>
-                <button class="button" type="submit">Continuer ↗</button>
-              </fieldset>
-              <fieldset data-step="1" hidden disabled>
-                <legend>Comment vous recontacter ?</legend>
-                <label
-                  >Votre prénom<input
-                    name="prenom"
-                    autocomplete="given-name"
-                    maxlength="60"
-                    required /></label
-                ><label
-                  >Votre préférence<select name="canal">
-                    <option value="email">E-mail</option>
-                    <option value="telephone">Téléphone</option>
-                  </select></label
-                ><label id="contact-label"
-                  >Votre adresse e-mail<input
-                    name="contact"
-                    type="email"
-                    autocomplete="email"
-                    maxlength="120"
-                    required /></label
-                ><label
-                  >Une précision ?
-                  <span class="quiet"
-                    >Facultatif · pas de document personnel</span
-                  ><textarea name="message" maxlength="300" rows="3"></textarea>
-                </label>
-                <div class="actions">
-                  <button class="button secondary" type="button" data-back>
-                    Retour</button
-                  ><button class="button" type="submit">
-                    Relire mon message ↗
-                  </button>
-                </div>
-              </fieldset>
-              <fieldset data-step="2" hidden disabled>
-                <legend>Votre message est prêt</legend>
-                <p class="quiet">
-                  Il n’est pas encore envoyé. Votre messagerie s’ouvrira avec ce
-                  texte : vous pourrez le modifier puis l’envoyer.
-                </p>
-                <pre class="summary" id="message-preview"></pre>
-                <div class="actions">
-                  <a
-                    id="send-mail"
-                    class="button"
-                    href="mailto:martin.s@connexionimmo.be"
-                    >Ouvrir ma messagerie ↗</a
-                  ><button
-                    class="button secondary"
-                    id="copy-message"
-                    type="button"
-                  >
-                    Copier le message
-                  </button>
-                </div>
-                <button class="button secondary" type="button" data-back>
-                  Modifier
-                </button>
-                <p class="quiet">
-                  Si aucune messagerie ne s’ouvre : copiez le texte et
-                  adressez-le à
-                  <a href="mailto:martin.s@connexionimmo.be"
-                    >martin.s@connexionimmo.be</a
-                  >, ou appelez le <a href="tel:+32493057184">0493 05 71 84</a>.
-                </p>
-              </fieldset>
-              <p
-                class="error"
-                id="form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-            </form>
-            <p class="quiet">
-              Aucune inscription à une newsletter. Les champs restent dans cette
-              page jusqu’à votre départ ; aucun envoi au serveur.
-              <a href="/politique-confidentialite.html">Vos données</a>.
-            </p>
-            <noscript
-              ><p class="noscript">
-                Pour préparer le message, activez JavaScript ou contactez
-                directement Martin au
-                <a href="tel:+32493057184">0493 05 71 84</a>.
-              </p></noscript
-            >
-          </section>
-          <aside class="aside">
-            <img
-              src="/assets/ms.jpg"
-              width="1000"
-              height="776"
-              alt="Martin Snauwaert"
-            />
-            <h2>Un échange, puis la suite.</h2>
-            <p>
-              Votre message permet de préciser le bien et votre calendrier. Une
-              estimation nécessite ensuite d’examiner les informations utiles
-              avec Martin.
-            </p>
-            <p>
-              Vous n’avez pas encore tous les documents ? Vous pouvez déjà poser
-              vos questions.
-            </p>
-            <a href="/preparer-ma-vente/">Les premières étapes d’une vente ↗</a>
-          </aside>
-        </div>
-      </main>
+        <aside class="aside">
+          <img src="/assets/ms.jpg" width="1000" height="776" alt="Martin Snauwaert" />
+          <h2>Un échange, puis la suite.</h2>
+          <p>Votre demande permet de préciser le bien et votre calendrier. Une estimation nécessite ensuite d’examiner les informations utiles avec Martin.</p>
+          <p>Vous n’avez pas encore tous les documents ? Vous pouvez déjà poser vos questions.</p>
+          <a href="/preparer-ma-vente/">Les premières étapes d’une vente ↗</a>
+        </aside>
+      </div>
+    </main>
       <footer>
         <strong>Martin Snauwaert · Connexion Immo</strong>
         <p>
