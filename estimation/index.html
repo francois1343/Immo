@@ -80,7 +80,7 @@
                 <p class="field-error" id="err-type" hidden></p>
               </fieldset>
               <fieldset class="choice" data-field aria-describedby="err-delai">
-                <legend>Votre calendrier</legend>
+                <legend>Quand souhaitez-vous vendre ?</legend>
                 <div class="chips">
                   <label class="chip"><input type="radio" name="delai" value="Dès que possible" required /><span>Dès que possible</span></label>
                   <label class="chip"><input type="radio" name="delai" value="Dans les six mois" /><span>Dans les six mois</span></label>
@@ -93,7 +93,7 @@
             </fieldset>
             <fieldset data-step="1" hidden disabled>
               <legend>Vos coordonnées</legend>
-              <p class="estimate-recap"><span id="recap-bien"></span> <button type="button" class="link-button" data-back="0">Modifier</button></p>
+              <p class="estimate-recap"><span id="recap-bien"></span> <button type="button" class="link-button" data-back="0">← Modifier</button></p>
               <div class="field" data-field>
                 <label for="f-prenom">Prénom</label>
                 <input id="f-prenom" name="prenom" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" maxlength="60" required aria-describedby="err-prenom" />
@@ -136,7 +136,6 @@
                 </div>
               </div>
               <div class="actions estimate-actions">
-                <button class="button secondary" type="button" data-back="0">Retour</button>
                 <button class="button estimate-main" type="submit" id="estimate-submit">Préparer mon message</button>
               </div>
               <p class="quiet" data-when="mail">Rien n’est envoyé par ce site : vous relisez votre message, puis vous l’envoyez depuis votre messagerie. <a href="/politique-confidentialite.html">Vos données</a>.</p>

@@ -91,3 +91,11 @@ Dans tous les cas, avant ouverture au public :
 
 Responsable du traitement, durée de conservation, délai de rappel annoncé, mentions légales, autorisations de
 marque, hébergement autorisant l'usage commercial.
+
+## Recette visuelle du 17 novembre 2026
+
+Six corrections : question « Quand souhaitez-vous vendre ? » au-dessus des quatre boutons de calendrier ; un seul
+retour en arrière à l'étape 2 (lien « ← Modifier ») ; message général d'erreur placé au-dessus du bouton principal ;
+aide du téléphone masquée quand l'erreur s'affiche ; bordures et texte d'exemple assombris (3,75 et 5,2 pour 1) ;
+mention « facultatif » insécable. Contrôlé à 320, 360, 390, 768 et 1440 px et au zoom de 200 %.
+Limite connue : sous 213 px de largeur utile, l'en-tête commun du site impose un léger défilement horizontal.

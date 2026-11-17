@@ -61,10 +61,11 @@
   font-size: 16px; /* prevents the zoom on focus in iOS Safari */
   min-height: 52px;
   padding: 13px 14px;
+  border: 1.5px solid #74878f;
   border-radius: 8px;
 }
 .estimate input::placeholder {
-  color: #7d8f98;
+  color: #5d6f79;
 }
 .optional {
   font-weight: 500;
@@ -88,7 +89,7 @@
   min-height: 52px;
   margin: 0;
   padding: 10px 12px;
-  border: 1.5px solid #aab9c0;
+  border: 1.5px solid #74878f;
   border-radius: 10px;
   background: #fff;
   font-size: 14px;
@@ -183,7 +184,7 @@
 }
 .estimate-actions {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   margin: 26px 0 14px;
 }
 .estimate-actions .button {
@@ -193,7 +194,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 12px;
+  justify-content: space-between;
+  gap: 0 12px;
   margin: 0 0 22px;
   padding: 12px 14px;
   border-radius: 8px;
@@ -298,8 +300,7 @@
     min-width: 240px;
   }
   .estimate-actions {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
+    justify-content: start;
   }
 }
 .form-layout:has(.estimate) {
@@ -324,4 +325,28 @@
 }
 .estimate-more[open] summary::before {
   content: "–";
+}
+/* Review of 17 November 2026 */
+.optional {
+  white-space: nowrap;
+}
+.field.has-error .field-hint {
+  display: none;
+}
+#form-status {
+  margin: 0 0 12px;
+  font-weight: 650;
+}
+@media (max-width: 300px) {
+  .chips,
+  .chips.chips-icons {
+    grid-template-columns: 1fr;
+  }
+  .chips-icons .chip {
+    flex-direction: row;
+    min-height: 56px;
+  }
+  .estimate.form-card {
+    padding: 16px 12px 18px;
+  }
 }

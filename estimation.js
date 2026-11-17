@@ -117,6 +117,8 @@
     progress.textContent = `Étape ${n + 1} sur 2 · ${STEP_NAMES[n]}`;
     progress.dataset.step = String(n + 1);
     status.textContent = "";
+    // The status line sits just above the main button of the visible step.
+    steps[n].querySelector(".estimate-actions, .estimate-main").before(status);
     if (n === 1) {
       recap();
       loadPhoneLibrary().then(updatePhoneHint);
