@@ -406,3 +406,23 @@
     white-space: normal;
   }
 }
+@media (max-width: 300px) {
+  .estimate legend,
+  .estimate label {
+    overflow-wrap: anywhere;
+  }
+}
+/* A legend sizes itself to its text: keep it inside its fieldset so long labels wrap. */
+.estimate legend {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 300px) {
+  .optional {
+    display: inline-block;
+    max-width: 100%;
+  }
+}
+.estimate-more summary {
+  flex-wrap: wrap;
+}
