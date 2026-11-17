@@ -1,0 +1,15 @@
+{
+  "id": "d1a0f3c2-0001-4000-8000-000000000001",
+  "receivedAt": "2026-11-17T09:00:00.000Z",
+  "status": "Nouvelle",
+  "commune": "Beaumont",
+  "type": "Maison",
+  "delai": "Dans les six mois",
+  "prenom": "Camille",
+  "telephone": "+32470123451",
+  "pays": "BE",
+  "email": "camille@example.org",
+  "rappel": "Soirée",
+  "message": "Maison quatre façades, je réfléchis à vendre au printemps.",
+  "origine": "/estimation/"
+}

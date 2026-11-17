@@ -243,3 +243,41 @@ test("page and shared rules offer exactly the same choices", () => {
   assert.deepEqual(options("delai"), core.DELAYS);
   assert.deepEqual(options("rappel"), core.CALLBACKS);
 });
+
+/* Contract shared with the cockpit: the same file lives in its tests, where the
+   inbox model must accept it. Fictitious person. */
+test("contract: the stored request is exactly the shape the cockpit expects", async () => {
+  const expected = JSON.parse(read("tests/fixtures/demande-contrat.json"));
+  const f = fixture({
+    newId: () => expected.id,
+    now: () => new Date(expected.receivedAt),
+  });
+  const r = await f.post({
+    commune: "Beaumont",
+    type: "Maison",
+    delai: "Dans les six mois",
+    prenom: "Camille",
+    telephone: "0470 12 34 51",
+    email: "camille@example.org",
+    rappel: "Soirée",
+    message: "Maison quatre façades, je réfléchis à vendre au printemps.",
+    origine: "/estimation/",
+  });
+  assert.equal(r.status, 201);
+  assert.deepEqual(f.store.all()[0], expected);
+  assert.deepEqual(Object.keys(expected), [
+    "id",
+    "receivedAt",
+    "status",
+    "commune",
+    "type",
+    "delai",
+    "prenom",
+    "telephone",
+    "pays",
+    "email",
+    "rappel",
+    "message",
+    "origine",
+  ]);
+});
