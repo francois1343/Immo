@@ -1,9 +1,13 @@
-const CACHE = "martin-immo-v4";
+const CACHE = "martin-immo-v8";
 const FILES = [
   "/",
   "/index.html",
   "/site.css",
   "/site.js",
+  "/estimation.css",
+  "/estimation.js",
+  "/inquiry-core.js",
+  "/inquiry-config.js",
   "/fonts.css",
   "/manifest.webmanifest",
   "/assets/icon-192.png",
