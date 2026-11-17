@@ -12,6 +12,7 @@
     "build": "node scripts/build.cjs",
     "dev": "node scripts/dev-server.mjs",
     "dev:api": "node scripts/dev-server.mjs --api",
-    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs"
+    "serve": "node server/node-server.mjs",
+    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/reception.test.mjs"
   }
 }
