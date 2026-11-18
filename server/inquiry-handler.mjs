@@ -17,6 +17,7 @@ export function createInquiryHandler({
   phoneLib, // libphonenumber-js
   allowedOrigin, // exact origin of the public site
   notify = async () => {}, // alert without personal data; a failure never loses the request
+  sectors = undefined, // known sector ids: a campaign naming another sector is stored as a direct visit
   now = () => new Date(),
   newId = () => crypto.randomUUID(),
 }) {
@@ -87,7 +88,7 @@ export function createInquiryHandler({
       )
         return reply(403, { ok: false, error: "challenge" });
 
-      const check = core.validate(input, phoneLib);
+      const check = core.validate(input, phoneLib, { sectors });
       if (!check.ok) return reply(422, { ok: false, errors: check.errors });
 
       const record = {

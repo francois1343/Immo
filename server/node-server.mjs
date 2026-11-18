@@ -49,6 +49,9 @@ export function createSiteServer({
       allowedOrigin: origin,
       rateLimit: createFileRateLimit({ dir: storeDir, secret: rateSecret, max: rateMax }),
       verifyTurnstile: turnstile.verify,
+      // Campaign origins are checked against the sectors of the site, active or not:
+      // a flyer printed for a sector that is later switched off stays recognised.
+      sectors: JSON.parse(fs.readFileSync(path.join(root, "data", "zones.json"), "utf8")).communes.map((c) => c.id),
       ...(notify ? { notify } : {}),
     });
     config = "window.IMMO_INQUIRY=Object.freeze(" + JSON.stringify({ endpoint: "/api/demande", turnstileSiteKey: turnstile.siteKey, ...(turnstile.script ? { turnstileScript: turnstile.script } : {}) }) + ");";

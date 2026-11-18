@@ -343,9 +343,8 @@
   const commune = core.clean(params.get("commune") || "");
   if (commune && core.validate({ commune }).errors.commune === undefined)
     field("commune").value = commune;
-  const origine = core.clean(params.get("origine") || "");
-  field("origine").value = /^[a-z0-9/_.-]{1,120}$/i.test(origine)
-    ? origine
-    : "/estimation/";
+  /* A campaign link names its support and sector; any other visit is neutral.
+     The server checks the result again. */
+  field("origine").value = core.originFromParams((name) => params.get(name));
   show(0, false);
 })();

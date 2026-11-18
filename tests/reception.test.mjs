@@ -133,8 +133,31 @@ test("server with reception: stored on disk, once, and still there after a resta
   const saved = JSON.parse(fs.readFileSync(path.join(dir, "demandes", files(dir, "demandes")[0]), "utf8")).record;
   assert.equal(saved.telephone, "+32470123451");
   assert.equal(saved.status, "Nouvelle");
-  assert.deepEqual(Object.keys(saved).sort(), ["commune", "delai", "id", "pays", "prenom", "receivedAt", "status", "telephone", "type"]);
+  assert.deepEqual(Object.keys(saved).sort(), ["commune", "delai", "id", "origine", "pays", "prenom", "receivedAt", "status", "telephone", "type"]);
+  assert.equal(saved.origine, "/estimation/"); // no campaign: neutral origin
 });
+test("server: the commercial origin is checked again before it is stored", async () => {
+  const dir = tmp(), site = "https://site.example";
+  const s = await serve({ origin: site, reception: true, storeDir: dir, rateSecret: "secret-de-test", rateMax: 50, turnstile: { siteKey: "cle", script: "/mock.js", scriptBody: "", verify: async (t) => t === "ok" } });
+  const sent = async (prenom, origine) => {
+    assert.equal((await post(s.origin, { ...good, prenom, ...(origine === undefined ? {} : { origine }) }, { from: site })).status, 201, prenom);
+  };
+  try {
+    await sent("Alice", "/estimation/qr-commerce.qr.estimation-2027-01.beaumont-p01");
+    await sent("Bruno", undefined);
+    await sent("Chloé", "/estimation/flyer.print.estimation-2027-01.bruxelles"); // unknown sector
+    await sent("David", "/estimation/newsletter.email.promo.beaumont"); // unknown support
+    assert.equal((await post(s.origin, { ...good, prenom: "Emma", origine: "/estimation/<b>" }, { from: site })).status, 422);
+  } finally { await s.close(); }
+  const byName = Object.fromEntries(files(dir, "demandes").map((f) => JSON.parse(fs.readFileSync(path.join(dir, "demandes", f), "utf8")).record).map((r) => [r.prenom, r.origine]));
+  assert.deepEqual(byName, {
+    Alice: "/estimation/qr-commerce.qr.estimation-2027-01.beaumont-p01",
+    Bruno: "/estimation/",
+    Chloé: "/estimation/",
+    David: "/estimation/",
+  });
+});
+
 test("server: a storage failure is never confirmed to the visitor; the rate limit holds", async () => {
   const dir = tmp();
   const base = { reception: true, storeDir: dir, rateSecret: "secret-de-test", rateMax: 2, turnstile: { siteKey: "cle", script: "/mock.js", scriptBody: "", verify: async () => true } };

@@ -4,13 +4,8 @@
    Names come from data/zones.json, so an excluded centre can never get a link.
    Nothing is sent or generated beyond this text: no QR image, no campaign. */
 const P = require("./partials.cjs");
-const SUPPORTS = {
-  flyer: "print",
-  carte: "print",
-  "qr-commerce": "qr",
-  facebook: "paid-social",
-  instagram: "paid-social",
-};
+/* Supports and their medium: the same list the form and the server accept. */
+const { SUPPORTS } = require("../inquiry-core.js");
 function links(zones, campaign, origin) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(campaign))
     throw Error("Nom de campagne : minuscules, chiffres et tirets, par exemple estimation-2027-01.");

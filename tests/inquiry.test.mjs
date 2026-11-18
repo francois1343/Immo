@@ -281,3 +281,49 @@ test("contract: the stored request is exactly the shape the cockpit expects", as
     "origine",
   ]);
 });
+
+test("campaign origin: known support, strict format and known sector, or a direct visit", () => {
+  const sectors = require("../data/zones.json").communes.map((c) => c.id);
+  const from = (query) => core.originFromParams((k) => new URLSearchParams(query).get(k), sectors);
+  const flyer = "utm_source=flyer&utm_medium=print&utm_campaign=estimation-2027-01&utm_content=beaumont";
+  assert.equal(from(flyer), "/estimation/flyer.print.estimation-2027-01.beaumont");
+  /* Case and spaces are normalised; a partner number is kept. */
+  assert.equal(
+    from("utm_source=QR-Commerce&utm_medium=QR&utm_campaign=Estimation-2027-01&utm_content=%20walcourt-p03"),
+    "/estimation/qr-commerce.qr.estimation-2027-01.walcourt-p03",
+  );
+  /* Anything else is a direct visit: no parameter, a missing part, an unknown
+     support, a medium that does not belong to the support, an unknown sector,
+     free text, a person's name or e-mail, an overlong value. */
+  for (const query of [
+    "",
+    "commune=Beaumont",
+    "utm_source=flyer&utm_medium=print&utm_campaign=estimation-2027-01",
+    flyer.replace("flyer", "newsletter"),
+    flyer.replace("print", "paid-social"),
+    flyer.replace("beaumont", "bruxelles"),
+    flyer.replace("beaumont", "couvin-centre"),
+    flyer.replace("estimation-2027-01", "Promo d'été !"),
+    flyer.replace("beaumont", "camille.dupont@example.org"),
+    flyer.replace("estimation-2027-01", "x".repeat(33)),
+    flyer.replace("beaumont", "beaumont.extra"),
+  ])
+    assert.equal(from(query), core.NEUTRAL_ORIGIN, query);
+  /* What validate() stores is always neutral or canonical, never the raw input. */
+  const store = (origine) => core.validate({ ...good, origine }, lib, { sectors });
+  assert.equal(store(undefined).value.origine, "/estimation/");
+  assert.equal(store("/estimation/FLYER.print.estimation-2027-01.beaumont").value.origine, "/estimation/flyer.print.estimation-2027-01.beaumont");
+  assert.equal(store("/une/autre/page").value.origine, "/estimation/");
+  assert.equal(store("/estimation/flyer.print.estimation-2027-01.bruxelles").value.origine, "/estimation/");
+  assert.ok(store("/estimation/<script>").errors.origine);
+  /* Every link the generator prints is recognised, and excluded centres get a
+     link by sector id only. */
+  const { links } = require("../scripts/campaign-links.cjs");
+  const rows = links(require("../data/zones.json"), "estimation-2027-01", "https://exemple.test");
+  assert.equal(rows.length, 65);
+  for (const row of rows) {
+    const origin = from(new URL(row.url).search.slice(1));
+    assert.notEqual(origin, core.NEUTRAL_ORIGIN, row.url);
+    assert.equal(core.parseOrigin(origin).source, row.support);
+  }
+});

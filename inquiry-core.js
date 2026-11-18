@@ -97,9 +97,80 @@
     return null;
   }
 
+  /* ── Commercial origin of a request ────────────────────────────────
+     A request keeps where it came from, and nothing else about the visit:
+       "/estimation/"                                  direct or natural visit
+       "/estimation/<support>.<medium>.<campaign>.<sector>[-pNN]"   campaign link
+     The four parts come from the utm_* parameters of a campaign link. Each is
+     checked against a closed list or a strict format; anything else is stored
+     as a direct visit, so an arbitrary value never reaches the records. */
+  const NEUTRAL_ORIGIN = "/estimation/";
+  const SUPPORTS = {
+    flyer: "print",
+    carte: "print",
+    "qr-commerce": "qr",
+    facebook: "paid-social",
+    instagram: "paid-social",
+  };
+  const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const PARTNER = /^(.+)-p(\d{2})$/;
+  const part = (v) => clean(v).toLowerCase();
+  /* sectors: optional list of known sector ids (data/zones.json). The server
+     passes it; without it only the format is checked. */
+  function campaignOrigin(parts, sectors) {
+    const p = parts && typeof parts === "object" ? parts : {};
+    const source = part(p.source),
+      medium = part(p.medium),
+      campaign = part(p.campaign),
+      content = part(p.content);
+    if (!Object.hasOwn(SUPPORTS, source) || SUPPORTS[source] !== medium)
+      return NEUTRAL_ORIGIN;
+    if (!SLUG.test(campaign) || campaign.length > 32) return NEUTRAL_ORIGIN;
+    if (!SLUG.test(content) || content.length > 48) return NEUTRAL_ORIGIN;
+    const partner = PARTNER.exec(content),
+      sector = partner ? partner[1] : content;
+    if (Array.isArray(sectors) && !sectors.includes(sector)) return NEUTRAL_ORIGIN;
+    return `${NEUTRAL_ORIGIN}${source}.${medium}.${campaign}.${content}`;
+  }
+  /* The parts of a stored origin, or null for a direct visit. */
+  function parseOrigin(origine) {
+    const text = typeof origine === "string" ? origine : "";
+    if (!text.startsWith(NEUTRAL_ORIGIN)) return null;
+    const bits = text.slice(NEUTRAL_ORIGIN.length).split(".");
+    if (bits.length !== 4) return null;
+    const [source, medium, campaign, content] = bits;
+    const partner = PARTNER.exec(content);
+    return {
+      source,
+      medium,
+      campaign,
+      content,
+      sector: partner ? partner[1] : content,
+      partner: partner ? partner[2] : "",
+    };
+  }
+  /* Whatever arrives is rebuilt from its parts: the result is always either
+     the neutral origin or a canonical campaign origin. */
+  function normalizeOrigin(origine, sectors) {
+    const p = parseOrigin(clean(origine).toLowerCase());
+    return p ? campaignOrigin(p, sectors) : NEUTRAL_ORIGIN;
+  }
+  /* get: (name) -> string|null, typically URLSearchParams.get of a campaign link. */
+  function originFromParams(get, sectors) {
+    return campaignOrigin(
+      {
+        source: get("utm_source"),
+        medium: get("utm_medium"),
+        campaign: get("utm_campaign"),
+        content: get("utm_content"),
+      },
+      sectors,
+    );
+  }
+
   /* Returns {ok, value, errors}. `value` holds only known, normalised fields;
-     anything else in the input is dropped. */
-  function validate(input, lib) {
+     anything else in the input is dropped. options.sectors: known sector ids. */
+  function validate(input, lib, options) {
     const src = input && typeof input === "object" ? input : {};
     const errors = {},
       value = {};
@@ -140,11 +211,11 @@
       else value.message = message;
     }
     const origine = text("origine");
-    if (origine) {
-      if (origine.length > LIMITS.origine || !/^[a-z0-9/_.-]+$/i.test(origine))
-        errors.origine = MESSAGES.origine;
-      else value.origine = origine;
-    }
+    /* Forbidden characters are refused as before; a well-formed but unknown
+       origin is stored as a direct visit. Every request has an origin. */
+    if (origine && (origine.length > LIMITS.origine || !/^[a-z0-9/_.-]+$/i.test(origine)))
+      errors.origine = MESSAGES.origine;
+    else value.origine = normalizeOrigin(origine, options && options.sectors);
     return { ok: Object.keys(errors).length === 0, value, errors };
   }
 
@@ -178,6 +249,12 @@
     MESSAGES,
     clean,
     parsePhone,
+    NEUTRAL_ORIGIN,
+    SUPPORTS,
+    campaignOrigin,
+    parseOrigin,
+    normalizeOrigin,
+    originFromParams,
     validate,
     mailText,
   };
