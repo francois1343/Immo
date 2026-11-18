@@ -92,12 +92,12 @@ test("the footer shows verified details only, and never a bank account", () => {
   ])
     assert.ok(html.includes(expected), expected);
   for (const f of data.pro.fields.filter((x) => x.status !== "verified"))
-    for (const text of [f.value, f.footerText, f.candidate].filter(Boolean))
+    for (const text of [f.value, f.footerText].filter(Boolean))
       assert.ok(!html.includes(text), f.key);
   assert.ok(!/\bBE\d{2}[ \d]{12,}/.test(html));
   /* Switching on an unconfirmed value is refused by the data check. */
   const forced = structuredClone(data.pro);
-  forced.fields.find((f) => f.key === "thirdPartyAccount").footer = true;
+  forced.fields.find((f) => f.key === "insurance").footer = true;
   assert.throws(() => P.validatePro(forced));
 });
 
@@ -134,6 +134,10 @@ test("the legal page comes from the same data: verified host, no unconfirmed ban
     const v = data.pro.fields.find((f) => f.key === k).value;
     assert.ok(rendered.footer.includes(v) && rendered["legal-details"].includes(v), k);
   }
+  /* The public data file carries no working notes or unconfirmed numbers. */
+  const raw = fs.readFileSync(path.join(__dirname, "..", "data", "professional.json"), "utf8");
+  for (const word of ['"source"', '"note"', '"candidate"', "thirdPartyAccount", "0721"])
+    assert.ok(!raw.includes(word), word);
   /* An unverified host is never printed. */
   const draft = structuredClone(data.pro);
   draft.fields.find((f) => f.key === "host").status = "to-confirm";
