@@ -186,7 +186,7 @@ function footer(pro) {
    detailed page and the footer are corrected in one place. */
 function legalDetails(pro) {
   return pro.fields
-    .filter((x) => x.legalLabel && x.value)
+    .filter((x) => x.legalLabel && x.value && x.legal !== false)
     .map(
       (x) => `<li${x.legalWide ? ' class="legal-detail-wide"' : ""}>
             <span>${esc(x.legalLabel)}</span>
@@ -196,12 +196,27 @@ function legalDetails(pro) {
     .join("\n          ");
 }
 function legalMissing(pro) {
-  const missing = pro.fields.filter((x) => x.legalLabel && !x.value).map((x) => x.missingText || x.legalLabel);
+  const missing = pro.fields.filter((x) => x.legalLabel && !x.value && x.legal !== false).map((x) => x.missingText || x.legalLabel);
   return missing.length
     ? `<p class="legal-missing-info">
           <strong>Informations à compléter :</strong> ${esc(missing.join(" ; "))}.
         </p>`
     : "";
+}
+
+/* Hosting paragraph of the legal page: shown only once verified. */
+function legalHost(pro) {
+  const h = field(pro, "host");
+  if (!h || h.status !== "verified" || !h.value)
+    return "<p>Hébergeur en cours de confirmation.</p>";
+  const site = h.website
+    ? `<br />
+          <a href="${esc(h.website)}" rel="noopener noreferrer" target="_blank">${esc(h.website.replace(/^https?:\/\//, ""))}</a>`
+    : "";
+  return `<p>
+          ${esc(h.value)}<br />
+          ${esc(h.address || "")}${site}
+        </p>`;
 }
 
 /* ── Applying blocks to a page ─────────────────────────────────────── */
@@ -220,6 +235,7 @@ function blocks({ zones, pro }) {
     "commune-options": communeOptions(zones),
     "legal-details": legalDetails(pro),
     "legal-missing": legalMissing(pro),
+    "legal-host": legalHost(pro),
   };
 }
 function apply(html, rendered) {

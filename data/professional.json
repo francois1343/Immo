@@ -1,6 +1,6 @@
 {
   "reviewedOn": "2026-11-18",
-  "about": "Mentions professionnelles de Martin Snauwaert. Source unique du pied de page et de la page Mentions légales. status: verified = confirmé par la source indiquée ; to-confirm = en attente. footer:true n'est accepté que pour une valeur verified : le pied de page n'affiche jamais une information en attente.",
+  "about": "Mentions professionnelles de Martin Snauwaert. Source unique du pied de page et de la page Mentions légales. status: verified = confirmé par la source indiquée ; to-confirm = en attente. footer:true n'est accepté que pour une valeur verified : le pied de page n'affiche jamais une information en attente. legal:false retire une information de la page Mentions légales.",
   "fields": [
     {
       "key": "name",
@@ -65,13 +65,14 @@
     },
     {
       "key": "thirdPartyAccount",
-      "value": "BE90 3701 2576 4732",
+      "value": "",
       "status": "to-confirm",
       "footer": false,
       "footerLabel": "Compte de tiers",
       "legalLabel": "Compte de tiers",
-      "source": "Valeur de la page Mentions légales existante.",
-      "note": "Ne correspond à aucun des deux comptes de tiers publiés par le réseau (connexionimmo.be) ; l'attestation fournie date de 2023 et concerne Connexion Immo SRL. Le code de déontologie IPI en vigueur depuis le 2026-10-01 (art. 10) impose ce numéro sur le site quand un compte est requis : faire confirmer par Martin le compte qu'il a déclaré à l'IPI."
+      "source": "Numéro retiré du site le 2026-11-18 ; il figure dans la liste interne des éléments à confirmer (hors dépôt).",
+      "note": "Ne correspond à aucun des deux comptes de tiers publiés par le réseau (connexionimmo.be) ; l'attestation fournie date de 2023 et concerne Connexion Immo SRL. Le code de déontologie IPI en vigueur depuis le 2026-10-01 (art. 10) impose ce numéro sur le site quand un compte est requis : faire confirmer par Martin le compte qu'il a déclaré à l'IPI.",
+      "legal": false
     },
     {
       "key": "insurance",
@@ -110,12 +111,13 @@
     },
     {
       "key": "host",
-      "value": "",
-      "status": "to-confirm",
+      "value": "Vercel Inc.",
+      "status": "verified",
       "footer": false,
-      "source": "vercel.com/legal/privacy-policy, consulté le 2026-11-18",
-      "candidate": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
-      "note": "Hébergeur actuel de l'aperçu ; choix de l'hébergement définitif en attente."
+      "source": "vercel.com/legal/privacy-policy (« Contact Us », version du 2026-06-01), vercel.com/legal/terms et vercel.com/legal/dpa, consultés le 2026-11-18",
+      "note": "Hébergeur actuel. À mettre à jour ici si l'hébergement change.",
+      "address": "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+      "website": "https://vercel.com"
     }
   ]
 }

@@ -116,3 +116,26 @@ test("campaign links use stable sector ids and never name an excluded centre", (
   assert.ok(rows.some((r) => r.url.includes("commune=Beaumont&utm_source=flyer&utm_medium=print&utm_campaign=estimation-2027-01&utm_content=beaumont")));
   assert.throws(() => links(data.zones, "Campagne Été", "https://exemple.test"));
 });
+
+test("the legal page comes from the same data: verified host, no unconfirmed bank account", () => {
+  const html = read("mentions-legales.html");
+  assert.ok(html.includes("Vercel Inc."));
+  assert.ok(html.includes("440 N Barranca Avenue #4133, Covina, CA 91723"));
+  assert.ok(!html.includes("[Nom de l") && !html.includes("[Adresse"), "placeholder left");
+  assert.ok(!/\bBE\d{2}[ \d]{12,}/.test(html), "bank account left");
+  assert.ok(!html.includes("Compte de tiers"));
+  /* Footer and legal list read the same fields: changing one changes both. */
+  const moved = structuredClone(data.pro);
+  moved.fields.find((f) => f.key === "phone").value = "0400 00 00 00";
+  const again = P.blocks({ zones: data.zones, pro: moved });
+  assert.ok(again.footer.includes("0400 00 00 00"));
+  assert.ok(again["legal-details"].includes("0400 00 00 00"));
+  for (const k of ["phone", "email"]) {
+    const v = data.pro.fields.find((f) => f.key === k).value;
+    assert.ok(rendered.footer.includes(v) && rendered["legal-details"].includes(v), k);
+  }
+  /* An unverified host is never printed. */
+  const draft = structuredClone(data.pro);
+  draft.fields.find((f) => f.key === "host").status = "to-confirm";
+  assert.ok(!P.blocks({ zones: data.zones, pro: draft })["legal-host"].includes("Vercel"));
+});
