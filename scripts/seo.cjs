@@ -25,6 +25,10 @@ const routes = {
     "/vendre-beaumont-barbencon/",
     "Un projet de vente à Beaumont ou Barbençon ? Préparez les premières questions et les informations utiles avec Martin.",
   ],
+  "secteurs/index.html": [
+    "/secteurs/",
+    "Les secteurs où Martin Snauwaert est le plus présent : Beaumont, Barbençon et les communes voisines, village par village.",
+  ],
   "mentions-legales.html": [
     "/mentions-legales.html",
     "Mentions du site Immo de Martin Snauwaert. Aperçu de travail à compléter avant diffusion commerciale.",

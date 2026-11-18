@@ -8,6 +8,7 @@ const files = [
   "estimation/index.html",
   "preparer-ma-vente/index.html",
   "vendre-beaumont-barbencon/index.html",
+  "secteurs/index.html",
   "Back/estimation.html",
   "Back/formulaire.html",
   "mentions-legales.html",
@@ -19,6 +20,7 @@ const files = [
   "inquiry-core.js",
   "inquiry-config.js",
   "legal.css",
+  "footer.css",
   "fonts.css",
   "service-worker.js",
   "manifest.webmanifest",
@@ -73,6 +75,14 @@ for (const [name, from] of Object.entries(vendor)) {
   const dest = path.join(out, name);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(path.join(root, from), dest);
+}
+/* Shared blocks (footer, sectors, legal details) are rendered from data/*.json
+   again here, so the export never depends on a page synced by hand. */
+const partials = require("./partials.cjs"),
+  rendered = partials.blocks(partials.load());
+for (const page of partials.PAGES) {
+  const dest = path.join(out, page);
+  fs.writeFileSync(dest, partials.apply(fs.readFileSync(dest, "utf8"), rendered));
 }
 const seo = require("./seo.cjs").build(root, out);
 console.log(

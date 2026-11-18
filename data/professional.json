@@ -1,0 +1,121 @@
+{
+  "reviewedOn": "2026-11-18",
+  "about": "Mentions professionnelles de Martin Snauwaert. Source unique du pied de page et de la page Mentions légales. status: verified = confirmé par la source indiquée ; to-confirm = en attente. footer:true n'est accepté que pour une valeur verified : le pied de page n'affiche jamais une information en attente.",
+  "fields": [
+    {
+      "key": "name",
+      "value": "Martin Snauwaert",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Nom / Agent immobilier",
+      "legalText": "Martin Snauwaert – Immobilier",
+      "source": "Registre public IPI, fiche 513699 (ipi.be/agent-immobilier/martin-snauwaert-513699), consulté le 2026-11-18 ; connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18"
+    },
+    {
+      "key": "title",
+      "value": "Agent immobilier agréé IPI n° 513.699",
+      "status": "verified",
+      "footer": true,
+      "source": "Registre public IPI, fiche 513699 (ipi.be/agent-immobilier/martin-snauwaert-513699), consulté le 2026-11-18 : « Courtier (titulaire) » ; connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18 : « Agent Immobilier agréé »"
+    },
+    {
+      "key": "network",
+      "value": "Connexion Immo",
+      "status": "verified",
+      "footer": true,
+      "source": "connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18"
+    },
+    {
+      "key": "address",
+      "value": "Avenue des Tours 31, 6500 Barbençon",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Adresse",
+      "legalText": "Avenue des Tours 31 – 6500 Barbençon",
+      "source": "Registre public IPI, fiche 513699 (ipi.be/agent-immobilier/martin-snauwaert-513699), consulté le 2026-11-18 et BCE : « Avenue des Tours 31, 6500 Beaumont ». Barbençon est la localité postale (6500) de cette adresse ; les registres impriment le nom de la commune.",
+      "note": "Graphie du site conservée ; à faire confirmer par Martin s'il préfère « 6500 Beaumont »."
+    },
+    {
+      "key": "phone",
+      "value": "0493 05 71 84",
+      "href": "tel:+32493057184",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Téléphone",
+      "source": "Registre public IPI, fiche 513699 (ipi.be/agent-immobilier/martin-snauwaert-513699), consulté le 2026-11-18 ; connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18"
+    },
+    {
+      "key": "email",
+      "value": "martin.s@connexionimmo.be",
+      "href": "mailto:martin.s@connexionimmo.be",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "E-mail",
+      "source": "connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18"
+    },
+    {
+      "key": "ipi",
+      "value": "513.699",
+      "status": "verified",
+      "footer": false,
+      "legalLabel": "Agrément professionnel",
+      "legalText": "Agent immobilier intermédiaire agréé IPI n° 513.699",
+      "source": "Registre public IPI, fiche 513699 (ipi.be/agent-immobilier/martin-snauwaert-513699), consulté le 2026-11-18 ; connexionimmo.be/fr/notre-equipe/, consulté le 2026-11-18",
+      "note": "Affiché dans le pied de page à travers le champ title."
+    },
+    {
+      "key": "thirdPartyAccount",
+      "value": "BE90 3701 2576 4732",
+      "status": "to-confirm",
+      "footer": false,
+      "footerLabel": "Compte de tiers",
+      "legalLabel": "Compte de tiers",
+      "source": "Valeur de la page Mentions légales existante.",
+      "note": "Ne correspond à aucun des deux comptes de tiers publiés par le réseau (connexionimmo.be) ; l'attestation fournie date de 2023 et concerne Connexion Immo SRL. Le code de déontologie IPI en vigueur depuis le 2026-10-01 (art. 10) impose ce numéro sur le site quand un compte est requis : faire confirmer par Martin le compte qu'il a déclaré à l'IPI."
+    },
+    {
+      "key": "insurance",
+      "value": "AXA Belgium (Van Dessel) – Police n° 730390160",
+      "status": "to-confirm",
+      "footer": false,
+      "footerLabel": "RC professionnelle",
+      "footerText": "AXA Belgium, police n° 730390160",
+      "legalLabel": "Assurance responsabilité civile professionnelle",
+      "legalWide": true,
+      "source": "Valeur de la page Mentions légales existante. Non retrouvée sur une source publique le 2026-11-18.",
+      "note": "À confirmer avec l'attestation d'assurance de Martin avant affichage dans le pied de page."
+    },
+    {
+      "key": "authority",
+      "value": "Institut Professionnel des Agents Immobiliers (IPI), rue du Luxembourg 16B, 1000 Bruxelles",
+      "status": "verified",
+      "footer": true,
+      "footerLabel": "Autorité de contrôle",
+      "footerText": "IPI, rue du Luxembourg 16B, 1000 Bruxelles",
+      "legalLabel": "Autorité de contrôle",
+      "legalWide": true,
+      "source": "ipi.be/contact, consulté le 2026-11-18"
+    },
+    {
+      "key": "company",
+      "value": "",
+      "status": "to-confirm",
+      "footer": false,
+      "footerLabel": "BCE / TVA",
+      "legalLabel": "Entreprise",
+      "missingText": "statut juridique et numéro d’entreprise BCE / TVA",
+      "source": "BCE Public Search (kbopub.economie.fgov.be), consulté le 2026-11-18 : même nom, même adresse, active depuis le 2019-04-01.",
+      "candidate": "Entreprise personne physique, BCE 0721.961.003, établissement « Martin Snauwaert Immobilier »",
+      "note": "Trouvé dans le registre public mais pas encore confirmé par Martin comme l'entité qui exerce l'activité. Pour l'afficher : recopier dans value, passer status à verified et footer à true."
+    },
+    {
+      "key": "host",
+      "value": "",
+      "status": "to-confirm",
+      "footer": false,
+      "source": "vercel.com/legal/privacy-policy, consulté le 2026-11-18",
+      "candidate": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+      "note": "Hébergeur actuel de l'aperçu ; choix de l'hébergement définitif en attente."
+    }
+  ]
+}

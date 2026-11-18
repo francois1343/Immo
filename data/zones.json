@@ -1,0 +1,734 @@
+{
+  "schema": 1,
+  "updatedOn": "2026-11-18",
+  "about": "Secteurs prioritaires de prospection de Martin Snauwaert. Source unique pour le site, les pages locales, les supports imprimés, les QR codes et les campagnes. Sélection commerciale, pas une liste administrative ni une limite d’intervention.",
+  "fields": {
+    "id": "Identifiant stable (minuscules, tirets). Sert aux ancres du site et aux noms de campagne : ne pas le changer une fois diffusé.",
+    "commune": "Nom officiel de la commune.",
+    "publicLabel": "Libellé public quand le nom de la commune ne doit pas être affiché seul (centre exclu).",
+    "province": "Province.",
+    "postalCodes": "Codes postaux de la commune. Information, jamais un critère d’exclusion.",
+    "active": "false retire la commune du site et des campagnes sans la supprimer.",
+    "priority": "Priorité commerciale : 1 = ancrage local, 2 = secteur prioritaire, 3 = secteur secondaire.",
+    "anchor": "true pour l’ancrage local de Martin.",
+    "localities": "Villages ciblés, chacun avec son code postal. active:false retire un village.",
+    "exclusions": "Localités expressément exclues. Jamais affichées ni ciblées.",
+    "notListed": "Sections de la commune absentes de la liste de Martin : signalées, non ciblées, non affichées.",
+    "corrections": "Écarts entre la liste reçue et la source officielle.",
+    "postalName": "Libellé bpost quand il diffère du nom d’usage (adressage, publipostage).",
+    "kind": "hameau quand la localité n’est pas une localité postale bpost."
+  },
+  "communes": [
+    {
+      "id": "beaumont",
+      "commune": "Beaumont",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6500",
+        "6511"
+      ],
+      "active": true,
+      "priority": 1,
+      "anchor": true,
+      "localities": [
+        {
+          "name": "Barbençon",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Beaumont",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Leugnies",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Leval-Chaudeville",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Renlies",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Solre-Saint-Géry",
+          "postalCode": "6500"
+        },
+        {
+          "name": "Strée",
+          "postalCode": "6511"
+        },
+        {
+          "name": "Thirimont",
+          "postalCode": "6500"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "froidchapelle",
+      "commune": "Froidchapelle",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6440",
+        "6441"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Boussu-lez-Walcourt",
+          "postalCode": "6440"
+        },
+        {
+          "name": "Erpion",
+          "postalCode": "6441"
+        },
+        {
+          "name": "Fourbechies",
+          "postalCode": "6440"
+        },
+        {
+          "name": "Froidchapelle",
+          "postalCode": "6440"
+        },
+        {
+          "name": "Vergnies",
+          "postalCode": "6440"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "sivry-rance",
+      "commune": "Sivry-Rance",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6470"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Grandrieu",
+          "postalCode": "6470"
+        },
+        {
+          "name": "Montbliart",
+          "postalCode": "6470"
+        },
+        {
+          "name": "Rance",
+          "postalCode": "6470"
+        },
+        {
+          "name": "Sautin",
+          "postalCode": "6470"
+        },
+        {
+          "name": "Sivry",
+          "postalCode": "6470"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "chimay",
+      "commune": "Chimay",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6460",
+        "6461",
+        "6462",
+        "6463",
+        "6464"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Baileux",
+          "postalCode": "6464"
+        },
+        {
+          "name": "Bailièvre",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Bourlers",
+          "postalCode": "6464"
+        },
+        {
+          "name": "Chimay",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Forges",
+          "postalCode": "6464"
+        },
+        {
+          "name": "L’Escaillère",
+          "postalCode": "6464",
+          "postalName": "l’Escaillère"
+        },
+        {
+          "name": "Lompret",
+          "postalCode": "6463"
+        },
+        {
+          "name": "Rièzes",
+          "postalCode": "6464"
+        },
+        {
+          "name": "Robechies",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Saint-Remy",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Salles",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Vaulx-lez-Chimay",
+          "postalCode": "6462"
+        },
+        {
+          "name": "Villers-la-Tour",
+          "postalCode": "6460"
+        },
+        {
+          "name": "Virelles",
+          "postalCode": "6461"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": [
+        {
+          "locality": "L’Escaillère",
+          "received": "L’Escaillère",
+          "official": "l’Escaillère",
+          "note": "bpost écrit l’article en minuscule ; majuscule conservée en début de libellé."
+        }
+      ]
+    },
+    {
+      "id": "thuin",
+      "commune": "Thuin",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6530",
+        "6531",
+        "6532",
+        "6533",
+        "6534",
+        "6536"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Biercée",
+          "postalCode": "6533"
+        },
+        {
+          "name": "Biesme-sous-Thuin",
+          "postalCode": "6531"
+        },
+        {
+          "name": "Donstiennes",
+          "postalCode": "6536"
+        },
+        {
+          "name": "Gozée",
+          "postalCode": "6534"
+        },
+        {
+          "name": "Leers-et-Fosteau",
+          "postalCode": "6530"
+        },
+        {
+          "name": "Ragnies",
+          "postalCode": "6532"
+        },
+        {
+          "name": "Thuillies",
+          "postalCode": "6536"
+        },
+        {
+          "name": "Thuin",
+          "postalCode": "6530"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "ham-sur-heure-nalinnes",
+      "commune": "Ham-sur-Heure-Nalinnes",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6120"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Beignée",
+          "postalCode": "6120",
+          "kind": "hameau",
+          "postalName": "Ham-sur-Heure"
+        },
+        {
+          "name": "Cour-sur-Heure",
+          "postalCode": "6120"
+        },
+        {
+          "name": "Ham-sur-Heure",
+          "postalCode": "6120"
+        },
+        {
+          "name": "Jamioulx",
+          "postalCode": "6120"
+        },
+        {
+          "name": "Marbaix-la-Tour",
+          "postalCode": "6120",
+          "postalName": "Marbaix"
+        },
+        {
+          "name": "Nalinnes",
+          "postalCode": "6120"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": [
+        {
+          "locality": "Beignée",
+          "received": "Beignée",
+          "official": "absent de la liste bpost",
+          "note": "Hameau de Ham-sur-Heure : conservé comme lieu ciblé, adresse postale 6120 Ham-sur-Heure."
+        },
+        {
+          "locality": "Marbaix-la-Tour",
+          "received": "Marbaix-la-Tour",
+          "official": "Marbaix",
+          "note": "Nom d’usage conservé ; bpost écrit « Marbaix »."
+        }
+      ]
+    },
+    {
+      "id": "walcourt",
+      "commune": "Walcourt",
+      "province": "Namur",
+      "postalCodes": [
+        "5650",
+        "5651"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Berzée",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Castillon",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Chastrès",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Clermont",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Fontenelle",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Fraire",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Gourdinne",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Laneffe",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Pry",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Rognée",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Somzée",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Tarcienne",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Thy-le-Château",
+          "postalCode": "5651"
+        },
+        {
+          "name": "Vogenée",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Walcourt",
+          "postalCode": "5650"
+        },
+        {
+          "name": "Yves-Gomezée",
+          "postalCode": "5650"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "cerfontaine",
+      "commune": "Cerfontaine",
+      "province": "Namur",
+      "postalCodes": [
+        "5630"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Cerfontaine",
+          "postalCode": "5630"
+        },
+        {
+          "name": "Daussois",
+          "postalCode": "5630"
+        },
+        {
+          "name": "Senzeilles",
+          "postalCode": "5630"
+        },
+        {
+          "name": "Silenrieux",
+          "postalCode": "5630"
+        },
+        {
+          "name": "Soumoy",
+          "postalCode": "5630"
+        },
+        {
+          "name": "Villers-Deux-Églises",
+          "postalCode": "5630",
+          "postalName": "Villers-Deux-Eglises"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": [
+        {
+          "locality": "Villers-Deux-Églises",
+          "received": "Villers-Deux-Églises",
+          "official": "Villers-Deux-Eglises",
+          "note": "bpost n’accentue pas la capitale ; graphie accentuée conservée."
+        }
+      ]
+    },
+    {
+      "id": "philippeville",
+      "commune": "Philippeville",
+      "province": "Namur",
+      "postalCodes": [
+        "5600"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Fagnolle",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Franchimont",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Jamagne",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Jamiolle",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Merlemont",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Neuville",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Omezée",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Philippeville",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Roly",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Romedenne",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Samart",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Sart-en-Fagne",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Sautour",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Surice",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Villers-en-Fagne",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Villers-le-Gambon",
+          "postalCode": "5600"
+        },
+        {
+          "name": "Vodecée",
+          "postalCode": "5600"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "couvin",
+      "commune": "Couvin",
+      "publicLabel": "Villages de Couvin",
+      "province": "Namur",
+      "postalCodes": [
+        "5660"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Aublain",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Boussu-en-Fagne",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Dailly",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Mariembourg",
+          "postalCode": "5660"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Couvin",
+          "postalCode": "5660",
+          "scope": "centre-ville",
+          "reason": "Exclusion expresse de Martin : la ville de Couvin n’est pas ciblée, ses villages listés le sont. Même code postal 5660 : ne jamais filtrer sur le code postal seul."
+        }
+      ],
+      "notListed": [
+        {
+          "name": "Brûly",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Brûly-de-Pesche",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Cul-des-Sarts",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Frasnes",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Gonrieux",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Pesche",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Pétigny",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Petite-Chapelle",
+          "postalCode": "5660"
+        },
+        {
+          "name": "Presgaux",
+          "postalCode": "5660"
+        }
+      ],
+      "corrections": []
+    },
+    {
+      "id": "merbes-le-chateau",
+      "commune": "Merbes-le-Château",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6567"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Fontaine-Valmont",
+          "postalCode": "6567"
+        },
+        {
+          "name": "Labuissière",
+          "postalCode": "6567"
+        },
+        {
+          "name": "Merbes-le-Château",
+          "postalCode": "6567"
+        },
+        {
+          "name": "Merbes-Sainte-Marie",
+          "postalCode": "6567"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    },
+    {
+      "id": "erquelinnes",
+      "commune": "Erquelinnes",
+      "publicLabel": "Villages d’Erquelinnes",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6560"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Bersillies-l’Abbaye",
+          "postalCode": "6560"
+        },
+        {
+          "name": "Hantes-Wihéries",
+          "postalCode": "6560"
+        },
+        {
+          "name": "Montignies-Saint-Christophe",
+          "postalCode": "6560"
+        },
+        {
+          "name": "Solre-sur-Sambre",
+          "postalCode": "6560"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Erquelinnes",
+          "postalCode": "6560",
+          "scope": "centre-ville",
+          "reason": "Exclusion expresse de Martin : la ville d’Erquelinnes n’est pas ciblée, ses quatre villages listés le sont. Même code postal 6560 : ne jamais filtrer sur le code postal seul."
+        }
+      ],
+      "notListed": [
+        {
+          "name": "Grand-Reng",
+          "postalCode": "6560"
+        }
+      ],
+      "corrections": []
+    },
+    {
+      "id": "montigny-le-tilleul",
+      "commune": "Montigny-le-Tilleul",
+      "province": "Hainaut",
+      "postalCodes": [
+        "6110",
+        "6111"
+      ],
+      "active": true,
+      "priority": 2,
+      "anchor": false,
+      "localities": [
+        {
+          "name": "Landelies",
+          "postalCode": "6111"
+        },
+        {
+          "name": "Montigny-le-Tilleul",
+          "postalCode": "6110"
+        }
+      ],
+      "exclusions": [],
+      "notListed": [],
+      "corrections": []
+    }
+  ],
+  "verification": {
+    "source": "bpost, zipcodes_num_fr_2025.xls (fichier daté du 2026-02-18), consulté le 2026-11-18",
+    "result": "Tous les codes postaux transmis par Martin sont exacts et chaque village appartient bien à la commune indiquée. Quatre écarts d’écriture ou de statut sont consignés dans corrections."
+  }
+}
