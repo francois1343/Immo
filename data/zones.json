@@ -1,22 +1,18 @@
 {
   "schema": 1,
   "updatedOn": "2026-11-18",
-  "about": "Secteurs prioritaires de prospection de Martin Snauwaert. Source unique pour le site, les pages locales, les supports imprimés, les QR codes et les campagnes. Sélection commerciale, pas une liste administrative ni une limite d’intervention.",
+  "about": "Secteurs couverts par le site. Source unique pour les pages, le formulaire et les liens de campagne.",
   "fields": {
     "id": "Identifiant stable (minuscules, tirets). Sert aux ancres du site et aux noms de campagne : ne pas le changer une fois diffusé.",
-    "commune": "Nom officiel de la commune.",
-    "publicLabel": "Libellé public quand le nom de la commune ne doit pas être affiché seul (centre exclu).",
+    "commune": "Nom de la commune.",
+    "publicLabel": "Libellé affiché à la place du nom de la commune.",
     "province": "Province.",
-    "postalCodes": "Codes postaux de la commune. Information, jamais un critère d’exclusion.",
-    "active": "false retire la commune du site et des campagnes sans la supprimer.",
-    "priority": "Priorité commerciale : 1 = ancrage local, 2 = secteur prioritaire, 3 = secteur secondaire.",
-    "anchor": "true pour l’ancrage local de Martin.",
-    "localities": "Villages ciblés, chacun avec son code postal. active:false retire un village.",
-    "exclusions": "Localités expressément exclues. Jamais affichées ni ciblées.",
-    "notListed": "Sections de la commune absentes de la liste de Martin : signalées, non ciblées, non affichées.",
-    "corrections": "Écarts entre la liste reçue et la source officielle.",
-    "postalName": "Libellé bpost quand il diffère du nom d’usage (adressage, publipostage).",
-    "kind": "hameau quand la localité n’est pas une localité postale bpost."
+    "postalCodes": "Codes postaux de la commune. Jamais un critère d’exclusion.",
+    "active": "false retire la commune du site et des liens de campagne.",
+    "priority": "1, 2 ou 3 : ordre d’affichage et de diffusion.",
+    "anchor": "true pour le secteur mis en avant.",
+    "localities": "Localités affichées, chacune avec son code postal. postalName : libellé postal quand il diffère ; kind : hameau.",
+    "exclusions": "Localités jamais affichées ni proposées, même si elles partagent un code postal avec des localités listées."
   },
   "communes": [
     {
@@ -64,9 +60,7 @@
           "postalCode": "6500"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "froidchapelle",
@@ -101,9 +95,7 @@
           "postalCode": "6440"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "sivry-rance",
@@ -137,9 +129,7 @@
           "postalCode": "6470"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "chimay",
@@ -214,16 +204,7 @@
           "postalCode": "6461"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": [
-        {
-          "locality": "L’Escaillère",
-          "received": "L’Escaillère",
-          "official": "l’Escaillère",
-          "note": "bpost écrit l’article en minuscule ; majuscule conservée en début de libellé."
-        }
-      ]
+      "exclusions": []
     },
     {
       "id": "thuin",
@@ -274,9 +255,7 @@
           "postalCode": "6530"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "ham-sur-heure-nalinnes",
@@ -317,22 +296,7 @@
           "postalCode": "6120"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": [
-        {
-          "locality": "Beignée",
-          "received": "Beignée",
-          "official": "absent de la liste bpost",
-          "note": "Hameau de Ham-sur-Heure : conservé comme lieu ciblé, adresse postale 6120 Ham-sur-Heure."
-        },
-        {
-          "locality": "Marbaix-la-Tour",
-          "received": "Marbaix-la-Tour",
-          "official": "Marbaix",
-          "note": "Nom d’usage conservé ; bpost écrit « Marbaix »."
-        }
-      ]
+      "exclusions": []
     },
     {
       "id": "walcourt",
@@ -411,9 +375,7 @@
           "postalCode": "5650"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "cerfontaine",
@@ -452,16 +414,7 @@
           "postalName": "Villers-Deux-Eglises"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": [
-        {
-          "locality": "Villers-Deux-Églises",
-          "received": "Villers-Deux-Églises",
-          "official": "Villers-Deux-Eglises",
-          "note": "bpost n’accentue pas la capitale ; graphie accentuée conservée."
-        }
-      ]
+      "exclusions": []
     },
     {
       "id": "philippeville",
@@ -543,9 +496,7 @@
           "postalCode": "5600"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "couvin",
@@ -579,50 +530,9 @@
       "exclusions": [
         {
           "name": "Couvin",
-          "postalCode": "5660",
-          "scope": "centre-ville",
-          "reason": "Exclusion expresse de Martin : la ville de Couvin n’est pas ciblée, ses villages listés le sont. Même code postal 5660 : ne jamais filtrer sur le code postal seul."
-        }
-      ],
-      "notListed": [
-        {
-          "name": "Brûly",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Brûly-de-Pesche",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Cul-des-Sarts",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Frasnes",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Gonrieux",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Pesche",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Pétigny",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Petite-Chapelle",
-          "postalCode": "5660"
-        },
-        {
-          "name": "Presgaux",
           "postalCode": "5660"
         }
-      ],
-      "corrections": []
+      ]
     },
     {
       "id": "merbes-le-chateau",
@@ -652,9 +562,7 @@
           "postalCode": "6567"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     },
     {
       "id": "erquelinnes",
@@ -688,18 +596,9 @@
       "exclusions": [
         {
           "name": "Erquelinnes",
-          "postalCode": "6560",
-          "scope": "centre-ville",
-          "reason": "Exclusion expresse de Martin : la ville d’Erquelinnes n’est pas ciblée, ses quatre villages listés le sont. Même code postal 6560 : ne jamais filtrer sur le code postal seul."
-        }
-      ],
-      "notListed": [
-        {
-          "name": "Grand-Reng",
           "postalCode": "6560"
         }
-      ],
-      "corrections": []
+      ]
     },
     {
       "id": "montigny-le-tilleul",
@@ -722,13 +621,7 @@
           "postalCode": "6110"
         }
       ],
-      "exclusions": [],
-      "notListed": [],
-      "corrections": []
+      "exclusions": []
     }
-  ],
-  "verification": {
-    "source": "bpost, zipcodes_num_fr_2025.xls (fichier daté du 2026-02-18), consulté le 2026-11-18",
-    "result": "Tous les codes postaux transmis par Martin sont exacts et chaque village appartient bien à la commune indiquée. Quatre écarts d’écriture ou de statut sont consignés dans corrections."
-  }
+  ]
 }

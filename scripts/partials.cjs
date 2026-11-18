@@ -48,10 +48,10 @@ function validateZones(zones) {
     }
     /* An exclusion is a locality, never a postal code: a village sharing the
        code of an excluded centre stays targeted. */
-    for (const x of [...c.exclusions, ...c.notListed]) {
-      if (!x.name) fail("localité exclue ou non listée sans nom");
+    for (const x of c.exclusions) {
+      if (!x.name) fail("localité exclue sans nom");
       if (targeted.has(key(x.name)))
-        fail(`${x.name} est à la fois ciblée et exclue ou non listée`);
+        fail(`${x.name} est à la fois listée et exclue`);
     }
     const centreExcluded = c.exclusions.some((x) => key(x.name) === key(c.commune));
     if (centreExcluded && !c.publicLabel)

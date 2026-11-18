@@ -41,8 +41,10 @@ test("Couvin and Erquelinnes centres are excluded, their villages stay targeted"
     assert.ok(c.localities.every((l) => l.postalCode === code));
     assert.equal(c.localities.length, 4);
   }
-  /* Sections outside Martin's selection are reported, never targeted. */
-  assert.ok(!names.includes("Grand-Reng") && !names.includes("Pesche"));
+  /* The public file holds what the site needs, no working notes. */
+  const raw = fs.readFileSync(path.join(__dirname, "..", "data", "zones.json"), "utf8");
+  for (const word of ["notListed", "corrections", "reason", "verification"])
+    assert.ok(!raw.includes('"' + word + '"'), word);
 });
 
 test("an exclusion that is also targeted, or a postal code outside the commune, is refused", () => {

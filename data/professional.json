@@ -55,14 +55,6 @@
       "legalText": "Agent immobilier intermédiaire agréé IPI n° 513.699"
     },
     {
-      "key": "insurance",
-      "value": "AXA Belgium (Van Dessel) – Police n° 730390160",
-      "status": "to-confirm",
-      "footer": false,
-      "legalLabel": "Assurance responsabilité civile professionnelle",
-      "legalWide": true
-    },
-    {
       "key": "authority",
       "value": "Institut Professionnel des Agents Immobiliers (IPI), rue du Luxembourg 16B, 1000 Bruxelles",
       "status": "verified",
@@ -79,6 +71,15 @@
       "footer": false,
       "legalLabel": "Entreprise",
       "missingText": "statut juridique et numéro d’entreprise BCE / TVA"
+    },
+    {
+      "key": "insurance",
+      "value": "",
+      "status": "to-confirm",
+      "footer": false,
+      "legalLabel": "Assurance responsabilité civile professionnelle",
+      "legalWide": true,
+      "missingText": "assurance responsabilité civile professionnelle (assureur et numéro de police)"
     },
     {
       "key": "host",
