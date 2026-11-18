@@ -10,9 +10,10 @@
   },
   "scripts": {
     "build": "node scripts/build.cjs",
+    "sync": "node scripts/sync.cjs",
     "dev": "node scripts/dev-server.mjs",
     "dev:api": "node scripts/dev-server.mjs --api",
     "serve": "node server/node-server.mjs",
-    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/reception.test.mjs"
+    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/reception.test.mjs tests/zones.test.cjs"
   }
 }

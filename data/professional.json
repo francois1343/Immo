@@ -1,0 +1,93 @@
+{
+  "reviewedOn": "2026-11-18",
+  "about": "Mentions professionnelles affichées par le site. Source unique du pied de page et de la page Mentions légales. Le pied de page n'affiche qu'une valeur verified avec footer:true. Les pièces de vérification ne sont pas dans ce dépôt.",
+  "fields": [
+    {
+      "key": "name",
+      "value": "Martin Snauwaert",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Nom / Agent immobilier",
+      "legalText": "Martin Snauwaert – Immobilier"
+    },
+    {
+      "key": "title",
+      "value": "Agent immobilier agréé IPI n° 513.699",
+      "status": "verified",
+      "footer": true
+    },
+    {
+      "key": "network",
+      "value": "Connexion Immo",
+      "status": "verified",
+      "footer": true
+    },
+    {
+      "key": "address",
+      "value": "Avenue des Tours 31, 6500 Barbençon",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Adresse",
+      "legalText": "Avenue des Tours 31 – 6500 Barbençon"
+    },
+    {
+      "key": "phone",
+      "value": "0493 05 71 84",
+      "href": "tel:+32493057184",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "Téléphone"
+    },
+    {
+      "key": "email",
+      "value": "martin.s@connexionimmo.be",
+      "href": "mailto:martin.s@connexionimmo.be",
+      "status": "verified",
+      "footer": true,
+      "legalLabel": "E-mail"
+    },
+    {
+      "key": "ipi",
+      "value": "513.699",
+      "status": "verified",
+      "footer": false,
+      "legalLabel": "Agrément professionnel",
+      "legalText": "Agent immobilier intermédiaire agréé IPI n° 513.699"
+    },
+    {
+      "key": "authority",
+      "value": "Institut Professionnel des Agents Immobiliers (IPI), rue du Luxembourg 16B, 1000 Bruxelles",
+      "status": "verified",
+      "footer": true,
+      "footerLabel": "Autorité de contrôle",
+      "footerText": "IPI, rue du Luxembourg 16B, 1000 Bruxelles",
+      "legalLabel": "Autorité de contrôle",
+      "legalWide": true
+    },
+    {
+      "key": "company",
+      "value": "",
+      "status": "to-confirm",
+      "footer": false,
+      "legalLabel": "Entreprise",
+      "missingText": "statut juridique et numéro d’entreprise BCE / TVA"
+    },
+    {
+      "key": "insurance",
+      "value": "",
+      "status": "to-confirm",
+      "footer": false,
+      "legalLabel": "Assurance responsabilité civile professionnelle",
+      "legalWide": true,
+      "missingText": "assurance responsabilité civile professionnelle (assureur et numéro de police)"
+    },
+    {
+      "key": "host",
+      "value": "Vercel Inc.",
+      "status": "verified",
+      "footer": false,
+      "address": "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+      "website": "https://vercel.com"
+    }
+  ]
+}

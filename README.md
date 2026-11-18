@@ -15,3 +15,9 @@ Le formulaire prépare un message en mémoire. Le visiteur le relit puis ouvre s
 Cette version reste un **aperçu non indexable**, avec mention visible. Aucun domaine public définitif n’est renseigné. Le contenu légal (entité responsable, BCE/TVA, traitement et conservation des messages) et l’identité Connexion Immo doivent être validés avant diffusion commerciale. Le domaine canonique, le sitemap et l’indexation seront activés ensemble après validation ; ne pas simplement retirer noindex sans ces vérifications.
 
 Le service worker ne force pas l’activation d’une nouvelle version et met en cache chaque route sous son propre chemin. Il ne stocke pas les champs du formulaire. Les anciennes expériences restent dans Git mais hors de l’export public.
+
+## Secteurs et mentions professionnelles
+
+Deux fichiers sont la source unique : `data/zones.json` (communes, villages ciblés, exclusions, priorité, activation) et `data/professional.json` (mentions de Martin, avec un statut par information). Après une modification : `npm run sync`, puis `npm test`. Les pages contiennent des blocs `<!-- gen:… -->` réécrits par cette commande ; ne pas les modifier à la main. Le build les régénère de toute façon.
+
+Une exclusion vise une localité, jamais un code postal : Couvin et Erquelinnes partagent leur code avec des villages ciblés. Le pied de page n'affiche qu'une information `verified` avec `footer: true` ; le contrôle des données refuse toute autre combinaison. `node scripts/campaign-links.cjs estimation-2027-01` liste les liens suivis par support et secteur, sans rien générer d'autre.
