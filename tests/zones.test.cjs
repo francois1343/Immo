@@ -3,7 +3,9 @@ const { test } = require("node:test"),
   fs = require("node:fs"),
   path = require("node:path"),
   P = require("../scripts/partials.cjs");
-const read = (f) => fs.readFileSync(path.join(__dirname, "..", f), "utf8");
+/* A Windows checkout may hold CRLF: compare on LF. */
+const read = (f) =>
+  fs.readFileSync(path.join(__dirname, "..", f), "utf8").replace(/\r\n/g, "\n");
 const data = P.load(),
   rendered = P.blocks(data);
 const commune = (id) => data.zones.communes.find((c) => c.id === id);
