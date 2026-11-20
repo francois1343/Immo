@@ -1,6 +1,6 @@
 {
   "name": "martin-immo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "engines": {
     "node": "24.x"
@@ -13,6 +13,7 @@
     "sync": "node scripts/sync.cjs",
     "dev": "node scripts/dev-server.mjs",
     "dev:api": "node scripts/dev-server.mjs --api",
-    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs"
+    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs tests/pages.test.cjs",
+    "indexnow": "node scripts/indexnow.cjs"
   }
 }

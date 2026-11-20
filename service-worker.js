@@ -1,8 +1,9 @@
-const CACHE = "martin-immo-v9";
+const CACHE = "martin-immo-v10";
 const FILES = [
   "/",
   "/index.html",
   "/site.css",
+  "/pages.css",
   "/site.js",
   "/estimation.css",
   "/estimation.js",
@@ -16,7 +17,6 @@ const FILES = [
   "/assets/icon-maskable-512.png",
   "/estimation/",
   "/preparer-ma-vente/",
-  "/vendre-beaumont-barbencon/",
   "/secteurs/",
   "/footer.css",
   "/Back/estimation.html",

@@ -10,7 +10,7 @@ const drift = [],
 for (const page of P.PAGES) {
   const file = path.join(P.root, page),
     before = fs.readFileSync(file, "utf8"),
-    after = P.apply(before, rendered);
+    after = P.apply(before, rendered, page);
   /* A Windows checkout may hold CRLF: line endings are not a drift. */
   if (lf(before) === lf(after)) continue;
   drift.push(page);

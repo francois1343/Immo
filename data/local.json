@@ -1,0 +1,1305 @@
+{
+  "schema": 1,
+  "collectedOn": "2026-11-20",
+  "about": "Repères locaux sourcés, par commune et par localité ciblée. Chaque valeur porte l’adresse de sa source ; une valeur non confirmée vaut null et n’est jamais affichée. Sources : Statbel (population au 1er janvier 2026, prix de l’immobilier 2025), Géoportail de la Wallonie (limites, communes voisines), Infrabel (gares), sites communaux, beauxvillages.be, et Wikipédia en dernier recours.",
+  "communes": {
+    "beaumont": {
+      "website": "https://www.beaumont.be/",
+      "adminAddress": "Grand Place, 11, 6500 Beaumont",
+      "adminAddressSource": "https://www.uvcw.be/fiches-locales/56005",
+      "urbanismeUrl": null,
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 7104,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Erquelinnes",
+          "Froidchapelle",
+          "Merbes-le-Château",
+          "Sivry-Rance",
+          "Thuin",
+          "Walcourt"
+        ],
+        "france": true,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [],
+      "landmarks": [
+        {
+          "text": "Tour Salamandre, ancien donjon du XIe siècle abritant un musée",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Tour_Salamandre"
+        },
+        {
+          "text": "Route nationale N53 Charleroi – Chimay, croisement avec la N40 à Beaumont",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        {
+          "text": "Route nationale N40 Mons – Philippeville",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_40_(Belgique)"
+        }
+      ],
+      "beauxVillages": [
+        "Barbençon"
+      ],
+      "market": {
+        "housesMedian": 184000,
+        "housesTransactions": 65,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Barbençon": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://beauxvillages.be/villages/barbencon/"
+        },
+        "Beaumont": {
+          "formerCommune": true,
+          "note": "Chef-lieu de la commune",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        "Leugnies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Leugnies"
+        },
+        "Leval-Chaudeville": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Leval-Chaudeville"
+        },
+        "Renlies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Renlies"
+        },
+        "Solre-Saint-Géry": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Solre-Saint-G%C3%A9ry"
+        },
+        "Strée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Str%C3%A9e_(Beaumont)"
+        },
+        "Thirimont": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Thirimont_(Beaumont)"
+        }
+      }
+    },
+    "froidchapelle": {
+      "website": "https://www.froidchapelle.be/",
+      "adminAddress": "Place Albert 1er, 38, 6440 Froidchapelle",
+      "adminAddressSource": "https://www.froidchapelle.be/",
+      "urbanismeUrl": "https://www.froidchapelle.be/ma-commune/services-communaux/amenagement-du-territoire-urbanisme",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 3999,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Cerfontaine",
+          "Chimay",
+          "Couvin",
+          "Sivry-Rance",
+          "Walcourt"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [],
+      "landmarks": [
+        {
+          "text": "Domaine des Lacs de l’Eau d’Heure (1 800 ha), sur les communes de Froidchapelle et de Cerfontaine",
+          "locality": null,
+          "source": "https://www.lacsdeleaudheure.be/fr"
+        },
+        {
+          "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
+          "locality": null,
+          "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
+        },
+        {
+          "text": "Route nationale N589 Boussu-lez-Walcourt – Cul-des-Sarts, croisement avec la N40",
+          "locality": "Boussu-lez-Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_589_(Belgique)"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 95000,
+        "housesTransactions": 80,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Boussu-lez-Walcourt": {
+          "formerCommune": true,
+          "note": "Point de départ de la route nationale N589, au croisement de la N40",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_589_(Belgique)"
+        },
+        "Erpion": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Erpion"
+        },
+        "Fourbechies": {
+          "formerCommune": null,
+          "note": "Commune distincte de 1868 à 1965, rattachée à Froidchapelle dès le 1er janvier 1965",
+          "source": "https://fr.wikipedia.org/wiki/Fourbechies"
+        },
+        "Froidchapelle": {
+          "formerCommune": true,
+          "note": "Chef-lieu de la commune, située dans le Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Froidchapelle"
+        },
+        "Vergnies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Vergnies"
+        }
+      }
+    },
+    "sivry-rance": {
+      "website": "https://www.sivry-rance.be/",
+      "adminAddress": "Grand’Place 2, 6470 Sivry",
+      "adminAddressSource": "https://www.sivry-rance.be/",
+      "urbanismeUrl": "https://www.sivry-rance.be/ma-commune/services-communaux/urbanisme",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 4828,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Chimay",
+          "Froidchapelle"
+        ],
+        "france": true,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [],
+      "landmarks": [
+        {
+          "text": "RAVeL de la ligne 109 (Lobbes – Chimay) traversant la commune",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Sivry-Rance"
+        },
+        {
+          "text": "Route nationale N53 Charleroi – Chimay",
+          "locality": "Rance",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 165000,
+        "housesTransactions": 35,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Grandrieu": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Grandrieu_(Belgique)"
+        },
+        "Montbliart": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Montbliart"
+        },
+        "Rance": {
+          "formerCommune": true,
+          "note": "Sur le parcours de la route nationale N53 Charleroi – Chimay",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        "Sautin": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Sautin"
+        },
+        "Sivry": {
+          "formerCommune": true,
+          "note": "Centre administratif de la commune de Sivry-Rance",
+          "source": "https://fr.wikipedia.org/wiki/Sivry_(Belgique)"
+        }
+      }
+    },
+    "chimay": {
+      "website": "https://www.chimayville.be/",
+      "adminAddress": "Place Léopold, 12, 6460 Chimay",
+      "adminAddressSource": "https://www.chimayville.be/",
+      "urbanismeUrl": "https://www.chimayville.be/ma-ville/services-communaux/urbanisme",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 9606,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Couvin",
+          "Froidchapelle",
+          "Momignies",
+          "Sivry-Rance"
+        ],
+        "france": true,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [],
+      "landmarks": [
+        {
+          "text": "Château de Chimay, au cœur de la ville",
+          "locality": "Chimay",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chimay"
+        },
+        {
+          "text": "Étang (lac) de Virelles, réserve naturelle à 3 km au nord-est de Chimay",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Lac_de_Virelles"
+        },
+        {
+          "text": "Abbaye Notre-Dame de Scourmont",
+          "locality": "Forges",
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Scourmont"
+        },
+        {
+          "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
+          "locality": null,
+          "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
+        }
+      ],
+      "beauxVillages": [
+        "Lompret"
+      ],
+      "market": {
+        "housesMedian": 164500,
+        "housesTransactions": 103,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Baileux": {
+          "formerCommune": true,
+          "note": "Croisement des routes nationales N589 et N99 ; sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_589_(Belgique)"
+        },
+        "Bailièvre": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Baili%C3%A8vre"
+        },
+        "Bourlers": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Bourlers"
+        },
+        "Chimay": {
+          "formerCommune": true,
+          "note": "Terminus de la route nationale N53 Charleroi – Chimay",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chimay"
+        },
+        "Forges": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Scourmont"
+        },
+        "L’Escaillère": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/L'Escaill%C3%A8re"
+        },
+        "Lompret": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://beauxvillages.be/villages/lompret/"
+        },
+        "Rièzes": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Ri%C3%A8zes"
+        },
+        "Robechies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Robechies"
+        },
+        "Saint-Remy": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Saint-Remy_(Chimay)"
+        },
+        "Salles": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Salles_(Chimay)"
+        },
+        "Vaulx-lez-Chimay": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Vaulx_(Chimay)"
+        },
+        "Villers-la-Tour": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Villers-la-Tour"
+        },
+        "Virelles": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Virelles"
+        }
+      }
+    },
+    "thuin": {
+      "website": "https://www.thuin.be/",
+      "adminAddress": "Grand’Rue 36, 6530 Thuin",
+      "adminAddressSource": "https://www.thuin.be/",
+      "urbanismeUrl": "https://www.thuin.be/administration/services-communaux/services-au-public/urbanisme",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 14916,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Fontaine-l’Évêque",
+          "Ham-sur-Heure-Nalinnes",
+          "Lobbes",
+          "Merbes-le-Château",
+          "Montigny-le-Tilleul",
+          "Walcourt"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Thuin",
+          "locality": "Thuin",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Hourpes",
+          "locality": "Hourpes (hameau)",
+          "line": "130A",
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/hourpes"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Beffroi de Thuin, inscrit au patrimoine mondial de l’UNESCO (beffrois de Belgique et de France)",
+          "locality": "Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Beffroi_de_Thuin"
+        },
+        {
+          "text": "Abbaye d’Aulne, au hameau d’Aulne en bord de Sambre",
+          "locality": "Gozée",
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_d'Aulne"
+        },
+        {
+          "text": "Jardins suspendus de Thuin, patrimoine exceptionnel de Wallonie",
+          "locality": "Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Jardins_suspendus_(Thuin)"
+        },
+        {
+          "text": "Route nationale N53 Charleroi – Chimay",
+          "locality": "Gozée",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        }
+      ],
+      "beauxVillages": [
+        "Ragnies"
+      ],
+      "market": {
+        "housesMedian": 235000,
+        "housesTransactions": 126,
+        "apartmentsMedian": 176000,
+        "apartmentsTransactions": 23,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Biercée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Bierc%C3%A9e"
+        },
+        "Biesme-sous-Thuin": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Biesme-sous-Thuin"
+        },
+        "Donstiennes": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Donstiennes"
+        },
+        "Gozée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Goz%C3%A9e"
+        },
+        "Leers-et-Fosteau": {
+          "formerCommune": true,
+          "note": "Château du Fosteau, à deux kilomètres à l’est du village",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_du_Fosteau"
+        },
+        "Ragnies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://beauxvillages.be/villages/ragnies/"
+        },
+        "Thuillies": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Thuillies"
+        },
+        "Thuin": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Beffroi_de_Thuin"
+        }
+      }
+    },
+    "ham-sur-heure-nalinnes": {
+      "website": "https://www.ham-sur-heure-nalinnes.be/",
+      "adminAddress": "Chemin d’Oultre-Heure, 20, 6120 Ham-sur-Heure",
+      "adminAddressSource": "https://www.ham-sur-heure-nalinnes.be/",
+      "urbanismeUrl": "https://www.ham-sur-heure-nalinnes.be/la-commune/les-services-communaux/service-urbanisme-mobilite-logement",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 13856,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Charleroi",
+          "Gerpinnes",
+          "Montigny-le-Tilleul",
+          "Thuin",
+          "Walcourt"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Jamioulx",
+          "locality": "Jamioulx",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/jamioulx"
+        },
+        {
+          "name": "Beignée",
+          "locality": "Beignée",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/beignee"
+        },
+        {
+          "name": "Ham-sur-Heure",
+          "locality": "Ham-sur-Heure",
+          "line": "132",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Cour-sur-Heure",
+          "locality": "Cour-sur-Heure",
+          "line": "132",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Château de Ham-sur-Heure",
+          "locality": "Ham-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Ham-sur-Heure"
+        },
+        {
+          "text": "Route nationale N5 bordant le quartier de Nalinnes-Bultia",
+          "locality": "Nalinnes",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure-Nalinnes"
+        },
+        {
+          "text": "Vallée de l’Eau d’Heure, le long de laquelle se suivent Cour-sur-Heure, Beignée, Ham-sur-Heure et Jamioulx",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure-Nalinnes"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 270000,
+        "housesTransactions": 144,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Beignée": {
+          "formerCommune": false,
+          "note": "Village formant une seule agglomération avec Ham-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Beign%C3%A9e"
+        },
+        "Cour-sur-Heure": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        "Ham-sur-Heure": {
+          "formerCommune": true,
+          "note": "Village traversé par l’Eau d’Heure",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure"
+        },
+        "Jamioulx": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/jamioulx"
+        },
+        "Marbaix-la-Tour": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Marbaix-la-Tour"
+        },
+        "Nalinnes": {
+          "formerCommune": true,
+          "note": "Quartier de Nalinnes-Bultia bordé par la route nationale N5",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure-Nalinnes"
+        }
+      }
+    },
+    "walcourt": {
+      "website": "https://www.walcourt.be/",
+      "adminAddress": "Place de l’Hôtel de Ville 3-5, 5650 Walcourt",
+      "adminAddressSource": "https://www.walcourt.be/",
+      "urbanismeUrl": "https://www.walcourt.be/services-communaux/",
+      "arrondissement": "Philippeville",
+      "population": {
+        "value": 18338,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Cerfontaine",
+          "Florennes",
+          "Froidchapelle",
+          "Gerpinnes",
+          "Ham-sur-Heure-Nalinnes",
+          "Philippeville",
+          "Thuin"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Berzée",
+          "locality": "Berzée",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/berzee"
+        },
+        {
+          "name": "Pry",
+          "locality": "Pry",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/pry"
+        },
+        {
+          "name": "Walcourt",
+          "locality": "Walcourt",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/walcourt"
+        },
+        {
+          "name": "Yves-Gomezée",
+          "locality": "Yves-Gomezée",
+          "line": "132",
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/yves-gomezee"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Basilique Saint-Materne (Notre-Dame de Walcourt)",
+          "locality": "Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Basilique_Saint-Materne_de_Walcourt"
+        },
+        {
+          "text": "Château médiéval de Thy-le-Château",
+          "locality": "Thy-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Thy-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Route nationale N5 (E420), en voie rapide de Somzée à la frontière française",
+          "locality": "Somzée",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_5_(Belgique)"
+        },
+        {
+          "text": "Route nationale N978 Gerpinnes – Cerfontaine via Tarcienne, Somzée, Chastrès et Walcourt",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 228500,
+        "housesTransactions": 184,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Berzée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/berzee"
+        },
+        "Castillon": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Castillon_(Belgique)"
+        },
+        "Chastrès": {
+          "formerCommune": true,
+          "note": "Sur le parcours de la route nationale N978 Gerpinnes – Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        "Clermont": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Clermont_(Walcourt)"
+        },
+        "Fontenelle": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Fontenelle_(Belgique)"
+        },
+        "Fraire": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Fraire"
+        },
+        "Gourdinne": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Gourdinne"
+        },
+        "Laneffe": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Laneffe"
+        },
+        "Pry": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/pry"
+        },
+        "Rognée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
+        },
+        "Somzée": {
+          "formerCommune": true,
+          "note": "Croisement des routes nationales N5 et N978",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        "Tarcienne": {
+          "formerCommune": true,
+          "note": "Sur le parcours de la route nationale N978 Gerpinnes – Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        "Thy-le-Château": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Thy-le-Ch%C3%A2teau"
+        },
+        "Vogenée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Vogen%C3%A9e"
+        },
+        "Walcourt": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/walcourt"
+        },
+        "Yves-Gomezée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://www.belgiantrain.be/fr/station-information/namur/yves-gomezee"
+        }
+      }
+    },
+    "cerfontaine": {
+      "website": "https://www.cerfontaine.be/",
+      "adminAddress": "Place de l’Eglise 5, 5630 Cerfontaine",
+      "adminAddressSource": "https://www.cerfontaine.be/",
+      "urbanismeUrl": "https://www.cerfontaine.be/ma-commune/services-communaux/urbanisme-cadastre-voirie-environnement",
+      "arrondissement": "Philippeville",
+      "population": {
+        "value": 5016,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Couvin",
+          "Froidchapelle",
+          "Philippeville",
+          "Walcourt"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [],
+      "landmarks": [
+        {
+          "text": "Domaine des Lacs de l’Eau d’Heure (1 800 ha), sur les communes de Froidchapelle et de Cerfontaine",
+          "locality": null,
+          "source": "https://www.lacsdeleaudheure.be/fr"
+        },
+        {
+          "text": "Barrage de l’Eau d’Heure, situé près de Silenrieux",
+          "locality": "Silenrieux",
+          "source": "https://fr.wikipedia.org/wiki/Lacs_de_l'Eau_d'Heure"
+        },
+        {
+          "text": "Route nationale N978 Gerpinnes – Cerfontaine via Silenrieux, croisement avec la N589 à Cerfontaine",
+          "locality": "Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        {
+          "text": "Route nationale N40 Mons – Philippeville",
+          "locality": "Silenrieux",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_40_(Belgique)"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 157500,
+        "housesTransactions": 64,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Cerfontaine": {
+          "formerCommune": true,
+          "note": "Chef-lieu de la commune",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        "Daussois": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Daussois"
+        },
+        "Senzeilles": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Senzeille"
+        },
+        "Silenrieux": {
+          "formerCommune": true,
+          "note": "Croisement des routes nationales N978 et N40",
+          "source": "https://fr.wikipedia.org/wiki/Lacs_de_l'Eau_d'Heure"
+        },
+        "Soumoy": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Soumoy"
+        },
+        "Villers-Deux-Églises": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Villers-Deux-%C3%89glises"
+        }
+      }
+    },
+    "philippeville": {
+      "website": "https://www.philippeville.be/",
+      "adminAddress": "Place d’Armes 12, 5600 Philippeville",
+      "adminAddressSource": "https://www.philippeville.be/",
+      "urbanismeUrl": "https://www.philippeville.be/ma-commune/vie-administrative/urbanisme",
+      "arrondissement": "Philippeville",
+      "population": {
+        "value": 9599,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Cerfontaine",
+          "Couvin",
+          "Doische",
+          "Florennes",
+          "Viroinval",
+          "Walcourt"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Philippeville",
+          "locality": "Philippeville",
+          "line": "132",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Routes nationales N5 (E420) et N40, reliées par un échangeur à Philippeville",
+          "locality": "Philippeville",
+          "source": "https://fr.wikipedia.org/wiki/Philippeville"
+        },
+        {
+          "text": "Ancienne enceinte fortifiée de Philippeville",
+          "locality": "Philippeville",
+          "source": "https://fr.wikipedia.org/wiki/Enceinte_de_Philippeville"
+        },
+        {
+          "text": "Château fort médiéval de Fagnolle, ruine classée",
+          "locality": "Fagnolle",
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Fagnolle"
+        }
+      ],
+      "beauxVillages": [
+        "Fagnolle"
+      ],
+      "market": {
+        "housesMedian": 200000,
+        "housesTransactions": 114,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Fagnolle": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://beauxvillages.be/villages/fagnolle/"
+        },
+        "Franchimont": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Franchimont"
+        },
+        "Jamagne": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Jamagne_(Philippeville)"
+        },
+        "Jamiolle": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Jamiolle"
+        },
+        "Merlemont": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Merlemont"
+        },
+        "Neuville": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Neuville_(Philippeville)"
+        },
+        "Omezée": {
+          "formerCommune": true,
+          "note": "Ancienne commune jusqu’en 1977, alors présentée comme la plus petite de Belgique",
+          "source": "https://fr.wikipedia.org/wiki/Omez%C3%A9e"
+        },
+        "Philippeville": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Philippeville"
+        },
+        "Roly": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Roly"
+        },
+        "Romedenne": {
+          "formerCommune": true,
+          "note": "Commune à part entière de 1901 (séparation de Surice) à la fusion de 1977",
+          "source": "https://fr.wikipedia.org/wiki/Romedenne"
+        },
+        "Samart": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Samart"
+        },
+        "Sart-en-Fagne": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Sart-en-Fagne"
+        },
+        "Sautour": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Sautour"
+        },
+        "Surice": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Surice"
+        },
+        "Villers-en-Fagne": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Villers-en-Fagne"
+        },
+        "Villers-le-Gambon": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Villers-le-Gambon"
+        },
+        "Vodecée": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Vodec%C3%A9e"
+        }
+      }
+    },
+    "couvin": {
+      "website": "https://www.couvin.be/",
+      "adminAddress": "Avenue de la Libération 2, 5660 Couvin",
+      "adminAddressSource": "https://www.couvin.be/",
+      "urbanismeUrl": "https://www.couvin.be/ma-commune/vos-services-communaux/urbanisme",
+      "arrondissement": "Philippeville",
+      "population": {
+        "value": 13927,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Cerfontaine",
+          "Chimay",
+          "Froidchapelle",
+          "Philippeville",
+          "Viroinval"
+        ],
+        "france": true,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Mariembourg",
+          "locality": "Mariembourg",
+          "line": "132 / 134",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Couvin",
+          "locality": "Couvin",
+          "line": "134",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Chemin de fer à vapeur des Trois Vallées, ligne touristique Mariembourg – Treignes",
+          "locality": "Mariembourg",
+          "source": "https://fr.wikipedia.org/wiki/Chemin_de_fer_%C3%A0_vapeur_des_Trois_Vall%C3%A9es"
+        },
+        {
+          "text": "Route nationale N5 (E420) Charleroi – frontière française",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_5_(Belgique)"
+        },
+        {
+          "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
+          "locality": null,
+          "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 145000,
+        "housesTransactions": 162,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Aublain": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Aublain"
+        },
+        "Boussu-en-Fagne": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-en-Fagne"
+        },
+        "Dailly": {
+          "formerCommune": true,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "source": "https://fr.wikipedia.org/wiki/Dailly"
+        },
+        "Mariembourg": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      }
+    },
+    "merbes-le-chateau": {
+      "website": "https://www.merbeslechateau.be/",
+      "adminAddress": "Rue Saint-Martin 71, 6567 Merbes-le-Château",
+      "adminAddressSource": "https://www.merbeslechateau.be/",
+      "urbanismeUrl": "https://www.merbeslechateau.be/ma-commune/services-communaux/urbanisme",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 4193,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Binche",
+          "Erquelinnes",
+          "Estinnes",
+          "Lobbes",
+          "Thuin"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Fontaine-Valmont",
+          "locality": "Fontaine-Valmont",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Labuissière",
+          "locality": "Labuissière",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Commune arrosée par la Sambre, région de la Haute-Sambre",
+          "locality": null,
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 222500,
+        "housesTransactions": 46,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Fontaine-Valmont": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        "Labuissière": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        "Merbes-le-Château": {
+          "formerCommune": true,
+          "note": "Chef-lieu de la commune, arrosée par la Sambre",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+        },
+        "Merbes-Sainte-Marie": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Merbes-Sainte-Marie"
+        }
+      }
+    },
+    "erquelinnes": {
+      "website": "https://www.erquelinnes.be/",
+      "adminAddress": "Rue Albert 1er, 51, 6560 Erquelinnes",
+      "adminAddressSource": "https://www.erquelinnes.be/",
+      "urbanismeUrl": "https://www.erquelinnes.be/ma-commune/administration/services-communaux/urbanisme-logement/",
+      "arrondissement": "Thuin",
+      "population": {
+        "value": 9941,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Beaumont",
+          "Estinnes",
+          "Merbes-le-Château"
+        ],
+        "france": true,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Erquelinnes",
+          "locality": "Erquelinnes",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Erquelinnes-Village",
+          "locality": "Erquelinnes",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        },
+        {
+          "name": "Solre-sur-Sambre",
+          "locality": "Solre-sur-Sambre",
+          "line": "130A",
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Route nationale N40 Mons – Philippeville, croisement avec la N55 à Solre-sur-Sambre",
+          "locality": "Solre-sur-Sambre",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_40_(Belgique)"
+        },
+        {
+          "text": "Site de l’ancienne abbaye de la Thure, entre Solre-sur-Sambre et Bersillies-l’Abbaye",
+          "locality": "Bersillies-l’Abbaye",
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_de_la_Thure"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 140000,
+        "housesTransactions": 99,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Bersillies-l’Abbaye": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_de_la_Thure"
+        },
+        "Hantes-Wihéries": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Erquelinnes"
+        },
+        "Montignies-Saint-Christophe": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Montignies-Saint-Christophe"
+        },
+        "Solre-sur-Sambre": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/"
+        }
+      }
+    },
+    "montigny-le-tilleul": {
+      "website": "https://www.montigny-le-tilleul.be/",
+      "adminAddress": "Rue de Marchienne, 1-5, 6110 Montigny-le-Tilleul",
+      "adminAddressSource": "https://www.montigny-le-tilleul.be/",
+      "urbanismeUrl": "https://www.montigny-le-tilleul.be/ma-commune/services-communaux/urbanisme",
+      "arrondissement": "Charleroi",
+      "population": {
+        "value": 10110,
+        "date": "2026-01-01",
+        "source": "https://statbel.fgov.be/sites/default/files/files/documents/bevolking/5.1%20Structuur%20van%20de%20bevolking/Population_par_commune.xlsx"
+      },
+      "borders": {
+        "communes": [
+          "Charleroi",
+          "Fontaine-l’Évêque",
+          "Ham-sur-Heure-Nalinnes",
+          "Thuin"
+        ],
+        "france": false,
+        "source": "https://geoservices.wallonie.be/arcgis/rest/services/LIMITES/LIMITES_ADMINISTRATIVES/MapServer/3"
+      },
+      "stations": [
+        {
+          "name": "Landelies",
+          "locality": "Landelies",
+          "line": "130A",
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/landelies"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "Route nationale N53 Charleroi – Chimay via Montigny-le-Tilleul",
+          "locality": "Montigny-le-Tilleul",
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        {
+          "text": "RAVeL sur le chemin de halage de la Sambre, reliant Landelies à Charleroi et Thuin",
+          "locality": "Landelies",
+          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul"
+        }
+      ],
+      "beauxVillages": [],
+      "market": {
+        "housesMedian": 277500,
+        "housesTransactions": 113,
+        "apartmentsMedian": null,
+        "apartmentsTransactions": null,
+        "period": "année 2025",
+        "source": "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"
+      },
+      "localities": {
+        "Landelies": {
+          "formerCommune": true,
+          "note": "Village en bord de Sambre",
+          "source": "https://www.belgiantrain.be/fr/station-information/hainaut/landelies"
+        },
+        "Montigny-le-Tilleul": {
+          "formerCommune": true,
+          "note": null,
+          "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        }
+      }
+    }
+  }
+}

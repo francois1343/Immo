@@ -9,7 +9,7 @@ const PAGES = [
   "index.html",
   "estimation/index.html",
   "preparer-ma-vente/index.html",
-  "vendre-beaumont-barbencon/index.html",
+  
   "secteurs/index.html",
   "Back/estimation.html",
   "Back/formulaire.html",
@@ -24,6 +24,7 @@ const esc = (s) =>
 const readJson = (name) =>
   JSON.parse(fs.readFileSync(path.join(root, "data", name), "utf8"));
 const key = (s) => String(s).normalize("NFC").toLocaleLowerCase("fr");
+const CATALOGUE_URL = "https://connexionimmo.be/fr/nos-biens/";
 
 /* ── Zones ─────────────────────────────────────────────────────────── */
 function validateZones(zones) {
@@ -82,6 +83,19 @@ const targets = (zones) =>
 /* Names that must not appear in public or commercial material. */
 const excludedNames = (zones) =>
   zones.communes.flatMap((c) => c.exclusions.map((x) => x.name));
+/* URL segment of a locality: lower case, no accent, hyphens only. */
+const slug = (s) =>
+  String(s)
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+const communeRoute = (c) => `/secteurs/${c.id}/`;
+/* A locality bearing the name of its commune is covered by the commune page. */
+const hasOwnPage = (c, l) => key(l.name) !== key(c.commune);
+const localityRoute = (c, l) =>
+  hasOwnPage(c, l) ? `/secteurs/${c.id}/${slug(l.name)}/` : communeRoute(c);
 const estimateHref = (c) =>
   c.publicLabel
     ? "/estimation/"
@@ -92,7 +106,7 @@ function zonesCompact(zones) {
   const items = list
     .map(
       (c) =>
-        `<li><a href="/secteurs/#${c.id}"${c.anchor ? ' class="zone-anchor"' : ""}>${esc(publicName(c))}</a></li>`,
+        `<li><a href="${communeRoute(c)}"${c.anchor ? ' class="zone-anchor"' : ""}>${esc(publicName(c))}</a></li>`,
     )
     .join("\n            ");
   return `<ul class="zone-chips">
@@ -106,13 +120,14 @@ function zonesDetail(zones) {
         .filter((p) => targetedLocalities(c).some((l) => l.postalCode === p))
         .join(" · ");
       const names = targetedLocalities(c)
-        .map((l) => esc(l.name))
+        .map((l) => `<a href="${localityRoute(c, l)}">${esc(l.name)}</a>`)
         .join(", ");
       return `<article class="zone" id="${c.id}">
             <h2>${esc(publicName(c))}</h2>
             <p class="zone-codes">${c.anchor ? "Ancrage local · " : ""}${esc(c.province)} · ${codes}</p>
             <p class="zone-places">${names}</p>
-            <a href="${estimateHref(c)}">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-links"><a href="${communeRoute(c)}">Le secteur en détail ↗</a>
+            <a href="${estimateHref(c)}">Parler d’un bien dans ce secteur ↗</a></p>
           </article>`;
     })
     .join("\n          ");
@@ -178,6 +193,9 @@ function footer(pro) {
           <a href="/mentions-legales.html">Mentions légales</a>
           <a href="/politique-confidentialite.html">Vos données</a>
           <a href="/secteurs/">Secteurs couverts</a>
+          <a href="/guides/">Guides vendeurs</a>
+          <a href="/plan-du-site/">Plan du site</a>
+          <a href="${CATALOGUE_URL}" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
         </nav>
       </footer>`;
@@ -219,6 +237,67 @@ function legalHost(pro) {
         </p>`;
 }
 
+/* ── Client reviews ────────────────────────────────────────────────── */
+/* Nothing is copied from Google. A rating appears only with the date it was
+   read on the listing; a quote only with its author's consent. Without them
+   the block is a plain link to the verified listing. */
+function validateReviews(r) {
+  if (!/^https:\/\/(share\.google|g\.page|maps\.app\.goo\.gl|www\.google\.com|search\.google\.com)\//.test(r.googleUrl || ""))
+    throw Error("reviews.json : lien Google attendu");
+  const rated = r.rating != null || r.count != null;
+  if (rated && !(r.rating >= 1 && r.rating <= 5 && Number.isInteger(r.count) && r.count > 0 && /^\d{4}-\d{2}-\d{2}$/.test(r.ratingCheckedOn || "")))
+    throw Error("reviews.json : note, nombre d’avis et date du relevé vont ensemble");
+  for (const q of r.quotes || [])
+    if (!q.text || !q.author || q.consent !== true)
+      throw Error("reviews.json : une citation exige texte, auteur et accord (consent: true)");
+  return true;
+}
+function reviews(r) {
+  validateReviews(r);
+  const rated = r.rating != null;
+  const score = rated
+    ? `<p class="reviews-score"><strong>${String(r.rating).replace(".", ",")}<span>/5</span></strong> ${r.count} avis Google · relevé le ${esc(r.ratingCheckedOn.split("-").reverse().join("/"))}</p>`
+    : "";
+  const quotes = (r.quotes || [])
+    .map(
+      (q) => `<figure class="review-card">
+              <blockquote><p>${esc(q.text)}</p></blockquote>
+              <figcaption>${esc(q.author)}${q.date ? ` · ${esc(q.date)}` : ""}</figcaption>
+            </figure>`,
+    )
+    .join("\n            ");
+  return `<div class="reviews${quotes ? " has-quotes" : ""}">
+            <div class="reviews-lead">
+              ${score}
+              <p>${quotes ? "Ces avis ont été laissés sur la fiche Google de Martin et sont repris avec l’accord de leurs auteurs." : "Les avis des clients de Martin sont publiés sur sa fiche Google : ils y sont vérifiables, datés et signés. Nous préférons vous y renvoyer plutôt que d’en choisir quelques-uns."}</p>
+              <a class="button secondary" href="${esc(r.googleUrl)}" rel="noopener noreferrer" target="_blank">Voir nos avis <span aria-hidden="true">↗</span><span class="visually-hidden"> sur Google (nouvel onglet)</span></a>
+            </div>
+            ${quotes ? `<div class="review-cards">\n            ${quotes}\n            </div>` : ""}
+          </div>`;
+}
+
+/* ── Main navigation ───────────────────────────────────────────────── */
+const NAV = [
+  ["/estimation-immobiliere/", "Estimation"],
+  ["/preparer-ma-vente/", 'Préparer<span class="nav-long"> ma vente</span>'],
+  ["/secteurs/", "Secteurs"],
+  ["/guides/", "Guides"],
+];
+/* `route` is the public path of the page: the entry whose path contains it is
+   marked as current. */
+function nav(route = "") {
+  const current = (href) => (route.startsWith(href) ? ' aria-current="page"' : "");
+  const links = NAV.map(([href, label]) => `<a href="${href}"${current(href)}>${label}</a>`);
+  return `<nav aria-label="Navigation principale">
+          ${links.join("\n          ")}
+          <a href="${CATALOGUE_URL}" rel="noopener noreferrer" target="_blank" class="nav-external">Nos biens <span aria-hidden="true">↗</span><span class="visually-hidden"> (catalogue Connexion Immo, nouvel onglet)</span></a>
+          <a href="/estimation/" class="nav-estimate"${route === "/estimation/" ? ' aria-current="page"' : ""}>Votre projet <span aria-hidden="true">↗</span></a>
+        </nav>`;
+}
+/* Public path of a source page; the legacy Back/ entries stand for the form. */
+const routeOf = (page) =>
+  page.startsWith("Back/") ? "/estimation/" : "/" + page.replace(/index\.html$/, "");
+
 /* ── Applying blocks to a page ─────────────────────────────────────── */
 function load() {
   const zones = readJson("zones.json"),
@@ -230,20 +309,24 @@ function load() {
 function blocks({ zones, pro }) {
   return {
     footer: footer(pro),
+    nav,
     "zones-compact": zonesCompact(zones),
     "zones-detail": zonesDetail(zones),
     "commune-options": communeOptions(zones),
     "legal-details": legalDetails(pro),
     "legal-missing": legalMissing(pro),
     "legal-host": legalHost(pro),
+    reviews: reviews(readJson("reviews.json")),
   };
 }
-function apply(html, rendered) {
+/* A block is a string, or a function of the public path of the page. */
+function apply(html, rendered, page = "") {
   return html.replace(
     /(<!-- gen:([a-z-]+) -->)[\s\S]*?(<!-- \/gen:\2 -->)/g,
     (all, open, name, close) => {
       if (!(name in rendered)) throw Error("Bloc inconnu : " + name);
-      return open + rendered[name] + close;
+      const block = rendered[name];
+      return open + (typeof block === "function" ? block(routeOf(page)) : block) + close;
     },
   );
 }
@@ -261,4 +344,18 @@ module.exports = {
   publicName,
   footer,
   communeOptions,
+  nav,
+  reviews,
+  validateReviews,
+  routeOf,
+  esc,
+  key,
+  slug,
+  communeRoute,
+  localityRoute,
+  hasOwnPage,
+  targetedLocalities,
+  estimateHref,
+  field,
+  CATALOGUE_URL,
 };

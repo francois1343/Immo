@@ -1,0 +1,344 @@
+{
+  "schema": 1,
+  "updatedOn": "2026-11-20",
+  "about": "Catalogue des prestations présentées par le site. Source unique des pages de service et de leurs déclinaisons par commune et par village. Jetons acceptés dans les textes locaux : {lieu}, {a} (à Chimay, dans les villages de Couvin), {de}, {commune}, {deCommune}.",
+  "services": [
+    {
+      "id": "estimation",
+      "slug": "estimation-immobiliere",
+      "label": "Estimation immobilière",
+      "short": "Estimation",
+      "propertyType": null,
+      "localityPages": true,
+      "requires": null,
+      "hub": {
+        "title": "Estimation immobilière en Thudinie et Botte du Hainaut | Martin Snauwaert",
+        "h1": "Estimation immobilière : situer la valeur de votre bien avant de décider",
+        "eyebrow": "Estimation · avis de valeur",
+        "description": "Faire estimer une maison, un appartement ou un terrain entre Thuin, Beaumont, Chimay et Philippeville : déroulement, critères et documents utiles, avec Martin Snauwaert.",
+        "intro": "Une estimation sert à prendre une décision : vendre maintenant, plus tard, ou pas du tout. Martin Snauwaert, agent immobilier agréé IPI installé à Barbençon, visite le bien, l’examine et vous remet un avis de valeur argumenté.",
+        "sections": [
+          {
+            "h2": "Ce que comprend l’estimation",
+            "p": [
+              "L’estimation d’un agent immobilier est un avis de valeur : une fourchette de prix de mise en vente réaliste, fondée sur la visite du bien, ses caractéristiques et le marché local du moment.",
+              "Ce n’est pas une expertise : un rapport d’expertise, demandé par exemple pour une succession, un partage ou un litige, est établi par un expert (géomètre-expert, notamment). Martin vous oriente si votre situation en demande une."
+            ]
+          },
+          {
+            "h2": "Comment cela se passe",
+            "steps": [
+              ["Un premier échange", "Vous indiquez la commune, le type de bien et votre calendrier, par le formulaire ou par téléphone. Aucun document n’est demandé à ce stade."],
+              ["Une visite sur place", "Martin parcourt le bien avec vous : volumes, état, travaux réalisés, abords, particularités que seuls les occupants connaissent."],
+              ["L’analyse", "Il confronte ce qu’il a vu aux éléments vérifiables : situation urbanistique, certificat PEB, biens comparables, demande observée dans le secteur."],
+              ["L’avis de valeur", "Il vous présente une fourchette et ce qui la justifie, puis les suites possibles : préparer la vente, attendre, ou ne rien changer."]
+            ]
+          },
+          {
+            "h2": "Ce qui pèse sur la valeur",
+            "list": [
+              "La situation : village, rue, voisinage, accès, nuisances éventuelles.",
+              "Les surfaces : habitable, terrain, annexes, possibilités d’extension.",
+              "L’état général et les travaux à prévoir : toiture, châssis, chauffage, électricité, humidité.",
+              "La performance énergétique indiquée par le certificat PEB.",
+              "La situation urbanistique : permis délivrés, travaux régularisés ou non, affectation au plan de secteur.",
+              "Le marché local au moment de la vente : biens comparables disponibles et demande réelle."
+            ]
+          },
+          {
+            "h2": "Documents utiles à préparer",
+            "p": ["Rien n’est requis pour un premier contact. Pour la visite, ces documents, lorsque vous les avez, permettent une estimation plus précise :"],
+            "list": [
+              "Le titre de propriété (acte d’achat).",
+              "Le certificat PEB, s’il existe déjà.",
+              "Les plans et les permis d’urbanisme.",
+              "Le procès-verbal de contrôle de l’installation électrique, s’il existe.",
+              "Les factures des travaux importants.",
+              "Pour un appartement : l’acte de base et les derniers décomptes de charges."
+            ]
+          }
+        ],
+        "faq": [
+          ["Faire estimer mon bien m’engage-t-il à vendre ?", "Non. L’estimation sert précisément à décider en connaissance de cause. Vous restez libre de vendre plus tard, autrement, ou de ne pas vendre."],
+          ["Quelle est la différence entre une estimation et une expertise ?", "L’estimation d’un agent est un avis de valeur en vue d’une mise en vente. L’expertise est un rapport établi par un expert, utilisé lorsqu’une valeur doit être opposable : succession, partage, litige, par exemple."],
+          ["Une estimation en ligne suffit-elle ?", "Un outil en ligne applique des moyennes à une adresse. Il ne voit ni l’état du bien, ni les travaux, ni la situation urbanistique. Il donne un ordre de grandeur ; une visite permet d’argumenter un prix."],
+          ["Puis-je demander une estimation si je ne vends que dans un an ?", "Oui. Une estimation anticipée aide à planifier les travaux utiles, à rassembler les documents et à choisir le bon moment."]
+        ]
+      },
+      "local": {
+        "title": "Estimation immobilière {a} | Martin Snauwaert",
+        "h1": "Estimation immobilière {a}",
+        "eyebrow": "Estimation · {lieu}",
+        "description": "Faire estimer une maison, un appartement ou un terrain {a} : visite sur place, critères examinés et repères locaux, avec Martin Snauwaert, agent immobilier agréé IPI.",
+        "lead": "Vous souhaitez connaître la valeur d’un bien {a} avant de prendre une décision ? Martin Snauwaert se déplace, visite le bien et vous remet un avis de valeur argumenté.",
+        "angleTitle": "Ce que Martin examine pour un bien {a}",
+        "summaryTitle": "L’estimation en quatre temps",
+        "summary": [
+          "Un premier échange, sans document à fournir.",
+          "Une visite du bien avec vous.",
+          "Une analyse : urbanisme, PEB, biens comparables, demande locale.",
+          "Un avis de valeur expliqué, et les suites possibles."
+        ],
+        "cta": "Demander une estimation {a}"
+      }
+    },
+    {
+      "id": "vendre-maison",
+      "slug": "vendre-maison",
+      "label": "Vendre une maison",
+      "short": "Vendre une maison",
+      "propertyType": "Maison",
+      "localityPages": true,
+      "requires": null,
+      "hub": {
+        "title": "Vendre sa maison en Thudinie et Botte du Hainaut | Martin Snauwaert",
+        "h1": "Vendre votre maison : de l’estimation à la signature de l’acte",
+        "eyebrow": "Vente · maison",
+        "description": "Vendre une maison entre Thuin, Beaumont, Chimay et Philippeville : préparation, documents wallons obligatoires, mise en vente, offres et compromis, avec Martin Snauwaert.",
+        "intro": "Vendre une maison, c’est une suite d’étapes dont l’ordre compte. Martin Snauwaert vous accompagne du premier avis de valeur jusqu’à la signature de l’acte chez le notaire, avec un seul interlocuteur.",
+        "sections": [
+          {
+            "h2": "Les étapes de la vente",
+            "steps": [
+              ["Estimer", "Une visite et un avis de valeur argumenté, pour fixer un prix de présentation défendable."],
+              ["Préparer", "Rassembler les documents obligatoires, régler les points qui bloqueraient un acheteur ou son notaire, soigner la présentation."],
+              ["Commercialiser", "Photos, annonce fidèle, diffusion, organisation et conduite des visites, retour après chaque visite."],
+              ["Accompagner", "Analyse des offres, négociation, compromis de vente, suivi jusqu’à l’acte authentique chez le notaire."]
+            ]
+          },
+          {
+            "h2": "Les documents à réunir en Wallonie",
+            "p": ["Plusieurs documents sont exigés par la réglementation wallonne ou fédérale. Les réunir tôt évite de retarder le compromis."],
+            "list": [
+              "Le certificat PEB, nécessaire dès la mise en publicité du bien.",
+              "Le procès-verbal de contrôle de l’installation électrique du logement.",
+              "L’extrait conforme de la Banque de données de l’état des sols (BDES).",
+              "Les renseignements urbanistiques, délivrés par la commune où se situe le bien.",
+              "Le dossier d’intervention ultérieure (DIU), lorsque des travaux ont été réalisés depuis le 1er mai 2001.",
+              "Le certificat de la citerne à mazout, lorsqu’elle y est soumise.",
+              "Le titre de propriété."
+            ],
+            "after": "Le détail, document par document, se trouve dans le guide « Documents pour vendre en Wallonie »."
+          },
+          {
+            "h2": "Fixer le prix de présentation",
+            "p": [
+              "Un prix trop élevé allonge la vente et finit souvent par une baisse visible ; un prix trop bas vous prive d’une partie de la valeur. Le prix de présentation se décide à partir de l’avis de valeur, de votre calendrier et de votre marge de négociation.",
+              "Martin vous explique sa fourchette et ce qui la justifie. La décision vous revient."
+            ]
+          },
+          {
+            "h2": "Des offres au compromis",
+            "p": [
+              "Une offre écrite et acceptée engage les parties : mieux vaut en vérifier le contenu avant de la contresigner (prix, conditions suspensives, délai, financement).",
+              "Le compromis de vente fixe l’accord. L’acte authentique est ensuite signé chez le notaire, en général dans les quatre mois."
+            ]
+          }
+        ],
+        "faq": [
+          ["Par quoi commencer pour vendre ma maison ?", "Par une estimation et un point sur les documents. Ces deux éléments déterminent le prix de présentation et le calendrier réaliste."],
+          ["Quels documents sont obligatoires pour vendre une maison en Wallonie ?", "Notamment le certificat PEB, le procès-verbal de contrôle électrique, l’extrait conforme de la BDES et les renseignements urbanistiques. D’autres s’ajoutent selon le bien : DIU, certificat de citerne à mazout."],
+          ["Dois-je faire des travaux avant de vendre ?", "Pas nécessairement. Certains travaux se récupèrent dans le prix, d’autres non. Cela se décide au cas par cas, après la visite."],
+          ["Combien de temps entre le compromis et l’acte ?", "Le délai est fixé dans le compromis. En pratique, l’acte authentique est signé au plus tard quatre mois après."]
+        ]
+      },
+      "local": {
+        "title": "Vendre sa maison {a} | Martin Snauwaert",
+        "h1": "Vendre votre maison {a}",
+        "eyebrow": "Vente · maison · {lieu}",
+        "description": "Vendre une maison {a} : estimation, documents à demander, démarches auprès de la commune et accompagnement jusqu’à l’acte, avec Martin Snauwaert.",
+        "lead": "Vous envisagez de vendre une maison {a} ? Voici comment Martin Snauwaert vous accompagne, et les démarches locales à prévoir.",
+        "angleTitle": "Les démarches locales pour vendre {a}",
+        "summaryTitle": "L’accompagnement, étape par étape",
+        "summary": [
+          "Estimer : une visite et un avis de valeur argumenté.",
+          "Préparer : documents obligatoires et présentation du bien.",
+          "Commercialiser : annonce, diffusion et visites.",
+          "Accompagner : offres, compromis et suivi jusqu’à l’acte."
+        ],
+        "cta": "Parler de la vente de ma maison"
+      }
+    },
+    {
+      "id": "vendre-appartement",
+      "slug": "vendre-appartement",
+      "label": "Vendre un appartement",
+      "short": "Vendre un appartement",
+      "propertyType": "Appartement",
+      "localityPages": false,
+      "requires": "apartments",
+      "hub": {
+        "title": "Vendre un appartement : copropriété et documents | Martin Snauwaert",
+        "h1": "Vendre votre appartement : ce que la copropriété change",
+        "eyebrow": "Vente · appartement",
+        "description": "Vendre un appartement en Wallonie : documents de la copropriété à demander au syndic, charges, PEB et étapes de la vente, avec Martin Snauwaert.",
+        "intro": "Un appartement se vend avec sa copropriété : ses charges, ses décisions et ses travaux votés. Martin Snauwaert vous aide à réunir ces informations avant que l’acheteur ne les demande.",
+        "sections": [
+          {
+            "h2": "Les informations de la copropriété",
+            "p": ["Avant la signature du compromis, l’acheteur doit recevoir une série d’informations sur la copropriété. Elles sont demandées au syndic :"],
+            "list": [
+              "Le montant du fonds de roulement et du fonds de réserve.",
+              "Les arriérés éventuels dus par le vendeur.",
+              "Les appels de fonds destinés au fonds de réserve déjà décidés.",
+              "Les procédures judiciaires en cours concernant la copropriété.",
+              "Les procès-verbaux des assemblées générales des trois dernières années et les décomptes de charges des deux dernières années.",
+              "Le dernier bilan approuvé par l’assemblée générale."
+            ]
+          },
+          {
+            "h2": "Ce qu’un acheteur regarde",
+            "list": [
+              "Le montant des charges et ce qu’elles couvrent.",
+              "Les travaux votés ou annoncés dans les parties communes.",
+              "L’acte de base et le règlement de copropriété : quotités, usage des parties privatives, cave, garage, emplacement.",
+              "Le certificat PEB de l’appartement et l’état de l’installation électrique."
+            ]
+          },
+          {
+            "h2": "Les autres documents",
+            "p": ["Comme pour toute vente d’un logement en Wallonie : certificat PEB, procès-verbal de contrôle de l’installation électrique, extrait conforme de la BDES et renseignements urbanistiques."]
+          }
+        ],
+        "faq": [
+          ["Qui fournit les documents de la copropriété ?", "Le syndic. La demande peut être faite par le vendeur, l’agent immobilier ou le notaire."],
+          ["Les travaux votés avant la vente sont-ils à ma charge ?", "La répartition entre vendeur et acheteur dépend de la date de la décision et de l’exigibilité des appels de fonds. Elle se précise avec le notaire et s’indique dans le compromis."],
+          ["Un appartement doit-il avoir son propre certificat PEB ?", "Oui : le certificat PEB porte sur le logement mis en vente."]
+        ]
+      },
+      "local": {
+        "title": "Vendre un appartement {a} | Martin Snauwaert",
+        "h1": "Vendre votre appartement {a}",
+        "eyebrow": "Vente · appartement · {lieu}",
+        "description": "Vendre un appartement {a} : documents de la copropriété, charges, PEB et accompagnement jusqu’à l’acte, avec Martin Snauwaert.",
+        "lead": "Vous vendez un appartement {a} ? La copropriété ajoute des documents et des questions : voici comment les préparer avec Martin Snauwaert.",
+        "angleTitle": "Vendre un appartement {a} : les repères",
+        "summaryTitle": "À préparer avant la mise en vente",
+        "summary": [
+          "Les informations de la copropriété, à demander au syndic.",
+          "Les derniers décomptes de charges et procès-verbaux d’assemblée générale.",
+          "Le certificat PEB et le contrôle de l’installation électrique.",
+          "Une estimation qui tient compte de l’immeuble autant que de l’appartement."
+        ],
+        "cta": "Parler de la vente de mon appartement"
+      }
+    },
+    {
+      "id": "vendre-terrain",
+      "slug": "vendre-terrain",
+      "label": "Vendre un terrain",
+      "short": "Vendre un terrain",
+      "propertyType": "Terrain",
+      "localityPages": false,
+      "requires": null,
+      "hub": {
+        "title": "Vendre un terrain en Wallonie : ce qu’il faut vérifier | Martin Snauwaert",
+        "h1": "Vendre un terrain : d’abord savoir ce qu’on peut y faire",
+        "eyebrow": "Vente · terrain",
+        "description": "Vendre un terrain en Wallonie : affectation au plan de secteur, certificat d’urbanisme, bornage, équipement et documents, avec Martin Snauwaert.",
+        "intro": "La valeur d’un terrain dépend de ce qu’il est permis d’y construire. Avant d’en fixer le prix, Martin Snauwaert vérifie avec vous sa situation urbanistique et ses contraintes.",
+        "sections": [
+          {
+            "h2": "Les vérifications qui fixent la valeur",
+            "list": [
+              "L’affectation au plan de secteur : zone d’habitat, zone d’habitat à caractère rural, zone agricole, zone forestière… Elle se consulte sur le géoportail de la Wallonie.",
+              "Les renseignements urbanistiques délivrés par la commune.",
+              "Le certificat d’urbanisme n° 1, qui renseigne la situation urbanistique du terrain, ou n° 2, qui porte sur un projet précis.",
+              "L’équipement : voirie, eau, électricité, égouttage, selon la zone d’assainissement.",
+              "L’exposition à un aléa d’inondation et les servitudes.",
+              "Les limites exactes : un bornage par un géomètre-expert lève les doutes."
+            ]
+          },
+          {
+            "h2": "Diviser un terrain",
+            "p": ["Diviser un bien en plusieurs lots à bâtir peut nécessiter un permis d’urbanisation. La question se pose à la commune avant toute mise en vente par lots."]
+          },
+          {
+            "h2": "Les documents",
+            "p": ["L’extrait conforme de la BDES et les renseignements urbanistiques sont à fournir. Un terrain non bâti n’a ni certificat PEB ni contrôle d’installation électrique."]
+          }
+        ],
+        "faq": [
+          ["Comment savoir si mon terrain est constructible ?", "En vérifiant son affectation au plan de secteur, puis en demandant les renseignements urbanistiques ou un certificat d’urbanisme à la commune. Martin fait ce point avec vous avant toute estimation."],
+          ["Faut-il un certificat PEB pour vendre un terrain ?", "Non, pas pour un terrain non bâti."],
+          ["Faut-il borner le terrain avant de le vendre ?", "Ce n’est pas toujours obligatoire, mais des limites incertaines freinent un acheteur. Un géomètre-expert peut établir un plan de bornage."]
+        ]
+      },
+      "local": {
+        "title": "Vendre un terrain {a} | Martin Snauwaert",
+        "h1": "Vendre un terrain {a}",
+        "eyebrow": "Vente · terrain · {lieu}",
+        "description": "Vendre un terrain {a} : plan de secteur, renseignements urbanistiques auprès de la commune, équipement et documents, avec Martin Snauwaert.",
+        "lead": "Vous souhaitez vendre un terrain {a} ? Sa valeur dépend d’abord de ce qu’il est permis d’y construire. Voici les vérifications locales à prévoir.",
+        "angleTitle": "Les vérifications à faire pour un terrain {a}",
+        "summaryTitle": "Avant de fixer un prix",
+        "summary": [
+          "Vérifier l’affectation au plan de secteur.",
+          "Demander les renseignements urbanistiques à la commune.",
+          "Faire le point sur l’équipement, les servitudes et l’aléa d’inondation.",
+          "Clarifier les limites, au besoin par un bornage."
+        ],
+        "cta": "Parler de la vente de mon terrain"
+      }
+    },
+    {
+      "id": "agent",
+      "slug": "agent-immobilier",
+      "label": "Agent immobilier",
+      "short": "Agent immobilier",
+      "propertyType": null,
+      "localityPages": false,
+      "requires": null,
+      "hub": {
+        "title": "Martin Snauwaert, agent immobilier agréé IPI | Connexion Immo",
+        "h1": "Martin Snauwaert, agent immobilier agréé IPI à Barbençon",
+        "eyebrow": "Votre interlocuteur",
+        "description": "Martin Snauwaert, agent immobilier agréé IPI n° 513.699, membre du réseau Connexion Immo, installé à Barbençon : son rôle, sa façon de travailler et les secteurs où il se déplace.",
+        "intro": "Martin Snauwaert est agent immobilier agréé IPI (n° 513.699) et membre du réseau Connexion Immo. Installé à Barbençon, dans l’entité de Beaumont, il accompagne des vendeurs de la Thudinie à la Botte du Hainaut et à l’Entre-Sambre-et-Meuse.",
+        "sections": [
+          {
+            "h2": "Un agent agréé, ce que cela signifie",
+            "p": [
+              "En Belgique, la profession d’agent immobilier est réglementée. Seule une personne inscrite à l’Institut professionnel des agents immobiliers (IPI) peut l’exercer comme indépendant. L’agent est soumis à un code de déontologie et au contrôle de l’IPI.",
+              "Le numéro d’agrément de Martin est le 513.699. Il peut être vérifié dans le registre public de l’IPI."
+            ]
+          },
+          {
+            "h2": "Sa façon de travailler",
+            "list": [
+              "Un seul interlocuteur, du premier échange à la signature de l’acte.",
+              "Une estimation argumentée, expliquée, que vous pouvez discuter.",
+              "Une annonce fidèle : ce qui est montré correspond à ce qui est visité.",
+              "Un retour après chaque visite et un suivi des démarches jusqu’au notaire."
+            ]
+          },
+          {
+            "h2": "Où il intervient",
+            "p": ["Martin n’a pas de bureau dans chaque commune : il est installé à Barbençon et se déplace chez vous. Les secteurs ci-dessous sont ceux où il est le plus présent."]
+          }
+        ],
+        "faq": [
+          ["Martin Snauwaert a-t-il une agence où je peux passer ?", "Martin est installé à Barbençon (Beaumont) et travaille sur rendez-vous. Il se déplace chez vous : la visite du bien est de toute façon le point de départ."],
+          ["Comment vérifier qu’un agent immobilier est agréé ?", "Par le registre public de l’IPI, accessible sur ipi.be, où chaque agent agréé apparaît avec son numéro."],
+          ["Quel est le lien avec Connexion Immo ?", "Martin exerce au sein du réseau Connexion Immo. Les biens qu’il présente figurent dans le catalogue du réseau."]
+        ]
+      },
+      "local": {
+        "title": "Agent immobilier intervenant {a} | Martin Snauwaert",
+        "h1": "Un agent immobilier qui se déplace {a}",
+        "eyebrow": "Votre interlocuteur · {lieu}",
+        "description": "Martin Snauwaert, agent immobilier agréé IPI installé à Barbençon, intervient {a} : estimation, préparation de la vente et accompagnement jusqu’à l’acte.",
+        "lead": "Vous cherchez un agent immobilier pour un bien situé {a} ? Martin Snauwaert, agréé IPI et membre du réseau Connexion Immo, est installé à Barbençon et se déplace chez vous.",
+        "angleTitle": "Martin {a} : ce qu’il faut savoir",
+        "summaryTitle": "Ce que Martin prend en charge",
+        "summary": [
+          "L’estimation du bien, après visite.",
+          "La préparation de la vente et des documents.",
+          "La mise en vente, les visites et le retour après chacune.",
+          "Les offres, le compromis et le suivi jusqu’à l’acte."
+        ],
+        "cta": "Prendre contact avec Martin"
+      }
+    }
+  ]
+}

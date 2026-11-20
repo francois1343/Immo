@@ -1,0 +1,442 @@
+{
+  "schema": 1,
+  "updatedOn": "2026-11-20",
+  "about": "Guides vendeurs. Chaque affirmation réglementaire s’appuie sur une source officielle citée dans `sources`. Un point non confirmé sur une source officielle n’est pas publié (montants d’amendes, coût communal des renseignements urbanistiques, etc.).",
+  "guides": [
+    {
+      "slug": "documents-vente-wallonie",
+      "short": "Documents pour vendre en Wallonie",
+      "teaser": "PEB, contrôle électrique, BDES, urbanisme : la liste, document par document.",
+      "title": "Documents obligatoires pour vendre un bien en Wallonie",
+      "h1": "Quels documents réunir pour vendre un bien en Wallonie ?",
+      "description": "Certificat PEB, contrôle électrique, extrait BDES, renseignements urbanistiques, DIU : les documents à réunir pour vendre en Wallonie, sources officielles à l’appui.",
+      "eyebrow": "Guide vendeur · documents",
+      "intro": "Plusieurs documents sont exigés pour vendre une maison, un appartement ou un terrain en Wallonie. Les réunir tôt évite de retarder le compromis. Voici la liste, avec qui la fournit et à quel moment.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-appartement", "vendre-terrain"],
+      "sections": [
+        {
+          "h2": "Le certificat PEB",
+          "p": [
+            "Le propriétaire doit disposer d’un certificat PEB avant de mettre le logement en vente. Il est établi par un certificateur agréé et reste valable dix ans au maximum.",
+            "Toute publicité doit en reprendre les indicateurs. Le certificat est communiqué à l’acheteur avant la signature du compromis."
+          ]
+        },
+        {
+          "h2": "Le contrôle de l’installation électrique",
+          "p": [
+            "Le vendeur d’une habitation fait contrôler l’installation électrique par un organisme agréé et remet le procès-verbal à l’acheteur. La vente peut avoir lieu que le résultat soit conforme ou non.",
+            "Si l’installation n’est pas conforme, la mise en conformité revient à l’acheteur, dans le délai indiqué sur le procès-verbal : en principe dix-huit mois à compter de l’acte."
+          ]
+        },
+        {
+          "h2": "L’extrait conforme de la BDES",
+          "p": [
+            "Depuis le 1er janvier 2019, le vendeur fournit pour chaque parcelle un extrait conforme de la Banque de données de l’état des sols. Son contenu est repris dans le compromis.",
+            "Il se commande sur le site de la BDES ou par le notaire. Il coûte 30 € pour la première parcelle et 10 € par parcelle supplémentaire, et doit dater de moins d’un an au moment de l’acte."
+          ]
+        },
+        {
+          "h2": "Les renseignements urbanistiques",
+          "p": [
+            "Le compromis doit mentionner la situation urbanistique du bien : affectation au plan de secteur, permis délivrés, infractions éventuelles. Ces informations sont demandées à la commune où se situe le bien, qui dispose de trente jours pour répondre.",
+            "La demande est faite par le vendeur, son mandataire ou le notaire."
+          ]
+        },
+        {
+          "h2": "Selon le bien",
+          "list": [
+            "Le dossier d’intervention ultérieure (DIU), pour les travaux réalisés depuis le 1er mai 2001 ; il est remis à l’acheteur au plus tard à l’acte.",
+            "Pour une citerne à mazout de 3 000 litres ou plus : le certificat de contrôle d’étanchéité et de conformité.",
+            "Pour un appartement : les informations de la copropriété, demandées au syndic.",
+            "Pour des panneaux photovoltaïques : la déclaration de ce qui est compris dans la vente et du bénéficiaire des certificats verts.",
+            "Un CertIBEau n’est obligatoire que pour un immeuble raccordé pour la première fois à la distribution d’eau depuis le 1er juin 2021."
+          ]
+        },
+        {
+          "h2": "Ce qui n’est pas exigé à ce jour",
+          "p": ["Aucun inventaire amiante n’est exigé pour vendre en Wallonie à la date de ce guide. Le Gouvernement wallon a annoncé en novembre 2025 un diagnostic obligatoire, sans date d’entrée en vigueur."]
+        }
+      ],
+      "faq": [
+        ["Qui paie ces documents ?", "En règle générale le vendeur : certificat PEB, contrôle électrique, extrait BDES et renseignements urbanistiques font partie des frais de délivrance."],
+        ["Faut-il tout avoir avant de mettre en vente ?", "Le certificat PEB, oui : il est nécessaire pour la publicité. Les autres documents doivent être prêts pour le compromis ; les demander tôt évite un retard."],
+        ["Un contrôle électrique non conforme empêche-t-il de vendre ?", "Non. La vente peut avoir lieu ; l’acheteur devra mettre l’installation en conformité dans le délai indiqué sur le procès-verbal."]
+      ],
+      "sources": [
+        ["Notaire.be — documents à prévoir pour le vendeur", "https://www.notaire.be/immobilier/comment-acheter-ou-vendre-un-bien/checklist-des-documents-a-prevoir-pour-le-vendeur"],
+        ["Wallonie — obtenir un certificat PEB", "https://www.wallonie.be/fr/demarches/vendreacheterlouer-obtenir-un-certificat-peb"],
+        ["Wallonie — extrait conforme de la BDES", "https://www.wallonie.be/fr/demarches/demander-un-extrait-conforme-de-la-banque-de-donnees-de-letat-des-sols-bdes"],
+        ["Wallonie — gérer sa citerne à mazout", "https://www.wallonie.be/fr/demarches/gerer-sa-citerne-mazout"],
+        ["Wallonie — stratégie amiante (7 novembre 2025)", "https://www.wallonie.be/fr/actualites/amiante-la-wallonie-renforce-sa-strategie-sur-les-chantiers-de-renovation-et-de-demolition"]
+      ]
+    },
+    {
+      "slug": "etapes-vente-immobiliere",
+      "short": "Les étapes d’une vente",
+      "teaser": "De l’estimation à l’acte chez le notaire : l’ordre des étapes et les délais.",
+      "title": "Les étapes d’une vente immobilière en Belgique | Martin Snauwaert",
+      "h1": "De l’estimation à l’acte : les étapes d’une vente immobilière",
+      "description": "Estimation, documents, mise en vente, offre, compromis, acte authentique : les étapes d’une vente immobilière en Wallonie et les délais à connaître.",
+      "eyebrow": "Guide vendeur · calendrier",
+      "intro": "Une vente suit toujours le même ordre. Connaître chaque étape permet d’anticiper les délais et de savoir à quel moment on s’engage.",
+      "updatedOn": "2026-11-20",
+      "related": ["estimation", "vendre-maison"],
+      "sections": [
+        {
+          "h2": "Le déroulement",
+          "steps": [
+            ["Estimer", "Une visite du bien et un avis de valeur, pour fixer un prix de présentation défendable."],
+            ["Préparer", "Réunir les documents obligatoires et soigner la présentation du bien."],
+            ["Mettre en vente", "Annonce, diffusion et visites."],
+            ["Recevoir une offre", "Une offre écrite acceptée engage : son contenu se vérifie avant de la contresigner."],
+            ["Signer le compromis", "Il fixe définitivement l’accord. Chaque partie choisit librement son notaire."],
+            ["Signer l’acte", "L’acte authentique est signé chez le notaire, qui a entre-temps effectué les recherches nécessaires."]
+          ]
+        },
+        {
+          "h2": "L’offre et le compromis",
+          "p": [
+            "Le compromis de vente rend la vente définitive. Il peut prévoir une condition suspensive de financement ; elle n’est pas automatique et doit être écrite.",
+            "L’acheteur verse habituellement une garantie ou un acompte, souvent de l’ordre de 10 % du prix. Ce n’est pas une obligation légale mais un usage."
+          ]
+        },
+        {
+          "h2": "Pourquoi quatre mois avant l’acte ?",
+          "p": [
+            "Le compromis doit être enregistré dans les quatre mois, sauf si l’acte authentique est signé dans ce délai. C’est pourquoi l’acte est en pratique prévu au plus tard quatre mois après le compromis.",
+            "Ce temps sert au notaire : recherches hypothécaires, fiscales, urbanistiques et cadastrales, vérification d’un éventuel droit de préemption."
+          ]
+        }
+      ],
+      "faq": [
+        ["À quel moment suis-je engagé ?", "Dès qu’une offre écrite est acceptée par les deux parties, puis définitivement au compromis. D’où l’intérêt de faire relire l’offre avant de la signer."],
+        ["Puis-je choisir mon notaire ?", "Oui. Vendeur et acheteur choisissent chacun librement leur notaire, sans supplément de frais."],
+        ["L’acte peut-il être signé plus tôt que quatre mois ?", "Oui, si les recherches du notaire sont terminées et si les parties sont d’accord."]
+      ],
+      "sources": [
+        ["Notaire.be — les étapes d’un achat immobilier", "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier"],
+        ["SPF Finances — droit d’enregistrement", "https://fin.belgium.be/fr/particuliers/habitation/acheter-vendre/droit-enregistrement"],
+        ["Notaire.be — pourquoi attendre plusieurs mois après le compromis", "https://www.notaire.be/actualites/pourquoi-dois-je-attendre-plusieurs-mois-apres-le-compromis-de-vente-pour-signer-lacte-authentique"]
+      ]
+    },
+    {
+      "slug": "estimation-ou-expertise",
+      "short": "Estimation ou expertise ?",
+      "teaser": "Avis de valeur d’un agent, rapport d’un expert, outil en ligne : à quoi sert chacun.",
+      "title": "Estimation ou expertise immobilière : la différence | Martin Snauwaert",
+      "h1": "Estimation, expertise, outil en ligne : quelle différence ?",
+      "description": "Avis de valeur d’un agent immobilier, rapport d’expertise, simulateur en ligne : ce que chacun apporte, et lequel choisir selon votre situation.",
+      "eyebrow": "Guide vendeur · valeur",
+      "intro": "Trois démarches portent sur la valeur d’un bien, mais elles ne servent pas au même usage. Choisir la bonne évite de payer pour ce dont on n’a pas besoin, ou de s’appuyer sur un chiffre fragile.",
+      "updatedOn": "2026-11-20",
+      "related": ["estimation"],
+      "sections": [
+        {
+          "h2": "L’estimation d’un agent immobilier",
+          "p": [
+            "C’est un avis de valeur en vue d’une mise en vente : une fourchette de prix fondée sur la visite du bien et sur le marché local. Le code de déontologie des agents immobiliers impose que les estimations soient faites de manière sincère, et que l’agent émette des réserves si le prix souhaité est manifestement disproportionné.",
+            "Elle convient lorsque la question est : à quel prix présenter mon bien, et faut-il vendre maintenant ?"
+          ]
+        },
+        {
+          "h2": "L’expertise",
+          "p": [
+            "C’est un rapport écrit et motivé, établi par un expert, par exemple un géomètre-expert. Elle convient lorsque la valeur doit être établie de façon formelle : succession, partage, séparation, litige."
+          ]
+        },
+        {
+          "h2": "L’outil d’estimation en ligne",
+          "p": [
+            "Il applique des moyennes statistiques à une adresse. Il ne connaît ni l’état du bien, ni ses travaux, ni sa situation urbanistique. Il donne un ordre de grandeur, utile pour une première idée, insuffisant pour fixer un prix."
+          ]
+        },
+        {
+          "h2": "Et les statistiques officielles ?",
+          "p": [
+            "Statbel publie les prix médians des ventes par commune. Un prix médian décrit l’ensemble des ventes d’une commune, tous états et toutes tailles confondus : c’est un repère, pas la valeur d’une maison précise."
+          ]
+        }
+      ],
+      "faq": [
+        ["Une estimation d’agent a-t-elle une valeur officielle ?", "Non. C’est un avis professionnel destiné à préparer une vente. Pour une valeur opposable, il faut un rapport d’expertise."],
+        ["Faut-il plusieurs estimations ?", "Comparer est légitime. Comparez surtout les arguments : une estimation élevée sans justification ne vend pas mieux."]
+      ],
+      "sources": [
+        ["IPI — la déontologie de l’agent immobilier", "https://www.ipi.be/lagent-immobilier/la-deontologie-de-lagent-immobilier"],
+        ["Statbel — prix de l’immobilier", "https://statbel.fgov.be/fr/themes/construction-logement/prix-de-limmobilier"]
+      ]
+    },
+    {
+      "slug": "frais-vendeur-wallonie",
+      "short": "Les frais du vendeur",
+      "teaser": "Ce que le vendeur paie, ce que l’acheteur paie, et la question de la plus-value.",
+      "title": "Frais à charge du vendeur d’un bien en Wallonie | Martin Snauwaert",
+      "h1": "Vendre un bien en Wallonie : quels frais pour le vendeur ?",
+      "description": "Certificats, commission d’agence, mainlevée, plus-value : les frais à charge du vendeur d’un bien en Wallonie, et ceux qui reviennent à l’acheteur.",
+      "eyebrow": "Guide vendeur · frais",
+      "intro": "Les droits d’enregistrement et les frais d’acte sont payés par l’acheteur. Le vendeur, lui, supporte les frais de mise en vente et de délivrance du bien. Voici lesquels.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-appartement", "vendre-terrain"],
+      "sections": [
+        {
+          "h2": "Les frais de délivrance",
+          "list": [
+            "Le certificat PEB.",
+            "Le contrôle de l’installation électrique.",
+            "L’extrait conforme de la BDES (attestation du sol).",
+            "Les renseignements urbanistiques et les documents cadastraux.",
+            "Le contrôle de la citerne à mazout, lorsqu’il est requis.",
+            "Pour un appartement, les informations demandées au syndic.",
+            "La mainlevée de l’hypothèque, si un crédit grève encore le bien."
+          ]
+        },
+        {
+          "h2": "Les frais de mise en vente",
+          "p": [
+            "Ce sont les frais d’agence et de publicité. Le contrat conclu avec un agent immobilier doit indiquer son tarif global, TVA et taxes comprises. Rien n’est dû si la vente échoue parce qu’une condition suspensive ne se réalise pas.",
+            "Ce contrat est écrit. Le consommateur dispose de quatorze jours pour se rétracter sans frais, et une mission exclusive est limitée à six mois."
+          ]
+        },
+        {
+          "h2": "La taxe sur la plus-value",
+          "p": [
+            "La vente de l’habitation familiale du vendeur n’est pas taxée. Une plus-value peut l’être dans d’autres cas, notamment lorsqu’un bien bâti qui n’est pas l’habitation propre est revendu moins de cinq ans après son achat, ou un terrain moins de huit ans après.",
+            "Le notaire vérifie ce point pour votre situation."
+          ]
+        },
+        {
+          "h2": "Ce que paie l’acheteur",
+          "p": ["Les droits d’enregistrement sont à sa charge : 12,5 % en Wallonie, ou 3 % depuis le 1er janvier 2025 pour l’achat de son habitation propre et unique, sous conditions. S’y ajoutent les frais d’acte."]
+        }
+      ],
+      "faq": [
+        ["Les droits d’enregistrement concernent-ils le vendeur ?", "Non, ils sont payés par l’acheteur. Ils pèsent toutefois sur son budget total, donc sur ce qu’il peut offrir."],
+        ["Puis-je me rétracter après avoir signé avec un agent immobilier ?", "Oui, sans frais, dans les quatorze jours qui suivent la conclusion du contrat."]
+      ],
+      "sources": [
+        ["Notaire.be — taxes sur les plus-values immobilières", "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-frais-lies-lachat/taxes-sur-les-plus-values-immobilieres"],
+        ["Notaire.be — droits d’enregistrement en Région wallonne", "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-frais-lies-lachat/droits-denregistrement-en-region-wallonne"],
+        ["Wallonie — fiscalité immobilière", "https://www.wallonie.be/fr/vivre-en-wallonie/habitat-et-energie/fiscalite-immobiliere"],
+        ["IPI — arrêté royal du 28 septembre 2023 (contrats d’agent immobilier)", "https://www.ipi.be/media/1735/download?inline=1"]
+      ]
+    },
+    {
+      "slug": "renseignements-urbanistiques",
+      "short": "Renseignements urbanistiques : où s’adresser",
+      "teaser": "À quoi ils servent, qui les demande, et le service de chaque commune couverte.",
+      "title": "Renseignements urbanistiques : le service de chaque commune",
+      "h1": "Renseignements urbanistiques : à quoi servent-ils et où les demander ?",
+      "description": "Renseignements urbanistiques pour vendre en Wallonie : contenu, délai de trente jours et service d’urbanisme de Beaumont, Thuin, Chimay, Walcourt et environs.",
+      "eyebrow": "Guide vendeur · urbanisme",
+      "intro": "Avant un compromis, la situation urbanistique du bien doit être connue. Elle se demande à la commune où il se situe. Voici ce que contient la réponse, et à qui s’adresser dans chaque commune couverte par Martin.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-terrain"],
+      "sections": [
+        {
+          "h2": "Ce que le compromis doit mentionner",
+          "p": ["Le Code du développement territorial (CoDT) impose que tout acte de vente, compromis compris, mentionne notamment :"],
+          "list": [
+            "L’affectation du bien au plan de secteur.",
+            "Les permis d’urbanisme ou d’urbanisation délivrés depuis 1977, et les certificats d’urbanisme de moins de deux ans.",
+            "L’existence d’un droit de préemption ou d’un plan d’expropriation.",
+            "L’exposition à un risque naturel, dont l’aléa d’inondation.",
+            "Si des travaux constitutifs d’une infraction ont été réalisés, et si un procès-verbal a été dressé."
+          ]
+        },
+        {
+          "h2": "Qui les demande, et en combien de temps",
+          "p": [
+            "L’obligation repose sur le vendeur, son mandataire ou le notaire. La commune transmet les informations dans les trente jours de la demande. La redevance est fixée par chaque commune.",
+            "Si la réponse n’est pas arrivée, l’acte peut tout de même être signé, à condition de le mentionner."
+          ]
+        },
+        {
+          "h2": "Le service d’urbanisme, commune par commune",
+          "table": "urbanisme"
+        },
+        {
+          "h2": "Vérifier soi-même avant de demander",
+          "p": ["Le plan de secteur et la carte de l’aléa d’inondation se consultent librement sur WalOnMap, le géoportail de la Wallonie. C’est un premier repère, qui ne remplace pas la réponse de la commune."]
+        }
+      ],
+      "faq": [
+        ["Que se passe-t-il si des travaux ont été faits sans permis ?", "Il faut le déclarer. Selon le cas, une régularisation est possible avant la vente. Ce point se traite avec la commune et le notaire avant le compromis."],
+        ["Un certificat d’urbanisme remplace-t-il un permis ?", "Non. Il renseigne sur ce qui est envisageable, mais ne dispense pas de demander le permis."]
+      ],
+      "sources": [
+        ["SPW Territoire — Code du développement territorial (CoDT)", "https://territoire.wallonie.be/storage/territoire/documents/content/page/codt/codt.pdf"],
+        ["UVCW — informations notariales et renseignements urbanistiques", "https://uvcw.be/amenagement-territoire/vos-questions/art-9294"],
+        ["Wallonie — carte de l’aléa d’inondation", "https://wallonie.be/fr/demarches/sinformer-sur-la-carte-de-lalea-dinondation-en-wallonie"]
+      ]
+    },
+    {
+      "slug": "certificat-peb-vente",
+      "short": "Le certificat PEB pour vendre",
+      "teaser": "Quand le demander, combien de temps il vaut, ce que l’annonce doit afficher.",
+      "title": "Certificat PEB pour vendre en Wallonie : les règles | Martin Snauwaert",
+      "h1": "Le certificat PEB pour vendre en Wallonie",
+      "description": "Certificat PEB obligatoire avant la mise en vente en Wallonie : validité de dix ans, indicateurs à afficher dans l’annonce, remise à l’acheteur avant le compromis.",
+      "eyebrow": "Guide vendeur · énergie",
+      "intro": "Le certificat PEB est le premier document à demander : sans lui, pas de publicité conforme. Voici les règles applicables en Wallonie.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-appartement"],
+      "sections": [
+        {
+          "h2": "Quand faut-il l’avoir ?",
+          "p": ["Avant la mise en vente. Le propriétaire doit disposer du certificat avant toute publicité, et le communiquer au candidat acheteur avant la signature du compromis, qui mentionne cette formalité."]
+        },
+        {
+          "h2": "Qui l’établit et combien de temps vaut-il ?",
+          "p": ["Un certificateur PEB agréé par la Wallonie, après visite du logement. Le certificat est valable dix ans au maximum. Un certificat encore valide peut être réutilisé."]
+        },
+        {
+          "h2": "Ce que l’annonce doit afficher",
+          "p": ["Depuis le 1er janvier 2015, toute publicité de vente reprend les indicateurs du certificat :"],
+          "list": [
+            "La classe énergétique (de A++ à G).",
+            "Le code unique du certificat.",
+            "La consommation spécifique d’énergie primaire (E spec, en kWh/m².an).",
+            "La consommation totale d’énergie primaire (E totale, en kWh/an)."
+          ],
+          "after": "Sur internet, la page détaillée du bien affiche les quatre indicateurs ; une page de liste peut n’afficher que la classe."
+        },
+        {
+          "h2": "Un mauvais PEB empêche-t-il de vendre ?",
+          "p": ["Non. Le certificat informe l’acheteur ; il n’impose pas de travaux au vendeur. Il pèse en revanche sur l’estimation, et il vaut mieux le connaître avant de fixer un prix."]
+        }
+      ],
+      "faq": [
+        ["Faut-il un certificat PEB pour un terrain ?", "Non, pas pour un terrain non bâti."],
+        ["Mon certificat a huit ans : est-il encore valable ?", "Oui, s’il a moins de dix ans. Si des travaux ont amélioré le logement depuis, un nouveau certificat peut être à votre avantage."]
+      ],
+      "sources": [
+        ["Wallonie — obtenir un certificat PEB", "https://www.wallonie.be/fr/demarches/vendreacheterlouer-obtenir-un-certificat-peb"],
+        ["Énergie Wallonie — mentions dans les publicités", "https://energie.wallonie.be/home/performance-energetique-des-batiments/batiments-residentiels/achat-vente-location/obligations/mention-dans-les-publicites/vente--location--mentions-dans-les-publicites.html"]
+      ]
+    },
+    {
+      "slug": "extrait-bdes-attestation-sol",
+      "short": "L’extrait BDES (attestation du sol)",
+      "teaser": "À quoi il sert, comment le commander, son coût et sa durée de validité.",
+      "title": "Extrait conforme BDES pour vendre en Wallonie | Martin Snauwaert",
+      "h1": "L’extrait conforme de la BDES : l’attestation du sol en Wallonie",
+      "description": "Extrait conforme de la Banque de données de l’état des sols : obligatoire pour vendre en Wallonie depuis 2019. Commande, coût de 30 €, validité d’un an.",
+      "eyebrow": "Guide vendeur · sol",
+      "intro": "Depuis 2019, toute vente d’un bien ou d’un terrain en Wallonie s’accompagne d’un extrait de la Banque de données de l’état des sols. Il indique si une parcelle est concernée par une pollution connue ou suspectée.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-terrain"],
+      "sections": [
+        {
+          "h2": "Une obligation du vendeur",
+          "p": ["Le décret wallon relatif à la gestion et à l’assainissement des sols impose au vendeur de fournir à l’acheteur un extrait conforme pour chaque parcelle. Son contenu est repris dans le compromis."]
+        },
+        {
+          "h2": "Comment le commander",
+          "p": ["En ligne, sur le site de la BDES, ou par l’intermédiaire du notaire. Il faut la référence cadastrale de chaque parcelle."]
+        },
+        {
+          "h2": "Coût et validité",
+          "list": [
+            "30 € pour le premier extrait, 10 € par parcelle supplémentaire, avec un plafond de 320 € par demande.",
+            "Pour un acte notarié, l’extrait doit dater de moins d’un an.",
+            "Il devient caduc si les données de la parcelle changent entre-temps : la Wallonie conseille de le demander le plus tard possible dans la procédure."
+          ]
+        },
+        {
+          "h2": "Et si la parcelle est reprise comme polluée ?",
+          "p": ["L’extrait le signale par une couleur. Des obligations d’investigation ou d’assainissement peuvent alors s’appliquer. Ce point se traite avec le notaire avant le compromis."]
+        }
+      ],
+      "faq": [
+        ["L’extrait BDES est-il nécessaire pour un appartement ?", "Oui : l’obligation porte sur la parcelle sur laquelle se trouve le bien vendu."],
+        ["Qui paie l’extrait ?", "Il fait partie des frais de délivrance, habituellement à charge du vendeur."]
+      ],
+      "sources": [
+        ["Wallonie — demander un extrait conforme de la BDES", "https://www.wallonie.be/fr/demarches/demander-un-extrait-conforme-de-la-banque-de-donnees-de-letat-des-sols-bdes"],
+        ["Environnement Wallonie — l’extrait conforme", "https://environnement.wallonie.be/home/milieux/sol/bdes/extrait-conforme.html"]
+      ]
+    },
+    {
+      "slug": "controle-electrique-vente",
+      "short": "Le contrôle électrique à la vente",
+      "teaser": "Obligatoire pour une habitation : qui le fait, et que se passe-t-il s’il est négatif.",
+      "title": "Contrôle électrique pour vendre une habitation | Martin Snauwaert",
+      "h1": "Le contrôle de l’installation électrique lors d’une vente",
+      "description": "Contrôle électrique obligatoire pour vendre une habitation : organisme agréé, procès-verbal valable 25 ans s’il est conforme, mise en conformité par l’acheteur sinon.",
+      "eyebrow": "Guide vendeur · électricité",
+      "intro": "Vendre une habitation suppose de faire contrôler son installation électrique. Un résultat négatif n’empêche pas la vente, mais il faut savoir ce qu’il implique.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-maison", "vendre-appartement"],
+      "sections": [
+        {
+          "h2": "Ce que prévoit la règle",
+          "p": ["Le vendeur fait contrôler l’installation par un organisme agréé et remet le procès-verbal à l’acheteur. L’acte notarié mentionne la date du procès-verbal et sa remise."]
+        },
+        {
+          "h2": "Si l’installation est conforme",
+          "p": ["Le procès-verbal est valable vingt-cinq ans, sauf modification importante de l’installation. Un procès-verbal conforme encore valide peut donc suffire."]
+        },
+        {
+          "h2": "Si elle ne l’est pas",
+          "p": [
+            "La vente peut avoir lieu. La mise en conformité revient à l’acheteur, dans le délai précisé sur le procès-verbal : en principe dix-huit mois à compter de la signature de l’acte.",
+            "L’acheteur informé d’une installation non conforme en tient compte dans son offre. Connaître le résultat avant la mise en vente permet de l’anticiper."
+          ]
+        },
+        {
+          "h2": "Les cas de dispense",
+          "p": ["Si l’acheteur démolit le bâtiment ou rénove entièrement l’installation, le contrôle n’est pas requis ; cela se prévoit dans l’acte."]
+        }
+      ],
+      "faq": [
+        ["Dois-je faire les travaux avant de vendre ?", "Non, ce n’est pas une obligation. Certains vendeurs le font pour rassurer ; cela se décide au cas par cas."],
+        ["Le contrôle concerne-t-il un terrain ou un garage seul ?", "Il concerne les unités d’habitation."]
+      ],
+      "sources": [
+        ["Notaire.be — documents à prévoir pour le vendeur", "https://www.notaire.be/immobilier/comment-acheter-ou-vendre-un-bien/checklist-des-documents-a-prevoir-pour-le-vendeur"]
+      ]
+    },
+    {
+      "slug": "vendre-appartement-copropriete",
+      "short": "Vendre en copropriété",
+      "teaser": "Les informations à demander au syndic avant le compromis.",
+      "title": "Vendre un appartement en copropriété : documents du syndic",
+      "h1": "Vendre un appartement : les informations à demander au syndic",
+      "description": "Fonds de réserve, arriérés, procès-verbaux d’assemblée générale, décomptes de charges : les informations de copropriété à transmettre à l’acheteur d’un appartement.",
+      "eyebrow": "Guide vendeur · copropriété",
+      "intro": "L’acheteur d’un appartement achète aussi une part de l’immeuble. La loi prévoit qu’il reçoive, avant de signer, les informations qui lui permettent d’en mesurer les charges.",
+      "updatedOn": "2026-11-20",
+      "related": ["vendre-appartement"],
+      "sections": [
+        {
+          "h2": "Avant le compromis",
+          "p": ["Le Code civil prévoit la transmission à l’acheteur des informations suivantes, fournies par le syndic :"],
+          "list": [
+            "Le montant du fonds de roulement et du fonds de réserve.",
+            "Le montant des arriérés éventuels dus par le vendeur.",
+            "La situation des appels de fonds destinés au fonds de réserve.",
+            "Le relevé des procédures judiciaires en cours relatives à la copropriété.",
+            "Les procès-verbaux des assemblées générales des trois dernières années et les décomptes de charges des deux dernières années.",
+            "Le dernier bilan approuvé par l’assemblée générale."
+          ]
+        },
+        {
+          "h2": "Avant l’acte",
+          "p": ["Le notaire interroge à nouveau le syndic sur les dépenses et appels de fonds décidés avant la vente, pour répartir les charges entre vendeur et acheteur."]
+        },
+        {
+          "h2": "Ce que cela change pour le prix",
+          "p": ["Des travaux importants votés ou annoncés, ou un fonds de réserve faible, pèsent sur l’offre d’un acheteur. Mieux vaut les connaître au moment de l’estimation."]
+        }
+      ],
+      "faq": [
+        ["Qui demande ces documents ?", "Le vendeur, l’agent immobilier ou le notaire. C’est le syndic qui les fournit."],
+        ["Et s’il n’y a pas de syndic ?", "Dans une petite copropriété sans syndic, les informations sont réunies par les copropriétaires. Le notaire précise ce qui est attendu."]
+      ],
+      "sources": [
+        ["Notaire.be — documents à prévoir pour le vendeur", "https://www.notaire.be/immobilier/comment-acheter-ou-vendre-un-bien/checklist-des-documents-a-prevoir-pour-le-vendeur"]
+      ]
+    }
+  ]
+}

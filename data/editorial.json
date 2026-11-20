@@ -1,0 +1,8 @@
+{
+  "about": "Validation éditoriale des pages générées. Une page n’est proposée aux moteurs que si elle est complète (contrôle automatique), approuvée ici, et que le site est en mode live. approvedFamilies : service, guide, guide-index, commune, locality, service-commune, service-locality. heldRoutes retire une page précise.",
+  "reviewedBy": "",
+  "reviewedOn": "",
+  "approvedFamilies": [],
+  "approvedRoutes": [],
+  "heldRoutes": []
+}

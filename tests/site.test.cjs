@@ -24,7 +24,7 @@ test("preview is not indexable and exported pages have titles and local assets",
     "index.html",
     "estimation/index.html",
     "preparer-ma-vente/index.html",
-    "vendre-beaumont-barbencon/index.html",
+
   ]) {
     assert.ok(read(f).includes("noindex,nofollow"));
     assert.ok(read(f).includes("<title>"));

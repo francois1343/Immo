@@ -6,18 +6,24 @@
     <meta name="theme-color" content="#00314a" />
     <meta name="robots" content="noindex,nofollow" />
     <title>
-      Votre projet immobilier à Beaumont et Barbençon | Martin Snauwaert
+      Agent immobilier à Beaumont et Barbençon : estimation et vente | Martin Snauwaert
     </title>
     <meta
       name="description"
-      content="Martin Snauwaert, Connexion Immo : préparer votre projet de vente à Beaumont, Barbençon et dans les environs."
+      content="Martin Snauwaert, agent immobilier agréé IPI à Barbençon : estimation, préparation et vente de votre bien à Beaumont, Thuin, Chimay, Walcourt et environs."
     />
-    <meta
-      name="description"
-      content="Préparez votre projet immobilier avec Martin Snauwaert, Connexion Immo, à Beaumont, Barbençon et dans les environs."
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/ms-960.webp"
+      imagesrcset="/assets/ms-560.webp 560w, /assets/ms-960.webp 960w"
+      imagesizes="(max-width: 760px) 100vw, 480px"
+      fetchpriority="high"
     />
     <link rel="icon" href="/assets/favicon-32.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/fonts.css" />
     <link rel="stylesheet" href="/site.css" />
     <link rel="stylesheet" href="/footer.css" />
     <script src="/site.js" defer></script>
@@ -37,16 +43,19 @@
             alt="Connexion Immo"
           /><span>Martin<br />Snauwaert</span></a
         >
-        <nav aria-label="Navigation principale">
-          <a href="/preparer-ma-vente/">Préparer ma vente</a
-          ><a href="/secteurs/">Secteurs</a
-          ><a href="/estimation/" class="nav-estimate">Votre projet ↗</a>
-        </nav>
+        <!-- gen:nav --><nav aria-label="Navigation principale">
+          <a href="/estimation-immobiliere/">Estimation</a>
+          <a href="/preparer-ma-vente/">Préparer<span class="nav-long"> ma vente</span></a>
+          <a href="/secteurs/">Secteurs</a>
+          <a href="/guides/">Guides</a>
+          <a href="https://connexionimmo.be/fr/nos-biens/" rel="noopener noreferrer" target="_blank" class="nav-external">Nos biens <span aria-hidden="true">↗</span><span class="visually-hidden"> (catalogue Connexion Immo, nouvel onglet)</span></a>
+          <a href="/estimation/" class="nav-estimate">Votre projet <span aria-hidden="true">↗</span></a>
+        </nav><!-- /gen:nav -->
       </header>
       <main id="main">
         <section class="hero">
           <div>
-            <p class="hero-person">Martin Snauwaert · Connexion Immo</p><p class="eyebrow">Immobilier de proximité · Botte du Hainaut</p>
+            <p class="hero-person">Martin Snauwaert · Connexion Immo</p><p class="eyebrow">Estimation et vente · Thudinie et Botte du Hainaut</p>
             <h1>
               Votre prochain chapitre<br />commence
               <span class="serif">ici.</span>
@@ -68,12 +77,21 @@
             </p>
           </div>
           <div class="portrait">
-            <img
-              src="/assets/ms.jpg"
-              width="1000"
-              height="776"
-              alt="Martin Snauwaert, votre interlocuteur immobilier"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="/assets/ms-560.webp 560w, /assets/ms-960.webp 960w"
+                sizes="(max-width: 760px) 100vw, 480px"
+              />
+              <img
+                src="/assets/ms.jpg"
+                width="1000"
+                height="776"
+                fetchpriority="high"
+                decoding="async"
+                alt="Martin Snauwaert, votre interlocuteur immobilier"
+              />
+            </picture>
             <div class="portrait-caption">
               <div>
                 <strong>Martin Snauwaert</strong
@@ -133,6 +151,73 @@
             </article>
           </div>
         </section>
+        <section class="section why" aria-labelledby="why-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Pourquoi faire appel à Martin ?</p>
+              <h2 id="why-title">Un agent du coin, un cadre professionnel.</h2>
+            </div>
+            <p class="quiet">Quatre raisons, toutes vérifiables.</p>
+          </div>
+          <ul class="features">
+            <li>
+              <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.6-3.6 3.4-5.5 7-5.5s6.400 1.900 7 5.500" /></svg>
+              <h3>Un seul interlocuteur</h3>
+              <p>Du premier échange à la signature de l’acte, vous parlez à la même personne.</p>
+            </li>
+            <li>
+              <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.500-5.600-6.500-10.500a6.500 6.500 0 0 1 13 0C18.500 15.400 12 21 12 21Z" /><circle cx="12" cy="10.500" r="2.300" /></svg>
+              <h3>Installé à Barbençon</h3>
+              <p>Martin travaille depuis l’entité de Beaumont et se déplace chez vous, dans les communes voisines.</p>
+            </li>
+            <li>
+              <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.500 5 6v5.500c0 4.300 2.900 7.400 7 9 4.100-1.600 7-4.700 7-9V6l-7-2.500Z" /><path d="m9 12 2.200 2.200L15.200 10" /></svg>
+              <h3>Agent agréé IPI</h3>
+              <p>Une profession réglementée, un code de déontologie et un numéro d’agrément vérifiable : 513.699.</p>
+            </li>
+            <li>
+              <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.500 12 4l9 7.500M5.500 10v9.500h13V10M10 19.500v-5h4v5" /></svg>
+              <h3>Le réseau Connexion Immo</h3>
+              <p>Membre du réseau, Martin s’appuie sur son catalogue de biens et sur ses outils.</p>
+            </li>
+          </ul>
+          <p class="section-more"><a href="/agent-immobilier/">Qui est Martin Snauwaert ↗</a></p>
+        </section>
+        <section class="section journey" aria-labelledby="journey-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Votre projet, étape par étape</p>
+              <h2 id="journey-title">De l’estimation à l’acte.</h2>
+            </div>
+            <p class="quiet">Un ordre simple, un calendrier qui reste le vôtre.</p>
+          </div>
+          <ol class="journey-steps">
+            <li>
+              <span class="journey-n" aria-hidden="true">1</span>
+              <h3>Estimer</h3>
+              <p>Une visite, puis un avis de valeur argumenté.</p>
+              <a href="/estimation-immobiliere/">L’estimation ↗</a>
+            </li>
+            <li>
+              <span class="journey-n" aria-hidden="true">2</span>
+              <h3>Préparer</h3>
+              <p>Documents obligatoires et présentation du bien.</p>
+              <a href="/guides/documents-vente-wallonie/">Les documents ↗</a>
+            </li>
+            <li>
+              <span class="journey-n" aria-hidden="true">3</span>
+              <h3>Commercialiser</h3>
+              <p>Annonce fidèle, diffusion et visites accompagnées.</p>
+              <a href="/vendre-maison/">La vente ↗</a>
+            </li>
+            <li>
+              <span class="journey-n" aria-hidden="true">4</span>
+              <h3>Accompagner</h3>
+              <p>Offres, compromis et suivi jusqu’au notaire.</p>
+              <a href="/guides/etapes-vente-immobiliere/">Les étapes ↗</a>
+            </li>
+          </ol>
+        </section>
         <section class="section zones">
           <div class="section-head">
             <div>
@@ -145,19 +230,19 @@
             </p>
           </div>
           <!-- gen:zones-compact --><ul class="zone-chips">
-            <li><a href="/secteurs/#beaumont" class="zone-anchor">Beaumont</a></li>
-            <li><a href="/secteurs/#froidchapelle">Froidchapelle</a></li>
-            <li><a href="/secteurs/#sivry-rance">Sivry-Rance</a></li>
-            <li><a href="/secteurs/#chimay">Chimay</a></li>
-            <li><a href="/secteurs/#thuin">Thuin</a></li>
-            <li><a href="/secteurs/#ham-sur-heure-nalinnes">Ham-sur-Heure-Nalinnes</a></li>
-            <li><a href="/secteurs/#walcourt">Walcourt</a></li>
-            <li><a href="/secteurs/#cerfontaine">Cerfontaine</a></li>
-            <li><a href="/secteurs/#philippeville">Philippeville</a></li>
-            <li><a href="/secteurs/#couvin">Villages de Couvin</a></li>
-            <li><a href="/secteurs/#merbes-le-chateau">Merbes-le-Château</a></li>
-            <li><a href="/secteurs/#erquelinnes">Villages d’Erquelinnes</a></li>
-            <li><a href="/secteurs/#montigny-le-tilleul">Montigny-le-Tilleul</a></li>
+            <li><a href="/secteurs/beaumont/" class="zone-anchor">Beaumont</a></li>
+            <li><a href="/secteurs/froidchapelle/">Froidchapelle</a></li>
+            <li><a href="/secteurs/sivry-rance/">Sivry-Rance</a></li>
+            <li><a href="/secteurs/chimay/">Chimay</a></li>
+            <li><a href="/secteurs/thuin/">Thuin</a></li>
+            <li><a href="/secteurs/ham-sur-heure-nalinnes/">Ham-sur-Heure-Nalinnes</a></li>
+            <li><a href="/secteurs/walcourt/">Walcourt</a></li>
+            <li><a href="/secteurs/cerfontaine/">Cerfontaine</a></li>
+            <li><a href="/secteurs/philippeville/">Philippeville</a></li>
+            <li><a href="/secteurs/couvin/">Villages de Couvin</a></li>
+            <li><a href="/secteurs/merbes-le-chateau/">Merbes-le-Château</a></li>
+            <li><a href="/secteurs/erquelinnes/">Villages d’Erquelinnes</a></li>
+            <li><a href="/secteurs/montigny-le-tilleul/">Montigny-le-Tilleul</a></li>
           </ul><!-- /gen:zones-compact -->
           <p class="zones-note">
             <a href="/secteurs/">Voir les villages par secteur ↗</a>
@@ -166,13 +251,79 @@
               limite.</span>
           </p>
         </section>
+        <section class="section catalogue" aria-labelledby="catalogue-title">
+          <div class="band">
+            <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6" /><path d="m15 15 5.500 5.500" /></svg>
+            <div>
+              <h2 id="catalogue-title">Vous cherchez un bien ?</h2>
+              <p>Maisons, appartements et terrains à vendre ou à louer : le catalogue officiel du réseau Connexion Immo est tenu à jour par les agences.</p>
+            </div>
+            <a class="button secondary" href="https://connexionimmo.be/fr/nos-biens/" rel="noopener noreferrer" target="_blank">Nos biens <span aria-hidden="true">↗</span><span class="visually-hidden"> (catalogue Connexion Immo, nouvel onglet)</span></a>
+          </div>
+        </section>
+        <section class="section" aria-labelledby="reviews-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Avis clients</p>
+              <h2 id="reviews-title">Ce sont eux qui en parlent le mieux.</h2>
+            </div>
+          </div>
+          <!-- gen:reviews --><div class="reviews">
+            <div class="reviews-lead">
+              
+              <p>Les avis des clients de Martin sont publiés sur sa fiche Google : ils y sont vérifiables, datés et signés. Nous préférons vous y renvoyer plutôt que d’en choisir quelques-uns.</p>
+              <a class="button secondary" href="https://share.google/4TvEzckmnbouuSShr" rel="noopener noreferrer" target="_blank">Voir nos avis <span aria-hidden="true">↗</span><span class="visually-hidden"> sur Google (nouvel onglet)</span></a>
+            </div>
+            
+          </div><!-- /gen:reviews -->
+        </section>
+        <section class="section home-faq" aria-labelledby="faq-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Questions fréquentes</p>
+              <h2 id="faq-title">Avant de vous lancer.</h2>
+            </div>
+            <p class="quiet">
+              <a href="/guides/">Tous les guides vendeurs ↗</a>
+            </p>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Comment se passe une estimation ?</summary>
+              <p>Martin visite le bien avec vous, vérifie sa situation urbanistique et le compare au marché local, puis vous remet un avis de valeur argumenté. Ce n’est pas une expertise, et cela ne vous engage pas à vendre. <a href="/estimation-immobiliere/">Le déroulement en détail</a>.</p>
+            </details>
+            <details>
+              <summary>Quels documents faut-il pour vendre en Wallonie ?</summary>
+              <p>Notamment le certificat PEB, le procès-verbal de contrôle de l’installation électrique, l’extrait conforme de la BDES et les renseignements urbanistiques de la commune. <a href="/guides/documents-vente-wallonie/">La liste, document par document</a>.</p>
+            </details>
+            <details>
+              <summary>Par quoi commence une vente ?</summary>
+              <p>Par une estimation et un point sur les documents. Viennent ensuite la mise en vente, les visites, l’offre, le compromis puis l’acte chez le notaire. <a href="/guides/etapes-vente-immobiliere/">Les étapes d’une vente</a>.</p>
+            </details>
+            <details>
+              <summary>Combien de temps faut-il pour vendre ?</summary>
+              <p>La durée de mise en vente dépend du bien, de son prix et du marché : personne ne peut la garantir. Entre le compromis et l’acte, il faut compter jusqu’à quatre mois, le temps des recherches du notaire.</p>
+            </details>
+            <details>
+              <summary>Que fait Martin pendant la vente ?</summary>
+              <p>Il prépare l’annonce, organise et conduit les visites, vous fait un retour après chacune, analyse les offres avec vous et suit le dossier jusqu’à la signature de l’acte.</p>
+            </details>
+            <details>
+              <summary>Comment prendre rendez-vous ?</summary>
+              <p>Par le <a href="/estimation/">formulaire</a>, en moins d’une minute, ou par téléphone au <a href="tel:+32493057184">0493 05 71 84</a>. Martin est installé à Barbençon et se déplace chez vous.</p>
+            </details>
+          </div>
+        </section>
         <section class="section">
           <div class="callout">
             <div>
-              <h2>Une question avant de commencer ?</h2>
-              <p class="intro">Vous pouvez aussi appeler Martin directement.</p>
+              <h2>Parlons de votre bien.</h2>
+              <p class="intro">Un premier échange, sans document à préparer et sans engagement de vendre.</p>
             </div>
-            <a class="button" href="tel:+32493057184">0493 05 71 84 ↗</a>
+            <div class="callout-actions">
+              <a class="button" href="/estimation/">Demander une estimation <span aria-hidden="true">↗</span></a>
+              <a class="button ghost" href="tel:+32493057184">0493 05 71 84</a>
+            </div>
           </div>
         </section>
       </main>
@@ -188,6 +339,9 @@
           <a href="/mentions-legales.html">Mentions légales</a>
           <a href="/politique-confidentialite.html">Vos données</a>
           <a href="/secteurs/">Secteurs couverts</a>
+          <a href="/guides/">Guides vendeurs</a>
+          <a href="/plan-du-site/">Plan du site</a>
+          <a href="https://connexionimmo.be/fr/nos-biens/" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
         </nav>
       </footer><!-- /gen:footer -->

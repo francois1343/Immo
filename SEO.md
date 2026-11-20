@@ -1,13 +1,55 @@
-# Préparation SEO — 12 novembre 2026
+# SEO local — état au 20 novembre 2026
 
-Le site reste un aperçu de travail `noindex,nofollow`, également protégé par l'en-tête Vercel `X-Robots-Tag` et un `robots.txt` restrictif. L'hébergement en ligne ne signifie pas une validation commerciale ou juridique.
+Le site reste un **aperçu non indexable** : `noindex,nofollow` sur chaque page, en-tête Vercel `X-Robots-Tag`, `robots.txt` fermé, sitemap vide. Rien n'est soumis aux moteurs.
 
-Le build génère des URL canoniques absolues, descriptions et métadonnées de partage pour les huit pages HTML autorisées. Les anciennes pages `Back/estimation.html` et `Back/formulaire.html` pointent vers `/estimation/` comme version canonique. Un sitemap XML valide mais vide est publié : **zéro page annoncée comme indexable**.
+## Pages générées
 
-`seo.config.json` centralise l'origine canonique et cinq points de contrôle non validés : identité professionnelle, droits marque/photos, confidentialité/conservation, essai réel du parcours mobile et adéquation de l'hébergement commercial. Mettre un booléen à `true` ne suffit pas à publier : le script refuse tout mode autre que `preview`. Une prochaine livraison devra modifier ensemble HTML, en-têtes, robots et sitemap après vérification des éléments réels.
+`npm run build` produit les pages locales dans `public-dist` à partir de `data/` ; aucun fichier HTML n'est entretenu à la main.
 
-Pas de fausse fiche d'entreprise JSON-LD, note client, résultat d'estimation, adresse d'agence ou promesse de référencement ajouté. Les textes restent relisibles et le formulaire prépare seulement un e-mail.
+| Source | Rôle |
+|---|---|
+| `data/zones.json` | Communes, villages ciblés, exclusions (géographie validée) |
+| `data/services.json` | Prestations : page principale et déclinaisons locales |
+| `data/guides.json` | Guides vendeurs, avec leurs sources officielles |
+| `data/local.json` | Repères locaux, chacun avec l'adresse de sa source |
+| `data/editorial.json` | Validation éditoriale : familles ou pages approuvées, pages retenues |
+| `data/reviews.json` | Lien vers les avis ; note et citations seulement si relevées et autorisées |
 
-Source technique : [Google Search Central — URL canoniques](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
+Familles de routes : `/{prestation}/`, `/secteurs/{commune}/`, `/secteurs/{commune}/{village}/`, `/{prestation}/{commune}/`, `/{prestation}/{commune}/{village}/` (estimation et vente de maison), `/guides/{guide}/`, plus `/plan-du-site/` et `404.html`.
 
-Validation : `npm test`, puis `npm run build`. Contrôler les URL générées sous `public-dist`, les anciennes routes et l'absence de fuite de fichiers de travail.
+Un village qui porte le nom de sa commune n'a pas de page propre. Un centre exclu (Couvin, Erquelinnes) n'a ni page ni mention « à … ». Aucune page n'attribue à Martin un bureau ailleurs qu'à Barbençon.
+
+## Contrôle qualité
+
+`scripts/pages/quality.cjs` classe chaque page :
+
+- `complete` : texte suffisant, assez de repères locaux sourcés qui lui sont propres, pas de quasi-copie d'une page de la même famille (similarité mesurée sur des suites de quatre mots) ;
+- `to-review` : tout le reste. Une page à revoir n'est jamais proposée aux moteurs.
+
+Une page n'est indexable que si elle est `complete`, **approuvée** dans `data/editorial.json`, et que le site est en mode `live`. Titre, H1, description ou adresse en double, lien interne cassé, image sans texte alternatif : le build échoue.
+
+Rapports écrits dans `reports/` (hors dépôt, hors export) : `pages.csv` et `pages.json` (une ligne par page : statut, score, mots, repères, similarité, liens entrants, points à traiter), `summary.json`, `indexnow-urls.txt`.
+
+## Passage en mode live
+
+Un seul changement relu, dans le même commit :
+
+1. `seo.config.json` : `origin` définitive, `mode: "live"`, chaque entrée de `publicationChecks` à `true` ;
+2. `vercel.json` : retrait de l'en-tête `X-Robots-Tag` ;
+3. `data/editorial.json` : familles ou pages approuvées, avec relecteur et date.
+
+Le build refuse le mode `live` tant qu'une validation manque ou que l'en-tête est présent. Il écrit alors le sitemap (pages indexables seulement), un `robots.txt` ouvert et retire le bandeau d'aperçu.
+
+## Données structurées
+
+`RealEstateAgent` (accueil et page « Agent immobilier ») avec les seules valeurs `verified` de `data/professional.json`, et `BreadcrumbList` sur les pages générées. Ni note, ni avis, ni horaires. Pas de `FAQPage` : Google n'affiche plus ce résultat enrichi.
+
+## IndexNow et Search Console
+
+`npm run indexnow` liste ce qui serait envoyé et n'envoie rien. `-- --send` n'envoie que si le site est en mode live, sur un domaine qui n'est pas `*.vercel.app`, avec une clé configurée dont le fichier répond en ligne. IndexNow sert Bing et les moteurs participants. Google passe par Search Console, le sitemap et l'exploration normale ; l'API Indexing de Google ne concerne pas ces pages.
+
+## Mise à jour des données locales
+
+Population et prix : Statbel (annuel). Avant chaque mise à jour, vérifier aussi le statut de l'obligation amiante en Wallonie et les textes cités dans les guides.
+
+Validation : `npm test`, puis `npm run build`.

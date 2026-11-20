@@ -12,6 +12,7 @@
     />
     <link rel="icon" href="/assets/favicon-32.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/fonts.css" />
     <link rel="stylesheet" href="/site.css" />
     <link rel="stylesheet" href="/footer.css" />
     <script src="/site.js" defer></script>
@@ -31,11 +32,14 @@
             alt="Connexion Immo"
           /><span>Martin<br />Snauwaert</span></a
         >
-        <nav aria-label="Navigation principale">
-          <a href="/preparer-ma-vente/">Préparer ma vente</a
-          ><a href="/secteurs/" aria-current="page">Secteurs</a
-          ><a href="/estimation/" class="nav-estimate">Votre projet ↗</a>
-        </nav>
+        <!-- gen:nav --><nav aria-label="Navigation principale">
+          <a href="/estimation-immobiliere/">Estimation</a>
+          <a href="/preparer-ma-vente/">Préparer<span class="nav-long"> ma vente</span></a>
+          <a href="/secteurs/" aria-current="page">Secteurs</a>
+          <a href="/guides/">Guides</a>
+          <a href="https://connexionimmo.be/fr/nos-biens/" rel="noopener noreferrer" target="_blank" class="nav-external">Nos biens <span aria-hidden="true">↗</span><span class="visually-hidden"> (catalogue Connexion Immo, nouvel onglet)</span></a>
+          <a href="/estimation/" class="nav-estimate">Votre projet <span aria-hidden="true">↗</span></a>
+        </nav><!-- /gen:nav -->
       </header>
       <main id="main">
         <section class="page-intro">
@@ -54,80 +58,93 @@
           <!-- gen:zones-detail --><article class="zone" id="beaumont">
             <h2>Beaumont</h2>
             <p class="zone-codes">Ancrage local · Hainaut · 6500 · 6511</p>
-            <p class="zone-places">Barbençon, Beaumont, Leugnies, Leval-Chaudeville, Renlies, Solre-Saint-Géry, Strée, Thirimont</p>
-            <a href="/estimation/?commune=Beaumont">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/beaumont/barbencon/">Barbençon</a>, <a href="/secteurs/beaumont/">Beaumont</a>, <a href="/secteurs/beaumont/leugnies/">Leugnies</a>, <a href="/secteurs/beaumont/leval-chaudeville/">Leval-Chaudeville</a>, <a href="/secteurs/beaumont/renlies/">Renlies</a>, <a href="/secteurs/beaumont/solre-saint-gery/">Solre-Saint-Géry</a>, <a href="/secteurs/beaumont/stree/">Strée</a>, <a href="/secteurs/beaumont/thirimont/">Thirimont</a></p>
+            <p class="zone-links"><a href="/secteurs/beaumont/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Beaumont">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="froidchapelle">
             <h2>Froidchapelle</h2>
             <p class="zone-codes">Hainaut · 6440 · 6441</p>
-            <p class="zone-places">Boussu-lez-Walcourt, Erpion, Fourbechies, Froidchapelle, Vergnies</p>
-            <a href="/estimation/?commune=Froidchapelle">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/froidchapelle/boussu-lez-walcourt/">Boussu-lez-Walcourt</a>, <a href="/secteurs/froidchapelle/erpion/">Erpion</a>, <a href="/secteurs/froidchapelle/fourbechies/">Fourbechies</a>, <a href="/secteurs/froidchapelle/">Froidchapelle</a>, <a href="/secteurs/froidchapelle/vergnies/">Vergnies</a></p>
+            <p class="zone-links"><a href="/secteurs/froidchapelle/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Froidchapelle">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="sivry-rance">
             <h2>Sivry-Rance</h2>
             <p class="zone-codes">Hainaut · 6470</p>
-            <p class="zone-places">Grandrieu, Montbliart, Rance, Sautin, Sivry</p>
-            <a href="/estimation/?commune=Sivry-Rance">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/sivry-rance/grandrieu/">Grandrieu</a>, <a href="/secteurs/sivry-rance/montbliart/">Montbliart</a>, <a href="/secteurs/sivry-rance/rance/">Rance</a>, <a href="/secteurs/sivry-rance/sautin/">Sautin</a>, <a href="/secteurs/sivry-rance/sivry/">Sivry</a></p>
+            <p class="zone-links"><a href="/secteurs/sivry-rance/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Sivry-Rance">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="chimay">
             <h2>Chimay</h2>
             <p class="zone-codes">Hainaut · 6460 · 6461 · 6462 · 6463 · 6464</p>
-            <p class="zone-places">Baileux, Bailièvre, Bourlers, Chimay, Forges, L’Escaillère, Lompret, Rièzes, Robechies, Saint-Remy, Salles, Vaulx-lez-Chimay, Villers-la-Tour, Virelles</p>
-            <a href="/estimation/?commune=Chimay">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/chimay/baileux/">Baileux</a>, <a href="/secteurs/chimay/bailievre/">Bailièvre</a>, <a href="/secteurs/chimay/bourlers/">Bourlers</a>, <a href="/secteurs/chimay/">Chimay</a>, <a href="/secteurs/chimay/forges/">Forges</a>, <a href="/secteurs/chimay/l-escaillere/">L’Escaillère</a>, <a href="/secteurs/chimay/lompret/">Lompret</a>, <a href="/secteurs/chimay/riezes/">Rièzes</a>, <a href="/secteurs/chimay/robechies/">Robechies</a>, <a href="/secteurs/chimay/saint-remy/">Saint-Remy</a>, <a href="/secteurs/chimay/salles/">Salles</a>, <a href="/secteurs/chimay/vaulx-lez-chimay/">Vaulx-lez-Chimay</a>, <a href="/secteurs/chimay/villers-la-tour/">Villers-la-Tour</a>, <a href="/secteurs/chimay/virelles/">Virelles</a></p>
+            <p class="zone-links"><a href="/secteurs/chimay/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Chimay">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="thuin">
             <h2>Thuin</h2>
             <p class="zone-codes">Hainaut · 6530 · 6531 · 6532 · 6533 · 6534 · 6536</p>
-            <p class="zone-places">Biercée, Biesme-sous-Thuin, Donstiennes, Gozée, Leers-et-Fosteau, Ragnies, Thuillies, Thuin</p>
-            <a href="/estimation/?commune=Thuin">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/thuin/biercee/">Biercée</a>, <a href="/secteurs/thuin/biesme-sous-thuin/">Biesme-sous-Thuin</a>, <a href="/secteurs/thuin/donstiennes/">Donstiennes</a>, <a href="/secteurs/thuin/gozee/">Gozée</a>, <a href="/secteurs/thuin/leers-et-fosteau/">Leers-et-Fosteau</a>, <a href="/secteurs/thuin/ragnies/">Ragnies</a>, <a href="/secteurs/thuin/thuillies/">Thuillies</a>, <a href="/secteurs/thuin/">Thuin</a></p>
+            <p class="zone-links"><a href="/secteurs/thuin/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Thuin">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="ham-sur-heure-nalinnes">
             <h2>Ham-sur-Heure-Nalinnes</h2>
             <p class="zone-codes">Hainaut · 6120</p>
-            <p class="zone-places">Beignée, Cour-sur-Heure, Ham-sur-Heure, Jamioulx, Marbaix-la-Tour, Nalinnes</p>
-            <a href="/estimation/?commune=Ham-sur-Heure-Nalinnes">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/ham-sur-heure-nalinnes/beignee/">Beignée</a>, <a href="/secteurs/ham-sur-heure-nalinnes/cour-sur-heure/">Cour-sur-Heure</a>, <a href="/secteurs/ham-sur-heure-nalinnes/ham-sur-heure/">Ham-sur-Heure</a>, <a href="/secteurs/ham-sur-heure-nalinnes/jamioulx/">Jamioulx</a>, <a href="/secteurs/ham-sur-heure-nalinnes/marbaix-la-tour/">Marbaix-la-Tour</a>, <a href="/secteurs/ham-sur-heure-nalinnes/nalinnes/">Nalinnes</a></p>
+            <p class="zone-links"><a href="/secteurs/ham-sur-heure-nalinnes/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Ham-sur-Heure-Nalinnes">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="walcourt">
             <h2>Walcourt</h2>
             <p class="zone-codes">Namur · 5650 · 5651</p>
-            <p class="zone-places">Berzée, Castillon, Chastrès, Clermont, Fontenelle, Fraire, Gourdinne, Laneffe, Pry, Rognée, Somzée, Tarcienne, Thy-le-Château, Vogenée, Walcourt, Yves-Gomezée</p>
-            <a href="/estimation/?commune=Walcourt">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/walcourt/berzee/">Berzée</a>, <a href="/secteurs/walcourt/castillon/">Castillon</a>, <a href="/secteurs/walcourt/chastres/">Chastrès</a>, <a href="/secteurs/walcourt/clermont/">Clermont</a>, <a href="/secteurs/walcourt/fontenelle/">Fontenelle</a>, <a href="/secteurs/walcourt/fraire/">Fraire</a>, <a href="/secteurs/walcourt/gourdinne/">Gourdinne</a>, <a href="/secteurs/walcourt/laneffe/">Laneffe</a>, <a href="/secteurs/walcourt/pry/">Pry</a>, <a href="/secteurs/walcourt/rognee/">Rognée</a>, <a href="/secteurs/walcourt/somzee/">Somzée</a>, <a href="/secteurs/walcourt/tarcienne/">Tarcienne</a>, <a href="/secteurs/walcourt/thy-le-chateau/">Thy-le-Château</a>, <a href="/secteurs/walcourt/vogenee/">Vogenée</a>, <a href="/secteurs/walcourt/">Walcourt</a>, <a href="/secteurs/walcourt/yves-gomezee/">Yves-Gomezée</a></p>
+            <p class="zone-links"><a href="/secteurs/walcourt/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Walcourt">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="cerfontaine">
             <h2>Cerfontaine</h2>
             <p class="zone-codes">Namur · 5630</p>
-            <p class="zone-places">Cerfontaine, Daussois, Senzeilles, Silenrieux, Soumoy, Villers-Deux-Églises</p>
-            <a href="/estimation/?commune=Cerfontaine">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/cerfontaine/">Cerfontaine</a>, <a href="/secteurs/cerfontaine/daussois/">Daussois</a>, <a href="/secteurs/cerfontaine/senzeilles/">Senzeilles</a>, <a href="/secteurs/cerfontaine/silenrieux/">Silenrieux</a>, <a href="/secteurs/cerfontaine/soumoy/">Soumoy</a>, <a href="/secteurs/cerfontaine/villers-deux-eglises/">Villers-Deux-Églises</a></p>
+            <p class="zone-links"><a href="/secteurs/cerfontaine/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Cerfontaine">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="philippeville">
             <h2>Philippeville</h2>
             <p class="zone-codes">Namur · 5600</p>
-            <p class="zone-places">Fagnolle, Franchimont, Jamagne, Jamiolle, Merlemont, Neuville, Omezée, Philippeville, Roly, Romedenne, Samart, Sart-en-Fagne, Sautour, Surice, Villers-en-Fagne, Villers-le-Gambon, Vodecée</p>
-            <a href="/estimation/?commune=Philippeville">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/philippeville/fagnolle/">Fagnolle</a>, <a href="/secteurs/philippeville/franchimont/">Franchimont</a>, <a href="/secteurs/philippeville/jamagne/">Jamagne</a>, <a href="/secteurs/philippeville/jamiolle/">Jamiolle</a>, <a href="/secteurs/philippeville/merlemont/">Merlemont</a>, <a href="/secteurs/philippeville/neuville/">Neuville</a>, <a href="/secteurs/philippeville/omezee/">Omezée</a>, <a href="/secteurs/philippeville/">Philippeville</a>, <a href="/secteurs/philippeville/roly/">Roly</a>, <a href="/secteurs/philippeville/romedenne/">Romedenne</a>, <a href="/secteurs/philippeville/samart/">Samart</a>, <a href="/secteurs/philippeville/sart-en-fagne/">Sart-en-Fagne</a>, <a href="/secteurs/philippeville/sautour/">Sautour</a>, <a href="/secteurs/philippeville/surice/">Surice</a>, <a href="/secteurs/philippeville/villers-en-fagne/">Villers-en-Fagne</a>, <a href="/secteurs/philippeville/villers-le-gambon/">Villers-le-Gambon</a>, <a href="/secteurs/philippeville/vodecee/">Vodecée</a></p>
+            <p class="zone-links"><a href="/secteurs/philippeville/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Philippeville">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="couvin">
             <h2>Villages de Couvin</h2>
             <p class="zone-codes">Namur · 5660</p>
-            <p class="zone-places">Aublain, Boussu-en-Fagne, Dailly, Mariembourg</p>
-            <a href="/estimation/">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/couvin/aublain/">Aublain</a>, <a href="/secteurs/couvin/boussu-en-fagne/">Boussu-en-Fagne</a>, <a href="/secteurs/couvin/dailly/">Dailly</a>, <a href="/secteurs/couvin/mariembourg/">Mariembourg</a></p>
+            <p class="zone-links"><a href="/secteurs/couvin/">Le secteur en détail ↗</a>
+            <a href="/estimation/">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="merbes-le-chateau">
             <h2>Merbes-le-Château</h2>
             <p class="zone-codes">Hainaut · 6567</p>
-            <p class="zone-places">Fontaine-Valmont, Labuissière, Merbes-le-Château, Merbes-Sainte-Marie</p>
-            <a href="/estimation/?commune=Merbes-le-Ch%C3%A2teau">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/merbes-le-chateau/fontaine-valmont/">Fontaine-Valmont</a>, <a href="/secteurs/merbes-le-chateau/labuissiere/">Labuissière</a>, <a href="/secteurs/merbes-le-chateau/">Merbes-le-Château</a>, <a href="/secteurs/merbes-le-chateau/merbes-sainte-marie/">Merbes-Sainte-Marie</a></p>
+            <p class="zone-links"><a href="/secteurs/merbes-le-chateau/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Merbes-le-Ch%C3%A2teau">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="erquelinnes">
             <h2>Villages d’Erquelinnes</h2>
             <p class="zone-codes">Hainaut · 6560</p>
-            <p class="zone-places">Bersillies-l’Abbaye, Hantes-Wihéries, Montignies-Saint-Christophe, Solre-sur-Sambre</p>
-            <a href="/estimation/">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/erquelinnes/bersillies-l-abbaye/">Bersillies-l’Abbaye</a>, <a href="/secteurs/erquelinnes/hantes-wiheries/">Hantes-Wihéries</a>, <a href="/secteurs/erquelinnes/montignies-saint-christophe/">Montignies-Saint-Christophe</a>, <a href="/secteurs/erquelinnes/solre-sur-sambre/">Solre-sur-Sambre</a></p>
+            <p class="zone-links"><a href="/secteurs/erquelinnes/">Le secteur en détail ↗</a>
+            <a href="/estimation/">Parler d’un bien dans ce secteur ↗</a></p>
           </article>
           <article class="zone" id="montigny-le-tilleul">
             <h2>Montigny-le-Tilleul</h2>
             <p class="zone-codes">Hainaut · 6110 · 6111</p>
-            <p class="zone-places">Landelies, Montigny-le-Tilleul</p>
-            <a href="/estimation/?commune=Montigny-le-Tilleul">Parler d’un bien dans ce secteur ↗</a>
+            <p class="zone-places"><a href="/secteurs/montigny-le-tilleul/landelies/">Landelies</a>, <a href="/secteurs/montigny-le-tilleul/">Montigny-le-Tilleul</a></p>
+            <p class="zone-links"><a href="/secteurs/montigny-le-tilleul/">Le secteur en détail ↗</a>
+            <a href="/estimation/?commune=Montigny-le-Tilleul">Parler d’un bien dans ce secteur ↗</a></p>
           </article><!-- /gen:zones-detail -->
         </section>
         <section class="content">
@@ -139,9 +156,7 @@
           </p>
           <div class="actions">
             <a href="/estimation/" class="button">Parler de mon projet ↗</a>
-            <a href="/vendre-beaumont-barbencon/" class="button secondary"
-              >Vendre à Beaumont ou Barbençon</a
-            >
+            <a href="/estimation-immobiliere/" class="button secondary">Comment se passe une estimation</a>
           </div>
         </section>
       </main>
@@ -157,6 +172,9 @@
           <a href="/mentions-legales.html">Mentions légales</a>
           <a href="/politique-confidentialite.html">Vos données</a>
           <a href="/secteurs/">Secteurs couverts</a>
+          <a href="/guides/">Guides vendeurs</a>
+          <a href="/plan-du-site/">Plan du site</a>
+          <a href="https://connexionimmo.be/fr/nos-biens/" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
         </nav>
       </footer><!-- /gen:footer -->

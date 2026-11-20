@@ -77,7 +77,7 @@ test("every page carries the generated blocks and is in sync with the data", () 
     assert.ok(html.includes("<!-- gen:footer -->"), page);
     assert.equal((html.match(/<footer/g) || []).length, 1, page);
     assert.ok(/href="\/?footer\.css"/.test(html), page);
-    assert.equal(P.apply(html, rendered), html, `${page} : lancer npm run sync`);
+    assert.equal(P.apply(html, rendered, page), html, `${page} : lancer npm run sync`);
   }
 });
 
