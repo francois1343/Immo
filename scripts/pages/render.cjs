@@ -173,7 +173,7 @@ const presence = (c, l) =>
 
 /* ── Service pages ─────────────────────────────────────────────────── */
 function serviceHub(ctx, s) {
-  const links = ctx.communes.map((c) => [`/${s.slug}/${c.id}/`, P.publicName(c), c.province]);
+  const links = ctx.communes.map((c) => [ctx.has(`/${s.slug}/${c.id}/`) ? `/${s.slug}/${c.id}/` : P.communeRoute(c), P.publicName(c), c.province]);
   const others = ctx.data.services.filter((x) => x.id !== s.id).map((x) => [`/${x.slug}/`, x.label]);
   const guides = ctx.data.guides.filter((g) => (g.related || []).includes(s.id)).map((g) => [`/guides/${g.slug}/`, g.short || g.h1]);
   return `${intro({ eyebrow: s.hub.eyebrow, h1: s.hub.h1, lead: s.hub.intro })}
@@ -199,19 +199,12 @@ function angle(ctx, s, c, l, src) {
   const here = l ? "à " + l.name : c.publicLabel ? "dans ces villages" : "à " + c.commune;
   const loc = l ? k.locality(l.name) : null;
   const stations = l ? k.stations.filter((x) => P.key(x.locality || "") === P.key(l.name)) : k.stations;
-  const landmarks = l ? k.landmarks.filter((x) => P.key(x.locality || "") === P.key(l.name)) : k.landmarks;
   let facts = 0;
   const station = () => {
     if (!stations.length) return;
     stations.forEach((x) => src.add(x.source, "Gares"));
     facts++;
     return stations.map((x) => esc(x.name)).join(", ");
-  };
-  const marks = () => {
-    if (!landmarks.length) return;
-    landmarks.forEach((x) => src.add(x.source, "Repères locaux"));
-    facts += landmarks.length;
-    return landmarks.map((x) => esc(x.text)).join(" ; ");
   };
   if (loc && loc.note) {
     items.push(`<strong>${esc(l.name)}</strong> : ${esc(loc.note)}.`);
@@ -229,17 +222,13 @@ function angle(ctx, s, c, l, src) {
     if (l) items.push(`L’adresse précise ${here} : rue, voisinage, accès et environnement immédiat.`);
     const st = station();
     if (st) items.push(`La proximité d’une gare SNCB (${st}), relevée parmi les éléments de situation.`);
-    const mk = marks();
-    if (mk) items.push(`L’environnement proche, lorsqu’il concerne le bien : ${mk}.`);
     items.push(`La situation urbanistique, vérifiée auprès du ${urb}.`);
     items.push("L’état du bien, ses surfaces, son certificat PEB et les travaux à prévoir, constatés lors de la visite.");
   } else if (s.id === "vendre-maison") {
     items.push(`Les renseignements urbanistiques se demandent au ${urb}.`);
     items.push("Le certificat PEB, le procès-verbal de contrôle électrique et l’extrait conforme de la BDES se préparent avant la mise en vente : ce sont des obligations wallonnes, identiques dans toutes les communes.");
     const st = station();
-    const mk = marks();
-    if (st || mk)
-      items.push(`Ce qu’une annonce peut mentionner lorsque c’est exact pour votre maison : ${[st && "la gare SNCB (" + st + ")", mk].filter(Boolean).join(" ; ")}.`);
+    if (st) items.push(`La proximité d’une gare SNCB (${st}) peut figurer dans l’annonce lorsqu’elle est exacte pour votre maison.`);
     items.push(`La maison est présentée dans le <a href="${P.CATALOGUE_URL}" rel="noopener noreferrer" target="_blank">catalogue du réseau Connexion Immo <span aria-hidden="true">↗</span></a>.`);
   } else if (s.id === "vendre-terrain") {
     items.push(`L’affectation du terrain au plan de secteur se consulte sur ${ext(GEOPORTAL, "WalOnMap, le géoportail de la Wallonie")}.`);
@@ -264,13 +253,13 @@ function angle(ctx, s, c, l, src) {
 function localFaq(ctx, s, c, l) {
   const L = ctx.data.local.communes[c.id] || {};
   const place = l ? ctx.placeOfLocality(l) : ctx.placeOfCommune(c);
-  const rows = [[`Martin a-t-il un bureau ${place.a} ?`, esc(l && P.key(l.name) === "barbençon" ? "Martin est installé à Barbençon et reçoit sur rendez-vous." : c.anchor && !l ? "Martin est installé à Barbençon, dans l’entité de Beaumont, et reçoit sur rendez-vous." : "Non. Martin est installé à Barbençon (Beaumont). Il se déplace chez vous sur rendez-vous : la visite du bien est le point de départ.")]];
+  const rows = [[`Martin a-t-il un bureau ${place.a} ?`, esc(l && P.key(l.name) === "barbençon" ? "Martin est installé à Barbençon et travaille sur rendez-vous." : c.anchor && !l ? "Martin est installé à Barbençon, dans l’entité de Beaumont, et travaille sur rendez-vous." : "Non. Martin est installé à Barbençon (Beaumont). Il se déplace chez vous sur rendez-vous : la visite du bien est le point de départ.")]];
   if (l)
     rows.push([`À quelle commune appartient ${l.name} ?`, esc(`${l.name} fait partie de la commune ${ctx.de(c.commune)} (province ${c.province === "Hainaut" ? "de Hainaut" : "de Namur"}), code postal ${l.postalCode}${l.postalName ? `, libellé postal « ${l.postalName} »` : ""}. Les démarches d’urbanisme se font auprès de cette commune.`)]);
   if (L.adminAddress)
     rows.push([`Où demander les renseignements urbanistiques pour un bien ${place.a} ?`, esc(`À l’administration communale ${ctx.de(c.commune)}, ${L.adminAddress}. En pratique, le notaire ou l’agent immobilier s’en charge.`)]);
   if (!l && P.targetedLocalities(c).length > 1)
-    rows.push([`Quels villages sont couverts ${place.a === "à " + c.commune ? "dans la commune " + ctx.de(c.commune) : place.a} ?`, esc(P.targetedLocalities(c).map((x) => x.name).join(", ") + ".")]);
+    rows.push([c.publicLabel ? `Quels villages de la commune ${ctx.de(c.commune)} sont couverts ?` : `Quels villages sont couverts dans la commune ${ctx.de(c.commune)} ?`, esc(P.targetedLocalities(c).map((x) => x.name).join(", ") + ".")]);
   return rows;
 }
 
@@ -281,11 +270,11 @@ function serviceCommune(ctx, s, c) {
   const a = angle(ctx, s, c, null, src);
   const fr = factRows(ctx, c, src);
   const market = s.id === "estimation" || s.id === "vendre-maison" ? marketBlock(ctx, c, src, "houses-only") : s.id === "vendre-appartement" ? marketBlock(ctx, c, src, "apartments") : { html: "", facts: 0 };
-  const near = ctx.neighbours(ctx.data, c).map((n) => [`/${s.slug}/${n.id}/`, P.publicName(n)]);
+  const near = ctx.neighbours(ctx.data, c).filter((n) => ctx.has(`/${s.slug}/${n.id}/`)).map((n) => [`/${s.slug}/${n.id}/`, P.publicName(n)]);
   const villages = s.localityPages
-    ? P.targetedLocalities(c).filter((l) => P.hasOwnPage(c, l)).map((l) => [`/${s.slug}/${c.id}/${P.slug(l.name)}/`, l.name])
+    ? P.targetedLocalities(c).map((l) => [`/${s.slug}/${c.id}/${P.slug(l.name)}/`, l.name]).filter(([href]) => ctx.has(href))
     : [];
-  const others = ctx.data.services.filter((x) => x.id !== s.id).map((x) => [`/${x.slug}/${c.id}/`, x.label]);
+  const others = ctx.data.services.filter((x) => x.id !== s.id).map((x) => [ctx.best(x, c), x.label]);
   const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead) })}
 <div class="content wide">
 <section class="block"><h2>${esc(f(s.local.angleTitle))}</h2>
@@ -293,7 +282,7 @@ ${a.html}
 </section>
 <section class="block"><h2>Repères : ${esc(place.lieu)}</h2>
 ${dl(fr.rows)}
-<p>${esc(presence(c))} <a href="${P.communeRoute(c)}">Le secteur ${esc(place.lieu)} en détail</a>.</p>
+<p>${s.id === "agent" ? "" : esc(presence(c)) + " "}<a href="${P.communeRoute(c)}">Le secteur ${esc(place.lieu)} en détail</a>.</p>
 </section>
 ${market.html}
 <section class="block"><h2>${esc(s.local.summaryTitle)}</h2>
@@ -318,8 +307,9 @@ function serviceLocality(ctx, s, c, l) {
   const a = angle(ctx, s, c, l, src);
   const lf = localityFacts(ctx, c, l, src);
   const siblings = P.targetedLocalities(c)
-    .filter((x) => x.name !== l.name && P.hasOwnPage(c, x))
-    .map((x) => [`/${s.slug}/${c.id}/${P.slug(x.name)}/`, x.name]);
+    .filter((x) => x.name !== l.name)
+    .map((x) => [`/${s.slug}/${c.id}/${P.slug(x.name)}/`, x.name])
+    .filter(([href]) => ctx.has(href));
   const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead) })}
 <div class="content wide">
 <section class="block"><h2>${esc(f(s.local.angleTitle))}</h2>
@@ -393,9 +383,10 @@ function commune(ctx, c) {
   const admin = adminBlock(ctx, c, src, `Urbanisme : à qui s’adresser ${place.a}`);
   const market = marketBlock(ctx, c, src);
   const near = ctx.neighbours(ctx.data, c).map((n) => [P.communeRoute(n), P.publicName(n)]);
-  const services = ctx.data.services
-    .filter((s) => s.id !== "vendre-appartement" || (k.L.market && k.L.market.apartmentsMedian))
-    .map((s) => [`/${s.slug}/${c.id}/`, s.label, place.lieu]);
+  const services = ctx.data.services.map((s) => {
+    const href = ctx.best(s, c);
+    return [href, s.label, href === `/${s.slug}/` ? "La prestation" : place.lieu];
+  });
   const lead = c.anchor
     ? "Beaumont est le secteur d’attache de Martin Snauwaert, installé à Barbençon. Voici les villages couverts, les repères utiles à un vendeur et les démarches locales."
     : `${presence(c)} Voici les villages couverts, les repères utiles à un vendeur et les démarches locales.`;
@@ -429,9 +420,10 @@ function locality(ctx, c, l) {
   const siblings = P.targetedLocalities(c)
     .filter((x) => x.name !== l.name)
     .map((x) => [P.localityRoute(c, x), x.name]);
-  const services = ctx.data.services.map((s) =>
-    s.localityPages ? [`/${s.slug}/${c.id}/${P.slug(l.name)}/`, s.label, l.name] : [`/${s.slug}/${c.id}/`, s.label, cplace.lieu],
-  ).filter(([href]) => !href.startsWith("/vendre-appartement/") || ((ctx.data.local.communes[c.id] || {}).market || {}).apartmentsMedian);
+  const services = ctx.data.services.map((s) => {
+    const href = ctx.best(s, c, l);
+    return [href, s.label, href === `/${s.slug}/` ? "La prestation" : href.endsWith(`/${P.slug(l.name)}/`) ? l.name : cplace.lieu];
+  });
   const html = `${intro({ eyebrow: `${cplace.lieu} · ${l.postalCode}`, h1: `Vendre ou faire estimer un bien ${place.a}`, lead: `${presence(c, l)} Voici les repères utiles pour un bien situé ${place.a}.` })}
 <div class="content wide">
 <section class="block"><h2>${esc(l.name)} en bref</h2>

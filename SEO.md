@@ -19,6 +19,19 @@ Familles de routes : `/{prestation}/`, `/secteurs/{commune}/`, `/secteurs/{commu
 
 Un village qui porte le nom de sa commune n'a pas de page propre. Un centre exclu (Couvin, Erquelinnes) n'a ni page ni mention « à … ». Aucune page n'attribue à Martin un bureau ailleurs qu'à Barbençon.
 
+## Ce qui est publié, ce qui est mis de côté
+
+Sur 363 déclinaisons possibles, le build en écrit 156. Les autres ne sont pas publiées, et aucune page n'y renvoie :
+
+- **consolidées** dans leur page mère, parce qu'elles n'auraient fait que la répéter : « Agent immobilier » et « Vendre un terrain » par commune (la page de la commune en tient lieu), « Vendre une maison » par village (la page du village en tient lieu) ;
+- **brouillons** : « Estimation » pour un village sans repères propres suffisants, « Vendre un appartement » dans une commune sans prix d'appartement publié par Statbel.
+
+Le réglage est dans `data/services.json` (`communePages`, `localityPages`). Un village enrichi dans `data/local.json` retrouve sa page d'estimation au build suivant.
+
+## Publication par phases
+
+Chaque page complète porte une phase : 1 = prestations, guides, communes ; 2 = prestations par commune ; 3 = villages. L'approbation se donne **page par page** dans `approvedRoutes` de `data/editorial.json`, après relecture. `npm run editorial` résume l'avancement ; `npm run editorial -- --phase 1` liste les pages de la phase encore à approuver. Une page non approuvée reste `noindex` et hors du sitemap, même après le lancement.
+
 ## Contrôle qualité
 
 `scripts/pages/quality.cjs` classe chaque page :

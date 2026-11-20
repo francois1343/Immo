@@ -11,7 +11,7 @@ const { test } = require("node:test"),
   vercel = require("../vercel.json");
 
 const data = C.load(),
-  pages = C.pages(data),
+  { pages, setAside } = C.plan(data),
   quality = Q.evaluate(pages, data.editorial);
 const text = (p) => Q.text(p.main);
 
@@ -20,9 +20,23 @@ test("the catalogue produces every family of pages, each with a unique address, 
   assert.equal(count("service"), data.services.length);
   assert.equal(count("commune"), 13);
   assert.equal(count("locality"), 90);
-  assert.equal(count("service-commune"), 13 * data.services.length);
   assert.equal(count("guide"), data.guides.length);
-  assert.ok(pages.length >= 300 && pages.length <= 500, String(pages.length));
+  /* Volume is not a goal: a declination that would repeat its parent is set
+     aside, with the parent it is consolidated into. */
+  assert.ok(pages.length >= 120 && pages.length <= 500, String(pages.length));
+  assert.equal(pages.length + setAside.length, 363);
+  const published = new Set(pages.map((p) => p.route));
+  for (const r of setAside) {
+    assert.ok(!published.has(r.route), r.route);
+    assert.ok(["consolidée", "brouillon"].includes(r.decision) && r.reason, r.route);
+    assert.ok(published.has(r.into), `${r.route} → ${r.into}`);
+  }
+  /* No page links to a page that was set aside. */
+  for (const p of pages)
+    for (const m of p.main.matchAll(/href="(\/[^"#?]*)"/g))
+      assert.ok(!setAside.some((r) => r.route === m[1]), `${p.route} → ${m[1]}`);
+  /* Every published village declination passed the quality gate. */
+  for (const r of quality.rows.filter((x) => x.family === "service-locality")) assert.equal(r.status, "complete", r.route);
   assert.deepEqual(quality.errors, []);
   for (const p of pages) {
     assert.match(p.route, /^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/, p.route);
@@ -52,14 +66,18 @@ test("a local page without enough sourced facts stays to review, and nothing is 
   assert.ok(rows.some((r) => r.status === "complete"));
   assert.ok(rows.some((r) => r.status === "to-review"));
   assert.equal(rows.filter((r) => r.approved).length, 0);
-  /* Without local data every local page falls back to review. */
-  const bare = C.pages({ ...data, local: { communes: {} } });
-  const q = Q.evaluate(bare, {});
-  for (const r of q.rows.filter((x) => ["commune", "locality", "service-commune", "service-locality"].includes(x.family)))
+  /* Without local data every local page falls back to review, and no village
+     declination is published at all. */
+  const bare = C.plan({ ...data, local: { communes: {} } });
+  const q = Q.evaluate(bare.pages, {});
+  for (const r of q.rows.filter((x) => ["commune", "locality", "service-commune"].includes(x.family)))
     assert.equal(r.status, "to-review", r.route);
+  assert.equal(bare.pages.filter((p) => p.family === "service-locality").length, 0);
   /* An apartment page needs official apartment sales in the commune. */
-  for (const r of rows.filter((x) => x.service === "vendre-appartement" && x.family === "service-commune"))
-    assert.equal(r.status === "complete", Boolean(data.local.communes[r.commune].market.apartmentsMedian) && !r.issues.length, r.route);
+  for (const p of pages.filter((x) => x.service === "vendre-appartement" && x.family === "service-commune"))
+    assert.ok(data.local.communes[p.commune].market.apartmentsMedian, p.route);
+  /* Complete pages carry a publication phase; the others none. */
+  for (const r of rows) assert.equal(Boolean(r.phase), r.status === "complete", r.route);
 });
 
 test("approval needs a complete page, and a held page is never approved", () => {
@@ -126,7 +144,7 @@ test("reviews: no rating without a dated reading, no quote without consent, noth
   assert.equal(r.quotes.length, 0);
   const html = P.reviews(r);
   assert.ok(html.includes("Voir nos avis") && html.includes(r.googleUrl));
-  assert.ok(!/\/5|étoile/.test(html));
+  assert.ok(!/\d\/5|étoile/.test(html));
   assert.throws(() => P.validateReviews({ ...r, rating: 4.9 }));
   assert.throws(() => P.validateReviews({ ...r, quotes: [{ text: "Très bien", author: "A." }] }));
   assert.throws(() => P.validateReviews({ ...r, googleUrl: "https://exemple.test/avis" }));

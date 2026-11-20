@@ -14,6 +14,7 @@
     "dev": "node scripts/dev-server.mjs",
     "dev:api": "node scripts/dev-server.mjs --api",
     "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs tests/pages.test.cjs",
-    "indexnow": "node scripts/indexnow.cjs"
+    "indexnow": "node scripts/indexnow.cjs",
+    "editorial": "node scripts/editorial.cjs"
   }
 }

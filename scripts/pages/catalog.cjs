@@ -6,6 +6,7 @@ const fs = require("node:fs"),
   path = require("node:path");
 const P = require("../partials.cjs");
 const R = require("./render.cjs");
+const Q = require("./quality.cjs");
 
 const optional = (name, fallback) => {
   const file = path.join(P.root, "data", name);
@@ -96,15 +97,19 @@ function fitDescription(d) {
   }
   return d;
 }
-function pages(data) {
-  const out = [];
+/* Builds the list of pages. `held` holds the village pages a first pass found
+   too thin: they are set aside, and no page links to them.
+   A page is set aside rather than published when its content would only
+   repeat a parent page: the reason and the parent are kept for the report. */
+function build(data, held) {
+  const specs = [],
+    setAside = [];
   const communes = P.activeCommunes(data.zones);
-  const ctx = { data, communes, placeOfCommune, placeOfLocality, fill, neighbours, de };
-  const add = (page) => out.push({ ...page, title: fitTitle(page.title), description: fitDescription(page.description) });
   const HOME = ["Accueil", "/"];
+  const aside = (row) => setAside.push(row);
 
-  for (const s of data.services) {
-    add({
+  for (const s of data.services)
+    specs.push({
       route: `/${s.slug}/`,
       family: "service",
       service: s.id,
@@ -112,14 +117,11 @@ function pages(data) {
       h1: s.hub.h1,
       description: s.hub.description,
       breadcrumbs: [HOME, [s.label, null]],
-      main: R.serviceHub(ctx, s),
-      ownFacts: null,
+      render: (ctx) => ({ html: R.serviceHub(ctx, s), facts: null }),
     });
-  }
   for (const c of communes) {
     const place = placeOfCommune(c);
-    const body = R.commune(ctx, c);
-    add({
+    specs.push({
       route: P.communeRoute(c),
       family: "commune",
       commune: c.id,
@@ -127,14 +129,12 @@ function pages(data) {
       h1: `Vendre ou faire estimer un bien ${place.a}`,
       description: `Estimation et vente immobilière ${place.a} : villages couverts, repères locaux, service d’urbanisme et démarches, avec Martin Snauwaert, agent immobilier agréé IPI.`,
       breadcrumbs: [HOME, ["Secteurs", "/secteurs/"], [place.lieu, null]],
-      main: body.html,
-      ownFacts: body.facts,
+      render: (ctx) => R.commune(ctx, c),
     });
     for (const l of P.targetedLocalities(c)) {
       if (!P.hasOwnPage(c, l)) continue;
       const lp = placeOfLocality(l);
-      const lb = R.locality(ctx, c, l);
-      add({
+      specs.push({
         route: P.localityRoute(c, l),
         family: "locality",
         commune: c.id,
@@ -143,60 +143,60 @@ function pages(data) {
         h1: `Vendre ou faire estimer un bien ${lp.a}`,
         description: `Un bien ${lp.a} (${l.postalCode}, ${c.commune}) ? Repères du village, démarches auprès de la commune et accompagnement par Martin Snauwaert, agent immobilier agréé IPI.`,
         breadcrumbs: [HOME, ["Secteurs", "/secteurs/"], [place.lieu, P.communeRoute(c)], [l.name, null]],
-        main: lb.html,
-        ownFacts: lb.facts,
+        render: (ctx) => R.locality(ctx, c, l),
       });
     }
     for (const s of data.services) {
-      const sb = R.serviceCommune(ctx, s, c);
-      add({
-        route: `/${s.slug}/${c.id}/`,
-        family: "service-commune",
-        service: s.id,
-        commune: c.id,
-        applies: serviceApplies(data, s, c),
-        title: fill(s.local.title, place, c),
-        h1: fill(s.local.h1, place, c),
-        description: fill(s.local.description, place, c),
-        breadcrumbs: [HOME, [s.label, `/${s.slug}/`], [place.lieu, null]],
-        main: sb.html,
-        ownFacts: sb.facts,
-      });
-      if (!s.localityPages) continue;
+      const route = `/${s.slug}/${c.id}/`;
+      const base = { family: "service-commune", service: s.id, commune: c.id };
+      if (s.communePages === "none") aside({ ...base, route, decision: "consolidée", into: P.communeRoute(c), reason: s.consolidation });
+      else if (!serviceApplies(data, s, c))
+        aside({ ...base, route, decision: "brouillon", into: `/${s.slug}/`, reason: "Statbel ne publie aucun prix d’appartement pour cette commune : prestation non étayée" });
+      else
+        specs.push({
+          ...base,
+          route,
+          title: fill(s.local.title, place, c),
+          h1: fill(s.local.h1, place, c),
+          description: fill(s.local.description, place, c),
+          breadcrumbs: [HOME, [s.label, `/${s.slug}/`], [place.lieu, null]],
+          render: (ctx) => R.serviceCommune(ctx, s, c),
+        });
+      if (s.communePages === "none") continue;
       for (const l of P.targetedLocalities(c)) {
         if (!P.hasOwnPage(c, l)) continue;
-        const lp = placeOfLocality(l);
-        const slb = R.serviceLocality(ctx, s, c, l);
-        add({
-          route: `/${s.slug}/${c.id}/${P.slug(l.name)}/`,
-          family: "service-locality",
-          service: s.id,
-          commune: c.id,
-          locality: l.name,
-          applies: true,
-          title: fill(s.local.title, lp, c),
-          h1: fill(s.local.h1, lp, c),
-          description: fill(s.local.description, lp, c),
-          breadcrumbs: [HOME, [s.label, `/${s.slug}/`], [place.lieu, `/${s.slug}/${c.id}/`], [l.name, null]],
-          main: slb.html,
-          ownFacts: slb.facts,
-        });
+        const lroute = `/${s.slug}/${c.id}/${P.slug(l.name)}/`,
+          lbase = { family: "service-locality", service: s.id, commune: c.id, locality: l.name },
+          lp = placeOfLocality(l);
+        if (!s.localityPages) {
+          if (s.villageConsolidation) aside({ ...lbase, route: lroute, decision: "consolidée", into: P.localityRoute(c, l), reason: s.villageConsolidation });
+        } else if (held.has(lroute))
+          aside({ ...lbase, route: lroute, decision: "brouillon", into: route, reason: "repères propres au village insuffisants : à enrichir avant toute publication" });
+        else
+          specs.push({
+            ...lbase,
+            route: lroute,
+            title: fill(s.local.title, lp, c),
+            h1: fill(s.local.h1, lp, c),
+            description: fill(s.local.description, lp, c),
+            breadcrumbs: [HOME, [s.label, `/${s.slug}/`], [place.lieu, route], [l.name, null]],
+            render: (ctx) => R.serviceLocality(ctx, s, c, l),
+          });
       }
     }
   }
   if (data.guides.length)
-    add({
+    specs.push({
       route: "/guides/",
       family: "guide-index",
       title: "Guides pour vendre un bien en Wallonie | Martin Snauwaert",
       h1: "Guides pour préparer une vente immobilière en Wallonie",
       description: "Documents obligatoires, étapes de la vente, frais du vendeur, urbanisme : des guides pratiques et sourcés pour préparer une vente immobilière en Wallonie.",
       breadcrumbs: [HOME, ["Guides", null]],
-      main: R.guideIndex(ctx),
-      ownFacts: null,
+      render: (ctx) => ({ html: R.guideIndex(ctx), facts: null }),
     });
   for (const g of data.guides)
-    add({
+    specs.push({
       route: `/guides/${g.slug}/`,
       family: "guide",
       guide: g.slug,
@@ -204,9 +204,31 @@ function pages(data) {
       h1: g.h1,
       description: g.description,
       breadcrumbs: [HOME, ["Guides", "/guides/"], [g.short || g.h1, null]],
-      main: R.guide(ctx, g),
-      ownFacts: null,
+      render: (ctx) => ({ html: R.guide(ctx, g), facts: null }),
     });
-  return out;
+
+  /* A link only ever points to a page of this build. */
+  const routes = new Set(specs.map((x) => x.route));
+  const has = (route) => routes.has(route);
+  const best = (s, c, l) =>
+    [l && `/${s.slug}/${c.id}/${P.slug(l.name)}/`, `/${s.slug}/${c.id}/`, `/${s.slug}/`].find((r) => r && has(r));
+  const ctx = { data, communes, placeOfCommune, placeOfLocality, fill, neighbours, de, has, best };
+  const pages = specs.map(({ render, ...page }) => {
+    const body = render(ctx);
+    return { ...page, title: fitTitle(page.title), description: fitDescription(page.description), main: body.html, ownFacts: body.facts };
+  });
+  return { pages, setAside };
 }
-module.exports = { load, validate, pages, placeOfCommune, placeOfLocality, fill, neighbours, serviceApplies, de };
+/* Two passes: the first measures every candidate village page, the second
+   leaves out those that did not reach the quality gate. */
+function plan(data) {
+  const first = build(data, new Set());
+  const held = new Set(
+    Q.evaluate(first.pages, {})
+      .rows.filter((r) => r.family === "service-locality" && r.status !== "complete")
+      .map((r) => r.route),
+  );
+  return build(data, held);
+}
+const pages = (data) => plan(data).pages;
+module.exports = { load, validate, plan, pages, placeOfCommune, placeOfLocality, fill, neighbours, serviceApplies, de };

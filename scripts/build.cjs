@@ -136,16 +136,26 @@ for (const r of rows) {
   else f.toReview++;
   if (r.approved) f.approved++;
 }
+/* Pages set aside: never written to the export, listed with their parent. */
+const aside = generated.setAside;
+const phases = {};
+for (const r of rows.filter((x) => x.phase)) phases[r.phase] = (phases[r.phase] || 0) + 1;
 const summary = {
   builtOn: new Date().toISOString().slice(0, 10),
   mode: seo.mode,
   origin: seo.canonicalOrigin,
   handWrittenPages: Object.keys(S.routes).length,
+  candidateRoutes: rows.length + aside.length,
   generatedRoutes: rows.length,
   editoriallyComplete: count((r) => r.status === "complete"),
   editoriallyApproved: count((r) => r.approved),
   allowedForIndexing: seo.indexablePages,
   toReview: count((r) => r.status !== "complete"),
+  setAside: {
+    consolidated: aside.filter((r) => r.decision === "consolidée").length,
+    draft: aside.filter((r) => r.decision === "brouillon").length,
+  },
+  completeByPhase: phases,
   families,
   errors: generated.quality.errors,
   brokenLinks: broken,
@@ -153,17 +163,19 @@ const summary = {
   markupErrors: metaErrors,
 };
 fs.mkdirSync(reports, { recursive: true });
-fs.writeFileSync(path.join(reports, "pages.json"), JSON.stringify(rows, null, 1));
+fs.writeFileSync(path.join(reports, "pages.json"), JSON.stringify({ pages: rows, setAside: aside }, null, 1));
 const csv = (v) => `"${String(v).replaceAll('"', '""')}"`;
+const line = (cells) => cells.map(csv).join(";");
 fs.writeFileSync(
   path.join(reports, "pages.csv"),
-  "﻿" +
-    ["route;famille;prestation;commune;localite;statut;approuvee;score;mots;reperes_locaux;similarite_pct;page_la_plus_proche;liens_entrants;titre;points_a_traiter"]
+  "\uFEFF" +
+    ["route;famille;prestation;commune;localite;statut;phase;decision;approuvee;score;mots;reperes_locaux;similarite_pct;page_la_plus_proche;liens_entrants;titre;points_a_traiter"]
       .concat(
         rows.map((r) =>
-          [r.route, r.family, r.service, r.commune, r.locality, r.status, r.approved ? "oui" : "non", r.score, r.words, r.localFacts, r.similarity, r.closest, r.inboundLinks, r.title, r.issues.join(" | ")]
-            .map(csv)
-            .join(";"),
+          line([r.route, r.family, r.service, r.commune, r.locality, r.status, r.phase || "", r.decision, r.approved ? "oui" : "non", r.score, r.words, r.localFacts, r.similarity, r.closest, r.inboundLinks, r.title, r.issues.join(" | ")]),
+        ),
+        aside.map((r) =>
+          line([r.route, r.family, r.service, r.commune, r.locality || "", "non publiée", "", `${r.decision} → ${r.into}`, "non", "", "", "", "", "", "", "", r.reason]),
         ),
       )
       .join("\r\n"),
@@ -185,6 +197,7 @@ console.log(
       editoriallyComplete: summary.editoriallyComplete,
       allowedForIndexing: summary.allowedForIndexing,
       toReview: summary.toReview,
+      setAside: aside.length,
       orphanPages: orphans.length,
     },
     reports: "reports/",

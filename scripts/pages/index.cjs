@@ -101,7 +101,7 @@ const fileOf = (page) => page.file || page.route.slice(1) + "index.html";
 function build(out, { statics = [] } = {}) {
   const data = C.load();
   const rendered = P.blocks(data);
-  const pages = C.pages(data);
+  const { pages, setAside } = C.plan(data);
   const quality = Q.evaluate(pages, data.editorial);
   const utility = [siteMapPage(data, pages, statics), notFound];
   const written = [];
@@ -112,6 +112,6 @@ function build(out, { statics = [] } = {}) {
     fs.writeFileSync(dest, shell(page, rendered));
     written.push(file);
   }
-  return { data, pages, utility, quality, written, fileOf };
+  return { data, pages, setAside, utility, quality, written, fileOf };
 }
 module.exports = { build, shell, fileOf, breadcrumb };

@@ -32,10 +32,13 @@ const RULES = {
   "guide-index": { words: 0 },
   commune: { words: 220, facts: 4, similarity: 0.8 },
   locality: { words: 160, facts: 2, similarity: 0.85 },
-  "service-commune": { words: 260, facts: 4, similarity: 0.8 },
+  "service-commune": { words: 260, facts: 3, similarity: 0.8 },
   "service-locality": { words: 220, facts: 3, similarity: 0.8 },
 };
 
+/* Order of publication once pages are approved: the base of the site first,
+   then the service pages per commune, then the villages. */
+const PHASES = { service: 1, guide: 1, "guide-index": 1, commune: 1, "service-commune": 2, locality: 3, "service-locality": 3 };
 function evaluate(pages, editorial = {}) {
   const approvedFamilies = new Set(editorial.approvedFamilies || []),
     approvedRoutes = new Set(editorial.approvedRoutes || []),
@@ -121,6 +124,8 @@ function evaluate(pages, editorial = {}) {
         closest: twin,
         score,
         status: complete ? "complete" : "to-review",
+        phase: complete ? PHASES[x.p.family] || 0 : 0,
+        decision: complete ? `à relire puis approuver (phase ${PHASES[x.p.family]})` : "à enrichir : reste noindex et hors sitemap",
         approved,
         issues,
       });
@@ -129,4 +134,4 @@ function evaluate(pages, editorial = {}) {
   rows.sort((a, b) => a.route.localeCompare(b.route));
   return { rows, errors };
 }
-module.exports = { evaluate, text, words, shingles, jaccard, RULES };
+module.exports = { PHASES, evaluate, text, words, shingles, jaccard, RULES };

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "updatedOn": "2026-11-20",
-  "about": "Catalogue des prestations présentées par le site. Source unique des pages de service et de leurs déclinaisons par commune et par village. Jetons acceptés dans les textes locaux : {lieu}, {a} (à Chimay, dans les villages de Couvin), {de}, {commune}, {deCommune}.",
+  "about": "Catalogue des prestations présentées par le site. Source unique des pages de service et de leurs déclinaisons par commune et par village. Jetons acceptés dans les textes locaux : {lieu}, {a} (à Chimay, dans les villages de Couvin), {de}, {commune}, {deCommune}. communePages : all ou none (none = la page de la commune tient lieu de déclinaison). localityPages : true pour décliner par village ; un village sans repères propres suffisants reste en brouillon.",
   "services": [
     {
       "id": "estimation",
@@ -28,10 +28,22 @@
           {
             "h2": "Comment cela se passe",
             "steps": [
-              ["Un premier échange", "Vous indiquez la commune, le type de bien et votre calendrier, par le formulaire ou par téléphone. Aucun document n’est demandé à ce stade."],
-              ["Une visite sur place", "Martin parcourt le bien avec vous : volumes, état, travaux réalisés, abords, particularités que seuls les occupants connaissent."],
-              ["L’analyse", "Il confronte ce qu’il a vu aux éléments vérifiables : situation urbanistique, certificat PEB, biens comparables, demande observée dans le secteur."],
-              ["L’avis de valeur", "Il vous présente une fourchette et ce qui la justifie, puis les suites possibles : préparer la vente, attendre, ou ne rien changer."]
+              [
+                "Un premier échange",
+                "Vous indiquez la commune, le type de bien et votre calendrier, par le formulaire ou par téléphone. Aucun document n’est demandé à ce stade."
+              ],
+              [
+                "Une visite sur place",
+                "Martin parcourt le bien avec vous : volumes, état, travaux réalisés, abords, particularités que seuls les occupants connaissent."
+              ],
+              [
+                "L’analyse",
+                "Il confronte ce qu’il a vu aux éléments vérifiables : situation urbanistique, certificat PEB, biens comparables, demande observée dans le secteur."
+              ],
+              [
+                "L’avis de valeur",
+                "Il vous présente une fourchette et ce qui la justifie, puis les suites possibles : préparer la vente, attendre, ou ne rien changer."
+              ]
             ]
           },
           {
@@ -47,7 +59,9 @@
           },
           {
             "h2": "Documents utiles à préparer",
-            "p": ["Rien n’est requis pour un premier contact. Pour la visite, ces documents, lorsque vous les avez, permettent une estimation plus précise :"],
+            "p": [
+              "Rien n’est requis pour un premier contact. Pour la visite, ces documents, lorsque vous les avez, permettent une estimation plus précise :"
+            ],
             "list": [
               "Le titre de propriété (acte d’achat).",
               "Le certificat PEB, s’il existe déjà.",
@@ -59,10 +73,22 @@
           }
         ],
         "faq": [
-          ["Faire estimer mon bien m’engage-t-il à vendre ?", "Non. L’estimation sert précisément à décider en connaissance de cause. Vous restez libre de vendre plus tard, autrement, ou de ne pas vendre."],
-          ["Quelle est la différence entre une estimation et une expertise ?", "L’estimation d’un agent est un avis de valeur en vue d’une mise en vente. L’expertise est un rapport établi par un expert, utilisé lorsqu’une valeur doit être opposable : succession, partage, litige, par exemple."],
-          ["Une estimation en ligne suffit-elle ?", "Un outil en ligne applique des moyennes à une adresse. Il ne voit ni l’état du bien, ni les travaux, ni la situation urbanistique. Il donne un ordre de grandeur ; une visite permet d’argumenter un prix."],
-          ["Puis-je demander une estimation si je ne vends que dans un an ?", "Oui. Une estimation anticipée aide à planifier les travaux utiles, à rassembler les documents et à choisir le bon moment."]
+          [
+            "Faire estimer mon bien m’engage-t-il à vendre ?",
+            "Non. L’estimation sert précisément à décider en connaissance de cause. Vous restez libre de vendre plus tard, autrement, ou de ne pas vendre."
+          ],
+          [
+            "Quelle est la différence entre une estimation et une expertise ?",
+            "L’estimation d’un agent est un avis de valeur en vue d’une mise en vente. L’expertise est un rapport établi par un expert, utilisé lorsqu’une valeur doit être opposable : succession, partage, litige, par exemple."
+          ],
+          [
+            "Une estimation en ligne suffit-elle ?",
+            "Un outil en ligne applique des moyennes à une adresse. Il ne voit ni l’état du bien, ni les travaux, ni la situation urbanistique. Il donne un ordre de grandeur ; une visite permet d’argumenter un prix."
+          ],
+          [
+            "Puis-je demander une estimation si je ne vends que dans un an ?",
+            "Oui. Une estimation anticipée aide à planifier les travaux utiles, à rassembler les documents et à choisir le bon moment."
+          ]
         ]
       },
       "local": {
@@ -80,7 +106,8 @@
           "Un avis de valeur expliqué, et les suites possibles."
         ],
         "cta": "Demander une estimation {a}"
-      }
+      },
+      "communePages": "all"
     },
     {
       "id": "vendre-maison",
@@ -88,7 +115,7 @@
       "label": "Vendre une maison",
       "short": "Vendre une maison",
       "propertyType": "Maison",
-      "localityPages": true,
+      "localityPages": false,
       "requires": null,
       "hub": {
         "title": "Vendre sa maison en Thudinie et Botte du Hainaut | Martin Snauwaert",
@@ -100,15 +127,29 @@
           {
             "h2": "Les étapes de la vente",
             "steps": [
-              ["Estimer", "Une visite et un avis de valeur argumenté, pour fixer un prix de présentation défendable."],
-              ["Préparer", "Rassembler les documents obligatoires, régler les points qui bloqueraient un acheteur ou son notaire, soigner la présentation."],
-              ["Commercialiser", "Photos, annonce fidèle, diffusion, organisation et conduite des visites, retour après chaque visite."],
-              ["Accompagner", "Analyse des offres, négociation, compromis de vente, suivi jusqu’à l’acte authentique chez le notaire."]
+              [
+                "Estimer",
+                "Une visite et un avis de valeur argumenté, pour fixer un prix de présentation défendable."
+              ],
+              [
+                "Préparer",
+                "Rassembler les documents obligatoires, régler les points qui bloqueraient un acheteur ou son notaire, soigner la présentation."
+              ],
+              [
+                "Commercialiser",
+                "Photos, annonce fidèle, diffusion, organisation et conduite des visites, retour après chaque visite."
+              ],
+              [
+                "Accompagner",
+                "Analyse des offres, négociation, compromis de vente, suivi jusqu’à l’acte authentique chez le notaire."
+              ]
             ]
           },
           {
             "h2": "Les documents à réunir en Wallonie",
-            "p": ["Plusieurs documents sont exigés par la réglementation wallonne ou fédérale. Les réunir tôt évite de retarder le compromis."],
+            "p": [
+              "Plusieurs documents sont exigés par la réglementation wallonne ou fédérale. Les réunir tôt évite de retarder le compromis."
+            ],
             "list": [
               "Le certificat PEB, nécessaire dès la mise en publicité du bien.",
               "Le procès-verbal de contrôle de l’installation électrique du logement.",
@@ -136,10 +177,22 @@
           }
         ],
         "faq": [
-          ["Par quoi commencer pour vendre ma maison ?", "Par une estimation et un point sur les documents. Ces deux éléments déterminent le prix de présentation et le calendrier réaliste."],
-          ["Quels documents sont obligatoires pour vendre une maison en Wallonie ?", "Notamment le certificat PEB, le procès-verbal de contrôle électrique, l’extrait conforme de la BDES et les renseignements urbanistiques. D’autres s’ajoutent selon le bien : DIU, certificat de citerne à mazout."],
-          ["Dois-je faire des travaux avant de vendre ?", "Pas nécessairement. Certains travaux se récupèrent dans le prix, d’autres non. Cela se décide au cas par cas, après la visite."],
-          ["Combien de temps entre le compromis et l’acte ?", "Le délai est fixé dans le compromis. En pratique, l’acte authentique est signé au plus tard quatre mois après."]
+          [
+            "Par quoi commencer pour vendre ma maison ?",
+            "Par une estimation et un point sur les documents. Ces deux éléments déterminent le prix de présentation et le calendrier réaliste."
+          ],
+          [
+            "Quels documents sont obligatoires pour vendre une maison en Wallonie ?",
+            "Notamment le certificat PEB, le procès-verbal de contrôle électrique, l’extrait conforme de la BDES et les renseignements urbanistiques. D’autres s’ajoutent selon le bien : DIU, certificat de citerne à mazout."
+          ],
+          [
+            "Dois-je faire des travaux avant de vendre ?",
+            "Pas nécessairement. Certains travaux se récupèrent dans le prix, d’autres non. Cela se décide au cas par cas, après la visite."
+          ],
+          [
+            "Combien de temps entre le compromis et l’acte ?",
+            "Le délai est fixé dans le compromis. En pratique, l’acte authentique est signé au plus tard quatre mois après."
+          ]
         ]
       },
       "local": {
@@ -157,7 +210,9 @@
           "Accompagner : offres, compromis et suivi jusqu’à l’acte."
         ],
         "cta": "Parler de la vente de ma maison"
-      }
+      },
+      "communePages": "all",
+      "villageConsolidation": "même contenu que la page du village et que « Vendre une maison » de la commune : la page du village y renvoie"
     },
     {
       "id": "vendre-appartement",
@@ -176,7 +231,9 @@
         "sections": [
           {
             "h2": "Les informations de la copropriété",
-            "p": ["Avant la signature du compromis, l’acheteur doit recevoir une série d’informations sur la copropriété. Elles sont demandées au syndic :"],
+            "p": [
+              "Avant la signature du compromis, l’acheteur doit recevoir une série d’informations sur la copropriété. Elles sont demandées au syndic :"
+            ],
             "list": [
               "Le montant du fonds de roulement et du fonds de réserve.",
               "Les arriérés éventuels dus par le vendeur.",
@@ -197,13 +254,24 @@
           },
           {
             "h2": "Les autres documents",
-            "p": ["Comme pour toute vente d’un logement en Wallonie : certificat PEB, procès-verbal de contrôle de l’installation électrique, extrait conforme de la BDES et renseignements urbanistiques."]
+            "p": [
+              "Comme pour toute vente d’un logement en Wallonie : certificat PEB, procès-verbal de contrôle de l’installation électrique, extrait conforme de la BDES et renseignements urbanistiques."
+            ]
           }
         ],
         "faq": [
-          ["Qui fournit les documents de la copropriété ?", "Le syndic. La demande peut être faite par le vendeur, l’agent immobilier ou le notaire."],
-          ["Les travaux votés avant la vente sont-ils à ma charge ?", "La répartition entre vendeur et acheteur dépend de la date de la décision et de l’exigibilité des appels de fonds. Elle se précise avec le notaire et s’indique dans le compromis."],
-          ["Un appartement doit-il avoir son propre certificat PEB ?", "Oui : le certificat PEB porte sur le logement mis en vente."]
+          [
+            "Qui fournit les documents de la copropriété ?",
+            "Le syndic. La demande peut être faite par le vendeur, l’agent immobilier ou le notaire."
+          ],
+          [
+            "Les travaux votés avant la vente sont-ils à ma charge ?",
+            "La répartition entre vendeur et acheteur dépend de la date de la décision et de l’exigibilité des appels de fonds. Elle se précise avec le notaire et s’indique dans le compromis."
+          ],
+          [
+            "Un appartement doit-il avoir son propre certificat PEB ?",
+            "Oui : le certificat PEB porte sur le logement mis en vente."
+          ]
         ]
       },
       "local": {
@@ -221,7 +289,8 @@
           "Une estimation qui tient compte de l’immeuble autant que de l’appartement."
         ],
         "cta": "Parler de la vente de mon appartement"
-      }
+      },
+      "communePages": "all"
     },
     {
       "id": "vendre-terrain",
@@ -251,17 +320,30 @@
           },
           {
             "h2": "Diviser un terrain",
-            "p": ["Diviser un bien en plusieurs lots à bâtir peut nécessiter un permis d’urbanisation. La question se pose à la commune avant toute mise en vente par lots."]
+            "p": [
+              "Diviser un bien en plusieurs lots à bâtir peut nécessiter un permis d’urbanisation. La question se pose à la commune avant toute mise en vente par lots."
+            ]
           },
           {
             "h2": "Les documents",
-            "p": ["L’extrait conforme de la BDES et les renseignements urbanistiques sont à fournir. Un terrain non bâti n’a ni certificat PEB ni contrôle d’installation électrique."]
+            "p": [
+              "L’extrait conforme de la BDES et les renseignements urbanistiques sont à fournir. Un terrain non bâti n’a ni certificat PEB ni contrôle d’installation électrique."
+            ]
           }
         ],
         "faq": [
-          ["Comment savoir si mon terrain est constructible ?", "En vérifiant son affectation au plan de secteur, puis en demandant les renseignements urbanistiques ou un certificat d’urbanisme à la commune. Martin fait ce point avec vous avant toute estimation."],
-          ["Faut-il un certificat PEB pour vendre un terrain ?", "Non, pas pour un terrain non bâti."],
-          ["Faut-il borner le terrain avant de le vendre ?", "Ce n’est pas toujours obligatoire, mais des limites incertaines freinent un acheteur. Un géomètre-expert peut établir un plan de bornage."]
+          [
+            "Comment savoir si mon terrain est constructible ?",
+            "En vérifiant son affectation au plan de secteur, puis en demandant les renseignements urbanistiques ou un certificat d’urbanisme à la commune. Martin fait ce point avec vous avant toute estimation."
+          ],
+          [
+            "Faut-il un certificat PEB pour vendre un terrain ?",
+            "Non, pas pour un terrain non bâti."
+          ],
+          [
+            "Faut-il borner le terrain avant de le vendre ?",
+            "Ce n’est pas toujours obligatoire, mais des limites incertaines freinent un acheteur. Un géomètre-expert peut établir un plan de bornage."
+          ]
         ]
       },
       "local": {
@@ -279,7 +361,9 @@
           "Clarifier les limites, au besoin par un bornage."
         ],
         "cta": "Parler de la vente de mon terrain"
-      }
+      },
+      "communePages": "none",
+      "consolidation": "vérifications identiques d’une commune à l’autre ; seul le service d’urbanisme change, et il figure sur la page de la commune"
     },
     {
       "id": "agent",
@@ -314,13 +398,24 @@
           },
           {
             "h2": "Où il intervient",
-            "p": ["Martin n’a pas de bureau dans chaque commune : il est installé à Barbençon et se déplace chez vous. Les secteurs ci-dessous sont ceux où il est le plus présent."]
+            "p": [
+              "Martin n’a pas de bureau dans chaque commune : il est installé à Barbençon et se déplace chez vous. Les secteurs ci-dessous sont ceux où il est le plus présent."
+            ]
           }
         ],
         "faq": [
-          ["Martin Snauwaert a-t-il une agence où je peux passer ?", "Martin est installé à Barbençon (Beaumont) et travaille sur rendez-vous. Il se déplace chez vous : la visite du bien est de toute façon le point de départ."],
-          ["Comment vérifier qu’un agent immobilier est agréé ?", "Par le registre public de l’IPI, accessible sur ipi.be, où chaque agent agréé apparaît avec son numéro."],
-          ["Quel est le lien avec Connexion Immo ?", "Martin exerce au sein du réseau Connexion Immo. Les biens qu’il présente figurent dans le catalogue du réseau."]
+          [
+            "Martin Snauwaert a-t-il une agence où je peux passer ?",
+            "Martin est installé à Barbençon (Beaumont) et travaille sur rendez-vous. Il se déplace chez vous : la visite du bien est de toute façon le point de départ."
+          ],
+          [
+            "Comment vérifier qu’un agent immobilier est agréé ?",
+            "Par le registre public de l’IPI, accessible sur ipi.be, où chaque agent agréé apparaît avec son numéro."
+          ],
+          [
+            "Quel est le lien avec Connexion Immo ?",
+            "Martin exerce au sein du réseau Connexion Immo. Les biens qu’il présente figurent dans le catalogue du réseau."
+          ]
         ]
       },
       "local": {
@@ -338,7 +433,9 @@
           "Les offres, le compromis et le suivi jusqu’à l’acte."
         ],
         "cta": "Prendre contact avec Martin"
-      }
+      },
+      "communePages": "none",
+      "consolidation": "même intention que la page de la commune, qui présente déjà Martin, ses villages et ses prestations"
     }
   ]
 }

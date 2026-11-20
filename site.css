@@ -1549,3 +1549,20 @@ textarea {
     padding-left: 0;
   }
 }
+/* Catalogue et avis : deux bandeaux du même composant, l’un sous l’autre. */
+.duo {
+  display: grid;
+  gap: 16px;
+}
+.duo .review-cards {
+  margin-top: 4px;
+}
+.band .reviews-score strong {
+  font-size: inherit;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.band .reviews-score {
+  font-size: inherit;
+  color: inherit;
+}

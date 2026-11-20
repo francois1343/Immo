@@ -256,7 +256,7 @@ function reviews(r) {
   validateReviews(r);
   const rated = r.rating != null;
   const score = rated
-    ? `<p class="reviews-score"><strong>${String(r.rating).replace(".", ",")}<span>/5</span></strong> ${r.count} avis Google · relevé le ${esc(r.ratingCheckedOn.split("-").reverse().join("/"))}</p>`
+    ? ` <span class="reviews-score"><strong>${String(r.rating).replace(".", ",")}/5</strong> · ${r.count} avis Google, relevé le ${esc(r.ratingCheckedOn.split("-").reverse().join("/"))}.</span>`
     : "";
   const quotes = (r.quotes || [])
     .map(
@@ -266,20 +266,20 @@ function reviews(r) {
             </figure>`,
     )
     .join("\n            ");
-  return `<div class="reviews${quotes ? " has-quotes" : ""}">
-            <div class="reviews-lead">
-              ${score}
-              <p>${quotes ? "Ces avis ont été laissés sur la fiche Google de Martin et sont repris avec l’accord de leurs auteurs." : "Les avis des clients de Martin sont publiés sur sa fiche Google : ils y sont vérifiables, datés et signés. Nous préférons vous y renvoyer plutôt que d’en choisir quelques-uns."}</p>
-              <a class="button secondary" href="${esc(r.googleUrl)}" rel="noopener noreferrer" target="_blank">Voir nos avis <span aria-hidden="true">↗</span><span class="visually-hidden"> sur Google (nouvel onglet)</span></a>
+  return `<div class="band">
+            <svg class="picto" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v11H10l-4.5 3.5v-3.5H4Z" /><path d="M8 9.5h8M8 12.500h5" /></svg>
+            <div>
+              <h2 id="reviews-title">Ce que disent ses clients</h2>
+              <p>${quotes ? "Avis laissés sur la fiche Google de Martin, repris avec l’accord de leurs auteurs." : "Les avis des clients de Martin sont publiés sur sa fiche Google : datés, signés et vérifiables."}${score}</p>
             </div>
-            ${quotes ? `<div class="review-cards">\n            ${quotes}\n            </div>` : ""}
-          </div>`;
+            <a class="button secondary" href="${esc(r.googleUrl)}" rel="noopener noreferrer" target="_blank">Voir nos avis <span aria-hidden="true">↗</span><span class="visually-hidden"> sur Google (nouvel onglet)</span></a>
+          </div>${quotes ? `\n          <div class="review-cards">\n            ${quotes}\n          </div>` : ""}`;
 }
 
 /* ── Main navigation ───────────────────────────────────────────────── */
 const NAV = [
   ["/estimation-immobiliere/", "Estimation"],
-  ["/preparer-ma-vente/", 'Préparer<span class="nav-long"> ma vente</span>'],
+  ["/preparer-ma-vente/", 'Préparer<span class="nav-long">&nbsp;ma vente</span>'],
   ["/secteurs/", "Secteurs"],
   ["/guides/", "Guides"],
 ];

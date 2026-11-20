@@ -55,7 +55,7 @@
       "permanent": true
     },
     {
-      "source": "/vendre-beaumont-barbencon/:path*",
+      "source": "/vendre-beaumont-barbencon(/?)",
       "destination": "/secteurs/beaumont/",
       "permanent": true
     }
