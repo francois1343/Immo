@@ -146,6 +146,9 @@ function adminBlock(ctx, c, src, title) {
   };
 }
 function marketBlock(ctx, c, src, kind = "houses") {
+  /* Official prices stay in data/local.json but are shown only once Martin has
+     agreed: a commune-wide median must not be read as a personal estimate. */
+  if (ctx.data.editorial.showMarketStatistics !== true) return { html: "", facts: 0 };
   const m = (ctx.data.local.communes[c.id] || {}).market;
   if (!m) return { html: "", facts: 0 };
   const rows = [];
@@ -269,6 +272,7 @@ function serviceCommune(ctx, s, c) {
     f = (t) => ctx.fill(t, place, c);
   const a = angle(ctx, s, c, null, src);
   const fr = factRows(ctx, c, src);
+  src.add((ctx.data.local.communes[c.id] || {}).adminAddressSource, "Administration communale");
   const market = s.id === "estimation" || s.id === "vendre-maison" ? marketBlock(ctx, c, src, "houses-only") : s.id === "vendre-appartement" ? marketBlock(ctx, c, src, "apartments") : { html: "", facts: 0 };
   const near = ctx.neighbours(ctx.data, c).filter((n) => ctx.has(`/${s.slug}/${n.id}/`)).map((n) => [`/${s.slug}/${n.id}/`, P.publicName(n)]);
   const villages = s.localityPages
@@ -296,7 +300,10 @@ ${near.length ? `<section class="block"><h2>${esc(s.label)} dans les communes vo
 ${src.html()}
 ${cta(f(s.local.cta), "Un premier échange, sans document à préparer.", P.estimateHref(c), "Votre projet")}
 </div>`;
-  return { html, facts: a.facts + fr.facts + market.facts };
+  /* The address of the commune administration, given in the questions above,
+     is a sourced local fact like the others. */
+  const admin = (ctx.data.local.communes[c.id] || {}).adminAddress ? 1 : 0;
+  return { html, facts: a.facts + fr.facts + market.facts + admin };
 }
 
 function serviceLocality(ctx, s, c, l) {
