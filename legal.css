@@ -408,3 +408,37 @@ a:focus-visible {
     padding: 0 0 1rem;
   }
 }
+/* ── Lot du 21 novembre 2026 : confort de lecture et grands écrans ── */
+.back-link,
+.legal-contact span,
+.legal-contact a,
+.legal-navigation a {
+  font-size: 0.9rem;
+}
+.legal-header p {
+  font-size: 0.78rem;
+}
+.legal-content p,
+.legal-content ul {
+  font-size: 1rem;
+}
+.legal-details li > span {
+  font-size: 0.76rem;
+}
+.legal-details li > strong,
+.legal-details li > a {
+  font-size: 0.95rem;
+}
+.legal-details li > small {
+  font-size: 0.84rem;
+}
+.legal-details li > a {
+  padding: 0.55rem 0;
+  margin: -0.55rem 0;
+}
+@media (max-width: 560px) {
+  .legal-content p,
+  .legal-content ul {
+    font-size: 0.96rem;
+  }
+}

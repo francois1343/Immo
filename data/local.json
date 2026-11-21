@@ -72,32 +72,32 @@
         },
         "Leugnies": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village frontalier, sur la route qui mène de Beaumont à la frontière française",
           "source": "https://fr.wikipedia.org/wiki/Leugnies"
         },
         "Leval-Chaudeville": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la Hantes",
           "source": "https://fr.wikipedia.org/wiki/Leval-Chaudeville"
         },
         "Renlies": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village de la Fagne, traversé par la Hantes, classée en site Natura 2000",
           "source": "https://fr.wikipedia.org/wiki/Renlies"
         },
         "Solre-Saint-Géry": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la Hantes et par son affluent, le ruisseau du Barbesigneau",
           "source": "https://fr.wikipedia.org/wiki/Solre-Saint-G%C3%A9ry"
         },
         "Strée": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village agricole situé sur le tracé de l’ancienne chaussée romaine de Bavay à Trèves",
           "source": "https://fr.wikipedia.org/wiki/Str%C3%A9e_(Beaumont)"
         },
         "Thirimont": {
           "formerCommune": true,
-          "note": null,
+          "note": "Habitat dispersé : un centre et onze hameaux",
           "source": "https://fr.wikipedia.org/wiki/Thirimont_(Beaumont)"
         }
       }
@@ -329,7 +329,7 @@
         },
         "Bailièvre": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village de la Fagne, proche de la frontière française",
           "source": "https://fr.wikipedia.org/wiki/Baili%C3%A8vre"
         },
         "Bourlers": {
@@ -359,12 +359,12 @@
         },
         "Rièzes": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village de la Thiérache, en bordure de la frontière française",
           "source": "https://fr.wikipedia.org/wiki/Ri%C3%A8zes"
         },
         "Robechies": {
           "formerCommune": true,
-          "note": null,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
           "source": "https://fr.wikipedia.org/wiki/Robechies"
         },
         "Saint-Remy": {
@@ -389,7 +389,7 @@
         },
         "Virelles": {
           "formerCommune": true,
-          "note": null,
+          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
           "source": "https://fr.wikipedia.org/wiki/Virelles"
         }
       }
@@ -725,7 +725,7 @@
         },
         "Castillon": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village voisin de Barbençon, qui comprend le hameau de Mertenne",
           "source": "https://fr.wikipedia.org/wiki/Castillon_(Belgique)"
         },
         "Chastrès": {
@@ -735,7 +735,7 @@
         },
         "Clermont": {
           "formerCommune": true,
-          "note": null,
+          "note": "À l’extrémité ouest de la province de Namur, entre Thuillies, Castillon, Boussu-lez-Walcourt et Strée",
           "source": "https://fr.wikipedia.org/wiki/Clermont_(Walcourt)"
         },
         "Fontenelle": {
@@ -765,7 +765,7 @@
         },
         "Rognée": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé entre Berzée, Pry, Fontenelle et Castillon",
           "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
         },
         "Somzée": {
@@ -865,12 +865,12 @@
         },
         "Daussois": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la route nationale N40, entre Philippeville et Beaumont",
           "source": "https://fr.wikipedia.org/wiki/Daussois"
         },
         "Senzeilles": {
           "formerCommune": true,
-          "note": null,
+          "note": "Bourg regroupé au sommet d’une butte, sur la ligne de partage des bassins de la Meuse et de la Sambre",
           "source": "https://fr.wikipedia.org/wiki/Senzeille"
         },
         "Silenrieux": {
@@ -880,12 +880,12 @@
         },
         "Soumoy": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village baigné par le ruisseau de Soumoy, qui rejoint le pré-barrage de Falemprise",
           "source": "https://fr.wikipedia.org/wiki/Soumoy"
         },
         "Villers-Deux-Églises": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village bordé à l’est par la route nationale N40",
           "source": "https://fr.wikipedia.org/wiki/Villers-Deux-%C3%89glises"
         }
       }
@@ -985,7 +985,7 @@
         },
         "Neuville": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé sur les routes nationales N5 (Philippeville – Couvin) et N978",
           "source": "https://fr.wikipedia.org/wiki/Neuville_(Philippeville)"
         },
         "Omezée": {
@@ -1010,7 +1010,7 @@
         },
         "Samart": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé au sud de Philippeville, entre Neuville, Roly, Sautour et Vodecée",
           "source": "https://fr.wikipedia.org/wiki/Samart"
         },
         "Sart-en-Fagne": {
@@ -1020,7 +1020,7 @@
         },
         "Sautour": {
           "formerCommune": true,
-          "note": null,
+          "note": "Ruines d’une ancienne place forte ; le « Haut-du-Village » est classé par la Région wallonne",
           "source": "https://fr.wikipedia.org/wiki/Sautour"
         },
         "Surice": {

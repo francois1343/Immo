@@ -85,3 +85,15 @@
     display: none;
   }
 }
+/* ── Lot du 21 novembre 2026 : confort de lecture et grands écrans ── */
+.site-footer {
+  font-size: var(--fs-s, 13.5px);
+}
+.site-footer-id {
+  font-size: clamp(13.5px, 0.22vw + 12.4px, 16px);
+}
+@media (max-width: 1180px) {
+  .site-footer-links a {
+    min-height: 44px;
+  }
+}

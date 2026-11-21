@@ -1692,3 +1692,235 @@ textarea {
     box-shadow: none;
   }
 }
+/* ── Lot du 21 novembre 2026 : confort de lecture et grands écrans ──
+   Même direction artistique. Les textes gagnent environ un point, de façon
+   fluide ; la page s’élargit avec l’écran et les paragraphes gardent une
+   largeur de lecture. Les titres ne changent pas sur téléphone. */
+:root {
+  --fs-xs: clamp(12px, 0.2vw + 11px, 14px);
+  --fs-s: clamp(13.5px, 0.22vw + 12px, 15.5px);
+  --fs-b: clamp(15px, 0.25vw + 13px, 17.5px);
+  --fs-l: clamp(16.5px, 0.32vw + 13.5px, 19.5px);
+  --fs-h3: clamp(17px, 0.3vw + 14px, 20.5px);
+  --fs-btn: clamp(13px, 0.2vw + 11.4px, 15px);
+}
+.eyebrow,
+.quiet,
+.ribbon,
+.zone-codes,
+.review-card figcaption,
+.aerial-view figcaption,
+.aerial-tag,
+.card .number,
+.steps li {
+  font-size: var(--fs-xs);
+}
+.identity,
+.section-more,
+.zone-chips a,
+.zones-note,
+.journey-steps a,
+.card a,
+.zone a,
+label,
+.error,
+.aerial-note {
+  font-size: var(--fs-s);
+}
+.features p,
+.journey-steps p,
+.band p,
+.card p,
+.aside p,
+.zone-places,
+.review-card p,
+.reviews-lead p,
+.aerial-lead,
+.aerial-points p,
+.faq-list details p,
+.faq details p,
+.faq-list summary,
+.faq summary,
+.ribbon strong,
+.hero-person {
+  font-size: var(--fs-b);
+}
+.zone .zone-places a {
+  font-size: inherit;
+}
+.intro {
+  font-size: var(--fs-l);
+}
+.features h3,
+.journey-steps h3,
+.aerial-points h3,
+.card h3,
+.zone h2 {
+  font-size: var(--fs-h3);
+}
+.button {
+  font-size: var(--fs-btn);
+}
+.band h2 {
+  font-size: clamp(22px, 0.4vw + 17px, 27px);
+}
+@media (min-width: 761px) {
+  .section h2,
+  .section-head h2,
+  .callout h2 {
+    font-size: clamp(30px, 1.05vw + 17px, 42px);
+  }
+  .aside h2,
+  .content h2,
+  legend {
+    font-size: clamp(23px, 0.5vw + 17px, 28px);
+  }
+}
+@media (min-width: 1100px) {
+  .top nav {
+    font-size: var(--fs-s);
+  }
+}
+/* Grands écrans : la page suit la largeur disponible au lieu de rester une colonne centrée. */
+@media (min-width: 1200px) {
+  .shell {
+    width: min(clamp(1160px, 78vw, 1720px), calc(100% - 64px));
+  }
+  /* Questions fréquentes de l’accueil : deux colonnes. */
+  .home-faq .faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(32px, 4vw, 72px);
+    align-items: start;
+  }
+}
+@media (min-width: 1500px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, clamp(480px, 32vw, 680px));
+    gap: clamp(64px, 6vw, 120px);
+    padding: clamp(64px, 5vw, 104px) 0 clamp(50px, 4vw, 84px);
+  }
+  .hero h1 {
+    font-size: clamp(54px, 3.5vw, 78px);
+  }
+  .portrait {
+    max-width: clamp(480px, 32vw, 680px);
+  }
+  .portrait img {
+    height: clamp(420px, 28vw, 600px);
+  }
+  .portrait-caption strong {
+    font-size: clamp(20px, 1.2vw, 26px);
+  }
+  .top {
+    padding-top: clamp(18px, 1.4vw, 30px);
+    padding-bottom: clamp(18px, 1.4vw, 30px);
+  }
+  .identity img {
+    width: clamp(120px, 8vw, 168px);
+    height: auto;
+  }
+  .section {
+    padding-top: clamp(56px, 4.4vw, 96px);
+    padding-bottom: clamp(56px, 4.4vw, 96px);
+  }
+  .picto {
+    width: clamp(30px, 1.9vw, 40px);
+    height: clamp(30px, 1.9vw, 40px);
+  }
+  .features li {
+    padding-top: clamp(24px, 1.8vw, 36px);
+  }
+  .journey-n {
+    width: clamp(36px, 2.3vw, 46px);
+    height: clamp(36px, 2.3vw, 46px);
+    font-size: var(--fs-b);
+  }
+  .journey-steps li::after {
+    top: clamp(18px, 1.15vw, 23px);
+    left: clamp(46px, 3vw, 60px);
+  }
+  .aerial {
+    gap: clamp(56px, 5vw, 104px);
+  }
+  .aerial-tag .picto {
+    width: 24px;
+    height: 24px;
+  }
+  .aerial-points .picto {
+    width: 28px;
+    height: 28px;
+  }
+  /* Catalogue et avis côte à côte. */
+  .duo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 1.6vw, 32px);
+  }
+  .band {
+    padding: clamp(26px, 2vw, 38px) clamp(28px, 2.2vw, 42px);
+  }
+  .callout {
+    padding: clamp(40px, 3.4vw, 72px);
+  }
+  .zone-chips a {
+    min-height: 48px;
+    padding: 10px 18px;
+  }
+}
+/* Zones tactiles : une question, un lien isolé ou un lien de tableau se touchent sans viser. */
+.faq-list summary,
+.faq summary {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: -14px;
+  margin-bottom: -14px;
+}
+.faq-list summary::after,
+.faq summary::after {
+  top: 10px;
+}
+.section-more a,
+.zones-note a,
+.aside a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.draft {
+  font-size: 12px;
+}
+.band h2,
+.section-head h2 {
+  text-wrap: balance;
+}
+@media (max-width: 760px) {
+  .zone .zone-places a {
+    padding: 9px 0;
+  }
+}
+@media (max-width: 1180px) {
+  .zone a {
+    min-height: 44px;
+  }
+  .zone .zone-places a {
+    min-height: 0;
+  }
+}
+/* Écran bas en paysage (téléphone couché) : le haut de page tient dans la hauteur. */
+@media (min-width: 761px) and (max-height: 520px) {
+  .hero {
+    padding: 28px 0 28px;
+    align-items: start;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 4.4vw, 40px);
+    margin: 12px 0 14px;
+  }
+  .portrait img {
+    height: min(300px, 70vh);
+  }
+  .section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}

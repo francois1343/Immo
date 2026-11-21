@@ -29,7 +29,7 @@ test("live with phase 1 approved: only those pages are indexable and in the site
     const phase1 = generated.quality.rows.filter((r) => r.phase === 1).map((r) => r.route),
       weak = generated.quality.rows.filter((r) => r.status !== "complete").map((r) => r.route);
     assert.equal(phase1.length, 28);
-    assert.equal(weak.length, 52);
+    assert.equal(weak.length, 32);
     /* A reviewer approves phase 1, and by mistake two unfinished pages. */
     generated.quality = Q.evaluate(generated.pages, { approvedRoutes: [...phase1, ...weak.slice(0, 2)] });
     const seo = S.build(root, out, generated);

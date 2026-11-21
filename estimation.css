@@ -426,3 +426,23 @@
 .estimate-more summary {
   flex-wrap: wrap;
 }
+/* ── Lot du 21 novembre 2026 : confort de lecture et grands écrans ── */
+.estimate-progress,
+.optional,
+.field-hint {
+  font-size: var(--fs-xs, 12px);
+}
+.field-error,
+.estimate-recap,
+.link-button {
+  font-size: var(--fs-s, 13.5px);
+}
+.estimate .field label,
+.estimate .choice > legend,
+.estimate-more label,
+.chip,
+.estimate-main,
+.estimate-more summary,
+.estimate-failure {
+  font-size: var(--fs-b, 15px);
+}
