@@ -385,7 +385,8 @@
             "p": [
               "En Belgique, la profession d’agent immobilier est réglementée. Seule une personne inscrite à l’Institut professionnel des agents immobiliers (IPI) peut l’exercer comme indépendant. L’agent est soumis à un code de déontologie et au contrôle de l’IPI.",
               "Le numéro d’agrément de Martin est le 513.699. Il peut être vérifié dans le registre public de l’IPI."
-            ]
+            ],
+            "link": ["Vérifier l’agrément IPI", "https://www.ipi.be/agent-immobilier?keys=513699"]
           },
           {
             "h2": "Sa façon de travailler",
@@ -399,18 +400,14 @@
           {
             "h2": "Où il intervient",
             "p": [
-              "Martin n’a pas de bureau dans chaque commune : il est installé à Barbençon et se déplace chez vous. Les secteurs ci-dessous sont ceux où il est le plus présent."
+              "Martin est installé à Barbençon, à proximité des communes ci-dessous, et se déplace chez vous. Ce sont les secteurs où il est le plus présent."
             ]
           }
         ],
         "faq": [
           [
-            "Martin Snauwaert a-t-il une agence où je peux passer ?",
-            "Martin est installé à Barbençon (Beaumont) et travaille sur rendez-vous. Il se déplace chez vous : la visite du bien est de toute façon le point de départ."
-          ],
-          [
             "Comment vérifier qu’un agent immobilier est agréé ?",
-            "Par le registre public de l’IPI, accessible sur ipi.be, où chaque agent agréé apparaît avec son numéro."
+            "Par le registre public de l’IPI, accessible sur ipi.be, où chaque agent agréé apparaît avec son numéro. Celui de Martin est le 513.699."
           ],
           [
             "Quel est le lien avec Connexion Immo ?",

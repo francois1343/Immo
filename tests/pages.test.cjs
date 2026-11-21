@@ -55,10 +55,34 @@ test("no generated page presents an excluded centre as a sector or claims an off
         assert.ok(!new RegExp(`\\bà ${name}\\b`).test(field), `${p.route} : « à ${name} »`);
     }
     /* Martin has one address, in Barbençon. No page may give him another. */
-    assert.ok(!/(bureau|agence) (de Martin |situé |située )?à (?!Barbençon)/i.test(text(p).replace(/n’a pas de bureau à [^:]+:/g, "").replace(/a-t-il un bureau à [^?]+\?/g, "")), p.route);
+    assert.ok(!/(bureau|agence) (de Martin |situé |située )?à (?!Barbençon)/i.test(text(p)), p.route);
+    /* Wording agreed on 2026-11-21: no defensive sentence, no question about an office. */
+    assert.ok(!/n’a pas (de bureau|à)|a-t-il un(e)? (bureau|agence)/i.test(text(p)), p.route);
   }
   const names = new Set(P.targets(data.zones).map((t) => P.key(t.locality)));
   for (const p of pages.filter((x) => x.locality)) assert.ok(names.has(P.key(p.locality)), p.route);
+});
+
+test("local emblems: a known pictogram, a sourced landmark, never a place outside the targeted villages", () => {
+  const E = require("../scripts/pages/emblems.cjs");
+  assert.ok(E.validate(data.local));
+  const broken = structuredClone(data.local);
+  broken.communes.beaumont.landmarks[0].emblem = { icon: "inconnu", label: "x" };
+  assert.throws(() => E.validate(broken));
+  const targeted = new Set(P.targets(data.zones).map((x) => P.key(x.locality)));
+  const banned = P.excludedNames(data.zones);
+  const marks = new Map();
+  for (const p of pages) {
+    const m = /<p class="local-mark">.*?<strong>(.*?)<\/strong>(?:<span>(.*?)<\/span>)?/.exec(p.main);
+    if (!m) continue;
+    assert.ok(["commune", "locality", "service-commune", "service-locality"].includes(p.family), p.route);
+    if (m[2]) assert.ok(targeted.has(P.key(m[2])) && !banned.includes(m[2]), `${p.route} : ${m[2]}`);
+    if (p.family === "commune") marks.set(p.route, m[1]);
+  }
+  /* Every commune page has its own mark: Beaumont does not look like Chimay or Thuin. */
+  assert.equal(marks.size, data.zones.communes.filter((c) => c.active).length);
+  assert.equal(new Set(marks.values()).size, marks.size);
+  assert.equal(marks.get("/secteurs/beaumont/"), "Tour Salamandre");
 });
 
 test("a local page without enough sourced facts stays to review, and nothing is approved by default", () => {

@@ -2,6 +2,7 @@
    data/zones.json or data/local.json; when a value is missing the sentence is
    left out, never replaced by a guess. */
 const P = require("../partials.cjs");
+const E = require("./emblems.cjs");
 const { esc } = P;
 const nf = new Intl.NumberFormat("fr-BE");
 const TEL = { href: "tel:+32493057184", label: "0493 05 71 84" };
@@ -34,16 +35,21 @@ function sections(rows = []) {
 ${paragraphs(s.p)}
 ${s.steps ? steps(s.steps) : ""}
 ${s.list ? list(s.list.map(esc)) : ""}
-${s.after ? `<p>${esc(s.after)}</p>` : ""}
+${s.after ? `<p>${esc(s.after)}</p>` : ""}${s.link ? `
+<p class="section-more">${ext(s.link[1], s.link[0])}</p>` : ""}
 </section>`,
     )
     .join("\n");
 }
-const intro = ({ eyebrow, h1, lead }) => `<section class="page-intro">
+/* `mark` is the local emblem of a commune or village page, when a sourced landmark carries one. */
+const intro = ({ eyebrow, h1, lead, mark = "" }) => `<section class="page-intro${mark ? " has-mark" : ""}">
+<div>
 <p class="eyebrow">${esc(eyebrow)}</p>
 <h1>${esc(h1)}</h1>
 <p class="intro">${esc(lead)}</p>
+</div>${mark ? "\n" + mark : ""}
 </section>`;
+const localMark = (ctx, c, l) => E.mark(E.pick(knowledge(ctx, c).landmarks, l && l.name, P.key));
 function cta(title, text, href, label) {
   return `<section class="callout">
 <div><h2>${esc(title)}</h2><p class="intro">${esc(text)}</p></div>
@@ -172,7 +178,9 @@ const presence = (c, l) =>
     ? "Martin Snauwaert est installé à Barbençon : c’est ici son point d’attache."
     : c.anchor
       ? "Martin Snauwaert est installé à Barbençon, dans l’entité de Beaumont : c’est son secteur d’attache."
-      : `Martin Snauwaert n’a pas de bureau ${l ? "à " + l.name : c.publicLabel ? "dans ces villages" : "à " + c.commune} : il est installé à Barbençon (Beaumont) et se déplace chez vous, sur rendez-vous.`;
+      : `Martin Snauwaert est installé à Barbençon (Beaumont), à proximité ${l ? near(l.name) : c.publicLabel ? "de ces villages" : near(c.commune)}, et se déplace chez vous sur rendez-vous.`;
+/* « de Thuin », « d’Erquelinnes », « du Roux ». */
+const near = (n) => (/^Le /.test(n) ? "du " + n.slice(3) : /^Les /.test(n) ? "des " + n.slice(4) : /^[aeiouyàâéèêëîïôöûü]/i.test(n) ? "d’" + n : "de " + n);
 
 /* ── Service pages ─────────────────────────────────────────────────── */
 function serviceHub(ctx, s) {
@@ -221,7 +229,7 @@ function angle(ctx, s, c, l, src) {
   }
   if (s.id === "estimation") {
     if (!l && names.length > 1)
-      items.push(`L’adresse précise : la commune compte ${names.length} villages couverts (${names.map(esc).join(", ")}), et la demande n’est pas la même de l’un à l’autre.`);
+      items.push(`L’adresse précise, parmi les ${names.length} villages couverts (${names.map(esc).join(", ")}). La demande n’est pas la même de l’un à l’autre.`);
     if (l) items.push(`L’adresse précise ${here} : rue, voisinage, accès et environnement immédiat.`);
     const st = station();
     if (st) items.push(`La proximité d’une gare SNCB (${st}), relevée parmi les éléments de situation.`);
@@ -256,7 +264,7 @@ function angle(ctx, s, c, l, src) {
 function localFaq(ctx, s, c, l) {
   const L = ctx.data.local.communes[c.id] || {};
   const place = l ? ctx.placeOfLocality(l) : ctx.placeOfCommune(c);
-  const rows = [[`Martin a-t-il un bureau ${place.a} ?`, esc(l && P.key(l.name) === "barbençon" ? "Martin est installé à Barbençon et travaille sur rendez-vous." : c.anchor && !l ? "Martin est installé à Barbençon, dans l’entité de Beaumont, et travaille sur rendez-vous." : "Non. Martin est installé à Barbençon (Beaumont). Il se déplace chez vous sur rendez-vous : la visite du bien est le point de départ.")]];
+  const rows = [];
   if (l)
     rows.push([`À quelle commune appartient ${l.name} ?`, esc(`${l.name} fait partie de la commune ${ctx.de(c.commune)} (province ${c.province === "Hainaut" ? "de Hainaut" : "de Namur"}), code postal ${l.postalCode}${l.postalName ? `, libellé postal « ${l.postalName} »` : ""}. Les démarches d’urbanisme se font auprès de cette commune.`)]);
   if (L.adminAddress)
@@ -279,7 +287,7 @@ function serviceCommune(ctx, s, c) {
     ? P.targetedLocalities(c).map((l) => [`/${s.slug}/${c.id}/${P.slug(l.name)}/`, l.name]).filter(([href]) => ctx.has(href))
     : [];
   const others = ctx.data.services.filter((x) => x.id !== s.id).map((x) => [ctx.best(x, c), x.label]);
-  const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead) })}
+  const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead), mark: localMark(ctx, c) })}
 <div class="content wide">
 <section class="block"><h2>${esc(f(s.local.angleTitle))}</h2>
 ${a.html}
@@ -317,7 +325,7 @@ function serviceLocality(ctx, s, c, l) {
     .filter((x) => x.name !== l.name)
     .map((x) => [`/${s.slug}/${c.id}/${P.slug(x.name)}/`, x.name])
     .filter(([href]) => ctx.has(href));
-  const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead) })}
+  const html = `${intro({ eyebrow: f(s.local.eyebrow), h1: f(s.local.h1), lead: f(s.local.lead), mark: localMark(ctx, c, l) })}
 <div class="content wide">
 <section class="block"><h2>${esc(f(s.local.angleTitle))}</h2>
 ${a.html}
@@ -397,7 +405,7 @@ function commune(ctx, c) {
   const lead = c.anchor
     ? "Beaumont est le secteur d’attache de Martin Snauwaert, installé à Barbençon. Voici les villages couverts, les repères utiles à un vendeur et les démarches locales."
     : `${presence(c)} Voici les villages couverts, les repères utiles à un vendeur et les démarches locales.`;
-  const html = `${intro({ eyebrow: `Secteur · ${place.lieu}`, h1: `Vendre ou faire estimer un bien ${place.a}`, lead })}
+  const html = `${intro({ eyebrow: `Secteur · ${place.lieu}`, h1: `Vendre ou faire estimer un bien ${place.a}`, lead, mark: localMark(ctx, c) })}
 <div class="content wide">
 <section class="block"><h2>${esc(own.length ? "Les villages couverts" : "Le périmètre couvert")}</h2>
 ${c.publicLabel ? `<p>Dans la commune ${esc(ctx.de(c.commune))}, Martin intervient dans les villages ci-dessous.</p>` : ""}
@@ -431,7 +439,7 @@ function locality(ctx, c, l) {
     const href = ctx.best(s, c, l);
     return [href, s.label, href === `/${s.slug}/` ? "La prestation" : href.endsWith(`/${P.slug(l.name)}/`) ? l.name : cplace.lieu];
   });
-  const html = `${intro({ eyebrow: `${cplace.lieu} · ${l.postalCode}`, h1: `Vendre ou faire estimer un bien ${place.a}`, lead: `${presence(c, l)} Voici les repères utiles pour un bien situé ${place.a}.` })}
+  const html = `${intro({ eyebrow: `${cplace.lieu} · ${l.postalCode}`, h1: `Vendre ou faire estimer un bien ${place.a}`, mark: localMark(ctx, c, l), lead: `${presence(c, l)} Voici les repères utiles pour un bien situé ${place.a}.` })}
 <div class="content wide">
 <section class="block"><h2>${esc(l.name)} en bref</h2>
 ${dl(lf.rows)}

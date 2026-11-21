@@ -31,7 +31,11 @@
         {
           "text": "Tour Salamandre, ancien donjon du XIe siècle abritant un musée",
           "locality": "Beaumont",
-          "source": "https://fr.wikipedia.org/wiki/Tour_Salamandre"
+          "source": "https://fr.wikipedia.org/wiki/Tour_Salamandre",
+          "emblem": {
+            "icon": "keep",
+            "label": "Tour Salamandre"
+          }
         },
         {
           "text": "Route nationale N53 Charleroi – Chimay, croisement avec la N40 à Beaumont",
@@ -126,7 +130,11 @@
         {
           "text": "Domaine des Lacs de l’Eau d’Heure (1 800 ha), sur les communes de Froidchapelle et de Cerfontaine",
           "locality": null,
-          "source": "https://www.lacsdeleaudheure.be/fr"
+          "source": "https://www.lacsdeleaudheure.be/fr",
+          "emblem": {
+            "icon": "lake",
+            "label": "Lacs de l’Eau d’Heure"
+          }
         },
         {
           "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
@@ -201,7 +209,11 @@
         {
           "text": "RAVeL de la ligne 109 (Lobbes – Chimay) traversant la commune",
           "locality": null,
-          "source": "https://fr.wikipedia.org/wiki/Sivry-Rance"
+          "source": "https://fr.wikipedia.org/wiki/Sivry-Rance",
+          "emblem": {
+            "icon": "trail",
+            "label": "RAVeL de la ligne 109"
+          }
         },
         {
           "text": "Route nationale N53 Charleroi – Chimay",
@@ -272,7 +284,11 @@
         {
           "text": "Château de Chimay, au cœur de la ville",
           "locality": "Chimay",
-          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chimay"
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chimay",
+          "emblem": {
+            "icon": "castle",
+            "label": "Château de Chimay"
+          }
         },
         {
           "text": "Étang (lac) de Virelles, réserve naturelle à 3 km au nord-est de Chimay",
@@ -282,7 +298,11 @@
         {
           "text": "Abbaye Notre-Dame de Scourmont",
           "locality": "Forges",
-          "source": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Scourmont"
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Scourmont",
+          "emblem": {
+            "icon": "abbey",
+            "label": "Abbaye de Scourmont"
+          }
         },
         {
           "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
@@ -416,12 +436,20 @@
         {
           "text": "Beffroi de Thuin, inscrit au patrimoine mondial de l’UNESCO (beffrois de Belgique et de France)",
           "locality": "Thuin",
-          "source": "https://fr.wikipedia.org/wiki/Beffroi_de_Thuin"
+          "source": "https://fr.wikipedia.org/wiki/Beffroi_de_Thuin",
+          "emblem": {
+            "icon": "belfry",
+            "label": "Beffroi de Thuin"
+          }
         },
         {
           "text": "Abbaye d’Aulne, au hameau d’Aulne en bord de Sambre",
           "locality": "Gozée",
-          "source": "https://fr.wikipedia.org/wiki/Abbaye_d'Aulne"
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_d'Aulne",
+          "emblem": {
+            "icon": "abbey",
+            "label": "Abbaye d’Aulne"
+          }
         },
         {
           "text": "Jardins suspendus de Thuin, patrimoine exceptionnel de Wallonie",
@@ -540,7 +568,11 @@
         {
           "text": "Château de Ham-sur-Heure",
           "locality": "Ham-sur-Heure",
-          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Ham-sur-Heure"
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Ham-sur-Heure",
+          "emblem": {
+            "icon": "manor",
+            "label": "Château de Ham-sur-Heure"
+          }
         },
         {
           "text": "Route nationale N5 bordant le quartier de Nalinnes-Bultia",
@@ -650,12 +682,20 @@
         {
           "text": "Basilique Saint-Materne (Notre-Dame de Walcourt)",
           "locality": "Walcourt",
-          "source": "https://fr.wikipedia.org/wiki/Basilique_Saint-Materne_de_Walcourt"
+          "source": "https://fr.wikipedia.org/wiki/Basilique_Saint-Materne_de_Walcourt",
+          "emblem": {
+            "icon": "basilica",
+            "label": "Basilique Saint-Materne"
+          }
         },
         {
           "text": "Château médiéval de Thy-le-Château",
           "locality": "Thy-le-Château",
-          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Thy-le-Ch%C3%A2teau"
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Thy-le-Ch%C3%A2teau",
+          "emblem": {
+            "icon": "castle",
+            "label": "Château de Thy-le-Château"
+          }
         },
         {
           "text": "Route nationale N5 (E420), en voie rapide de Somzée à la frontière française",
@@ -791,7 +831,11 @@
         {
           "text": "Barrage de l’Eau d’Heure, situé près de Silenrieux",
           "locality": "Silenrieux",
-          "source": "https://fr.wikipedia.org/wiki/Lacs_de_l'Eau_d'Heure"
+          "source": "https://fr.wikipedia.org/wiki/Lacs_de_l'Eau_d'Heure",
+          "emblem": {
+            "icon": "dam",
+            "label": "Barrage de l’Eau d’Heure"
+          }
         },
         {
           "text": "Route nationale N978 Gerpinnes – Cerfontaine via Silenrieux, croisement avec la N589 à Cerfontaine",
@@ -886,12 +930,20 @@
         {
           "text": "Ancienne enceinte fortifiée de Philippeville",
           "locality": "Philippeville",
-          "source": "https://fr.wikipedia.org/wiki/Enceinte_de_Philippeville"
+          "source": "https://fr.wikipedia.org/wiki/Enceinte_de_Philippeville",
+          "emblem": {
+            "icon": "ramparts",
+            "label": "Ancienne place forte"
+          }
         },
         {
           "text": "Château fort médiéval de Fagnolle, ruine classée",
           "locality": "Fagnolle",
-          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Fagnolle"
+          "source": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Fagnolle",
+          "emblem": {
+            "icon": "castle",
+            "label": "Château fort de Fagnolle"
+          }
         }
       ],
       "beauxVillages": [
@@ -1033,7 +1085,11 @@
         {
           "text": "Chemin de fer à vapeur des Trois Vallées, ligne touristique Mariembourg – Treignes",
           "locality": "Mariembourg",
-          "source": "https://fr.wikipedia.org/wiki/Chemin_de_fer_%C3%A0_vapeur_des_Trois_Vall%C3%A9es"
+          "source": "https://fr.wikipedia.org/wiki/Chemin_de_fer_%C3%A0_vapeur_des_Trois_Vall%C3%A9es",
+          "emblem": {
+            "icon": "steam",
+            "label": "Chemin de fer des Trois Vallées"
+          }
         },
         {
           "text": "Route nationale N5 (E420) Charleroi – frontière française",
@@ -1119,7 +1175,11 @@
         {
           "text": "Commune arrosée par la Sambre, région de la Haute-Sambre",
           "locality": null,
-          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau",
+          "emblem": {
+            "icon": "river",
+            "label": "La Sambre"
+          }
         }
       ],
       "beauxVillages": [],
@@ -1203,7 +1263,11 @@
         {
           "text": "Site de l’ancienne abbaye de la Thure, entre Solre-sur-Sambre et Bersillies-l’Abbaye",
           "locality": "Bersillies-l’Abbaye",
-          "source": "https://fr.wikipedia.org/wiki/Abbaye_de_la_Thure"
+          "source": "https://fr.wikipedia.org/wiki/Abbaye_de_la_Thure",
+          "emblem": {
+            "icon": "abbey",
+            "label": "Ancienne abbaye de la Thure"
+          }
         }
       ],
       "beauxVillages": [],
@@ -1276,7 +1340,11 @@
         {
           "text": "RAVeL sur le chemin de halage de la Sambre, reliant Landelies à Charleroi et Thuin",
           "locality": "Landelies",
-          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul"
+          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul",
+          "emblem": {
+            "icon": "towpath",
+            "label": "Halage de la Sambre"
+          }
         }
       ],
       "beauxVillages": [],
