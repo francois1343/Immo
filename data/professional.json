@@ -1,5 +1,5 @@
 {
-  "reviewedOn": "2026-11-18",
+  "reviewedOn": "2026-11-21",
   "about": "Mentions professionnelles affichées par le site. Source unique du pied de page et de la page Mentions légales. Le pied de page n'affiche qu'une valeur verified avec footer:true. Les pièces de vérification ne sont pas dans ce dépôt.",
   "fields": [
     {
@@ -66,18 +66,32 @@
     },
     {
       "key": "company",
-      "value": "",
-      "status": "to-confirm",
-      "footer": false,
-      "legalLabel": "Entreprise",
+      "value": "BE 0721.961.003",
+      "vatId": "BE0721961003",
+      "status": "verified",
+      "footer": true,
+      "footerLabel": "TVA",
+      "legalLabel": "Numéro d’entreprise / TVA",
+      "legalText": "BE 0721.961.003 – entreprise en personne physique",
       "missingText": "statut juridique et numéro d’entreprise BCE / TVA"
     },
     {
+      "key": "thirdPartyAccount",
+      "value": "BE90 3701 2576 4732",
+      "status": "verified",
+      "footer": true,
+      "footerLabel": "Compte de tiers",
+      "legalLabel": "Compte de tiers",
+      "legalText": "ING – BE90 3701 2576 4732",
+      "legalNote": "Compte distinct, réservé aux fonds détenus pour le compte de clients ou de tiers. Ce n’est pas le compte de paiement des prestations."
+    },
+    {
       "key": "insurance",
-      "value": "",
-      "status": "to-confirm",
+      "value": "AXA Belgium – police n° 730.390.160",
+      "status": "verified",
       "footer": false,
       "legalLabel": "Assurance responsabilité civile professionnelle",
+      "legalText": "AXA Belgium – police n° 730.390.160 (programme d’assurance collectif des agents immobiliers IPI)",
       "legalWide": true,
       "missingText": "assurance responsabilité civile professionnelle (assureur et numéro de police)"
     },

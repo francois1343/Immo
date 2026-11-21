@@ -81,7 +81,7 @@ test("every page carries the generated blocks and is in sync with the data", () 
   }
 });
 
-test("the footer shows verified details only, and never a bank account", () => {
+test("the footer shows verified details only, and no account other than the labelled third-party account", () => {
   const html = rendered.footer;
   for (const expected of [
     "Martin Snauwaert",
@@ -96,9 +96,15 @@ test("the footer shows verified details only, and never a bank account", () => {
   for (const f of data.pro.fields.filter((x) => x.status !== "verified"))
     for (const text of [f.value, f.footerText].filter(Boolean))
       assert.ok(!html.includes(text), f.key);
-  assert.ok(!/\bBE\d{2}[ \d]{12,}/.test(html));
+  /* The only IBAN is the verified third-party account, and it says what it is. */
+  const account = data.pro.fields.find((f) => f.key === "thirdPartyAccount");
+  assert.equal(account.status, "verified");
+  assert.deepEqual(html.match(/\bBE\d{2}[ \d]{12,}\d/g), [account.value]);
+  assert.ok(html.includes(`<span>Compte de tiers :</span> ${account.value}`));
+  assert.ok(html.includes("<span>TVA :</span> BE 0721.961.003"));
   /* Switching on an unconfirmed value is refused by the data check. */
   const forced = structuredClone(data.pro);
+  forced.fields.find((f) => f.key === "insurance").status = "to-confirm";
   forced.fields.find((f) => f.key === "insurance").footer = true;
   assert.throws(() => P.validatePro(forced));
 });
@@ -119,13 +125,18 @@ test("campaign links use stable sector ids and never name an excluded centre", (
   assert.throws(() => links(data.zones, "Campagne Été", "https://exemple.test"));
 });
 
-test("the legal page comes from the same data: verified host, no unconfirmed bank account", () => {
+test("the legal page comes from the same data: verified host, third-party account named as such", () => {
   const html = read("mentions-legales.html");
   assert.ok(html.includes("Vercel Inc."));
   assert.ok(html.includes("440 N Barranca Avenue #4133, Covina, CA 91723"));
   assert.ok(!html.includes("[Nom de l") && !html.includes("[Adresse"), "placeholder left");
-  assert.ok(!/\bBE\d{2}[ \d]{12,}/.test(html), "bank account left");
-  assert.ok(!html.includes("Compte de tiers"));
+  const account = data.pro.fields.find((f) => f.key === "thirdPartyAccount");
+  assert.deepEqual([...new Set(html.match(/\bBE\d{2}[ \d]{12,}\d/g))], [account.value], "only the third-party account");
+  assert.ok(html.includes("<span>Compte de tiers</span>"));
+  assert.ok(html.includes("Ce n’est pas le compte de paiement des prestations."));
+  assert.ok(html.includes("BE 0721.961.003") && html.includes("730.390.160"));
+  assert.ok(!html.includes("Informations à compléter"));
+  assert.ok(!/\bRPM\b/.test(html), "RPM is for legal persons; the registered entity is a natural person");
   /* Footer and legal list read the same fields: changing one changes both. */
   const moved = structuredClone(data.pro);
   moved.fields.find((f) => f.key === "phone").value = "0400 00 00 00";
@@ -138,7 +149,7 @@ test("the legal page comes from the same data: verified host, no unconfirmed ban
   }
   /* The public data file carries no working notes or unconfirmed numbers. */
   const raw = fs.readFileSync(path.join(__dirname, "..", "data", "professional.json"), "utf8");
-  for (const word of ['"source"', '"note"', '"candidate"', "thirdPartyAccount", "0721"])
+  for (const word of ['"source"', '"note"', '"candidate"'])
     assert.ok(!raw.includes(word), word);
   /* An unverified host is never printed. */
   const draft = structuredClone(data.pro);

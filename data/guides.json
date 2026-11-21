@@ -49,7 +49,6 @@
             "Le dossier d’intervention ultérieure (DIU), pour les travaux réalisés depuis le 1er mai 2001 ; il est remis à l’acheteur au plus tard à l’acte.",
             "Pour une citerne à mazout de 3 000 litres ou plus : le certificat de contrôle d’étanchéité et de conformité.",
             "Pour un appartement : les informations de la copropriété, demandées au syndic.",
-            "Pour des panneaux photovoltaïques : la déclaration de ce qui est compris dans la vente et du bénéficiaire des certificats verts.",
             "Un CertIBEau n’est obligatoire que pour un immeuble raccordé pour la première fois à la distribution d’eau depuis le 1er juin 2021."
           ]
         },
@@ -142,7 +141,7 @@
         {
           "h2": "L’expertise",
           "p": [
-            "C’est un rapport écrit et motivé, établi par un expert, par exemple un géomètre-expert. Elle convient lorsque la valeur doit être établie de façon formelle : succession, partage, séparation, litige."
+            "C’est un rapport écrit et motivé, établi par un expert, par exemple un géomètre-expert. Elle convient lorsque la valeur doit être établie de façon formelle : succession, partage, séparation, litige, mais aussi pour l’expertise bancaire."
           ]
         },
         {
@@ -207,12 +206,11 @@
         },
         {
           "h2": "Ce que paie l’acheteur",
-          "p": ["Les droits d’enregistrement sont à sa charge : 12,5 % en Wallonie, ou 3 % depuis le 1er janvier 2025 pour l’achat de son habitation propre et unique, sous conditions. S’y ajoutent les frais d’acte."]
+          "p": ["Les droits d’enregistrement sont à sa charge : 12,5 % en Wallonie, ou 3 % depuis le 1er janvier 2025 pour l’achat de son habitation propre et unique, sous conditions. S’y ajoutent les frais d’acte, ainsi que la transcription hypothécaire."]
         }
       ],
       "faq": [
-        ["Les droits d’enregistrement concernent-ils le vendeur ?", "Non, ils sont payés par l’acheteur. Ils pèsent toutefois sur son budget total, donc sur ce qu’il peut offrir."],
-        ["Puis-je me rétracter après avoir signé avec un agent immobilier ?", "Oui, sans frais, dans les quatorze jours qui suivent la conclusion du contrat."]
+        ["Les droits d’enregistrement concernent-ils le vendeur ?", "Non, ils sont payés par l’acheteur. Ils pèsent toutefois sur son budget total, donc sur ce qu’il peut offrir."]
       ],
       "sources": [
         ["Notaire.be — taxes sur les plus-values immobilières", "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-frais-lies-lachat/taxes-sur-les-plus-values-immobilieres"],

@@ -208,7 +208,8 @@ function legalDetails(pro) {
     .map(
       (x) => `<li${x.legalWide ? ' class="legal-detail-wide"' : ""}>
             <span>${esc(x.legalLabel)}</span>
-            ${x.href ? linked(x) : `<strong>${esc(x.legalText || x.value)}</strong>`}
+            ${x.href ? linked(x) : `<strong>${esc(x.legalText || x.value)}</strong>`}${x.legalNote ? `
+            <small>${esc(x.legalNote)}</small>` : ""}
           </li>`,
     )
     .join("\n          ");

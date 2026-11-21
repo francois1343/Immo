@@ -239,6 +239,13 @@ a:focus-visible {
   overflow-wrap: anywhere;
 }
 
+.legal-details li > small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
 .legal-details li > a:hover {
   color: var(--accent-text);
 }

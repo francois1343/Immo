@@ -133,6 +133,7 @@ function agentLd(config, pro, zones) {
       addressLocality: m[3],
       addressCountry: "BE",
     };
+  if (v("company") && v("company").vatId) ld.vatID = v("company").vatId;
   if (v("ipi"))
     ld.identifier = { "@type": "PropertyValue", propertyID: "IPI", value: v("ipi").value };
   if (v("network"))
