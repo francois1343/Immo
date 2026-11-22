@@ -12,7 +12,7 @@ Site Next.js 16 (Pages Router, React 19), entièrement rendu en pages statiques 
 
 Les pages sont livrées sans le runtime client de Next.js : le navigateur ne reçoit que le HTML, les feuilles de style et les petits scripts de `public/` (`site.js`, `estimation.js`). La politique de sécurité stricte (`script-src 'self'`) et le poids des pages restent ceux d'avant la migration. Les en-têtes et redirections sont déclarés une seule fois, dans `vercel.json` ; `next.config.js` les reprend hors de Vercel.
 
-`npm run dev` prépare les pages puis lance `next dev` ; après une modification de `content/` ou `data/`, relancer `npm run prepare-site`.
+`npm run dev` prépare les pages puis lance `next dev` ; après une modification de `content/` ou `data/`, relancer `npm run prepare-site`. En développement, React s'exécute dans le navigateur : le contenu des pages (`<main>`) lui est remis tel quel, parce que les scripts du site y travaillent, et les en-têtes de sécurité ne sont appliqués qu'au site construit.
 
 Pages écrites à la main (dans `content/`) : accueil, `/estimation/`, `/preparer-ma-vente/`, `/secteurs/` et pages légales. Les pages de prestation, de commune, de village et les guides sont générées au build depuis `data/` (voir `SEO.md`). `/vendre-beaumont-barbencon/` redirige vers `/secteurs/beaumont/`.
 Les anciens chemins `/Back/estimation.html`, `/Back/formulaire.html` et l’ancre d’estimation restent utilisables.

@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { assets } from "../components/Seo";
 
 /* React adds a preload hint for every image it renders. The pages declare
    their own (the portrait of the home page, in WebP): the automatic ones
@@ -16,7 +17,7 @@ export default class SiteDocument extends Document {
     const bodyClass = page && page.bodyClass !== null ? page.bodyClass : undefined;
     return (
       <Html lang="fr">
-        <Head />
+        <Head>{assets(page?.head)}</Head>
         <body className={bodyClass}>
           <Main />
           <NextScript />

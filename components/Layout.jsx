@@ -1,9 +1,26 @@
 import parse from "html-react-parser";
 
 /* A fragment written as HTML (content/ or data/), turned into React elements. */
-export const Html = ({ children }) => parse(children);
+/* Attributes React names differently and the parser leaves as written. */
+const RENAMED = { fetchpriority: "fetchPriority" };
+function replace(node) {
+  if (!node.attribs) return;
+  for (const [from, to] of Object.entries(RENAMED))
+    if (from in node.attribs) {
+      node.attribs[to] = node.attribs[from];
+      delete node.attribs[from];
+    }
+}
+export const Html = ({ children }) => parse(children, { replace });
 
 const mainProps = ({ id, class: className }) => ({ id, className });
+
+/* The content of a page, handed to the browser as written. The site's own
+   scripts (public/site.js, public/estimation.js) work on this part of the
+   page: React renders it once and never touches it again. */
+const Content = ({ page }) => (
+  <main {...mainProps(page.main)} suppressHydrationWarning dangerouslySetInnerHTML={{ __html: page.html }} />
+);
 
 function SiteLayout({ page }) {
   return (
@@ -25,9 +42,7 @@ function SiteLayout({ page }) {
           </a>
           <Html>{page.nav}</Html>
         </header>
-        <main {...mainProps(page.main)}>
-          <Html>{page.html}</Html>
-        </main>
+        <Content page={page} />
         <Html>{page.footer}</Html>
       </div>
       {page.dock && (
@@ -47,9 +62,7 @@ function SiteLayout({ page }) {
 function LegalLayout({ page }) {
   return (
     <>
-      <main {...mainProps(page.main)}>
-        <Html>{page.html}</Html>
-      </main>
+      <Content page={page} />
       <Html>{page.footer}</Html>
     </>
   );

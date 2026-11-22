@@ -27,6 +27,9 @@ function headTags(head, route) {
   return tags;
 }
 function split(html, route) {
+  /* A Windows checkout holds CRLF: the pages are rendered on LF, like the
+     published ones, so server and browser read the same text. */
+  html = html.replace(/\r\n?/g, "\n");
   const head = /<head>([\s\S]*?)<\/head>/.exec(html),
     body = /<body(?:\s+class="([^"]*)")?\s*>([\s\S]*)<\/body>/.exec(html),
     main = body && /<main\b([^>]*)>([\s\S]*)<\/main>/.exec(body[2]),
