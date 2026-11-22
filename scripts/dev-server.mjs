@@ -1,4 +1,5 @@
-/* Local demonstration only: serves public-dist on 127.0.0.1 and, with --api,
+/* Local demonstration only: serves the built site (public/ and the pages
+   rendered by `npm run build`) on 127.0.0.1 and, with --api,
    a mock reception endpoint backed by memory. Nothing is written to disk and
    nothing leaves the machine. Use fictitious data.
    Usage: node scripts/dev-server.mjs [--api] [--port 4173] */
@@ -13,7 +14,18 @@ import {
   memoryRateLimit,
 } from "../server/inquiry-handler.mjs";
 
-const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "public-dist");
+const base = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+const root = path.join(base, "public"),
+  pages = path.join(base, ".next", "server", "pages");
+/* A static file of public/, or the page Next.js rendered for the address. */
+function locate(name) {
+  const inside = (dir, rel) => {
+    const file = path.resolve(dir, "." + rel);
+    return file.startsWith(dir + path.sep) && fs.existsSync(file) && fs.statSync(file).isFile() ? file : null;
+  };
+  if (name.endsWith("/")) return inside(pages, name === "/" ? "/index.html" : name.slice(0, -1) + ".html");
+  return inside(root, name) || (name.endsWith(".html") ? inside(pages, name + ".html") : null);
+}
 const phoneLib = createRequire(import.meta.url)("libphonenumber-js");
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -72,10 +84,8 @@ export function start({ api = false, port = 4173, fail = () => false } = {}) {
         'window.turnstile={render(el,o){this.o=o;el.textContent="Vérification anti-robot (simulation locale)";this.reset();},reset(){setTimeout(()=>this.o.callback("jeton-fictif-valide"),50);}};',
       );
     }
-    let name = decodeURIComponent(url.pathname);
-    if (name.endsWith("/")) name += "index.html";
-    const file = path.resolve(root, "." + name);
-    if (!file.startsWith(root + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
+    const file = locate(decodeURIComponent(url.pathname));
+    if (!file) {
       res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
       return res.end("Introuvable");
     }

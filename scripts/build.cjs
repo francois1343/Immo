@@ -1,21 +1,19 @@
-/* Explicit public export: legacy experiments and working files stay outside.
-   Hand-written pages are copied, local pages are generated from data/*.json,
-   then every page receives its metadata. Reports go to reports/, never to the
-   public export. */
+/* Builds the site with Next.js and controls what it publishes.
+   1. scripts/prepare.cjs: pages (hand-written in content/, local pages from
+      data/*.json) with their metadata, sitemap, vendor bundle.
+   2. next build: every page rendered as static HTML.
+   3. Controls on the rendered pages and on public/, then reports in reports/
+      (never published). */
 const fs = require("node:fs"),
-  path = require("node:path");
+  path = require("node:path"),
+  { spawnSync } = require("node:child_process");
 const root = path.resolve(__dirname, ".."),
-  out = path.join(root, "public-dist"),
+  pub = path.join(root, "public"),
+  rendered = path.join(root, ".next", "server", "pages"),
   reports = path.join(root, "reports");
+/* Explicit list of the public files: legacy experiments and working files
+   stay outside, and an unlisted file in public/ stops the build. */
 const files = [
-  "index.html",
-  "estimation/index.html",
-  "preparer-ma-vente/index.html",
-  "secteurs/index.html",
-  "Back/estimation.html",
-  "Back/formulaire.html",
-  "mentions-legales.html",
-  "politique-confidentialite.html",
   "site.css",
   "pages.css",
   "site.js",
@@ -43,63 +41,43 @@ const files = [
   "assets/icon-maskable-192.png",
   "assets/icon-maskable-512.png",
   ...fs
-    .readdirSync(path.join(root, "assets/fonts"))
+    .readdirSync(path.join(pub, "assets/fonts"))
     .filter((n) => /^[a-zA-Z0-9_.-]+\.(woff2|txt)$/.test(n))
     .map((n) => "assets/fonts/" + n),
 ];
-/* Third-party browser bundle, copied from the installed package at build time. */
-const vendor = {
-  "vendor/libphonenumber-min.js":
-    "node_modules/libphonenumber-js/bundle/libphonenumber-min.js",
-};
-for (const name of files) {
-  const source = path.join(root, name);
-  if (fs.lstatSync(source).isSymbolicLink() || !fs.statSync(source).isFile())
-    throw Error("Unexpected source: " + name);
-}
-/* The export is rebuilt from nothing: a page removed from the data cannot
-   survive from an earlier build. */
-if (fs.existsSync(out)) {
-  if (fs.lstatSync(out).isSymbolicLink()) throw Error("Unexpected symlink");
-  fs.rmSync(out, { recursive: true, force: true });
-}
-for (const name of files) {
-  const dest = path.join(out, name);
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.copyFileSync(path.join(root, name), dest);
-}
-for (const [name, from] of Object.entries(vendor)) {
-  const dest = path.join(out, name);
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.copyFileSync(path.join(root, from), dest);
-}
-/* Shared blocks (navigation, footer, sectors, legal details) are rendered from
-   data/*.json again here, so the export never depends on a page synced by hand. */
-const partials = require("./partials.cjs"),
-  rendered = partials.blocks(partials.load());
-for (const page of partials.PAGES) {
-  const dest = path.join(out, page);
-  fs.writeFileSync(dest, partials.apply(fs.readFileSync(dest, "utf8"), rendered, page));
-}
+const walk = (dir) =>
+  fs.readdirSync(dir, { recursive: true, withFileTypes: true }).flatMap((entry) => {
+    if (entry.isSymbolicLink()) throw Error("Unexpected symlink");
+    return entry.isFile() ? [path.relative(dir, path.join(entry.parentPath, entry.name)).replaceAll("\\", "/")] : [];
+  });
+
 const S = require("./seo.cjs");
-const h1Of = (file) =>
-  (fs.readFileSync(path.join(out, file), "utf8").match(/<title>\s*([^<|]+?)\s*(?:\||<)/) || [])[1] || file;
-const statics = Object.entries(S.routes)
-  .filter(([file, [route]]) => !file.startsWith("Back/") && route !== "/")
-  .map(([file, [route]]) => ({ route, h1: h1Of(file) }));
-const generated = require("./pages/index.cjs").build(out, { statics });
-const seo = S.build(root, out, generated);
+const { prepare, generatedPublic } = require("./prepare.cjs");
+const { generated, addresses, seo } = prepare();
+const publicFiles = new Set([...files, ...generatedPublic]);
+for (const name of walk(pub)) if (!publicFiles.has(name)) throw Error("Unexpected public file: " + name);
+for (const name of publicFiles) if (!fs.existsSync(path.join(pub, name))) throw Error("Missing public file: " + name);
+
+/* The rendered pages are rebuilt from nothing: a page removed from the data
+   cannot survive from an earlier build. */
+fs.rmSync(path.join(root, ".next"), { recursive: true, force: true });
+const next = spawnSync(process.execPath, [require.resolve("next/dist/bin/next"), "build"], { cwd: root, stdio: "inherit" });
+if (next.status !== 0) process.exit(next.status || 1);
 
 /* ── Controls on the finished export ───────────────────────────────── */
-const expected = new Set([...files, ...Object.keys(vendor), "sitemap.xml", ...generated.written]);
-const html = [];
-for (const entry of fs.readdirSync(out, { recursive: true, withFileTypes: true })) {
-  if (entry.isSymbolicLink()) throw Error("Unexpected symlink");
-  if (!entry.isFile()) continue;
-  const relative = path.relative(out, path.join(entry.parentPath, entry.name)).replaceAll("\\", "/");
-  if (!expected.has(relative)) throw Error("Unexpected output: " + relative);
-  if (relative.endsWith(".html")) html.push(relative);
-}
+/* Published file of an address, and where Next.js wrote its HTML. */
+const fileOfAddress = (address) => (address.endsWith("/") ? address.slice(1) + "index.html" : address.slice(1));
+const renderedFile = (address) =>
+  address === "/" ? "index.html" : address === "/404.html" ? "404.html" : address.replace(/^\/|\/$/g, "") + ".html";
+const html = addresses.map(fileOfAddress);
+const expected = new Set([...publicFiles, ...html]);
+const renderedPath = new Map(addresses.map((address) => [fileOfAddress(address), path.join(rendered, renderedFile(address))]));
+/* Next.js must have rendered exactly the prepared pages (500.html is its own
+   error page). */
+const wanted = new Set(addresses.map(renderedFile));
+for (const name of walk(rendered).filter((n) => n.endsWith(".html")))
+  if (!wanted.has(name) && name !== "500.html") throw Error("Unexpected page: " + name);
+for (const name of wanted) if (!fs.existsSync(path.join(rendered, name))) throw Error("Page not rendered: " + name);
 /* Internal links: each must reach a file of the export; a page nobody links
    to is reported as orphan. */
 const routeOfFile = (f) => "/" + f.replace(/index\.html$/, "");
@@ -107,7 +85,12 @@ const inbound = new Map(html.map((f) => [routeOfFile(f), 0]));
 const broken = [];
 const metaErrors = [];
 for (const f of html) {
-  const source = fs.readFileSync(path.join(out, f), "utf8");
+  const source = fs.readFileSync(renderedPath.get(f), "utf8");
+  /* Static pages only: the strict Content-Security-Policy allows no inline
+     script, and nothing of the Next.js client runtime may be shipped. */
+  if (/_next\/|__NEXT_DATA__|<script(?![^>]*\b(?:src=|type="application\/ld\+json"))/.test(source))
+    metaErrors.push(`${f} : script en ligne ou runtime Next.js dans la page`);
+  if (/<body[\s\S]*<link\b/.test(source)) metaErrors.push(`${f} : balise link dans le corps de page`);
   for (const [tag, count] of [["<h1", 1], ['rel="canonical"', 1], ['name="description"', 1], ['name="robots"', 1], ["<main", 1]])
     if (source.split(tag).length - 1 !== count && !f.endsWith("-legales.html") && !f.endsWith("confidentialite.html"))
       metaErrors.push(`${f} : ${tag} attendu ${count} fois`);
@@ -191,7 +174,7 @@ const fatal = [...summary.errors, ...broken, ...metaErrors];
 console.log(
   JSON.stringify({
     files: files.length,
-    output: "public-dist",
+    output: ".next",
     automaticReception: false,
     indexing: seo.mode === "live",
     seo: { mode: seo.mode, canonicalOrigin: seo.canonicalOrigin, indexablePages: seo.indexablePages },

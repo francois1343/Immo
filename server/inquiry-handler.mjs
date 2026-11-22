@@ -4,7 +4,7 @@
    Storage, anti-bot check, rate limit and alert are injected, so the same code
    runs behind a Vercel function, a Node HTTP server or Passenger. */
 import { createRequire } from "node:module";
-const core = createRequire(import.meta.url)("../inquiry-core.js");
+const core = createRequire(import.meta.url)("../public/inquiry-core.js");
 
 const KEY =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

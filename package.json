@@ -1,17 +1,24 @@
 {
   "name": "martin-immo",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "engines": {
     "node": "24.x"
   },
   "dependencies": {
-    "libphonenumber-js": "1.13.16"
+    "html-react-parser": "6.1.10",
+    "libphonenumber-js": "1.13.16",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "scripts": {
+    "prepare-site": "node scripts/prepare.cjs",
+    "dev": "node scripts/prepare.cjs && next dev",
     "build": "node scripts/build.cjs",
+    "start": "next start",
     "sync": "node scripts/sync.cjs",
-    "dev": "node scripts/dev-server.mjs",
+    "preview": "node scripts/dev-server.mjs",
     "dev:api": "node scripts/dev-server.mjs --api",
     "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs tests/pages.test.cjs tests/publication.test.cjs",
     "indexnow": "node scripts/indexnow.cjs",

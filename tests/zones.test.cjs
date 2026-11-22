@@ -73,7 +73,7 @@ test("no public page presents an excluded centre as a sector", () => {
 
 test("every page carries the generated blocks and is in sync with the data", () => {
   for (const page of P.PAGES) {
-    const html = read(page);
+    const html = read("content/" + page);
     assert.ok(html.includes("<!-- gen:footer -->"), page);
     assert.equal((html.match(/<footer/g) || []).length, 1, page);
     assert.ok(/href="\/?footer\.css"/.test(html), page);
@@ -110,8 +110,8 @@ test("the footer shows verified details only, and no account other than the labe
 });
 
 test("the sectors page stays out of the index like the rest of the preview", () => {
-  assert.ok(read("secteurs/index.html").includes("noindex,nofollow"));
-  assert.ok(read("service-worker.js").includes('"/secteurs/"'));
+  assert.ok(read("content/secteurs/index.html").includes("noindex,nofollow"));
+  assert.ok(read("public/service-worker.js").includes('"/secteurs/"'));
 });
 
 test("campaign links use stable sector ids and never name an excluded centre", () => {
@@ -126,7 +126,7 @@ test("campaign links use stable sector ids and never name an excluded centre", (
 });
 
 test("the legal page comes from the same data: verified host, third-party account named as such", () => {
-  const html = read("mentions-legales.html");
+  const html = read("content/mentions-legales.html");
   assert.ok(html.includes("Vercel Inc."));
   assert.ok(html.includes("440 N Barranca Avenue #4133, Covina, CA 91723"));
   assert.ok(!html.includes("[Nom de l") && !html.includes("[Adresse"), "placeholder left");

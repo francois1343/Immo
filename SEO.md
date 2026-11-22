@@ -4,7 +4,7 @@ Le site reste un **aperçu non indexable** : `noindex,nofollow` sur chaque page,
 
 ## Pages générées
 
-`npm run build` produit les pages locales dans `public-dist` à partir de `data/` ; aucun fichier HTML n'est entretenu à la main.
+`npm run build` rend les pages locales avec Next.js à partir de `data/` ; aucun fichier HTML n'est entretenu à la main.
 
 | Source | Rôle |
 |---|---|

@@ -17,7 +17,7 @@
 
 | Fichier | Rôle |
 |---|---|
-| `estimation/index.html`, `estimation.css`, `estimation.js` | Page, styles, comportement |
+| `content/estimation/index.html`, `public/estimation.css`, `public/estimation.js` | Page, styles, comportement |
 | `inquiry-core.js` | Règles de validation, partagées par la page et par le futur serveur |
 | `inquiry-config.js` | Adresse de réception et clé anti-robot, vides |
 | `server/inquiry-handler.mjs` | Réception de référence, indépendante de l'hébergeur ; non déployée, hors build |
@@ -32,7 +32,7 @@ l'étape des coordonnées (43 Ko compressés). Le reste du formulaire pèse 8 Ko
 ```
 npm install
 npm run build
-npm run dev        # mode messagerie : http://127.0.0.1:4173/estimation/
+npm run preview    # mode messagerie : http://127.0.0.1:4173/estimation/
 npm run dev:api    # réception simulée en mémoire, données fictives uniquement
 ```
 

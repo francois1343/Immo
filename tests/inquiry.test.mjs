@@ -11,7 +11,7 @@ import {
 } from "../server/inquiry-handler.mjs";
 
 const require = createRequire(import.meta.url);
-const core = require("../inquiry-core.js");
+const core = require("../public/inquiry-core.js");
 const lib = require("libphonenumber-js");
 const read = (f) => fs.readFileSync(new URL("../" + f, import.meta.url), "utf8");
 
@@ -205,14 +205,14 @@ test("handler: a storage failure is reported, an alert failure is not", async ()
 });
 
 /* Publication guards */
-test("no reception is connected: empty endpoint and key, in sources and in the build", () => {
-  for (const f of ["inquiry-config.js", "public-dist/inquiry-config.js"]) {
+test("no reception is connected: empty endpoint and key, in the published file", () => {
+  for (const f of ["public/inquiry-config.js"]) {
     const window = {};
     new Function("window", read(f))(window);
     assert.equal(window.IMMO_INQUIRY.endpoint, "", f);
     assert.equal(window.IMMO_INQUIRY.turnstileSiteKey, "", f);
   }
-  const out = fs.readdirSync(new URL("../public-dist/", import.meta.url), { recursive: true }).map(String);
+  const out = fs.readdirSync(new URL("../public/", import.meta.url), { recursive: true }).map(String);
   assert.ok(!out.some((n) => /(^|[\\/])(server|api|scripts|tests)[\\/]|inquiry-handler|dev-server/.test(n)));
   assert.ok(out.some((n) => n.replaceAll("\\", "/") === "vendor/libphonenumber-min.js"));
   const config = JSON.parse(read("vercel.json"));
@@ -222,8 +222,8 @@ test("no reception is connected: empty endpoint and key, in sources and in the b
   assert.ok(!csp.includes("challenges.cloudflare.com"));
 });
 test("the page keeps answers in memory only and names the callback as a preference", () => {
-  const js = read("estimation.js"),
-    html = read("estimation/index.html");
+  const js = read("public/estimation.js"),
+    html = read("content/estimation/index.html");
   assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie|caches\./.test(js));
   assert.ok(!/innerHTML|insertAdjacentHTML|eval\(/.test(js));
   assert.ok(js.includes('credentials: "omit"') && js.includes('cache: "no-store"'));
@@ -233,11 +233,11 @@ test("the page keeps answers in memory only and names the callback as a preferen
   for (const name of ["commune", "prenom", "telephone", "email", "message"])
     assert.ok(html.includes(`aria-describedby="${name === "telephone" ? "hint-telephone " : ""}err-${name}"`), name);
   assert.ok(!/ style="/.test(html), "inline styles would be blocked by the CSP");
-  const sw = read("service-worker.js");
+  const sw = read("public/service-worker.js");
   assert.ok(!sw.includes("/api/") && !sw.includes("vendor/"));
 });
 test("page and shared rules offer exactly the same choices", () => {
-  const html = read("estimation/index.html");
+  const html = read("content/estimation/index.html");
   const options = (name) => [...html.matchAll(new RegExp(`name="${name}" value="([^"]+)"`, "g"))].map((m) => m[1]);
   assert.deepEqual(options("type"), core.TYPES);
   assert.deepEqual(options("delai"), core.DELAYS);

@@ -1,4 +1,8 @@
-public-dist/
+.next/
+.site/
+public/vendor/
+public/sitemap.xml
+next-env.d.ts
 node_modules/
 .vercel/
 .env*

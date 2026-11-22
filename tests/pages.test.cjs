@@ -192,7 +192,7 @@ test("the catalogue link and the main navigation are on every page shell", () =>
   assert.ok(nav.includes('href="https://connexionimmo.be/fr/nos-biens/"'));
   assert.ok(nav.includes('rel="noopener noreferrer"'));
   assert.match(nav, /href="\/secteurs\/" aria-current="page"/);
-  const home = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+  const home = fs.readFileSync(path.join(__dirname, "..", "content", "index.html"), "utf8");
   for (const id of ["why-title", "journey-title", "catalogue-title", "reviews-title", "faq-title"]) assert.ok(home.includes(`id="${id}"`), id);
   assert.ok(!/gratuit/i.test(home), "gratuité non confirmée");
 });

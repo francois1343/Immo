@@ -5,6 +5,8 @@
 const fs = require("node:fs"),
   path = require("node:path");
 const root = path.resolve(__dirname, "..");
+/* Hand-written pages live in content/; Next.js renders them at build time. */
+const content = path.join(root, "content");
 const PAGES = [
   "index.html",
   "estimation/index.html",
@@ -334,6 +336,7 @@ function apply(html, rendered, page = "") {
 module.exports = {
   PAGES,
   root,
+  content,
   load,
   blocks,
   apply,

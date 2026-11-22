@@ -221,65 +221,60 @@ function readConfig(root) {
   validate(config, vercel);
   return config;
 }
-/* `generated` is the result of scripts/pages/index.cjs, when pages were built. */
-function build(root, out, generated) {
-  const config = readConfig(root),
-    live = config.mode === "live";
+/* Every page with its metadata: the hand-written ones, then the generated
+   ones when `generated` (scripts/pages/index.cjs) is given. */
+function entries(config, generated) {
   const P = require("./partials.cjs"),
     { zones, pro } = P.load(),
     agent = agentLd(config, pro, zones);
-  const indexable = [];
-  for (const file of Object.keys(routes)) {
-    const p = path.join(out, file);
-    if (!fs.existsSync(p)) continue;
-    const [route, description, index] = routes[file];
-    fs.writeFileSync(
-      p,
-      enrich(
-        fs.readFileSync(p, "utf8"),
-        { route, description, index, jsonld: file === "index.html" ? [agent] : [] },
-        config,
-      ),
-    );
-    if (index && live) indexable.push(route);
-  }
+  const list = Object.entries(routes).map(([file, [route, description, index]]) => ({
+    file,
+    route,
+    description,
+    index,
+    jsonld: file === "index.html" ? [agent] : [],
+  }));
   if (generated) {
     const status = new Map(generated.quality.rows.map((r) => [r.route, r]));
     for (const page of [...generated.pages, ...generated.utility]) {
-      const p = path.join(out, generated.fileOf(page)),
-        q = status.get(page.route),
-        index = Boolean(q && q.approved);
-      fs.writeFileSync(
-        p,
-        enrich(
-          fs.readFileSync(p, "utf8"),
-          {
-            route: page.route,
-            description: page.description,
-            index,
-            jsonld: [
-              breadcrumbLd(config, page.breadcrumbs, page.route),
-              page.family === "service" && page.service === "agent" ? agent : null,
-            ],
-          },
-          config,
-        ),
-      );
-      if (index && live) indexable.push(page.route);
+      const q = status.get(page.route);
+      list.push({
+        file: generated.fileOf(page),
+        route: page.route,
+        description: page.description,
+        index: Boolean(q && q.approved),
+        jsonld: [
+          breadcrumbLd(config, page.breadcrumbs, page.route),
+          page.family === "service" && page.service === "agent" ? agent : null,
+        ],
+      });
     }
   }
-  indexable.sort();
-  const xml =
+  return list;
+}
+const sitemap = (config, indexable) =>
+  (
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemaps/0.9">' +
     indexable.map((r) => `\n  <url><loc>${escape(config.origin + r)}</loc></url>`).join("") +
     (indexable.length ? "\n" : "") +
-    "</urlset>\n";
-  fs.writeFileSync(path.join(out, "sitemap.xml"), xml.replace("/schemas/sitemaps/", "/schemas/sitemap/"));
-  if (live)
-    fs.writeFileSync(
-      path.join(out, "robots.txt"),
-      `User-agent: *\nAllow: /\nDisallow: /Back/\n\nSitemap: ${config.origin}/sitemap.xml\n`,
-    );
+    "</urlset>\n"
+  ).replace("/schemas/sitemaps/", "/schemas/sitemap/");
+const liveRobots = (config) =>
+  `User-agent: *\nAllow: /\nDisallow: /Back/\n\nSitemap: ${config.origin}/sitemap.xml\n`;
+/* Applies the metadata to pages written as files in `out`. */
+function build(root, out, generated) {
+  const config = readConfig(root),
+    live = config.mode === "live";
+  const indexable = [];
+  for (const entry of entries(config, generated)) {
+    const p = path.join(out, entry.file);
+    if (!fs.existsSync(p)) continue;
+    fs.writeFileSync(p, enrich(fs.readFileSync(p, "utf8"), entry, config));
+    if (entry.index && live) indexable.push(entry.route);
+  }
+  indexable.sort();
+  fs.writeFileSync(path.join(out, "sitemap.xml"), sitemap(config, indexable));
+  if (live) fs.writeFileSync(path.join(out, "robots.txt"), liveRobots(config));
   return {
     mode: config.mode,
     canonicalOrigin: config.origin,
@@ -287,4 +282,4 @@ function build(root, out, generated) {
     indexable,
   };
 }
-module.exports = { routes, validate, enrich, build, readConfig, agentLd, breadcrumbLd, hasNoindexHeader };
+module.exports = { routes, validate, enrich, entries, sitemap, liveRobots, build, readConfig, agentLd, breadcrumbLd, hasNoindexHeader };

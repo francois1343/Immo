@@ -8,7 +8,7 @@ const rendered = P.blocks(P.load());
 const drift = [],
   lf = (s) => s.replace(/\r\n/g, "\n");
 for (const page of P.PAGES) {
-  const file = path.join(P.root, page),
+  const file = path.join(P.content, page),
     before = fs.readFileSync(file, "utf8"),
     after = P.apply(before, rendered, page);
   /* A Windows checkout may hold CRLF: line endings are not a drift. */

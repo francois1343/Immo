@@ -98,20 +98,27 @@ const notFound = {
 
 const fileOf = (page) => page.file || page.route.slice(1) + "index.html";
 
-function build(out, { statics = [] } = {}) {
+/* Everything the site publishes beyond the hand-written pages, in memory. */
+function plan({ statics = [] } = {}) {
   const data = C.load();
   const rendered = P.blocks(data);
   const { pages, setAside } = C.plan(data);
   const quality = Q.evaluate(pages, data.editorial);
   const utility = [siteMapPage(data, pages, statics), notFound];
+  return { data, rendered, pages, setAside, utility, quality, fileOf };
+}
+/* Writes the pages as plain files: used to rehearse a publication in a
+   temporary folder. The site itself is rendered by Next.js from `plan`. */
+function build(out, options) {
+  const planned = plan(options);
   const written = [];
-  for (const page of [...pages, ...utility]) {
+  for (const page of [...planned.pages, ...planned.utility]) {
     const file = fileOf(page),
       dest = path.join(out, file);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.writeFileSync(dest, shell(page, rendered));
+    fs.writeFileSync(dest, shell(page, planned.rendered));
     written.push(file);
   }
-  return { data, pages, setAside, utility, quality, written, fileOf };
+  return { ...planned, written };
 }
-module.exports = { build, shell, fileOf, breadcrumb };
+module.exports = { plan, build, shell, fileOf, breadcrumb };

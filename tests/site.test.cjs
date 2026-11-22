@@ -6,9 +6,9 @@ const { test } = require("node:test"),
 const read = (f) => fs.readFileSync(path.join(__dirname, "..", f), "utf8");
 test("all form entry points use the explicit mail handoff and no submit API", () => {
   for (const f of [
-    "estimation/index.html",
-    "Back/estimation.html",
-    "Back/formulaire.html",
+    "content/estimation/index.html",
+    "content/Back/estimation.html",
+    "content/Back/formulaire.html",
   ]) {
     const html = read(f);
     assert.ok(html.includes('id="send-mail"'));
@@ -16,20 +16,20 @@ test("all form entry points use the explicit mail handoff and no submit API", ()
     assert.ok(!html.includes("/api/submit-lead"));
     assert.ok(!/setTimeout/.test(html));
   }
-  assert.ok(!/localStorage|sessionStorage|fetch\(/.test(read("site.js")));
+  assert.ok(!/localStorage|sessionStorage|fetch\(/.test(read("public/site.js")));
 });
 test("preview is not indexable and exported pages have titles and local assets", () => {
-  assert.ok(read("robots.txt").includes("Disallow: /"));
+  assert.ok(read("public/robots.txt").includes("Disallow: /"));
   for (const f of [
-    "index.html",
-    "estimation/index.html",
-    "preparer-ma-vente/index.html",
+    "content/index.html",
+    "content/estimation/index.html",
+    "content/preparer-ma-vente/index.html",
 
   ]) {
     assert.ok(read(f).includes("noindex,nofollow"));
     assert.ok(read(f).includes("<title>"));
   }
-  assert.ok(!read("site.css").includes("fonts.googleapis.com"));
+  assert.ok(!read("public/site.css").includes("fonts.googleapis.com"));
 });
 test("service worker caches navigation by its own path and ignores unlisted requests", async () => {
   const handlers = {},
@@ -40,7 +40,7 @@ test("service worker caches navigation by its own path and ignores unlisted requ
     open: async () => ({ put: async (k) => writes.push(k) }),
     match: async () => null,
   };
-  vm.runInNewContext(read("service-worker.js"), {
+  vm.runInNewContext(read("public/service-worker.js"), {
     self,
     caches,
     location: { origin: "https://immo.example" },

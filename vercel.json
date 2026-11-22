@@ -1,5 +1,6 @@
 {
-  "trailingSlash": true,
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
   "headers": [
     {
       "source": "/(.*)",
@@ -59,7 +60,5 @@
       "destination": "/secteurs/beaumont/",
       "permanent": true
     }
-  ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "public-dist"
+  ]
 }
