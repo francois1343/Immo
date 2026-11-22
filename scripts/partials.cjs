@@ -193,17 +193,38 @@ function validateSocial(pro) {
   }
   return true;
 }
-function social(pro, name) {
-  const list = pro.social || [];
-  if (!list.length) return "";
-  const links = list.map(
+const ownerName = (pro) => (field(pro, "name") || {}).value || "Martin Snauwaert";
+/* `labelled` adds the name of the network next to its icon. */
+function socialLinks(pro, className, labelled) {
+  return (pro.social || []).map(
     (s) =>
-      `<a class="site-footer-social-link" href="${esc(s.href)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`${s.label} de ${name} (nouvel onglet)`)}" title="${esc(s.label)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="${SOCIAL[s.network].icon}" /></svg></a>`,
+      `<a class="${className}" href="${esc(s.href)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`${s.label} de ${ownerName(pro)} (nouvel onglet)`)}" title="${esc(s.label)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="${SOCIAL[s.network].icon}" /></svg>${labelled ? `<span>${esc(s.label)}</span>` : ""}</a>`,
   );
+}
+function social(pro) {
+  const links = socialLinks(pro, "site-footer-social-link", true);
+  if (!links.length) return "";
   return `
         <p class="site-footer-social">
+          <span class="site-footer-social-title">Suivre Martin</span>
           ${links.join("\n          ")}
         </p>`;
+}
+/* Contact bar above the header: approval, phone, e-mail and social profiles.
+   Verified values only, like the footer. */
+function topbar(pro) {
+  const v = (k) => {
+    const f = field(pro, k);
+    return f && f.status === "verified" && f.value ? f : null;
+  };
+  const contact = [v("phone"), v("email")].filter(Boolean).map((f) => `<a class="topbar-${f.key}" href="${esc(f.href)}">${esc(f.value)}</a>`);
+  const links = socialLinks(pro, "topbar-social-link", false);
+  return `<div class="topbar">
+        ${v("title") ? `<p class="topbar-title">${esc(v("title").value)}</p>` : ""}
+        <p class="topbar-contact">
+          ${[...contact, ...links].join("\n          ")}
+        </p>
+      </div>`;
 }
 function footer(pro) {
   const f = (k) => shown(pro, k);
@@ -232,7 +253,7 @@ function footer(pro) {
           <a href="/plan-du-site/">Plan du site</a>
           <a href="${CATALOGUE_URL}" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
-        </nav>${social(pro, f("name") ? f("name").value : "Martin Snauwaert")}
+        </nav>${social(pro)}
       </footer>`;
 }
 /* Full list of the legal page: every value on file, verified or not, so the
@@ -346,6 +367,7 @@ function load() {
 function blocks({ zones, pro }) {
   return {
     footer: footer(pro),
+    topbar: topbar(pro),
     nav,
     "zones-compact": zonesCompact(zones),
     "zones-detail": zonesDetail(zones),
@@ -382,6 +404,7 @@ module.exports = {
   excludedNames,
   publicName,
   footer,
+  topbar,
   communeOptions,
   nav,
   reviews,

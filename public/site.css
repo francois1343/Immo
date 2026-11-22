@@ -1924,3 +1924,106 @@ label,
     padding-bottom: 36px;
   }
 }
+/* ── Bandeau de contact au-dessus de l'en-tête ── */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px 24px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.topbar p {
+  margin: 0;
+}
+.topbar-title {
+  font-weight: 650;
+}
+.topbar-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 18px;
+}
+.topbar-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.topbar-contact a:hover {
+  color: #a43d12;
+}
+.topbar-contact .topbar-social-link {
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #00314a;
+  color: #fff;
+  transition: background-color 0.15s;
+}
+.topbar-contact .topbar-social-link + .topbar-social-link {
+  margin-left: -8px;
+}
+.topbar-contact .topbar-social-link:hover {
+  background: #b9490a;
+  color: #fff;
+}
+.topbar-social-link svg {
+  fill: currentColor;
+}
+.topbar-contact a:focus-visible {
+  outline: 2px solid #b9490a;
+  outline-offset: 2px;
+}
+@media (max-width: 760px) {
+  /* Première ligne : agrément et réseaux ; seconde : téléphone et e-mail. */
+  .topbar {
+    gap: 0 8px;
+    padding: 8px 0 2px;
+  }
+  .topbar-contact {
+    display: contents;
+  }
+  .topbar-title {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .topbar-contact .topbar-social-link {
+    order: 1;
+    width: 38px;
+    height: 38px;
+    min-height: 0;
+  }
+  .topbar-contact .topbar-social-link + .topbar-social-link {
+    margin-left: 0;
+  }
+  .topbar-contact::before {
+    content: "";
+    order: 2;
+    width: 100%;
+  }
+  .topbar-phone,
+  .topbar-email {
+    order: 3;
+  }
+  .topbar-contact a {
+    min-height: 44px;
+  }
+  .topbar-phone {
+    margin-right: auto;
+  }
+}
+@media print {
+  .topbar-contact .topbar-social-link {
+    display: none;
+  }
+}

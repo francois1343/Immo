@@ -42,10 +42,12 @@ function split(html, route) {
   if (!body[2].includes('<div class="shell">')) return { ...page, layout: "legal" };
   const nav = /<nav aria-label="Navigation principale">[\s\S]*?<\/nav>/.exec(body[2]);
   if (!nav) fail(route, "navigation absente");
+  const topbar = /<div class="topbar">[\s\S]*?<\/div>/.exec(body[2]);
   return {
     ...page,
     layout: "site",
     nav: nav[0],
+    topbar: topbar ? topbar[0] : null,
     draft: body[2].includes('<div class="draft">'),
     dock: body[2].includes('<nav class="mobile-contact"'),
   };

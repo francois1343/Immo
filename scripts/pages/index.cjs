@@ -36,6 +36,7 @@ function shell(page, rendered) {
       Aperçu de travail · contenu à valider avant diffusion
     </div>
     <div class="shell">
+      ${rendered.topbar}
       <header class="top">
         <a href="/" class="identity"
           ><img src="/assets/logo-connexion.png" width="595" height="285" alt="Connexion Immo" /><span>Martin<br />Snauwaert</span></a

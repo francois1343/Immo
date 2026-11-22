@@ -13,6 +13,7 @@ function SiteLayout({ page }) {
       </a>
       {page.draft && <div className="draft">Aperçu de travail · contenu à valider avant diffusion</div>}
       <div className="shell">
+        {page.topbar && <Html>{page.topbar}</Html>}
         <header className="top">
           <a href="/" className="identity">
             <img src="/assets/logo-connexion.png" width="595" height="285" alt="Connexion Immo" />
