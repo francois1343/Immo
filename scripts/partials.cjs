@@ -11,10 +11,7 @@ const PAGES = [
   "index.html",
   "estimation/index.html",
   "preparer-ma-vente/index.html",
-  
   "secteurs/index.html",
-  "Back/estimation.html",
-  "Back/formulaire.html",
   "mentions-legales.html",
   "politique-confidentialite.html",
 ];
@@ -351,9 +348,9 @@ function nav(route = "") {
           <a href="/estimation/" class="nav-estimate"${route === "/estimation/" ? ' aria-current="page"' : ""}>Votre projet <span aria-hidden="true">↗</span></a>
         </nav>`;
 }
-/* Public path of a source page; the legacy Back/ entries stand for the form. */
+/* Public path of a source page. */
 const routeOf = (page) =>
-  page.startsWith("Back/") ? "/estimation/" : "/" + page.replace(/index\.html$/, "");
+  "/" + page.replace(/index\.html$/, "");
 
 /* ── Applying blocks to a page ─────────────────────────────────────── */
 function load() {

@@ -4,11 +4,9 @@ const { test } = require("node:test"),
   path = require("node:path"),
   vm = require("node:vm");
 const read = (f) => fs.readFileSync(path.join(__dirname, "..", f), "utf8");
-test("all form entry points use the explicit mail handoff and no submit API", () => {
+test("the form page keeps the prepared-mail handoff, and the shared script sends nothing", () => {
   for (const f of [
     "content/estimation/index.html",
-    "content/Back/estimation.html",
-    "content/Back/formulaire.html",
   ]) {
     const html = read(f);
     assert.ok(html.includes('id="send-mail"'));

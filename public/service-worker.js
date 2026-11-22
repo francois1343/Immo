@@ -1,4 +1,4 @@
-const CACHE = "martin-immo-v14";
+const CACHE = "martin-immo-v15";
 const FILES = [
   "/",
   "/index.html",
@@ -19,8 +19,6 @@ const FILES = [
   "/preparer-ma-vente/",
   "/secteurs/",
   "/footer.css",
-  "/Back/estimation.html",
-  "/Back/formulaire.html",
   "/politique-confidentialite.html",
   "/mentions-legales.html",
   "/legal.css",

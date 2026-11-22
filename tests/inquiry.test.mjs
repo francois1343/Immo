@@ -8,9 +8,11 @@ import {
   createInquiryHandler,
   memoryStore,
   memoryRateLimit,
-} from "../server/inquiry-handler.mjs";
+} from "../lib/inquiry-handler.mjs";
 
+import { mailSettings, mailConfigured, mailStore, inquiryMail } from "../lib/inquiry-mail.mjs";
 const require = createRequire(import.meta.url);
+const { inquiryConfig, ENDPOINT } = require("../scripts/prepare.cjs");
 const core = require("../public/inquiry-core.js");
 const lib = require("libphonenumber-js");
 const read = (f) => fs.readFileSync(new URL("../" + f, import.meta.url), "utf8");
@@ -205,21 +207,53 @@ test("handler: a storage failure is reported, an alert failure is not", async ()
 });
 
 /* Publication guards */
-test("no reception is connected: empty endpoint and key, in the published file", () => {
-  for (const f of ["public/inquiry-config.js"]) {
+test("reception is switched on by the SMTP password alone, and the secret stays out of the site", () => {
+  const settings = (env) => {
     const window = {};
-    new Function("window", read(f))(window);
-    assert.equal(window.IMMO_INQUIRY.endpoint, "", f);
-    assert.equal(window.IMMO_INQUIRY.turnstileSiteKey, "", f);
-  }
+    new Function("window", inquiryConfig(env))(window);
+    return window.IMMO_INQUIRY;
+  };
+  assert.equal(settings({}).endpoint, "");
+  assert.equal(settings({ SMTP_PASSWORD: "secret-fictif" }).endpoint, ENDPOINT);
+  assert.ok(!inquiryConfig({ SMTP_PASSWORD: "secret-fictif" }).includes("secret-fictif"));
+  assert.equal(mailConfigured({}), false);
+  assert.equal(mailConfigured({ SMTP_PASSWORD: "x" }), true);
+  /* The password is read from the environment only: no tracked file holds one. */
+  const m = mailSettings({});
+  assert.deepEqual([m.host, m.user, m.to, m.password], ["mail.immobiliermartin.be", "no-reply@immobiliermartin.be", "info@immobiliermartin.be", ""]);
+  for (const f of ["lib/inquiry-mail.mjs", "pages/api/demande.js", "scripts/prepare.cjs", "next.config.js", "vercel.json"])
+    assert.ok(!/SMTP_PASSWORD\s*[:=]\s*["'][^"']/.test(read(f)), f);
+  assert.ok(read(".gitignore").split(/\r?\n/).includes(".env*"));
   const out = fs.readdirSync(new URL("../public/", import.meta.url), { recursive: true }).map(String);
-  assert.ok(!out.some((n) => /(^|[\\/])(server|api|scripts|tests)[\\/]|inquiry-handler|dev-server/.test(n)));
-  assert.ok(out.some((n) => n.replaceAll("\\", "/") === "vendor/libphonenumber-min.js"));
+  assert.ok(!out.some((n) => /(^|[\\/])(lib|api|scripts|tests)[\\/]|inquiry-handler|inquiry-mail|\.env/.test(n)));
   const config = JSON.parse(read("vercel.json"));
-  assert.equal(config.functions, undefined);
   const csp = config.headers[0].headers.find((h) => h.key === "Content-Security-Policy").value;
   assert.ok(csp.includes("connect-src 'self'") && csp.includes("script-src 'self';"));
   assert.ok(!csp.includes("challenges.cloudflare.com"));
+});
+test("the request is sent once to the business inbox, from the no-reply address, with the visitor as reply-to", async () => {
+  const sent = [];
+  const settings = mailSettings({ SMTP_PASSWORD: "x" });
+  const store = mailStore({ transport: { sendMail: async (m) => sent.push(m) }, settings });
+  const f = fixture({ store, verifyTurnstile: null });
+  const k = key();
+  assert.equal((await f.post(good, { k })).status, 201);
+  assert.equal((await f.post(good, { k })).status, 200);
+  assert.equal(sent.length, 1);
+  const mail = sent[0];
+  assert.equal(mail.to, "info@immobiliermartin.be");
+  assert.equal(mail.from.address, "no-reply@immobiliermartin.be");
+  assert.equal(mail.replyTo, "camille@example.org");
+  assert.equal(mail.subject, "Demande d’estimation — Beaumont — Camille");
+  for (const expected of ["Commune : Beaumont", "Type de bien : Maison", "Téléphone : +32470123456", "Précision : Maison quatre façades."])
+    assert.ok(mail.text.includes(expected), expected);
+  assert.ok(!("html" in mail));
+  /* A header cannot be forged through a field. */
+  const forged = inquiryMail({ id: "12345678-aaaa", receivedAt: "2026-11-22T10:00:00Z", commune: "Thuin\r\nBcc: x@example.org", prenom: "A", telephone: "+32470123456" }, settings);
+  assert.ok(!/[\r\n]/.test(forged.subject));
+  /* A delivery failure is reported to the page, which then offers the phone and the prepared e-mail. */
+  const down = fixture({ store: mailStore({ transport: { sendMail: async () => { throw Error("smtp"); } }, settings }), verifyTurnstile: null });
+  assert.equal((await down.post(good)).status, 503);
 });
 test("the page keeps answers in memory only and names the callback as a preference", () => {
   const js = read("public/estimation.js"),

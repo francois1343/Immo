@@ -15,18 +15,8 @@ const routes = {
   ],
   "estimation/index.html": [
     "/estimation/",
-    "Préparez votre premier échange : commune, type de bien et calendrier, puis envoyez votre message depuis votre messagerie.",
+    "Préparez votre premier échange en deux étapes : commune, type de bien et calendrier, puis vos coordonnées pour que Martin vous rappelle.",
     true,
-  ],
-  "Back/estimation.html": [
-    "/estimation/",
-    "Préparez votre premier échange immobilier avec Martin Snauwaert.",
-    false,
-  ],
-  "Back/formulaire.html": [
-    "/estimation/",
-    "Préparez votre premier échange immobilier avec Martin Snauwaert.",
-    false,
   ],
   "preparer-ma-vente/index.html": [
     "/preparer-ma-vente/",
@@ -45,7 +35,7 @@ const routes = {
   ],
   "politique-confidentialite.html": [
     "/politique-confidentialite.html",
-    "Comment le site prépare votre message sur votre appareil et vous laisse choisir son envoi depuis votre messagerie.",
+    "Quelles données le formulaire d’estimation transmet à Martin Snauwaert, par quel moyen, et à qui écrire pour toute question à leur sujet.",
     false,
   ],
 };
@@ -260,7 +250,7 @@ const sitemap = (config, indexable) =>
     "</urlset>\n"
   ).replace("/schemas/sitemaps/", "/schemas/sitemap/");
 const liveRobots = (config) =>
-  `User-agent: *\nAllow: /\nDisallow: /Back/\n\nSitemap: ${config.origin}/sitemap.xml\n`;
+  `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${config.origin}/sitemap.xml\n`;
 /* Applies the metadata to pages written as files in `out`. */
 function build(root, out, generated) {
   const config = readConfig(root),

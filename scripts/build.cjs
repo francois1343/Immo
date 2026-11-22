@@ -20,7 +20,6 @@ const files = [
   "estimation.css",
   "estimation.js",
   "inquiry-core.js",
-  "inquiry-config.js",
   "legal.css",
   "footer.css",
   "fonts.css",
@@ -53,7 +52,7 @@ const walk = (dir) =>
 
 const S = require("./seo.cjs");
 const { prepare, generatedPublic } = require("./prepare.cjs");
-const { generated, addresses, seo } = prepare();
+const { generated, addresses, seo, reception } = prepare();
 const publicFiles = new Set([...files, ...generatedPublic]);
 for (const name of walk(pub)) if (!publicFiles.has(name)) throw Error("Unexpected public file: " + name);
 for (const name of publicFiles) if (!fs.existsSync(path.join(pub, name))) throw Error("Missing public file: " + name);
@@ -126,7 +125,7 @@ for (const f of html) {
   }
 }
 const orphans = [...inbound]
-  .filter(([route, n]) => n === 0 && route !== "/" && route !== "/404.html" && !route.startsWith("/Back/"))
+  .filter(([route, n]) => n === 0 && route !== "/" && route !== "/404.html")
   .map(([route]) => route);
 
 /* ── Reports ───────────────────────────────────────────────────────── */
@@ -193,7 +192,7 @@ console.log(
   JSON.stringify({
     files: files.length,
     output: ".next",
-    automaticReception: false,
+    automaticReception: reception,
     indexing: seo.mode === "live",
     seo: { mode: seo.mode, canonicalOrigin: seo.canonicalOrigin, indexablePages: seo.indexablePages },
     pages: {

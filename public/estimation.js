@@ -136,7 +136,7 @@
     for (const panel of result.querySelectorAll("[data-result]"))
       panel.hidden = panel.dataset.result !== name;
     progress.textContent =
-      name === "sent" ? "Demande enregistrée" : "Message prêt à envoyer";
+      name === "sent" ? "Demande envoyée" : "Message prêt à envoyer";
     progress.dataset.step = "3";
     const heading = result.querySelector(`[data-result="${name}"] h2`);
     heading.tabIndex = -1;

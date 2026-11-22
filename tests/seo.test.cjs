@@ -14,7 +14,7 @@ test("release stays preview and cannot silently enable indexing", () => {
 test("canonical aliases and absolute sharing metadata are deterministic", () => {
   const html =
     '<head><title>Estimation</title><meta name="robots" content="index"><meta name="description" content="old"></head>';
-  const result = S.enrich(html, "Back/formulaire.html", config);
+  const result = S.enrich(html, "estimation/index.html", config);
   assert.match(
     result,
     /rel="canonical" href="https:\/\/martin-immo.vercel.app\/estimation\/"/,

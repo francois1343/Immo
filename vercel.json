@@ -57,6 +57,11 @@
       "permanent": true
     },
     {
+      "source": "/Back/:page(estimation|formulaire).html",
+      "destination": "/estimation/",
+      "permanent": true
+    },
+    {
       "source": "/vendre-beaumont-barbencon(/?)",
       "destination": "/secteurs/beaumont/",
       "permanent": true

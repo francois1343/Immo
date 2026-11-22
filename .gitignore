@@ -2,6 +2,7 @@
 .site/
 public/vendor/
 public/sitemap.xml
+public/inquiry-config.js
 next-env.d.ts
 node_modules/
 .vercel/

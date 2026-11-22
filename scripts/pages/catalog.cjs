@@ -27,7 +27,7 @@ function load() {
   return data;
 }
 function validate({ zones, services, guides, local }) {
-  const slugs = new Set(["secteurs", "guides", "estimation", "preparer-ma-vente", "plan-du-site", "assets", "vendor", "Back"]);
+  const slugs = new Set(["secteurs", "guides", "estimation", "preparer-ma-vente", "plan-du-site", "assets", "vendor", "api"]);
   for (const s of services) {
     if (!/^[a-z]+(-[a-z]+)*$/.test(s.slug) || slugs.has(s.slug))
       throw Error("services.json : slug invalide ou déjà pris : " + s.slug);

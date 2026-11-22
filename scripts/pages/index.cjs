@@ -1,6 +1,6 @@
-/* Writes the generated pages into the export and reports on them.
-   Nothing is kept as an HTML source file: the pages exist only in public-dist
-   and are rebuilt from data/*.json at every build. */
+/* Plans the generated pages and reports on them.
+   Nothing is kept as an HTML source file: the pages are rendered by Next.js
+   and rebuilt from data/*.json at every build. */
 const fs = require("node:fs"),
   path = require("node:path");
 const P = require("../partials.cjs");
