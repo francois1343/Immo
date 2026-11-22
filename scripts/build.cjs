@@ -80,7 +80,12 @@ const layout = fs.existsSync(path.join(rendered, "index.html"))
   ? { dir: rendered, list: () => walk(rendered).filter((n) => n.endsWith(".html")), file: (name) => name }
   : {
       dir: adapted,
-      list: () => (fs.existsSync(adapted) ? walk(adapted) : []).filter((n) => n.endsWith(FALLBACK)).map((n) => n.slice(0, -FALLBACK.length) + ".html"),
+      /* The adapter links its function folders: only plain files are read. */
+      list: () =>
+        (fs.existsSync(adapted) ? fs.readdirSync(adapted, { recursive: true, withFileTypes: true }) : [])
+          .filter((entry) => entry.isFile() && entry.name.endsWith(FALLBACK))
+          .map((entry) => path.relative(adapted, path.join(entry.parentPath, entry.name)).replaceAll("\\", "/"))
+          .map((n) => n.slice(0, -FALLBACK.length) + ".html"),
       file: (name) => name.slice(0, -".html".length) + FALLBACK,
     };
 const renderedPath = new Map(addresses.map((address) => [fileOfAddress(address), path.join(layout.dir, layout.file(renderedFile(address)))]));
