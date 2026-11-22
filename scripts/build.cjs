@@ -71,13 +71,26 @@ const renderedFile = (address) =>
   address === "/" ? "index.html" : address === "/404.html" ? "404.html" : address.replace(/^\/|\/$/g, "") + ".html";
 const html = addresses.map(fileOfAddress);
 const expected = new Set([...publicFiles, ...html]);
-const renderedPath = new Map(addresses.map((address) => [fileOfAddress(address), path.join(rendered, renderedFile(address))]));
+/* Where the HTML of the pages ends up: .next/server/pages for a plain
+   `next build`; on Vercel, its adapter moves each page to
+   .next/output/functions/<page>.prerender-fallback.html. */
+const FALLBACK = ".prerender-fallback.html";
+const adapted = path.join(root, ".next", "output", "functions");
+const layout = fs.existsSync(path.join(rendered, "index.html"))
+  ? { dir: rendered, list: () => walk(rendered).filter((n) => n.endsWith(".html")), file: (name) => name }
+  : {
+      dir: adapted,
+      list: () => (fs.existsSync(adapted) ? walk(adapted) : []).filter((n) => n.endsWith(FALLBACK)).map((n) => n.slice(0, -FALLBACK.length) + ".html"),
+      file: (name) => name.slice(0, -".html".length) + FALLBACK,
+    };
+const renderedPath = new Map(addresses.map((address) => [fileOfAddress(address), path.join(layout.dir, layout.file(renderedFile(address)))]));
 /* Next.js must have rendered exactly the prepared pages (500.html is its own
    error page). */
 const wanted = new Set(addresses.map(renderedFile));
-for (const name of walk(rendered).filter((n) => n.endsWith(".html")))
-  if (!wanted.has(name) && name !== "500.html") throw Error("Unexpected page: " + name);
-for (const name of wanted) if (!fs.existsSync(path.join(rendered, name))) throw Error("Page not rendered: " + name);
+for (const name of layout.list()) if (!wanted.has(name) && name !== "500.html") throw Error("Unexpected page: " + name);
+for (const name of wanted)
+  if (!fs.existsSync(path.join(layout.dir, layout.file(name))))
+    throw Error(`Page not rendered: ${name} (looked in ${path.relative(root, layout.dir)}; if Next.js or its Vercel adapter moved its output, update scripts/build.cjs)`);
 /* Internal links: each must reach a file of the export; a page nobody links
    to is reported as orphan. */
 const routeOfFile = (f) => "/" + f.replace(/index\.html$/, "");
