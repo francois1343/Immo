@@ -13,6 +13,11 @@
 * {
   box-sizing: border-box;
 }
+/* The pages cover the whole screen (viewport-fit=cover): the content stays
+   clear of the system bars, such as Android's three navigation buttons. */
+html {
+  padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
 body {
   margin: 0;
 }
@@ -540,7 +545,7 @@ footer .footer-links {
     background: #fafbf8f5;
     backdrop-filter: blur(12px);
     border-top: 1px solid var(--line);
-    padding: 10px 18px max(10px, env(safe-area-inset-bottom));
+    padding: 10px 18px calc(10px + env(safe-area-inset-bottom, 0px));
     gap: 10px;
     z-index: 4;
   }

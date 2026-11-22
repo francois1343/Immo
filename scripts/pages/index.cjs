@@ -19,7 +19,7 @@ function shell(page, rendered) {
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <meta name="theme-color" content="#00314a" />
     <title>${esc(page.title)}</title>
     <link rel="icon" href="/assets/favicon-32.png" />
