@@ -1,6 +1,18 @@
 {
   "reviewedOn": "2026-11-21",
   "about": "Mentions professionnelles affichées par le site. Source unique du pied de page et de la page Mentions légales. Le pied de page n'affiche qu'une valeur verified avec footer:true. Les pièces de vérification ne sont pas dans ce dépôt.",
+  "social": [
+    {
+      "network": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com/profile.php?id=100067547700657"
+    },
+    {
+      "network": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/martin-snauwaert-1390821a6/"
+    }
+  ],
   "fields": [
     {
       "key": "name",

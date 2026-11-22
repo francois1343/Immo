@@ -172,6 +172,39 @@ const shown = (pro, k) => {
 const linked = (f, text = f.value) =>
   f.href ? `<a href="${esc(f.href)}">${esc(text)}</a>` : esc(text);
 
+/* Social profiles: a small icon button each, named for screen readers. */
+const SOCIAL = {
+  facebook: {
+    host: "www.facebook.com",
+    icon: "M13.6 21v-7.6h2.5l.4-3h-2.900V8.500c0-.9.300-1.400 1.500-1.400h1.500V4.400c-.3 0-1.200-.1-2.200-.1-2.200 0-3.700 1.300-3.700 3.800v2.300H8.100v3h2.600V21Z",
+  },
+  linkedin: {
+    host: "www.linkedin.com",
+    icon: "M6.900 9H4.100v11h2.800ZM5.500 4.100a1.650 1.650 0 1 0 0 3.300 1.650 1.650 0 0 0 0-3.300ZM20 13.700c0-3.100-1.600-4.900-4.100-4.900-1.400 0-2.400.700-2.900 1.500V9h-2.800v11H13v-5.900c0-1.500.800-2.400 2-2.400s1.900.800 1.900 2.400V20H20Z",
+  },
+};
+function validateSocial(pro) {
+  for (const s of pro.social || []) {
+    const known = SOCIAL[s.network];
+    if (!known || !s.label) throw Error("professional.json, social : réseau inconnu ou sans libellé");
+    const url = new URL(s.href);
+    if (url.protocol !== "https:" || url.hostname !== known.host)
+      throw Error(`professional.json, social : adresse ${s.network} inattendue`);
+  }
+  return true;
+}
+function social(pro, name) {
+  const list = pro.social || [];
+  if (!list.length) return "";
+  const links = list.map(
+    (s) =>
+      `<a class="site-footer-social-link" href="${esc(s.href)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`${s.label} de ${name} (nouvel onglet)`)}" title="${esc(s.label)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="${SOCIAL[s.network].icon}" /></svg></a>`,
+  );
+  return `
+        <p class="site-footer-social">
+          ${links.join("\n          ")}
+        </p>`;
+}
 function footer(pro) {
   const f = (k) => shown(pro, k);
   const id = [
@@ -199,7 +232,7 @@ function footer(pro) {
           <a href="/plan-du-site/">Plan du site</a>
           <a href="${CATALOGUE_URL}" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
-        </nav>
+        </nav>${social(pro, f("name") ? f("name").value : "Martin Snauwaert")}
       </footer>`;
 }
 /* Full list of the legal page: every value on file, verified or not, so the
@@ -307,6 +340,7 @@ function load() {
     pro = readJson("professional.json");
   validateZones(zones);
   validatePro(pro);
+  validateSocial(pro);
   return { zones, pro };
 }
 function blocks({ zones, pro }) {
@@ -342,6 +376,7 @@ module.exports = {
   apply,
   validateZones,
   validatePro,
+  validateSocial,
   activeCommunes,
   targets,
   excludedNames,
