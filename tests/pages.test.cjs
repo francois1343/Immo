@@ -14,6 +14,11 @@ const data = C.load(),
   { pages, setAside } = C.plan(data),
   quality = Q.evaluate(pages, data.editorial);
 const text = (p) => Q.text(p.main);
+/* The same site with one village left undocumented: its sourced note is missing. */
+const sparse = structuredClone(data);
+sparse.local.communes.thuin.localities["Biercée"].note = null;
+const sparsePages = C.plan(sparse).pages,
+  sparseQuality = Q.evaluate(sparsePages, {});
 
 test("the catalogue produces every family of pages, each with a unique address, title and H1", () => {
   const count = (f) => pages.filter((p) => p.family === f).length;
@@ -88,7 +93,7 @@ test("local emblems: a known pictogram, a sourced landmark, never a place outsid
 test("a local page without enough sourced facts stays to review, and nothing is approved by default", () => {
   const rows = quality.rows;
   assert.ok(rows.some((r) => r.status === "complete"));
-  assert.ok(rows.some((r) => r.status === "to-review"));
+  assert.equal(sparseQuality.rows.find((r) => r.route === "/secteurs/thuin/biercee/").status, "to-review");
   assert.equal(rows.filter((r) => r.approved).length, 0);
   /* Without local data every local page falls back to review, and no village
      declination is published at all. */
@@ -105,9 +110,9 @@ test("a local page without enough sourced facts stays to review, and nothing is 
 });
 
 test("approval needs a complete page, and a held page is never approved", () => {
-  const complete = quality.rows.find((r) => r.family === "commune" && r.status === "complete"),
-    weak = quality.rows.find((r) => r.status === "to-review");
-  const q = Q.evaluate(pages, { approvedFamilies: ["commune"], approvedRoutes: [weak.route], heldRoutes: [complete.route] });
+  const complete = sparseQuality.rows.find((r) => r.family === "commune" && r.status === "complete"),
+    weak = sparseQuality.rows.find((r) => r.status === "to-review");
+  const q = Q.evaluate(sparsePages, { approvedFamilies: ["commune"], approvedRoutes: [weak.route], heldRoutes: [complete.route] });
   const row = (route) => q.rows.find((r) => r.route === route);
   assert.equal(row(weak.route).approved, false);
   assert.equal(row(complete.route).approved, false);

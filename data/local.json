@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "collectedOn": "2026-11-20",
+  "collectedOn": "2026-11-23",
   "about": "Repères locaux sourcés, par commune et par localité ciblée. Chaque valeur porte l’adresse de sa source ; une valeur non confirmée vaut null et n’est jamais affichée. Sources : Statbel (population au 1er janvier 2026, prix de l’immobilier 2025), Géoportail de la Wallonie (limites, communes voisines), Infrabel (gares), sites communaux, beauxvillages.be, et Wikipédia en dernier recours.",
   "communes": {
     "beaumont": {
@@ -145,6 +145,11 @@
           "text": "Route nationale N589 Boussu-lez-Walcourt – Cul-des-Sarts, croisement avec la N40",
           "locality": "Boussu-lez-Walcourt",
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_589_(Belgique)"
+        },
+        {
+          "text": "Église de la Sainte-Vierge de Fourbechies, de style gothique hennuyer, bâtie au début du XVIIe siècle",
+          "locality": "Fourbechies",
+          "source": "https://fr.wikipedia.org/wiki/Fourbechies"
         }
       ],
       "beauxVillages": [],
@@ -179,7 +184,7 @@
         },
         "Vergnies": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village natal du compositeur François-Joseph Gossec (1734-1829), bordé par Barbençon, Erpion et Froidchapelle",
           "source": "https://fr.wikipedia.org/wiki/Vergnies"
         }
       }
@@ -233,12 +238,12 @@
       "localities": {
         "Grandrieu": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la Thure, en bordure de la frontière française",
           "source": "https://fr.wikipedia.org/wiki/Grandrieu_(Belgique)"
         },
         "Montbliart": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village frontalier drainé par l’Eau d’Eppe et le Ry de Fromont ; église Notre-Dame du XVIIe siècle",
           "source": "https://fr.wikipedia.org/wiki/Montbliart"
         },
         "Rance": {
@@ -248,7 +253,7 @@
         },
         "Sautin": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village bordé par la forêt domaniale de Sautin ; lieu-dit de la Pierre-qui-tourne, où se dressent deux menhirs",
           "source": "https://fr.wikipedia.org/wiki/Sautin"
         },
         "Sivry": {
@@ -334,7 +339,7 @@
         },
         "Bourlers": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village sur le territoire duquel l’Oise prend sa source, le long de la route qui mène à la Trappe",
           "source": "https://fr.wikipedia.org/wiki/Bourlers"
         },
         "Chimay": {
@@ -369,17 +374,17 @@
         },
         "Saint-Remy": {
           "formerCommune": true,
-          "note": null,
+          "note": "Église Saint-Remy aux nefs de 1734 et au chœur roman ; presbytère daté de 1744",
           "source": "https://fr.wikipedia.org/wiki/Saint-Remy_(Chimay)"
         },
         "Salles": {
           "formerCommune": true,
-          "note": null,
+          "note": "Chapelle Notre-Dame del Pilar, datée de 1677, lieu de pèlerinage",
           "source": "https://fr.wikipedia.org/wiki/Salles_(Chimay)"
         },
         "Vaulx-lez-Chimay": {
           "formerCommune": true,
-          "note": null,
+          "note": "Ancienne église de la Sainte-Vierge à nef romane, transformée en habitation au XIXe siècle ; église Saint-Pierre de 1866",
           "source": "https://fr.wikipedia.org/wiki/Vaulx_(Chimay)"
         },
         "Villers-la-Tour": {
@@ -476,17 +481,17 @@
       "localities": {
         "Biercée": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé à 2,5 km de Thuin, traversé par la route nationale N559",
           "source": "https://fr.wikipedia.org/wiki/Bierc%C3%A9e"
         },
         "Biesme-sous-Thuin": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la Biesmelle ; terminus sud du Tramway Lobbes – Thuin depuis 2010",
           "source": "https://fr.wikipedia.org/wiki/Biesme-sous-Thuin"
         },
         "Donstiennes": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village longé par l’ancienne chaussée romaine de Bavay à Trèves, qui le sépare de Strée ; ancien moulin hydraulique",
           "source": "https://fr.wikipedia.org/wiki/Donstiennes"
         },
         "Gozée": {
@@ -506,7 +511,7 @@
         },
         "Thuillies": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village au bord de la route nationale N53, traversé par la Biesmelle ; RAVeL sur le tracé des anciennes lignes 109 et 111",
           "source": "https://fr.wikipedia.org/wiki/Thuillies"
         },
         "Thuin": {
@@ -617,7 +622,7 @@
         },
         "Marbaix-la-Tour": {
           "formerCommune": true,
-          "note": null,
+          "note": "Église Saint-Christophe construite en 1894 ; château de la Pasture, entouré d’un parc",
           "source": "https://fr.wikipedia.org/wiki/Marbaix-la-Tour"
         },
         "Nalinnes": {
@@ -740,22 +745,22 @@
         },
         "Fontenelle": {
           "formerCommune": true,
-          "note": null,
+          "note": "Église Notre-Dame de l’Assomption, de style néo-gothique, construite en 1876 et 1877",
           "source": "https://fr.wikipedia.org/wiki/Fontenelle_(Belgique)"
         },
         "Fraire": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la route nationale N5 (Philippeville – Charleroi) ; hameau de Fairoul",
           "source": "https://fr.wikipedia.org/wiki/Fraire"
         },
         "Gourdinne": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village arrosé par le Thyria, entre Nalinnes, Somzée et Thy-le-Château",
           "source": "https://fr.wikipedia.org/wiki/Gourdinne"
         },
         "Laneffe": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village traversé par la route nationale N5 et arrosé par le Thyria, qui rejoint l’Eau d’Heure",
           "source": "https://fr.wikipedia.org/wiki/Laneffe"
         },
         "Pry": {
@@ -785,7 +790,7 @@
         },
         "Vogenée": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village de la vallée de l’Eau d’Yves, voisin de Walcourt ; anciennes forges du Rossignol, citées dès le XVIe siècle",
           "source": "https://fr.wikipedia.org/wiki/Vogen%C3%A9e"
         },
         "Walcourt": {
@@ -965,22 +970,22 @@
         },
         "Franchimont": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village agricole de la vallée de la Chinelle, où subsistent d’anciennes scieries de marbre du XVIIIe siècle",
           "source": "https://fr.wikipedia.org/wiki/Franchimont"
         },
         "Jamagne": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village établi sur le versant est du Ri des Gattes, entre Yves-Gomezée, Hemptinne, Philippeville et Jamiolle",
           "source": "https://fr.wikipedia.org/wiki/Jamagne_(Philippeville)"
         },
         "Jamiolle": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé entre la route nationale N5 (Philippeville – Charleroi) et la N40 (Philippeville – Beaumont)",
           "source": "https://fr.wikipedia.org/wiki/Jamiolle"
         },
         "Merlemont": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé sur une crête calcaire qui domine la Fagne",
           "source": "https://fr.wikipedia.org/wiki/Merlemont"
         },
         "Neuville": {
@@ -1000,7 +1005,7 @@
         },
         "Roly": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village de pierre du pays, entre forêts de chênes, prairies de la Fagne et collines calcaires de la Calestienne ; château-ferme de Roly",
           "source": "https://fr.wikipedia.org/wiki/Roly"
         },
         "Romedenne": {
@@ -1015,7 +1020,7 @@
         },
         "Sart-en-Fagne": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village agricole entouré de bois, entre Merlemont, Surice et Villers-le-Gambon",
           "source": "https://fr.wikipedia.org/wiki/Sart-en-Fagne"
         },
         "Sautour": {
@@ -1025,22 +1030,22 @@
         },
         "Surice": {
           "formerCommune": true,
-          "note": null,
+          "note": "Territoire arrosé par l’Hermeton ; hameaux de Lautenne et de Wez-de-Chine",
           "source": "https://fr.wikipedia.org/wiki/Surice"
         },
         "Villers-en-Fagne": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé entre Sautour, Villers-le-Gambon et Roly ; église Saint-Michel de 1844, de style néoclassique",
           "source": "https://fr.wikipedia.org/wiki/Villers-en-Fagne"
         },
         "Villers-le-Gambon": {
           "formerCommune": true,
-          "note": null,
+          "note": "Cité-jardin bâtie en 1924 pour les ouvriers marbriers des carrières du village",
           "source": "https://fr.wikipedia.org/wiki/Villers-le-Gambon"
         },
         "Vodecée": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village situé entre les routes nationales N40, N97 et N98, à l’est de Philippeville",
           "source": "https://fr.wikipedia.org/wiki/Vodec%C3%A9e"
         }
       }
@@ -1209,7 +1214,7 @@
         },
         "Merbes-Sainte-Marie": {
           "formerCommune": true,
-          "note": null,
+          "note": "Village agricole à cheval sur la région du Centre et la Thudinie, où naît le ruisseau Braquet, affluent de la Sambre",
           "source": "https://fr.wikipedia.org/wiki/Merbes-Sainte-Marie"
         }
       }
@@ -1287,12 +1292,12 @@
         },
         "Hantes-Wihéries": {
           "formerCommune": true,
-          "note": null,
-          "source": "https://fr.wikipedia.org/wiki/Erquelinnes"
+          "note": "Village traversé par la Hantes, qui rejoint la Sambre à Labuissière ; hameaux de Grand Pré, Grande Mée et Wihéries",
+          "source": "https://fr.wikipedia.org/wiki/Hantes-Wih%C3%A9ries"
         },
         "Montignies-Saint-Christophe": {
           "formerCommune": true,
-          "note": null,
+          "note": "Pont dit « romain » à treize arches sur la Hantes ; hameaux de Sainte-Anne, Miraumont, La Marlière et Hurtebise",
           "source": "https://fr.wikipedia.org/wiki/Montignies-Saint-Christophe"
         },
         "Solre-sur-Sambre": {

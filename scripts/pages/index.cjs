@@ -100,8 +100,7 @@ const notFound = {
 const fileOf = (page) => page.file || page.route.slice(1) + "index.html";
 
 /* Everything the site publishes beyond the hand-written pages, in memory. */
-function plan({ statics = [] } = {}) {
-  const data = C.load();
+function plan({ statics = [], data = C.load() } = {}) {
   const rendered = P.blocks(data);
   const { pages, setAside } = C.plan(data);
   const quality = Q.evaluate(pages, data.editorial);
