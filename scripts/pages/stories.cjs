@@ -31,6 +31,8 @@ const ICONS = {
   drop: `<path d="M24 6c7 9 11 15 11 21a11 11 0 0 1-22 0c0-6 4-12 11-21Z" /><path d="M19 28a5 5 0 0 0 5 5" />`,
   /* Visits: an open door. */
   door: `<path d="M10 42V8h18v34M28 12l10 3v24l-10 3" /><path d="M23 25v3M6 42h36" />`,
+  /* Large plot: a house, a tree and the ground. */
+  land: `<path d="M8 30 17 22l9 8v10H8Z" /><path d="M35 40V27" /><path d="M35 27c-4.500 0-7-3-7-7.500S31 9 35 9s7 6 7 10.500S39.500 27 35 27Z" /><path d="M4 40h40" />`,
   /* Heritage: a village church. */
   heritage: `<path d="M10 41V25l8-7 8 7v16M26 41V16l5-9 5 9v25M31 7V3M29 5h4" /><path d="M16 41v-6h4v6M31 22v5" /><path d="M6 41h36" />`,
   snow: `<path d="M24 5v38M7.500 14.500l33 19M7.500 33.500l33-19" /><path d="m19 9 5 5 5-5M19 39l5-5 5 5M8.500 21.500l6.800-1.800-1.800-6.800M39.500 26.500l-6.800 1.800 1.800 6.800M8.500 26.500l6.800 1.800-1.800 6.800M39.500 21.500l-6.800-1.800 1.800-6.800" />`,

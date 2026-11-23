@@ -29,7 +29,7 @@ test("the catalogue produces every family of pages, each with a unique address, 
   /* Volume is not a goal: a declination that would repeat its parent is set
      aside, with the parent it is consolidated into. */
   assert.ok(pages.length >= 120 && pages.length <= 500, String(pages.length));
-  assert.equal(pages.length + setAside.length, 371);
+  assert.equal(pages.length + setAside.length, 376);
   const published = new Set(pages.map((p) => p.route));
   for (const r of setAside) {
     assert.ok(!published.has(r.route), r.route);

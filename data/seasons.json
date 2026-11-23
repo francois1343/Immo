@@ -5,30 +5,30 @@
     "automne": {
       "icon": "leaf",
       "title": "L’hiver approche, votre projet immobilier aussi ?",
-      "text": "Une vente se prépare avant les jours courts : documents, photos, extérieurs. Le guide de saison fait le tour de ce qui compte.",
-      "href": "/guides/vendre-maison-hiver/",
-      "label": "Vendre en hiver"
+      "text": "Gouttières, humidité, photos, extérieurs : ce que vous préparez en automne sert votre vente tout l’hiver.",
+      "href": "/guides/vendre-maison-automne/",
+      "label": "Le guide d’automne"
     },
     "hiver": {
       "icon": "snow",
       "title": "Vendre en hiver, c’est possible, et cela se prépare.",
       "text": "Lumière, chauffage, accès, photos : ce qu’un visiteur remarque à cette saison, et comment présenter votre maison sous son meilleur jour.",
       "href": "/guides/vendre-maison-hiver/",
-      "label": "Le guide de saison"
+      "label": "Le guide d’hiver"
     },
     "printemps": {
       "icon": "sprout",
-      "title": "Les jours rallongent : le bon moment pour préparer votre vente.",
-      "text": "Jardin, façades, photos d’extérieur : cinq premières étapes pour mettre votre bien en ordre avant de le présenter.",
-      "href": "/preparer-ma-vente/",
-      "label": "Préparer ma vente"
+      "title": "Les jours rallongent : votre maison se montre avec son jardin.",
+      "text": "Première tonte, façades, photos d’extérieur : tirez parti de la lumière du printemps pour présenter votre bien.",
+      "href": "/guides/vendre-maison-printemps/",
+      "label": "Le guide de printemps"
     },
     "ete": {
       "icon": "sun",
       "title": "Jardin, terrasse, vue d’ensemble : montrez votre bien en entier.",
-      "text": "Une estimation tient compte du terrain et des extérieurs autant que de la maison. Parlons de votre bien, même si vous partez quelques jours.",
-      "href": "/estimation-immobiliere/",
-      "label": "L’estimation"
+      "text": "Extérieurs, vues aériennes, visites pendant les vacances : la vente avance aussi à la belle saison, même en votre absence.",
+      "href": "/guides/vendre-maison-ete/",
+      "label": "Le guide d’été"
     }
   }
 }
