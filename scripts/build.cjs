@@ -52,7 +52,7 @@ const walk = (dir) =>
 
 const S = require("./seo.cjs");
 const { prepare, generatedPublic } = require("./prepare.cjs");
-const { generated, addresses, seo, reception } = prepare();
+const { generated, addresses, seo, reception, recaptcha } = prepare();
 const publicFiles = new Set([...files, ...generatedPublic]);
 for (const name of walk(pub)) if (!publicFiles.has(name)) throw Error("Unexpected public file: " + name);
 for (const name of publicFiles) if (!fs.existsSync(path.join(pub, name))) throw Error("Missing public file: " + name);
@@ -193,6 +193,7 @@ console.log(
     files: files.length,
     output: ".next",
     automaticReception: reception,
+    recaptcha,
     indexing: seo.mode === "live",
     seo: { mode: seo.mode, canonicalOrigin: seo.canonicalOrigin, indexablePages: seo.indexablePages },
     pages: {

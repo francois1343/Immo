@@ -16,15 +16,26 @@ const vendor = {
   "vendor/libphonenumber-min.js": "node_modules/libphonenumber-js/bundle/libphonenumber-min.js",
 };
 /* Files written into public/ by this step; everything else there is a source. */
-const generatedPublic = [...Object.keys(vendor), "sitemap.xml", "inquiry-config.js"];
+/* IndexNow key file: <key>.txt at the root, holding the key. The key is public
+   by design; it proves to the engines that the notifications come from the site. */
+const indexNowKey = (config = S.readConfig(root)) => {
+  const key = (config.indexNow && config.indexNow.key) || "";
+  if (key && !/^[a-zA-Z0-9-]{8,128}$/.test(key)) throw Error("Clé IndexNow invalide dans seo.config.json");
+  return key;
+};
+const generatedPublic = [...Object.keys(vendor), "sitemap.xml", "inquiry-config.js", ...(indexNowKey() ? [indexNowKey() + ".txt"] : [])];
 /* Address of the reception route (pages/api/demande.js). */
 const ENDPOINT = "/api/demande/";
 /* Settings read by public/estimation.js. The form posts to the site only when
    the SMTP password is present at build time; otherwise it sends nothing and
    prepares a message the visitor sends from their own mail app. */
+/* The reCAPTCHA v3 site key (public) is given to the page only when the form
+   posts to the site and both keys are set: same rule as lib/recaptcha.mjs. */
+const recaptchaSiteKey = (env = process.env) =>
+  env.SMTP_PASSWORD && env.RECAPTCHA_SECRET_KEY && /^[A-Za-z0-9_-]{20,100}$/.test(env.RECAPTCHA_SITE_KEY || "") ? env.RECAPTCHA_SITE_KEY : "";
 const inquiryConfig = (env = process.env) =>
   "/* Written by scripts/prepare.cjs: do not edit. */\n" +
-  `window.IMMO_INQUIRY = Object.freeze(${JSON.stringify({ endpoint: env.SMTP_PASSWORD ? ENDPOINT : "", turnstileSiteKey: "" })});\n`;
+  `window.IMMO_INQUIRY = Object.freeze(${JSON.stringify({ endpoint: env.SMTP_PASSWORD ? ENDPOINT : "", recaptchaSiteKey: recaptchaSiteKey(env) })});\n`;
 /* Public address of a page file: a folder index, or the file itself. */
 const addressOf = (file) => "/" + file.replace(/index\.html$/, "");
 
@@ -66,10 +77,12 @@ function prepare() {
   fs.writeFileSync(path.join(pub, "sitemap.xml"), S.sitemap(config, indexable));
   if (live) fs.writeFileSync(path.join(pub, "robots.txt"), S.liveRobots(config));
   fs.writeFileSync(path.join(pub, "inquiry-config.js"), inquiryConfig());
+  if (indexNowKey(config)) fs.writeFileSync(path.join(pub, indexNowKey(config) + ".txt"), indexNowKey(config));
   return {
     generated,
     addresses: Object.keys(pages),
     reception: Boolean(process.env.SMTP_PASSWORD),
+    recaptcha: Boolean(recaptchaSiteKey()),
     seo: { mode: config.mode, canonicalOrigin: config.origin, indexablePages: indexable.length, indexable },
   };
 }

@@ -135,7 +135,6 @@
                 <textarea id="f-message" name="message" maxlength="300" rows="3" aria-describedby="err-message"></textarea>
                 <p class="field-error" id="err-message" hidden></p>
               </details>
-              <div id="turnstile-slot" class="estimate-turnstile" hidden></div>
               <div id="send-failure" class="estimate-failure" role="alert" hidden>
                 <p id="send-failure-text"></p>
                 <div class="actions">
@@ -148,6 +147,7 @@
               </div>
               <p class="quiet" data-when="mail">Rien n’est envoyé par ce site : vous relisez votre message, puis vous l’envoyez depuis votre messagerie. <a href="/politique-confidentialite.html">Vos données</a>.</p>
               <p class="quiet" data-when="api" hidden>Votre demande est transmise à Martin Snauwaert pour vous rappeler au sujet de votre bien. Aucune inscription à une newsletter. <a href="/politique-confidentialite.html">Vos données</a>.</p>
+              <p class="quiet" id="captcha-note" hidden>Ce formulaire est protégé par reCAPTCHA : les <a href="https://policies.google.com/privacy?hl=fr" rel="noopener noreferrer" target="_blank">règles de confidentialité</a> et les <a href="https://policies.google.com/terms?hl=fr" rel="noopener noreferrer" target="_blank">conditions d’utilisation</a> de Google s’appliquent.</p>
             </fieldset>
             <p class="error" id="form-status" role="status" aria-live="polite"></p>
           </form>

@@ -28,7 +28,7 @@
     dirty = false,
     busy = false,
     key = "",
-    token = "",
+    captchaRequest = null,
     lib = null,
     libRequest = null;
 
@@ -122,7 +122,7 @@
     if (n === 1) {
       recap();
       loadPhoneLibrary().then(updatePhoneHint);
-      startTurnstile();
+      loadCaptcha();
     }
     if (focus) {
       const legend = steps[n].querySelector("legend");
@@ -166,31 +166,50 @@
     showResult("mail");
   }
 
-  /* Turnstile is loaded only when a site key and an endpoint are configured.
-     Its token is checked by the server, never trusted here. */
-  function startTurnstile() {
-    const slot = $("#turnstile-slot");
-    if (!endpoint || !cfg.turnstileSiteKey || slot.dataset.ready) return;
-    slot.dataset.ready = "1";
-    slot.hidden = false;
-    const render = () =>
-      window.turnstile.render(slot, {
-        sitekey: cfg.turnstileSiteKey,
-        callback: (t) => (token = t),
-        "expired-callback": () => (token = ""),
-        "error-callback": () => (token = ""),
+  /* Google reCAPTCHA v3, only when a site key and an endpoint are configured.
+     It shows nothing; its token is checked by the server, never trusted here. */
+  const captchaKey =
+    endpoint && typeof cfg.recaptchaSiteKey === "string" && /^[A-Za-z0-9_-]{20,100}$/.test(cfg.recaptchaSiteKey)
+      ? cfg.recaptchaSiteKey
+      : "";
+  const captchaNote = $("#captcha-note");
+  if (captchaNote) captchaNote.hidden = !captchaKey;
+  function loadCaptcha() {
+    if (!captchaKey) return Promise.resolve(false);
+    if (!captchaRequest)
+      captchaRequest = new Promise((resolve) => {
+        const s = document.createElement("script");
+        s.src = "https://www.google.com/recaptcha/api.js?render=" + encodeURIComponent(captchaKey);
+        s.onload = () => resolve(true);
+        s.onerror = () => {
+          captchaRequest = null;
+          s.remove();
+          resolve(false);
+        };
+        document.head.append(s);
       });
-    if (window.turnstile) return render();
-    const s = document.createElement("script");
-    s.src =
-      typeof cfg.turnstileScript === "string" &&
-      cfg.turnstileScript.startsWith("/")
-        ? cfg.turnstileScript
-        : "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    s.onload = render;
-    s.onerror = () => (slot.hidden = true);
-    document.head.append(s);
+    return captchaRequest;
   }
+  /* A token lasts two minutes and serves once: one is asked for each sending. */
+  async function captchaToken() {
+    if (!(await loadCaptcha()) || !window.grecaptcha) return "";
+    return new Promise((resolve) => {
+      const timer = setTimeout(() => resolve(""), 8000);
+      const done = (t) => {
+        clearTimeout(timer);
+        resolve(typeof t === "string" ? t : "");
+      };
+      try {
+        window.grecaptcha.ready(() =>
+          window.grecaptcha.execute(captchaKey, { action: "estimation" }).then(done, () => done("")),
+        );
+      } catch {
+        done("");
+      }
+    });
+  }
+  const CAPTCHA_FAILURE =
+    "La vérification anti-robot n’a pas abouti (un bloqueur de contenu peut l’empêcher). Vos réponses sont toujours là : vous pouvez réessayer, ou contacter Martin directement.";
 
   function failure(message) {
     status.textContent = "";
@@ -202,27 +221,25 @@
   }
 
   async function send(v) {
-    if (cfg.turnstileSiteKey && !token) {
-      status.textContent =
-        "La vérification anti-robot n’est pas terminée. Patientez un instant puis réessayez.";
-      return;
-    }
     if (!key) key = crypto.randomUUID();
     busy = true;
     submit.disabled = true;
     submit.textContent = "Envoi en cours…";
     $("#send-failure").hidden = true;
     status.textContent = "Envoi de votre demande…";
-    const abort = new AbortController(),
-      timer = setTimeout(() => abort.abort(), 15000);
+    const abort = new AbortController();
+    let timer;
     try {
+      const token = captchaKey ? await captchaToken() : "";
+      if (captchaKey && !token) return failure(CAPTCHA_FAILURE);
+      timer = setTimeout(() => abort.abort(), 15000);
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Idempotency-Key": key },
         body: JSON.stringify({
           ...values(),
           website: read("website"),
-          turnstileToken: token,
+          captchaToken: token,
         }),
         credentials: "omit",
         cache: "no-store",
@@ -251,7 +268,9 @@
         return;
       }
       failure(
-        response.status === 429
+        response.status === 403 && data && data.error === "challenge"
+          ? CAPTCHA_FAILURE
+          : response.status === 429
           ? "Trop de tentatives depuis cette connexion. Réessayez dans quelques minutes, ou contactez Martin directement."
           : "L’envoi n’a pas abouti. Vos réponses sont toujours là : vous pouvez réessayer, ou contacter Martin directement.",
       );
@@ -266,13 +285,6 @@
       busy = false;
       submit.disabled = false;
       submit.textContent = "Envoyer ma demande";
-      if (window.turnstile && cfg.turnstileSiteKey && result.hidden)
-        try {
-          window.turnstile.reset();
-          token = "";
-        } catch {
-          /* The widget is optional for the page to keep working. */
-        }
     }
   }
 

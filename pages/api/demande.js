@@ -6,11 +6,12 @@ import nodemailer from "nodemailer";
 import * as phoneLib from "libphonenumber-js";
 import { createInquiryHandler, memoryRateLimit } from "../../lib/inquiry-handler.mjs";
 import { mailSettings, mailConfigured, mailStore, transportOptions } from "../../lib/inquiry-mail.mjs";
+import { recaptchaSettings, recaptchaConfigured, recaptchaVerifier } from "../../lib/recaptcha.mjs";
 
 /* The handler reads the raw text itself, with its own size limit. */
 export const config = { api: { bodyParser: false } };
 
-const MAX_BODY = 8192;
+const MAX_BODY = 12288;
 /* Five requests per ten minutes and per address, on each running instance. */
 const rateLimit = memoryRateLimit({ max: 5 });
 let store;
@@ -36,7 +37,10 @@ export default async function demande(req, res) {
   if (!mailConfigured()) return res.status(503).json({ ok: false, error: "unavailable" });
   const settings = mailSettings();
   store ||= mailStore({ transport: nodemailer.createTransport(transportOptions(settings)), settings });
-  const handle = createInquiryHandler({ store, rateLimit, phoneLib, allowedOrigin: ownOrigin(req) });
+  const origin = ownOrigin(req);
+  /* reCAPTCHA v3 is checked here whenever its two keys are configured. */
+  const verifyChallenge = recaptchaConfigured() ? recaptchaVerifier({ ...recaptchaSettings(), hostname: new URL(origin).hostname }) : null;
+  const handle = createInquiryHandler({ store, rateLimit, verifyChallenge, phoneLib, allowedOrigin: origin });
   const out = await handle({
     method: req.method,
     headers: req.headers,

@@ -11,6 +11,7 @@ import {
 } from "../lib/inquiry-handler.mjs";
 
 import { mailSettings, mailConfigured, mailStore, inquiryMail } from "../lib/inquiry-mail.mjs";
+import { recaptchaConfigured, recaptchaSettings, recaptchaVerifier } from "../lib/recaptcha.mjs";
 const require = createRequire(import.meta.url);
 const { inquiryConfig, ENDPOINT } = require("../scripts/prepare.cjs");
 const core = require("../public/inquiry-core.js");
@@ -111,7 +112,7 @@ function fixture(overrides = {}) {
     phoneLib: lib,
     allowedOrigin: origin,
     rateLimit: memoryRateLimit({ max: 3 }),
-    verifyTurnstile: async (token, ip) => {
+    verifyChallenge: async (token, ip) => {
       challenges.push([token, ip]);
       return token === "ok";
     },
@@ -128,7 +129,7 @@ function fixture(overrides = {}) {
         "idempotency-key": k,
         ...headers,
       },
-      body: typeof body === "string" ? body : JSON.stringify({ turnstileToken: "ok", website: "", ...body }),
+      body: typeof body === "string" ? body : JSON.stringify({ captchaToken: "ok", website: "", ...body }),
     });
   return { store, alerts, challenges, handle, post };
 }
@@ -149,7 +150,7 @@ test("handler stores a valid request once and never echoes personal data", async
   const saved = f.store.all()[0];
   assert.equal(saved.status, "Nouvelle");
   assert.equal(saved.telephone, "+32470123456");
-  assert.equal("website" in saved || "turnstileToken" in saved, false);
+  assert.equal("website" in saved || "captchaToken" in saved, false);
   assert.equal(f.alerts.length, 1);
   assert.deepEqual(Object.keys(f.alerts[0]), ["id"]);
 });
@@ -163,8 +164,8 @@ test("handler: a filled trap field looks like a success and stores nothing", asy
 });
 test("handler: the anti-bot token is verified by the server, every time", async () => {
   const f = fixture();
-  for (const token of ["", "faux", undefined, 42, "x".repeat(3000)]) {
-    const r = await f.post({ ...good, turnstileToken: token }, { ip: "198.51.100." + f.challenges.length });
+  for (const token of ["", "faux", undefined, 42, "x".repeat(5000)]) {
+    const r = await f.post({ ...good, captchaToken: token }, { ip: "198.51.100." + f.challenges.length });
     assert.equal(r.status, 403);
   }
   assert.equal(f.store.all().length, 0);
@@ -183,7 +184,7 @@ test("handler: wrong method, origin, type, size, JSON or key are refused", async
   assert.equal((await f.handle({ method: "GET", headers: {} })).status, 405);
   assert.equal((await f.post(good, { headers: { origin: "https://autre.example" } })).status, 403);
   assert.equal((await f.post(good, { headers: { "content-type": "text/plain" } })).status, 415);
-  assert.equal((await f.post("{" + " ".repeat(5000) + "}", { ip: "a" })).status, 413);
+  assert.equal((await f.post("{" + " ".repeat(9000) + "}", { ip: "a" })).status, 413);
   assert.equal((await f.post("{oups", { ip: "b" })).status, 400);
   assert.equal((await f.post("[1]", { ip: "c" })).status, 400);
   assert.equal((await f.post(good, { k: "pas-une-cle", ip: "d" })).status, 400);
@@ -229,13 +230,71 @@ test("reception is switched on by the SMTP password alone, and the secret stays 
   const config = JSON.parse(read("vercel.json"));
   const csp = config.headers[0].headers.find((h) => h.key === "Content-Security-Policy").value;
   assert.ok(csp.includes("connect-src 'self'") && csp.includes("script-src 'self';"));
-  assert.ok(!csp.includes("challenges.cloudflare.com"));
+  assert.ok(!csp.includes("challenges.cloudflare.com") && !csp.includes("google"));
+});
+test("reCAPTCHA v3 is switched on by its two keys, loaded on the form page only, and judged by the server", async () => {
+  const settings = (env) => {
+    const window = {};
+    new Function("window", inquiryConfig(env))(window);
+    return window.IMMO_INQUIRY;
+  };
+  const site = "6Lfictif-cle-de-site_0123456789abcdefghij",
+    env = { SMTP_PASSWORD: "x", RECAPTCHA_SITE_KEY: site, RECAPTCHA_SECRET_KEY: "secret-fictif" };
+  assert.equal(settings(env).recaptchaSiteKey, site);
+  assert.ok(!inquiryConfig(env).includes("secret-fictif"));
+  /* One key alone, a malformed key or no reception: nothing is loaded from Google. */
+  for (const partial of [{ ...env, RECAPTCHA_SECRET_KEY: "" }, { ...env, RECAPTCHA_SITE_KEY: "" }, { ...env, RECAPTCHA_SITE_KEY: 'x"y' }, { ...env, SMTP_PASSWORD: "" }])
+    assert.equal(settings(partial).recaptchaSiteKey, "");
+  assert.equal(recaptchaConfigured(env), true);
+  assert.equal(recaptchaConfigured({ RECAPTCHA_SITE_KEY: site }), false);
+  assert.equal(recaptchaSettings({}).minScore, 0.5);
+  assert.equal(recaptchaSettings({ RECAPTCHA_MIN_SCORE: "0.7" }).minScore, 0.7);
+
+  const calls = [];
+  const verifier = (answer, ok = true) =>
+    recaptchaVerifier({
+      secret: "secret-fictif",
+      minScore: 0.5,
+      hostname: "site.example",
+      fetch: async (url, init) => {
+        calls.push([url, Object.fromEntries(init.body)]);
+        if (answer instanceof Error) throw answer;
+        return { ok, json: async () => answer };
+      },
+    });
+  const yes = { success: true, action: "estimation", score: 0.9, hostname: "site.example" };
+  assert.equal(await verifier(yes)("jeton", "203.0.113.7"), true);
+  assert.deepEqual(calls[0], ["https://www.google.com/recaptcha/api/siteverify", { secret: "secret-fictif", response: "jeton", remoteip: "203.0.113.7" }]);
+  for (const no of [{ ...yes, success: false }, { ...yes, score: 0.3 }, { ...yes, score: undefined }, { ...yes, action: "autre" }, { ...yes, hostname: "ailleurs.example" }, Error("réseau")])
+    assert.equal(await verifier(no)("jeton", ""), false);
+  assert.equal(await verifier(yes, false)("jeton", ""), false);
+
+  /* Google is allowed by the policy of the form page, and nowhere else. */
+  const rules = JSON.parse(read("vercel.json")).headers;
+  const withCsp = rules.filter((r) => r.headers.some((h) => h.key === "Content-Security-Policy"));
+  assert.deepEqual(withCsp.map((r) => r.source), ["/(.*)", "/estimation(/?)"]);
+  const strict = withCsp[0].headers.find((h) => h.key === "Content-Security-Policy").value,
+    form = withCsp[1].headers.find((h) => h.key === "Content-Security-Policy").value;
+  const directives = (csp) => Object.fromEntries(csp.split("; ").map((d) => [d.split(" ")[0], d.split(" ").slice(1).join(" ")]));
+  const a = directives(strict),
+    b = directives(form);
+  for (const name of Object.keys(a))
+    if (!["script-src", "connect-src"].includes(name)) assert.equal(b[name], a[name], name);
+  assert.equal(b["script-src"], "'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/");
+  assert.equal(b["connect-src"], "'self' https://www.google.com/recaptcha/");
+  assert.equal(b["frame-src"], "https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/");
+  assert.ok(!form.includes("unsafe") && !form.includes("*"));
+  const js = read("public/estimation.js"),
+    html = read("content/estimation/index.html");
+  assert.ok(js.includes('"https://www.google.com/recaptcha/api.js?render="') && js.includes('action: "estimation"'));
+  assert.ok(html.includes('id="captcha-note" hidden') && html.includes("policies.google.com/privacy"));
+  assert.ok(read("content/politique-confidentialite.html").includes("reCAPTCHA v3"));
 });
 test("the request is sent once to the business inbox, from the no-reply address, with the visitor as reply-to", async () => {
   const sent = [];
   const settings = mailSettings({ SMTP_PASSWORD: "x" });
   const store = mailStore({ transport: { sendMail: async (m) => sent.push(m) }, settings });
-  const f = fixture({ store, verifyTurnstile: null });
+  const f = fixture({ store, verifyChallenge: null });
   const k = key();
   assert.equal((await f.post(good, { k })).status, 201);
   assert.equal((await f.post(good, { k })).status, 200);
@@ -252,7 +311,7 @@ test("the request is sent once to the business inbox, from the no-reply address,
   const forged = inquiryMail({ id: "12345678-aaaa", receivedAt: "2026-11-22T10:00:00Z", commune: "Thuin\r\nBcc: x@example.org", prenom: "A", telephone: "+32470123456" }, settings);
   assert.ok(!/[\r\n]/.test(forged.subject));
   /* A delivery failure is reported to the page, which then offers the phone and the prepared e-mail. */
-  const down = fixture({ store: mailStore({ transport: { sendMail: async () => { throw Error("smtp"); } }, settings }), verifyTurnstile: null });
+  const down = fixture({ store: mailStore({ transport: { sendMail: async () => { throw Error("smtp"); } }, settings }), verifyChallenge: null });
   assert.equal((await down.post(good)).status, 503);
 });
 test("the page keeps answers in memory only and names the callback as a preference", () => {

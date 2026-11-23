@@ -14,7 +14,7 @@
     "googleListingAndReviewsConfirmed": false
   },
   "indexNow": {
-    "key": "",
-    "about": "Clé à générer au lancement (8 à 128 caractères). Le fichier <clé>.txt est alors publié à la racine par le build. Vide : aucun envoi possible."
+    "key": "e81ca7def1dc4f84cd0f2a6c2f250380",
+    "about": "Clé publique IndexNow (8 à 128 caractères). Le build publie <clé>.txt à la racine du site. Vide : aucun envoi possible."
   }
 }

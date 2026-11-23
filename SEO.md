@@ -59,7 +59,7 @@ Le build refuse le mode `live` tant qu'une validation manque ou que l'en-tête e
 
 ## IndexNow et Search Console
 
-`npm run indexnow` liste ce qui serait envoyé et n'envoie rien. `-- --send` n'envoie que si le site est en mode live, sur un domaine qui n'est pas `*.vercel.app`, avec une clé configurée dont le fichier répond en ligne. IndexNow sert Bing et les moteurs participants. Google passe par Search Console, le sitemap et l'exploration normale ; l'API Indexing de Google ne concerne pas ces pages.
+La clé IndexNow est dans `seo.config.json` (`indexNow.key`, publique par nature) ; le build publie `/<clé>.txt` à la racine du site. `npm run indexnow` liste ce qui serait envoyé et n'envoie rien. `-- --send` n'envoie que si le site est en mode live, sur un domaine qui n'est pas `*.vercel.app`, avec une clé configurée dont le fichier répond en ligne. IndexNow sert Bing et les moteurs participants. Google passe par Search Console, le sitemap et l'exploration normale ; l'API Indexing de Google ne concerne pas ces pages.
 
 ## Mise à jour des données locales
 

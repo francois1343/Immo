@@ -3,6 +3,8 @@
 public/vendor/
 public/sitemap.xml
 public/inquiry-config.js
+public/*.txt
+!public/robots.txt
 next-env.d.ts
 node_modules/
 .vercel/

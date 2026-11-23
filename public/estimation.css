@@ -231,9 +231,9 @@
 .estimate-more label {
   margin-top: 10px;
 }
-.estimate-turnstile {
-  margin: 0 0 18px;
-  min-height: 65px;
+/* The reCAPTCHA badge is replaced by the notice under the button, as Google allows. */
+.grecaptcha-badge {
+  visibility: hidden;
 }
 .estimate-failure {
   margin: 0 0 18px;
