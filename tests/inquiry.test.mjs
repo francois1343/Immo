@@ -250,24 +250,62 @@ test("reCAPTCHA v3 is switched on by its two keys, loaded on the form page only,
   assert.equal(recaptchaSettings({}).minScore, 0.5);
   assert.equal(recaptchaSettings({ RECAPTCHA_MIN_SCORE: "0.7" }).minScore, 0.7);
 
-  const calls = [];
-  const verifier = (answer, ok = true) =>
+  /* Every answer below is simulated: nothing is asked of Google. */
+  const calls = [],
+    reasons = [],
+    clock = Date.parse("2026-11-23T10:00:00Z");
+  const verifier = (answer, { ok = true, minScore = 0.5 } = {}) =>
     recaptchaVerifier({
       secret: "secret-fictif",
-      minScore: 0.5,
+      minScore,
       hostname: "site.example",
+      now: () => clock,
+      report: (reason) => reasons.push(reason),
       fetch: async (url, init) => {
         calls.push([url, Object.fromEntries(init.body)]);
         if (answer instanceof Error) throw answer;
-        return { ok, json: async () => answer };
+        return { ok, status: ok ? 200 : 500, json: async () => answer };
       },
     });
-  const yes = { success: true, action: "estimation", score: 0.9, hostname: "site.example" };
+  const yes = { success: true, action: "estimation", score: 0.9, hostname: "site.example", challenge_ts: "2026-11-23T09:59:30Z" };
   assert.equal(await verifier(yes)("jeton", "203.0.113.7"), true);
   assert.deepEqual(calls[0], ["https://www.google.com/recaptcha/api/siteverify", { secret: "secret-fictif", response: "jeton", remoteip: "203.0.113.7" }]);
-  for (const no of [{ ...yes, success: false }, { ...yes, score: 0.3 }, { ...yes, score: undefined }, { ...yes, action: "autre" }, { ...yes, hostname: "ailleurs.example" }, Error("réseau")])
-    assert.equal(await verifier(no)("jeton", ""), false);
-  assert.equal(await verifier(yes, false)("jeton", ""), false);
+  assert.equal(reasons.length, 0);
+  /* `success: true` is not enough: score, action, site and age are all read. */
+  const refusals = [
+    [{ ...yes, success: false, "error-codes": ["timeout-or-duplicate"] }, "refused:timeout-or-duplicate"],
+    [{ ...yes, success: false, "error-codes": ["invalid-input-secret"] }, "refused:invalid-input-secret"],
+    [{ ...yes, success: false }, "refused:no-code"],
+    [{ ...yes, score: 0.3 }, "score"],
+    [{ ...yes, score: undefined }, "score"],
+    [{ ...yes, score: "0.9" }, "score"],
+    [{ ...yes, action: "autre" }, "action"],
+    [{ ...yes, action: undefined }, "action"],
+    [{ ...yes, hostname: "ailleurs.example" }, "hostname"],
+    [{ ...yes, hostname: undefined }, "hostname"],
+    [{ ...yes, challenge_ts: "2026-11-23T09:55:00Z" }, "expired"],
+    [{ ...yes, challenge_ts: "2026-11-23T10:05:00Z" }, "expired"],
+    [{ ...yes, challenge_ts: undefined }, "expired"],
+    [null, "unreadable-answer"],
+    [Error("réseau"), "unreachable"],
+  ];
+  for (const [answer, reason] of refusals) {
+    assert.equal(await verifier(answer)("jeton", ""), false, reason);
+    assert.equal(reasons.at(-1), reason);
+  }
+  assert.equal(await verifier(yes, { ok: false })("jeton", ""), false);
+  assert.equal(reasons.at(-1), "http-500");
+  /* The threshold is a setting. */
+  assert.equal(await verifier({ ...yes, score: 0.6 }, { minScore: 0.7 })("jeton", ""), false);
+  assert.equal(await verifier({ ...yes, score: 0.7 }, { minScore: 0.7 })("jeton", ""), true);
+  /* A refusal is logged by its reason only: neither the token nor the address. */
+  assert.ok(reasons.every((r) => !r.includes("jeton") && !r.includes("203.0.113")));
+  assert.throws(() => recaptchaVerifier({ secret: "x" }));
+  /* The rate limit comes first and does not depend on the challenge. */
+  const limited = fixture({ rateLimit: memoryRateLimit({ max: 1 }) });
+  assert.equal((await limited.post(good, { ip: "192.0.2.9" })).status, 201);
+  assert.equal((await limited.post(good, { ip: "192.0.2.9" })).status, 429);
+  assert.equal(limited.challenges.length, 1);
 
   /* Google is allowed by the policy of the form page, and nowhere else. */
   const rules = JSON.parse(read("vercel.json")).headers;

@@ -39,7 +39,14 @@ export default async function demande(req, res) {
   store ||= mailStore({ transport: nodemailer.createTransport(transportOptions(settings)), settings });
   const origin = ownOrigin(req);
   /* reCAPTCHA v3 is checked here whenever its two keys are configured. */
-  const verifyChallenge = recaptchaConfigured() ? recaptchaVerifier({ ...recaptchaSettings(), hostname: new URL(origin).hostname }) : null;
+  const verifyChallenge = recaptchaConfigured()
+    ? recaptchaVerifier({
+        ...recaptchaSettings(),
+        hostname: new URL(origin).hostname,
+        /* Server log: the reason only, never the token, the address or the request. */
+        report: (reason) => console.warn("reCAPTCHA: request refused (" + reason + ")"),
+      })
+    : null;
   const handle = createInquiryHandler({ store, rateLimit, verifyChallenge, phoneLib, allowedOrigin: origin });
   const out = await handle({
     method: req.method,
