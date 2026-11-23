@@ -7,6 +7,7 @@ const fs = require("node:fs"),
 const P = require("../partials.cjs");
 const R = require("./render.cjs");
 const Q = require("./quality.cjs");
+const T = require("./stories.cjs");
 
 const optional = (name, fallback) => {
   const file = path.join(P.root, "data", name);
@@ -19,6 +20,8 @@ function load() {
     pro,
     services: optional("services.json", { services: [] }).services,
     guides: optional("guides.json", { guides: [] }).guides,
+    articles: optional("articles.json", { articles: [] }).articles,
+    seasons: optional("seasons.json", null),
     local: optional("local.json", { communes: {} }),
     editorial: optional("editorial.json", {}),
     reviews: optional("reviews.json", {}),
@@ -26,8 +29,9 @@ function load() {
   validate(data);
   return data;
 }
-function validate({ zones, services, guides, local }) {
-  const slugs = new Set(["secteurs", "guides", "estimation", "preparer-ma-vente", "plan-du-site", "assets", "vendor", "api"]);
+function validate({ zones, services, guides, local, articles = [], seasons }) {
+  const slugs = new Set(["secteurs", "guides", "actualites", "estimation", "preparer-ma-vente", "plan-du-site", "assets", "vendor", "api"]);
+  T.validate({ articles, guides, seasons });
   for (const s of services) {
     if (!/^[a-z]+(-[a-z]+)*$/.test(s.slug) || slugs.has(s.slug))
       throw Error("services.json : slug invalide ou déjà pris : " + s.slug);
@@ -87,6 +91,8 @@ const serviceApplies = (data, s, c) => {
 };
 
 /* ── Routes ────────────────────────────────────────────────────────── */
+/* Hand-written pages (content/), which the data may link to. */
+const STATIC = ["/", "/estimation/", "/preparer-ma-vente/", "/secteurs/"];
 /* Keeps a title and a description within the length a result page shows:
    optional endings are dropped, the meaning is not. */
 const fitTitle = (t) => (t.length > 65 ? t.replace(" | Martin Snauwaert", "") : t);
@@ -204,7 +210,33 @@ function build(data, held) {
       h1: g.h1,
       description: g.description,
       breadcrumbs: [HOME, ["Guides", "/guides/"], [g.short || g.h1, null]],
+      /* A guide with a publication date is announced as an article. */
+      article: g.publishedOn ? { published: g.publishedOn, modified: g.updatedOn > g.publishedOn ? g.updatedOn : null } : null,
       render: (ctx) => ({ html: R.guide(ctx, g), facts: null }),
+    });
+  /* « Actualités & conseils » : dated news, and the index of every dated content. */
+  const articles = data.articles || [];
+  if (articles.length)
+    specs.push({
+      route: T.INDEX,
+      family: "article-index",
+      title: "Actualités immobilières et conseils de saison | Martin Snauwaert",
+      h1: "Actualités immobilières et conseils de saison en Wallonie",
+      description: "Ce qui change pour les propriétaires en Wallonie, et des conseils pratiques au fil des saisons : des contenus datés, appuyés sur des sources officielles.",
+      breadcrumbs: [HOME, ["Actualités & conseils", null]],
+      render: (ctx) => ({ html: R.articleIndex(ctx), facts: null }),
+    });
+  for (const a of articles)
+    specs.push({
+      route: T.articleRoute(a),
+      family: "article",
+      articleSlug: a.slug,
+      title: a.title,
+      h1: a.h1,
+      description: a.description,
+      breadcrumbs: [HOME, ["Actualités & conseils", T.INDEX], [a.short || a.h1, null]],
+      article: { published: a.publishedOn, modified: a.updatedOn || null },
+      render: (ctx) => ({ html: R.article(ctx, a), facts: null }),
     });
 
   /* A link only ever points to a page of this build. */
@@ -212,7 +244,13 @@ function build(data, held) {
   const has = (route) => routes.has(route);
   const best = (s, c, l) =>
     [l && `/${s.slug}/${c.id}/${P.slug(l.name)}/`, `/${s.slug}/${c.id}/`, `/${s.slug}/`].find((r) => r && has(r));
-  const ctx = { data, communes, placeOfCommune, placeOfLocality, fill, neighbours, de, has, best };
+  /* An internal link written in the data: a page of this build or a hand-written page. */
+  const internal = (href) => {
+    if (!has(href) && !STATIC.includes(href)) throw Error("Lien interne vers une page absente : " + href);
+    return href;
+  };
+  if (data.seasons) Object.values(data.seasons.tips).forEach((t) => internal(t.href));
+  const ctx = { data, communes, placeOfCommune, placeOfLocality, fill, neighbours, de, has, best, internal };
   const pages = specs.map(({ render, ...page }) => {
     const body = render(ctx);
     return { ...page, title: fitTitle(page.title), description: fitDescription(page.description), main: body.html, ownFacts: body.facts };

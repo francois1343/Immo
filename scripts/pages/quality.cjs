@@ -30,6 +30,8 @@ const RULES = {
   service: { words: 350 },
   guide: { words: 300 },
   "guide-index": { words: 0 },
+  article: { words: 350 },
+  "article-index": { words: 0 },
   commune: { words: 220, facts: 4, similarity: 0.8 },
   locality: { words: 160, facts: 2, similarity: 0.85 },
   "service-commune": { words: 260, facts: 3, similarity: 0.8 },
@@ -38,7 +40,7 @@ const RULES = {
 
 /* Order of publication once pages are approved: the base of the site first,
    then the service pages per commune, then the villages. */
-const PHASES = { service: 1, guide: 1, "guide-index": 1, commune: 1, "service-commune": 2, locality: 3, "service-locality": 3 };
+const PHASES = { service: 1, guide: 1, "guide-index": 1, article: 1, "article-index": 1, commune: 1, "service-commune": 2, locality: 3, "service-locality": 3 };
 function evaluate(pages, editorial = {}) {
   const approvedFamilies = new Set(editorial.approvedFamilies || []),
     approvedRoutes = new Set(editorial.approvedRoutes || []),

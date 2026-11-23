@@ -247,6 +247,7 @@ function footer(pro) {
           <a href="/politique-confidentialite.html">Vos données</a>
           <a href="/secteurs/">Secteurs couverts</a>
           <a href="/guides/">Guides vendeurs</a>
+          <a href="/actualites/">Actualités &amp; conseils</a>
           <a href="/plan-du-site/">Plan du site</a>
           <a href="${CATALOGUE_URL}" rel="noopener noreferrer" target="_blank">Nos biens ↗</a>
           <a href="https://connexionimmo.be/fr/notre-equipe/" rel="noopener noreferrer" target="_blank">Le réseau Connexion Immo ↗</a>
@@ -340,7 +341,8 @@ const NAV = [
 /* `route` is the public path of the page: the entry whose path contains it is
    marked as current. */
 function nav(route = "") {
-  const current = (href) => (route.startsWith(href) ? ' aria-current="page"' : "");
+  /* « Actualités & conseils » is reached through the guides: same menu entry. */
+  const current = (href) => (route.startsWith(href) || (href === "/guides/" && route.startsWith("/actualites/")) ? ' aria-current="page"' : "");
   const links = NAV.map(([href, label]) => `<a href="${href}"${current(href)}>${label}</a>`);
   return `<nav aria-label="Navigation principale">
           ${links.join("\n          ")}
@@ -362,7 +364,15 @@ function load() {
   return { zones, pro };
 }
 function blocks({ zones, pro }) {
+  const T = require("./pages/stories.cjs");
+  const optional = (name, fallback) => (fs.existsSync(path.join(root, "data", name)) ? readJson(name) : fallback);
+  const articles = optional("articles.json", { articles: [] }).articles,
+    guides = optional("guides.json", { guides: [] }).guides,
+    seasons = optional("seasons.json", null);
+  T.validate({ articles, guides, seasons });
   return {
+    news: T.cards(T.latest({ articles, guides })),
+    season: seasons ? T.seasonBlock(seasons) : "",
     footer: footer(pro),
     topbar: topbar(pro),
     nav,

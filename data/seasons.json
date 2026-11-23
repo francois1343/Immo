@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "about": "« Le conseil de saison » de l’accueil. La saison est celle du calendrier (hiver : décembre à février ; printemps : mars à mai ; été : juin à août ; automne : septembre à novembre), jamais la météo : aucun texte ne décrit le temps qu’il fait. Chaque lien pointe vers une page du site.",
+  "tips": {
+    "automne": {
+      "icon": "leaf",
+      "title": "L’hiver approche, votre projet immobilier aussi ?",
+      "text": "Une vente se prépare avant les jours courts : documents, photos, extérieurs. Le guide de saison fait le tour de ce qui compte.",
+      "href": "/guides/vendre-maison-hiver/",
+      "label": "Vendre en hiver"
+    },
+    "hiver": {
+      "icon": "snow",
+      "title": "Vendre en hiver, c’est possible, et cela se prépare.",
+      "text": "Lumière, chauffage, accès, photos : ce qu’un visiteur remarque à cette saison, et comment présenter votre maison sous son meilleur jour.",
+      "href": "/guides/vendre-maison-hiver/",
+      "label": "Le guide de saison"
+    },
+    "printemps": {
+      "icon": "sprout",
+      "title": "Les jours rallongent : le bon moment pour préparer votre vente.",
+      "text": "Jardin, façades, photos d’extérieur : cinq premières étapes pour mettre votre bien en ordre avant de le présenter.",
+      "href": "/preparer-ma-vente/",
+      "label": "Préparer ma vente"
+    },
+    "ete": {
+      "icon": "sun",
+      "title": "Jardin, terrasse, vue d’ensemble : montrez votre bien en entier.",
+      "text": "Une estimation tient compte du terrain et des extérieurs autant que de la maison. Parlons de votre bien, même si vous partez quelques jours.",
+      "href": "/estimation-immobiliere/",
+      "label": "L’estimation"
+    }
+  }
+}

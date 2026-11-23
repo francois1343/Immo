@@ -150,6 +150,23 @@ function breadcrumbLd(config, rows, route) {
     })),
   };
 }
+/* A dated content. The modification date is given only when the content
+   really changed, and no author is named before their role is validated. */
+function articleLd(config, page) {
+  if (!page.article) return null;
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.h1,
+    description: page.description,
+    inLanguage: "fr-BE",
+    datePublished: page.article.published,
+    mainEntityOfPage: config.origin + page.route,
+    publisher: { "@type": "Organization", name: "Martin Snauwaert · Connexion Immo", url: config.origin + "/" },
+  };
+  if (page.article.modified) ld.dateModified = page.article.modified;
+  return ld;
+}
 const ldTag = (obj) =>
   `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
@@ -235,6 +252,7 @@ function entries(config, generated) {
         index: Boolean(q && q.approved),
         jsonld: [
           breadcrumbLd(config, page.breadcrumbs, page.route),
+          articleLd(config, page),
           page.family === "service" && page.service === "agent" ? agent : null,
         ],
       });
@@ -272,4 +290,4 @@ function build(root, out, generated) {
     indexable,
   };
 }
-module.exports = { routes, validate, enrich, entries, sitemap, liveRobots, build, readConfig, agentLd, breadcrumbLd, hasNoindexHeader };
+module.exports = { routes, validate, enrich, entries, sitemap, liveRobots, build, readConfig, agentLd, breadcrumbLd, articleLd, hasNoindexHeader };

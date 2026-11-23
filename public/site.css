@@ -2032,3 +2032,170 @@ label,
     display: none;
   }
 }
+/* ── Lot éditorial du 23 novembre 2026 : actualités, conseils, saison ──
+   Cartes éditoriales (accueil, guides, rubrique) et « conseil de saison ».
+   Aucune animation : seul le filet supérieur change de couleur au survol. */
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.story a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 20px 22px 18px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  border-radius: 2px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.story a:hover {
+  border-top-color: var(--orange);
+}
+.story-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.story-icon,
+.season-icon {
+  flex: none;
+  fill: none;
+  stroke: var(--orange-text);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.story-icon {
+  width: 56px;
+  height: 56px;
+  padding: 9px;
+  border-radius: 2px;
+  background: #f7f4f0;
+}
+.story-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  line-height: 1.4;
+}
+.story-cat {
+  font-weight: 750;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #99603a;
+}
+.story strong {
+  font-size: var(--fs-h3);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+.story-text {
+  font-size: var(--fs-s);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.story-more {
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: var(--fs-s);
+  font-weight: 700;
+  color: var(--blue);
+}
+.story a:hover .story-more {
+  color: var(--orange-text);
+}
+/* Le conseil de saison : les quatre conseils occupent la même case, un seul
+   est visible. Le bloc garde donc la hauteur du plus long et rien ne bouge
+   quand la saison du jour est choisie. */
+.season {
+  margin: 0 0 20px;
+  padding: 20px 26px 22px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 2px;
+  background: #fff;
+}
+.season .eyebrow {
+  margin: 0 0 10px;
+}
+.season-tips {
+  display: grid;
+}
+.season-tip {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  visibility: hidden;
+}
+.season[data-season="hiver"] [data-for="hiver"],
+.season[data-season="printemps"] [data-for="printemps"],
+.season[data-season="ete"] [data-for="ete"],
+.season[data-season="automne"] [data-for="automne"] {
+  visibility: visible;
+}
+.season-icon {
+  width: 40px;
+  height: 40px;
+}
+.season-tip > div {
+  flex: 1;
+  min-width: 0;
+}
+.season-tip h3 {
+  margin: 0 0 4px;
+  font-size: var(--fs-h3);
+  font-weight: 650;
+  line-height: 1.35;
+}
+.season-tip p {
+  margin: 0;
+  max-width: 72ch;
+  font-size: var(--fs-b);
+  line-height: 1.7;
+  color: var(--muted);
+}
+.season-tip .button {
+  flex: none;
+}
+.dateline {
+  margin: 0 0 4px;
+  font-size: var(--fs-s);
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .season {
+    padding: 18px 18px 20px;
+  }
+  .season-tip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .season-icon {
+    display: none;
+  }
+  .season-tip .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media print {
+  .season-tip .button,
+  .story-more {
+    display: none;
+  }
+}

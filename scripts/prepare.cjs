@@ -7,7 +7,8 @@ const fs = require("node:fs"),
 const P = require("./partials.cjs"),
   S = require("./seo.cjs"),
   G = require("./pages/index.cjs"),
-  D = require("./document.cjs");
+  D = require("./document.cjs"),
+  T = require("./pages/stories.cjs");
 const root = P.root,
   site = path.join(root, ".site"),
   pub = path.join(root, "public");
@@ -48,7 +49,7 @@ function prepare() {
   const rendered = P.blocks(P.load());
   const documents = new Map();
   for (const page of P.PAGES)
-    documents.set(page, P.apply(fs.readFileSync(path.join(P.content, page), "utf8"), rendered, page));
+    documents.set(page, T.stamp(P.apply(fs.readFileSync(path.join(P.content, page), "utf8"), rendered, page)));
   const titleOf = (file) => (documents.get(file).match(/<title>\s*([^<|]+?)\s*(?:\||<)/) || [])[1] || file;
   const statics = Object.entries(S.routes)
     .filter(([, [route]]) => route !== "/")

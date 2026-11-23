@@ -81,6 +81,7 @@ ${group("Secteurs", by("commune"))}
 ${group("Villages", by("locality"))}
 ${perService}
 ${group("Guides", [...by("guide-index"), ...by("guide")])}
+${group("Actualités & conseils", [...by("article-index"), ...by("article")])}
 </div>`,
     ownFacts: null,
   };

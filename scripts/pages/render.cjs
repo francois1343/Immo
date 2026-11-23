@@ -3,6 +3,7 @@
    left out, never replaced by a guess. */
 const P = require("../partials.cjs");
 const E = require("./emblems.cjs");
+const T = require("./stories.cjs");
 const { esc } = P;
 const nf = new Intl.NumberFormat("fr-BE");
 const TEL = { href: "tel:+32493057184", label: "0493 05 71 84" };
@@ -473,24 +474,33 @@ ${rows
   .join("\n")}
 </tbody></table></div>`;
 }
-function guide(ctx, g) {
-  const src = (g.sources || []).map(([label, url]) => `<li>${ext(url, label)}</li>`);
-  const related = ctx.data.services.filter((s) => (g.related || []).includes(s.id)).map((s) => [`/${s.slug}/`, s.label]);
-  const others = ctx.data.guides.filter((x) => x.slug !== g.slug).map((x) => [`/guides/${x.slug}/`, x.short || x.h1]);
-  const body = (g.sections || [])
+/* Body of a guide or of an article. `more` is a contextual link to a page of the site. */
+const editorialBody = (ctx, rows = []) =>
+  rows
     .map(
       (s) => `<section class="block"><h2>${esc(s.h2)}</h2>
 ${paragraphs(s.p)}
 ${s.steps ? steps(s.steps) : ""}
 ${s.list ? list(s.list.map(esc)) : ""}
 ${s.table === "urbanisme" ? urbanismeTable(ctx) : ""}
-${s.after ? `<p>${esc(s.after)}</p>` : ""}
+${s.after ? `<p>${esc(s.after)}</p>` : ""}${s.more ? `
+<p class="section-more">À lire aussi : <a href="${ctx.internal(s.more[1])}">${esc(s.more[0])}</a></p>` : ""}
 </section>`,
     )
     .join("\n");
+/* Date line of a dated content. No author is named before their role is validated. */
+const dateline = (x) =>
+  `<p class="dateline">${esc(T.CATEGORIES[x.category])} · publié le <time datetime="${x.publishedOn}">${esc(frDate(x.publishedOn))}</time>${
+    x.updatedOn && x.updatedOn > x.publishedOn ? ` · mis à jour le <time datetime="${x.updatedOn}">${esc(frDate(x.updatedOn))}</time>` : ""
+  }</p>`;
+function guide(ctx, g) {
+  const src = (g.sources || []).map(([label, url]) => `<li>${ext(url, label)}</li>`);
+  const related = ctx.data.services.filter((s) => (g.related || []).includes(s.id)).map((s) => [`/${s.slug}/`, s.label]);
+  const others = ctx.data.guides.filter((x) => x.slug !== g.slug).map((x) => [`/guides/${x.slug}/`, x.short || x.h1]);
+  const body = editorialBody(ctx, g.sections);
   return `${intro({ eyebrow: g.eyebrow || "Guide vendeur", h1: g.h1, lead: g.intro })}
 <div class="content wide">
-${body}
+${g.publishedOn ? dateline(g) + "\n" : ""}${body}
 ${faq((g.faq || []).map(([q, a]) => [q, esc(a)]))}
 ${src.length ? `<section class="block sources"><h2>Sources officielles</h2>\n<ul>\n${src.join("\n")}\n</ul>\n<p class="quiet">Guide d’information générale, mis à jour le ${esc(frDate(g.updatedOn))}. Il ne remplace pas l’avis de votre notaire pour votre situation.</p></section>` : ""}
 ${related.length ? `<section class="block"><h2>Prestations liées</h2>\n${chips(related)}\n</section>` : ""}
@@ -502,7 +512,56 @@ function guideIndex(ctx) {
   return `${intro({ eyebrow: "Guides vendeurs", h1: "Guides pour préparer une vente immobilière en Wallonie", lead: "Des réponses pratiques, appuyées sur des sources officielles, aux questions qui reviennent avant une vente." })}
 <div class="content wide">
 ${linkGrid(ctx.data.guides.map((g) => [`/guides/${g.slug}/`, g.short || g.h1, g.teaser || ""]), "guides")}
+</div>
+${
+  ctx.has(T.INDEX)
+    ? `<section class="block stories-block" aria-labelledby="stories-title"><h2 id="stories-title">Actualités &amp; conseils</h2>
+<p>Ce qui change pour les propriétaires, et des conseils au fil des saisons.</p>
+${T.cards(T.latest(ctx.data))}
+<p class="section-more"><a href="${T.INDEX}">Toutes les actualités et tous les conseils</a></p>
+</section>`
+    : ""
+}
+<div class="content wide">
 ${cta("Une question sur votre vente ?", "Martin fait le point avec vous, sans engagement de vendre.", "/estimation/", "Votre projet")}
 </div>`;
 }
-module.exports = { serviceHub, serviceCommune, serviceLocality, commune, locality, guide, guideIndex, frDate, esc, faq, linkGrid, chips, intro, cta };
+
+/* ── Actualités & conseils ─────────────────────────────────────────── */
+function article(ctx, a) {
+  const src = a.sources.map(([label, url]) => `<li>${ext(url, label)}</li>`);
+  const related = ctx.data.services.filter((s) => (a.related || []).includes(s.id)).map((s) => [`/${s.slug}/`, s.label]);
+  const others = T.stories(ctx.data)
+    .filter((x) => x.route !== T.articleRoute(a))
+    .map((x) => [x.route, x.title]);
+  return `${intro({ eyebrow: "Actualités & conseils", h1: a.h1, lead: a.intro })}
+<div class="content wide">
+${dateline(a)}
+${editorialBody(ctx, a.sections)}
+${faq((a.faq || []).map(([q, r]) => [q, esc(r)]))}
+<section class="block sources"><h2>Sources officielles</h2>
+<ul>
+${src.join("\n")}
+</ul>
+<p class="quiet">Article d’information générale, publié le ${esc(frDate(a.publishedOn))} d’après les sources ci-dessus${a.updatedOn && a.updatedOn > a.publishedOn ? ` et mis à jour le ${esc(frDate(a.updatedOn))}` : ""}. Les règles et les montants peuvent évoluer : vérifiez votre situation auprès des organismes cités. Il ne remplace pas l’avis de votre notaire.</p></section>
+${related.length ? `<section class="block"><h2>Prestations liées</h2>\n${chips(related)}\n</section>` : ""}
+${others.length ? `<section class="block"><h2>À lire aussi</h2>\n${chips(others)}\n</section>` : ""}
+${cta("Une question sur votre bien ?", "Martin fait le point avec vous, sans engagement de vendre.", "/estimation/", "Votre projet")}
+</div>`;
+}
+function articleIndex(ctx) {
+  const all = T.stories(ctx.data);
+  const groups = Object.keys(T.CATEGORIES)
+    .map((id) => [id, all.filter((s) => s.category === id)])
+    .filter(([, rows]) => rows.length)
+    .map(([id, rows]) => `<section class="block stories-block" aria-labelledby="cat-${id}"><h2 id="cat-${id}">${esc(T.CATEGORIES[id])}</h2>\n${T.cards(rows)}\n</section>`);
+  return `${intro({ eyebrow: "Actualités & conseils", h1: "Actualités immobilières et conseils de saison en Wallonie", lead: "Ce qui change pour les propriétaires, expliqué simplement et daté, et des conseils pratiques au fil des saisons. Chaque article cite ses sources." })}
+${groups.join("\n")}
+<div class="content wide">
+<section class="block"><h2>Les guides permanents</h2>
+<p>Documents, étapes, frais, urbanisme : les règles qui ne dépendent ni de l’actualité ni de la saison sont dans les <a href="/guides/">guides vendeurs</a>.</p>
+</section>
+${cta("Une question sur votre bien ?", "Martin fait le point avec vous, sans engagement de vendre.", "/estimation/", "Votre projet")}
+</div>`;
+}
+module.exports = { serviceHub, serviceCommune, serviceLocality, commune, locality, guide, guideIndex, article, articleIndex, frDate, esc, faq, linkGrid, chips, intro, cta };

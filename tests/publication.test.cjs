@@ -36,7 +36,7 @@ test("live with phase 1 approved: only those pages are indexable and in the site
     const generated = G.build(out, { data });
     const phase1 = generated.quality.rows.filter((r) => r.phase === 1).map((r) => r.route),
       weak = generated.quality.rows.filter((r) => r.status !== "complete").map((r) => r.route);
-    assert.equal(phase1.length, 28);
+    assert.equal(phase1.length, 32);
     assert.equal(weak.length, 2);
     /* A reviewer approves phase 1, and by mistake two unfinished pages. */
     generated.quality = Q.evaluate(generated.pages, { approvedRoutes: [...phase1, ...weak.slice(0, 2)] });
@@ -44,7 +44,7 @@ test("live with phase 1 approved: only those pages are indexable and in the site
 
     assert.deepEqual([...seo.indexable].sort(), [...phase1].sort());
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
-    assert.equal((sitemap.match(/<loc>/g) || []).length, 28);
+    assert.equal((sitemap.match(/<loc>/g) || []).length, 32);
     assert.ok(sitemap.includes("https://exemple-immo.be/secteurs/beaumont/"));
     const robotsOf = (route) => {
       const html = fs.readFileSync(path.join(out, route.slice(1), "index.html"), "utf8");
@@ -71,7 +71,7 @@ test("official prices are kept in the data and shown nowhere until agreed", () =
   const data = C.load();
   assert.notEqual(data.editorial.showMarketStatistics, true);
   assert.ok(data.local.communes.froidchapelle.market.housesMedian > 0);
-  const all = C.plan(data).pages.filter((p) => p.family !== "guide").map((p) => p.main).join(" ");
+  const all = C.plan(data).pages.filter((p) => p.family !== "guide" && p.family !== "article").map((p) => p.main).join(" ");
   assert.ok(!/prix médian|\d[\d\s ]{2,}\s?€/.test(Q.text(all)), "un prix est affiché");
   const shown = C.plan({ ...data, editorial: { ...data.editorial, showMarketStatistics: true } }).pages.find((p) => p.route === "/secteurs/thuin/");
   assert.ok(/prix médian/.test(shown.main));

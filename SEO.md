@@ -66,3 +66,17 @@ La clé IndexNow est dans `seo.config.json` (`indexNow.key`, publique par nature
 Population et prix : Statbel (annuel). Avant chaque mise à jour, vérifier aussi le statut de l'obligation amiante en Wallonie et les textes cités dans les guides.
 
 Validation : `npm test`, puis `npm run build`.
+
+## Actualités & conseils (lot du 23 novembre 2026)
+
+| Source | Rôle |
+|---|---|
+| `data/articles.json` | Actualités datées (`/actualites/{article}/`) : date de publication réelle, sources officielles, pas d'auteur nommé avant validation |
+| `data/guides.json` | Un guide qui porte `category` et `publishedOn` (guide de saison) apparaît aussi dans la rubrique |
+| `data/seasons.json` | Les quatre « conseils de saison » de l'accueil |
+
+`/actualites/` liste les contenus datés par catégorie ; une catégorie sans contenu n'est pas affichée. L'entrée de menu reste « Guides » : la page des guides présente les derniers contenus et le pied de page y mène.
+
+Règles : `updatedOn` n'est rempli que si le fond a changé ; les données structurées `Article` reprennent ces dates et ne nomment aucun auteur tant que `author` vaut `null` ; un lien `more` d'une section doit pointer vers une page du site, sinon le build échoue. Les nouvelles pages suivent la règle commune : complètes, phase 1, jamais indexables sans approbation dans `data/editorial.json`.
+
+Conseil de saison : saison du calendrier (hiver de décembre à février), jamais la météo ; le build refuse un texte qui décrit le temps qu'il fait. Les quatre conseils sont dans la page ; le build marque la saison de son jour (visible sans JavaScript) et `site.js` choisit celle du jour de la visite, sans déplacement de mise en page.

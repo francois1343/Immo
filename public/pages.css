@@ -499,3 +499,12 @@
     display: block;
   }
 }
+/* Cartes éditoriales dans une page générée : la carte garde ses propres couleurs. */
+.block .story a,
+.block .story a:hover {
+  color: var(--ink);
+  font-weight: 500;
+}
+.stories-block .stories {
+  margin: 16px 0 10px;
+}
