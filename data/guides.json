@@ -677,8 +677,8 @@
         {
           "h2": "Faut-il attendre le printemps ?",
           "p": [
-            "Pas nécessairement. La bonne période dépend d’abord de votre projet : un déménagement prévu, une succession à régler, un achat déjà engagé. Attendre a aussi un coût, celui d’une maison à chauffer et à entretenir quelques mois de plus.",
-            "Ce guide ne promet pas qu’une saison vend mieux qu’une autre : personne ne peut le garantir. Il part d’un constat simple : en hiver, un visiteur voit la maison dans ses conditions les plus exigeantes. Si elle est chaude, sèche et bien éclairée ce jour-là, c’est un argument que l’été ne donne pas."
+            "La bonne période est d’abord celle de votre projet : un déménagement prévu, une succession à régler, un achat déjà engagé. Vendre maintenant, c’est aussi une maison de moins à chauffer et à entretenir cet hiver.",
+            "Chaque saison a ses atouts. Celui de l’hiver : un visiteur voit la maison dans ses conditions les plus exigeantes. Si elle est chaude, sèche et bien éclairée ce jour-là, c’est un argument que l’été ne donne pas."
           ]
         },
         {
@@ -689,7 +689,7 @@
           "list": [
             "Le chauffage : type d’installation, âge, entretien. Gardez la dernière attestation d’entretien à portée de main.",
             "Le confort : une pièce froide ou un courant d’air se sentent tout de suite. Repérez-les, et dites ce qui est prévu ou possible.",
-            "L’humidité : condensation sur les vitrages, taches, odeur de renfermé dans une cave. Traitez la cause quand c’est possible, et ne masquez rien : un défaut caché se retourne contre le vendeur.",
+            "L’humidité : condensation sur les vitrages, taches, odeur de renfermé dans une cave. Traitez la cause quand c’est possible et dites ce que vous savez : un acheteur bien informé s’engage plus sereinement.",
             "Le certificat PEB : il sera lu plus attentivement. Depuis le 1er septembre 2026, les nouveaux certificats proposent aussi un parcours de rénovation."
           ],
           "more": [
@@ -702,7 +702,7 @@
           "steps": [
             [
               "Visez la lumière du jour",
-              "Proposez des créneaux en milieu de journée et le samedi. Une visite à la nuit tombée ne montre ni le jardin, ni l’orientation, ni les abords."
+              "Proposez des créneaux en milieu de journée et le samedi. En plein jour, le jardin, l’orientation et les abords se montrent d’eux-mêmes."
             ],
             [
               "Éclairez chaque pièce",
@@ -710,7 +710,7 @@
             ],
             [
               "Chauffez à l’avance",
-              "Une maison occupée se présente à sa température habituelle. Une maison vide se remet en chauffe la veille, pas une heure avant."
+              "Une maison occupée se présente à sa température habituelle. Une maison vide se remet en chauffe dès la veille."
             ],
             [
               "Dégagez les accès",
@@ -737,13 +737,13 @@
             "Terrasse et mobilier nettoyés ou remisés, abri de jardin rangé : il sera ouvert.",
             "Haies et arbustes taillés à l’automne, pour que le terrain reste lisible même sans feuillage."
           ],
-          "after": "Un jardin au repos ne dérange personne ; un jardin laissé à l’abandon inquiète."
+          "after": "Un jardin au repos, mais rangé, donne confiance."
         },
         {
           "h2": "Pendant les fêtes",
           "p": [
-            "Une décoration sobre ne pose aucun problème. Évitez seulement ce qui encombre les pièces ou masque leurs volumes, et rangez les objets personnels de valeur avant une visite.",
-            "Entre Noël et le Nouvel An, les délais peuvent s’allonger : administrations communales, certificateurs et études notariales tournent souvent au ralenti. Demandez vos documents avant, pour que la mise en vente ne dépende pas d’un courrier en attente."
+            "Une décoration sobre met la maison en valeur. Laissez les pièces dégagées, pour que leurs volumes se voient, et rangez les objets personnels de valeur avant une visite.",
+            "Entre Noël et le Nouvel An, les délais peuvent s’allonger : administrations communales, certificateurs et études notariales tournent souvent au ralenti. Demandez vos documents avant : la mise en vente pourra démarrer dès la rentrée."
           ],
           "more": [
             "Les documents obligatoires pour vendre en Wallonie",
@@ -764,15 +764,15 @@
       "faq": [
         [
           "Le certificat PEB est-il différent si le certificateur passe en hiver ?",
-          "Non. Le certificat repose sur une consommation théorique calculée à partir des caractéristiques du logement, pas sur la température du jour de la visite."
+          "Il est le même en toute saison. Le certificat repose sur une consommation théorique calculée à partir des caractéristiques du logement, pas sur la température du jour de la visite."
         ],
         [
           "Peut-on visiter une maison qui n’est plus chauffée ?",
-          "Oui, mais elle se présente moins bien et le froid peut masquer ou aggraver un problème d’humidité. Si la maison est vide, gardez-la hors gel et remettez-la en chauffe avant les visites."
+          "Oui. Elle se présente au mieux gardée hors gel et remise en chauffe avant les visites : le confort se juge sur place."
         ],
         [
           "Puis-je utiliser des photos du jardin prises en été ?",
-          "Oui, si elles sont récentes et fidèles à l’état actuel du bien. Une annonce ne doit pas donner une image trompeuse de ce qui est vendu."
+          "Oui, si elles sont récentes et fidèles à l’état actuel du bien : l’annonce montre ainsi la maison telle qu’elle est, en toute saison."
         ]
       ],
       "sources": [
@@ -783,6 +783,447 @@
         [
           "Wallonie — Le certificat PEB évolue (2 septembre 2026)",
           "https://wallonie.be/fr/actualites/le-certificat-peb-evolue-pour-mieux-comprendre-son-logement-et-planifier-ses-travaux"
+        ]
+      ]
+    },
+    {
+      "category": "conseils",
+      "publishedOn": "2026-11-23",
+      "updatedOn": "2026-11-23",
+      "author": null,
+      "slug": "vendre-bien-succession",
+      "icon": "deed",
+      "short": "Vendre un bien reçu en succession",
+      "teaser": "Déclaration de succession, accord des héritiers, documents, maison à préparer : les étapes pour vendre un bien hérité.",
+      "title": "Vendre un bien reçu en succession : les étapes | Martin Snauwaert",
+      "h1": "Vendre un bien immobilier reçu en succession",
+      "description": "Vendre une maison héritée en Wallonie : déclaration de succession dans les quatre mois, accord de tous les héritiers, documents à réunir et estimation du bien.",
+      "eyebrow": "Conseil aux propriétaires · succession",
+      "intro": "Hériter d’une maison, c’est souvent devoir décider à plusieurs, dans un moment chargé. Voici les étapes dans l’ordre, pour avancer sereinement avec votre notaire et votre agent.",
+      "related": [
+        "estimation",
+        "vendre-maison"
+      ],
+      "sections": [
+        {
+          "h2": "Commencer par le notaire",
+          "p": [
+            "Le notaire est le point de départ : il établit qui sont les héritiers et délivre le document qui l’atteste, le certificat ou l’acte d’hérédité. C’est aussi lui qui vous dira quelles démarches accomplir, et dans quel ordre. Choisir un notaire commun à tous les héritiers simplifie les échanges."
+          ]
+        },
+        {
+          "h2": "La déclaration de succession : quatre mois",
+          "p": [
+            "Les héritiers et les légataires déposent une déclaration de succession dans les quatre mois du décès, auprès du bureau de sécurité juridique compétent du SPF Finances. Elle désigne les héritiers et recense les biens et les dettes du défunt, immeubles compris ; elle sert de base au calcul des droits de succession. Le délai est plus long lorsque le décès est survenu à l’étranger.",
+            "La maison y figure avec une valeur. Une estimation du bien vous donne un premier repère ; votre notaire vous indiquera quelle évaluation retenir pour la déclaration."
+          ],
+          "more": [
+            "Estimation ou expertise : la différence",
+            "/guides/estimation-ou-expertise/"
+          ]
+        },
+        {
+          "h2": "Vendre à plusieurs : l’accord de tous",
+          "p": [
+            "Tant que la succession n’est pas partagée, les héritiers sont propriétaires ensemble : ils sont en indivision. Vendre le bien demande alors l’accord de tous. Trois décisions prises tôt facilitent tout le reste :"
+          ],
+          "list": [
+            "Le prix de mise en vente, et la marge acceptée lors d’une offre.",
+            "Le calendrier : vendre maintenant, ou après avoir vidé et rafraîchi la maison.",
+            "L’interlocuteur : un héritier qui centralise les échanges avec l’agent et le notaire, et tient les autres informés."
+          ],
+          "after": "Un héritier éloigné peut se faire représenter par une procuration. Si les avis divergent, votre notaire présente les solutions possibles, dont le rachat des parts par l’un des héritiers."
+        },
+        {
+          "h2": "Les documents à réunir",
+          "p": [
+            "Les documents de la vente sont ceux de toute vente en Wallonie : certificat PEB, contrôle de l’installation électrique, extrait de la BDES, renseignements urbanistiques. S’y ajoutent les pièces de la succession, que le notaire demande généralement : la déclaration de succession, l’acte d’hérédité et le titre de propriété du défunt."
+          ],
+          "more": [
+            "Les documents obligatoires pour vendre en Wallonie",
+            "/guides/documents-vente-wallonie/"
+          ]
+        },
+        {
+          "h2": "Préparer la maison",
+          "steps": [
+            [
+              "Protégez-la",
+              "Prévenez l’assureur que la maison est inoccupée, gardez-la hors gel et relevez les compteurs."
+            ],
+            [
+              "Triez à votre rythme",
+              "Mettez d’abord de côté les papiers, les souvenirs et les objets auxquels la famille tient. Le reste se vide ensuite plus facilement."
+            ],
+            [
+              "Rassemblez ce qui documente le bien",
+              "Acte d’achat, plans, permis, factures de travaux, attestations d’entretien : tout ce qui répond aux questions d’un acheteur."
+            ],
+            [
+              "Entretenez l’essentiel",
+              "Une pelouse tondue, des pièces aérées et propres : la maison se présente bien, même vide."
+            ]
+          ]
+        },
+        {
+          "h2": "Un seul interlocuteur pour toute la famille",
+          "p": [
+            "Martin visite le bien, vous remet un avis de valeur argumenté et, si vous lui confiez la vente, rend compte à chaque héritier de la même façon : visites, retours, offres. Chacun dispose ainsi des mêmes informations pour décider."
+          ],
+          "more": [
+            "L’estimation immobilière : comment elle se déroule",
+            "/estimation-immobiliere/"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "Tous les héritiers doivent-ils signer la vente ?",
+          "Oui : la vente d’un bien en indivision demande l’accord de tous. Un héritier peut se faire représenter par une procuration ; votre notaire vous en explique la forme."
+        ],
+        [
+          "Demander une estimation nous engage-t-il à vendre ?",
+          "Non. L’estimation sert à décider en connaissance de cause : vendre, garder le bien ou le reprendre entre héritiers."
+        ],
+        [
+          "Peut-on vendre une maison encore meublée ?",
+          "Oui. Les visites sont plus parlantes dans une maison rangée et dégagée, mais le tri peut se poursuivre pendant la mise en vente."
+        ]
+      ],
+      "sources": [
+        [
+          "Notaire.be — la déclaration de succession",
+          "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces/la-declaration-de-succession"
+        ],
+        [
+          "Wallonie — s’informer sur les droits de succession en Région wallonne",
+          "https://www.wallonie.be/fr/demarches/sinformer-sur-les-droits-de-succession-en-region-wallonne"
+        ],
+        [
+          "Notaire.be — la procédure après un décès",
+          "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces"
+        ],
+        [
+          "Notaire.be — division et indivision",
+          "https://www.notaire.be/immobilier/le-logement-et-la-famille/acheter-plusieurs-division-et-indivision"
+        ]
+      ]
+    },
+    {
+      "category": "conseils",
+      "publishedOn": "2026-11-23",
+      "updatedOn": "2026-11-23",
+      "author": null,
+      "slug": "risque-inondation-avant-achat",
+      "icon": "water",
+      "short": "Risque d’inondation : que vérifier",
+      "teaser": "La carte officielle de l’aléa d’inondation, où la consulter, et ce qu’elle change pour un achat, une vente, un permis ou une assurance.",
+      "title": "Zone inondable en Wallonie : que vérifier avant d’acheter",
+      "h1": "Risque d’inondation : que vérifier avant d’acheter ou de vendre en Wallonie",
+      "description": "Carte de l’aléa d’inondation en Wallonie : où la consulter, comment la lire, et ce qu’elle change pour un achat, une vente, un permis d’urbanisme ou une assurance.",
+      "eyebrow": "Conseil aux propriétaires · cours d’eau",
+      "intro": "Une maison au bord de l’eau a un charme réel, et quelques questions à se poser. La Wallonie publie une carte officielle qui y répond, parcelle par parcelle. Voici comment la lire.",
+      "related": [
+        "estimation",
+        "vendre-maison",
+        "vendre-terrain"
+      ],
+      "sections": [
+        {
+          "h2": "La carte de l’aléa d’inondation",
+          "p": [
+            "C’est l’outil de référence en Wallonie pour s’informer sur le risque d’inondation. Elle distingue deux situations : le débordement d’un cours d’eau (on parle de zone d’aléa d’inondation) et le ruissellement dans un vallon sec (on parle d’axe d’aléa d’inondation).",
+            "L’aléa prend quatre valeurs : très faible, faible, moyenne ou élevée. Cette valeur combine la fréquence de l’inondation et son importance, c’est-à-dire la hauteur d’eau ou le débit. La version actuelle a été approuvée par le Gouvernement wallon le 4 mars 2021 ; depuis une décision du 17 avril 2025, elle est révisée au fil des nouvelles données."
+          ]
+        },
+        {
+          "h2": "Où la consulter",
+          "p": [
+            "La carte est en ligne sur le Géoportail de la Wallonie (WalOnMap), gratuitement et sans compétence technique : on y saisit une adresse et l’on affiche la couche « aléa d’inondation ». Pour le ruissellement, la carte LIDAXES la complète.",
+            "La lecture se fait parcelle par parcelle : deux biens d’une même rue peuvent avoir des situations différentes. Prenez le temps de regarder le terrain entier, jardin compris."
+          ]
+        },
+        {
+          "h2": "Ce que la carte change pour un projet",
+          "list": [
+            "Permis d’urbanisme : pour un bien concerné par l’aléa, la commune consulte les services compétents et tient compte de leur avis ; elle peut assortir le permis de prescriptions d’aménagement, ou le refuser.",
+            "Assurance : les zones d’aléa élevé correspondent aux « zones à risque » de la loi sur le contrat d’assurance. Pour les constructions érigées après la délimitation de ces zones, un assureur peut refuser la couverture. Interrogez votre assureur avant de vous engager.",
+            "Acte de vente : le notaire informe l’acquéreur de la situation du bien par rapport à l’aléa d’inondation."
+          ]
+        },
+        {
+          "h2": "Avant d’acheter près d’un cours d’eau",
+          "steps": [
+            [
+              "Consultez la carte",
+              "Relevez la valeur de l’aléa pour la maison et pour le terrain."
+            ],
+            [
+              "Interrogez le vendeur et le voisinage",
+              "Le bien a-t-il déjà connu de l’eau ? Quels aménagements ont été réalisés depuis ?"
+            ],
+            [
+              "Parlez-en à votre assureur",
+              "Demandez une offre pour ce bien précis avant de signer."
+            ],
+            [
+              "Anticipez votre projet",
+              "Pour un débordement de cours d’eau, un avis préalable peut être demandé au gestionnaire du cours d’eau. Pour un avis officiel sur un avant-projet, le service d’urbanisme de la commune vous renseigne sur le certificat d’urbanisme n° 2."
+            ]
+          ],
+          "more": [
+            "Renseignements urbanistiques : le service de chaque commune",
+            "/guides/renseignements-urbanistiques/"
+          ]
+        },
+        {
+          "h2": "Vous vendez un bien proche de l’eau",
+          "p": [
+            "Connaître la situation de votre bien avant la mise en vente est un atout. Consultez la carte, rassemblez ce qui documente l’histoire de la maison et les aménagements réalisés, et parlez-en à votre agent : un acheteur qui reçoit une information claire dès la visite avance en confiance.",
+            "La Sambre, la Hantes, la Thure, la Biesmelle, l’Eau d’Heure : les cours d’eau font partie du paysage de la région, et de l’attrait de bien des maisons. L’estimation tient compte de la situation réelle du bien, carte à l’appui."
+          ],
+          "more": [
+            "L’estimation immobilière : comment elle se déroule",
+            "/estimation-immobiliere/"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "La carte montre un aléa sur une partie du jardin seulement : est-ce important ?",
+          "C’est une information utile pour un projet d’extension ou d’aménagement. La valeur de l’aléa se lit à l’emplacement exact de la maison, puis à celui de votre projet."
+        ],
+        [
+          "La carte et le terrain semblent différer : que faire ?",
+          "La carte est établie à l’échelle régionale et peut différer localement du terrain. Le service d’urbanisme de la commune et le gestionnaire du cours d’eau peuvent vous éclairer."
+        ],
+        [
+          "Un bien en zone d’aléa peut-il se vendre ?",
+          "Oui. L’acquéreur en est informé par le notaire, et un dossier clair sur la situation du bien facilite sa décision."
+        ]
+      ],
+      "sources": [
+        [
+          "Wallonie (SPW) — carte de l’aléa d’inondation",
+          "https://environnement.wallonie.be/home/gestion-environnementale/risques-climatiques/inondations/urbanisme/cartes-inondations/carte-alea-inondation.html"
+        ],
+        [
+          "Wallonie (SPW) — savoir si mon bien ou mon terrain est en zone inondable",
+          "https://environnement.wallonie.be/home/gestion-environnementale/risques-climatiques/inondations/urbanisme/citoyens/savoir-si-mon-bienterrain-est-en-zone-inondable.html"
+        ],
+        [
+          "Wallonie (SPW) — assurances et inondation",
+          "https://environnement.wallonie.be/home/gestion-environnementale/risques-climatiques/inondations/urbanisme/citoyens/assurances-et-inondation.html"
+        ],
+        [
+          "Géoportail de la Wallonie — WalOnMap",
+          "https://geoportail.wallonie.be/walonmap"
+        ]
+      ]
+    },
+    {
+      "category": "conseils",
+      "publishedOn": "2026-11-23",
+      "updatedOn": "2026-11-23",
+      "author": null,
+      "slug": "vendre-maison-humidite",
+      "icon": "drop",
+      "short": "Vendre une maison qui présente de l’humidité",
+      "teaser": "Identifier la cause, dire ce que l’on sait, choisir entre réparer et vendre en l’état : une maison humide se vend, avec un dossier clair.",
+      "title": "Vendre une maison avec de l’humidité : comment faire",
+      "h1": "Vendre une maison qui présente de l’humidité",
+      "description": "Humidité dans une maison à vendre : identifier la cause, informer l’acheteur, réparer ou vendre en l’état. Les bons réflexes pour une vente sereine.",
+      "eyebrow": "Conseil aux propriétaires · état du bien",
+      "intro": "Une tache, une odeur de cave, de la buée sur les vitres : l’humidité est fréquente dans les maisons de la région, et elle se traite. Une maison qui en présente se vend, à condition de savoir d’où elle vient et de le dire.",
+      "related": [
+        "vendre-maison",
+        "estimation"
+      ],
+      "sections": [
+        {
+          "h2": "D’abord, comprendre d’où elle vient",
+          "p": [
+            "Le mot recouvre des situations très différentes, dont le traitement et le coût n’ont rien à voir :"
+          ],
+          "list": [
+            "La condensation : une ventilation insuffisante, souvent simple à corriger.",
+            "Une infiltration : toiture, gouttière, joint de façade ou châssis à reprendre.",
+            "Une remontée par les murs ou le sol, plus fréquente dans les maisons anciennes.",
+            "Une fuite : une canalisation ou une évacuation à réparer."
+          ],
+          "after": "Un professionnel du bâtiment établit la cause et chiffre la solution. Ce diagnostic transforme une inquiétude en information : c’est le document le plus utile de votre dossier."
+        },
+        {
+          "h2": "Dire ce que l’on sait",
+          "p": [
+            "La règle est simple : informez votre agent de tout ce que vous savez du bien. Les notaires le rappellent, un vendeur reste responsable des défauts qu’il connaissait, quelles que soient les clauses du contrat ; à l’inverse, les signes visibles lors d’une visite, comme une tache ou des moisissures, sont considérés comme apparents, et l’acheteur est censé les avoir vus.",
+            "Dire les choses joue donc en votre faveur : l’acheteur s’engage en connaissance de cause, le compromis décrit le bien tel qu’il est, et la vente se conclut sur des bases solides. Votre notaire vous conseille sur la formulation."
+          ]
+        },
+        {
+          "h2": "Réparer avant de vendre, ou vendre en l’état ?",
+          "p": [
+            "Les deux choix se défendent. Une réparation simple et documentée, comme une gouttière refaite ou une ventilation installée, se fait utilement avant la mise en vente. Pour des travaux plus lourds, un devis détaillé suffit souvent : l’acheteur connaît le montant et organise le chantier à sa façon.",
+            "L’estimation tient compte de l’état du bien et, le cas échéant, du devis. Elle vous aide à comparer les deux scénarios avant de décider."
+          ],
+          "more": [
+            "L’estimation immobilière : comment elle se déroule",
+            "/estimation-immobiliere/"
+          ]
+        },
+        {
+          "h2": "Présenter la maison",
+          "steps": [
+            [
+              "Aérez et chauffez",
+              "Une maison ventilée et tempérée se présente sous son vrai jour."
+            ],
+            [
+              "Préparez le dossier",
+              "Diagnostic, devis, factures des travaux réalisés : à remettre aux candidats sérieux."
+            ],
+            [
+              "Montrez les pièces concernées",
+              "Cave, grenier, pièces d’eau : une visite complète inspire confiance."
+            ],
+            [
+              "Laissez votre agent répondre",
+              "Il connaît le dossier et répond aux questions techniques, documents à l’appui."
+            ]
+          ],
+          "more": [
+            "Vendre sa maison en hiver",
+            "/guides/vendre-maison-hiver/"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "Faut-il repeindre une tache d’humidité avant les visites ?",
+          "Traitez d’abord la cause. Une fois le problème réglé, remettre le mur en état est une bonne idée, facture à l’appui."
+        ],
+        [
+          "L’humidité fait-elle baisser le certificat PEB ?",
+          "Le certificat PEB mesure la performance énergétique du logement. L’humidité relève de l’état du bâtiment et se traite séparément."
+        ],
+        [
+          "Mon agent doit-il être au courant ?",
+          "Oui : il présente le bien et répond aux candidats. Plus il en sait, mieux il défend votre maison."
+        ]
+      ],
+      "sources": [
+        [
+          "Notaire.be — vente d’un bien : défauts connus du vendeur et vigilance de l’acheteur",
+          "https://www.notaire.be/actualites/bien-mal-acquisreste-acquis"
+        ],
+        [
+          "Notaire.be — réussir sa visite immobilière",
+          "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier/reussir-sa-visite-immobiliere"
+        ]
+      ]
+    },
+    {
+      "category": "conseils",
+      "publishedOn": "2026-11-23",
+      "updatedOn": "2026-11-23",
+      "author": null,
+      "slug": "faire-visiter-maison-habitee",
+      "icon": "door",
+      "short": "Faire visiter une maison que l’on habite",
+      "teaser": "Organiser les créneaux, préparer la maison en vingt minutes, protéger sa vie privée : des visites réussies sans bouleverser le quotidien.",
+      "title": "Faire visiter une maison habitée : nos conseils | Martin Snauwaert",
+      "h1": "Faire visiter une maison que l’on habite encore",
+      "description": "Vendre une maison que l’on habite : organiser les visites, préparer les pièces en vingt minutes, protéger sa vie privée et laisser l’agent conduire la visite.",
+      "eyebrow": "Conseil aux propriétaires · visites",
+      "intro": "La plupart des maisons se vendent alors que leurs propriétaires y vivent encore. C’est un atout : une maison habitée est chauffée, entretenue, vivante. Quelques habitudes suffisent pour que les visites se passent bien.",
+      "related": [
+        "vendre-maison",
+        "agent"
+      ],
+      "sections": [
+        {
+          "h2": "Une maison habitée se présente bien",
+          "p": [
+            "Les meubles donnent l’échelle des pièces, le chauffage et la lumière montrent le confort, le jardin entretenu parle de lui-même. Votre rôle est de laisser voir tout cela ; celui de votre agent est de conduire la visite."
+          ]
+        },
+        {
+          "h2": "Organiser les créneaux",
+          "list": [
+            "Convenez avec votre agent de plages fixes dans la semaine, dont une en journée et une le samedi : vous savez quand vous préparer.",
+            "Regroupez les visites : plusieurs candidats à la suite valent mieux que des passages dispersés.",
+            "Fixez un délai de prévenance qui vous convient, et tenez-vous-y.",
+            "Privilégiez la lumière du jour : les acheteurs sont eux-mêmes invités à visiter en journée."
+          ]
+        },
+        {
+          "h2": "Vingt minutes avant une visite",
+          "steps": [
+            [
+              "Aérez, puis remettez à température",
+              "Dix minutes fenêtres ouvertes suffisent."
+            ],
+            [
+              "Dégagez les surfaces",
+              "Plan de travail, table, salle de bain : les volumes apparaissent."
+            ],
+            [
+              "Ouvrez tout",
+              "Tentures, volets, portes intérieures, lumière dans les pièces sombres."
+            ],
+            [
+              "Faites les lits et rangez le linge",
+              "Le geste le plus rapide, et celui qui se voit le plus."
+            ],
+            [
+              "Pensez aux animaux",
+              "Un chien ou un chat chez un voisin ou au jardin : la visite reste concentrée sur la maison."
+            ]
+          ]
+        },
+        {
+          "h2": "Pendant la visite",
+          "p": [
+            "Le plus confortable pour tous est de vous absenter, ou de rester en retrait : les visiteurs se projettent plus librement et posent toutes leurs questions à l’agent. Vous connaissez la maison mieux que personne : transmettez-lui à l’avance ce qui mérite d’être dit, le voisinage, l’ensoleillement, les travaux réalisés."
+          ]
+        },
+        {
+          "h2": "Protéger sa vie privée",
+          "list": [
+            "Rangez les objets de valeur, les clés, les papiers et les médicaments.",
+            "Choisissez avec votre agent ce que montrent les photos de l’annonce : des pièces rangées, sans photos de famille ni documents visibles.",
+            "Les visites se font sur rendez-vous et en présence de l’agent, qui connaît l’identité des visiteurs."
+          ]
+        },
+        {
+          "h2": "Après chaque visite",
+          "p": [
+            "Martin vous fait un retour après chaque visite : ce qui a plu, les questions posées, la suite envisagée. Ces retours servent à ajuster la présentation de la maison, et à décider sereinement quand une offre arrive."
+          ],
+          "more": [
+            "Les étapes d’une vente immobilière",
+            "/guides/etapes-vente-immobiliere/"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "Dois-je être présent pendant les visites ?",
+          "Ce n’est pas nécessaire. Beaucoup de propriétaires préfèrent s’absenter ; l’agent conduit la visite et vous en rend compte."
+        ],
+        [
+          "Faut-il tout ranger comme dans un magazine ?",
+          "Une maison propre, aérée et dégagée suffit. Les visiteurs savent qu’elle est habitée."
+        ],
+        [
+          "Peut-on refuser un créneau ?",
+          "Oui. Les plages convenues à l’avance servent à cela : elles respectent votre rythme et celui des candidats."
+        ]
+      ],
+      "sources": [
+        [
+          "Notaire.be — réussir sa visite immobilière (les conseils donnés aux acheteurs)",
+          "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier/reussir-sa-visite-immobiliere"
         ]
       ]
     }

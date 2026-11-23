@@ -40,13 +40,13 @@
           "h2": "Le parcours indicatif de rénovation",
           "p": [
             "Le certificat présente les principales améliorations recommandées et propose un ordre pour les réaliser : isolation de la toiture, des murs ou des sols, fenêtres, ventilation, étanchéité à l’air, chauffage, production d’eau chaude. Une annexe technique détaille les performances de chaque élément et montre par où la chaleur s’échappe.",
-            "Ce parcours est généré automatiquement à partir des relevés du certificateur. La Wallonie le présente comme une première orientation : ce n’est ni un devis, ni une étude personnalisée, ni un projet de rénovation clé en main. Les coûts mentionnés sont indicatifs et varient selon le bâtiment, les solutions retenues et les prix pratiqués."
+            "Ce parcours est généré automatiquement à partir des relevés du certificateur. La Wallonie le présente comme une première orientation, à compléter par des devis ou par une étude personnalisée. Les coûts mentionnés sont indicatifs : ils varient selon le bâtiment, les solutions retenues et les prix pratiqués."
           ]
         },
         {
-          "h2": "Appartements : pas d’estimation de coût",
+          "h2": "Appartements : une approche à l’échelle de l’immeuble",
           "p": [
-            "Dans un appartement, ou un logement raccordé à une installation collective, une partie des travaux se décide à l’échelle de l’immeuble ou de la copropriété. Pour cette raison, le certificat d’un appartement ne chiffre pas les travaux et renvoie à une approche globale de l’immeuble."
+            "Dans un appartement, ou un logement raccordé à une installation collective, une partie des travaux se décide à l’échelle de l’immeuble ou de la copropriété. Pour cette raison, le certificat d’un appartement privilégie une approche globale de l’immeuble, sans chiffrer les travaux."
           ],
           "more": ["Vendre un appartement en copropriété : les documents du syndic", "/guides/vendre-appartement-copropriete/"]
         },
@@ -67,25 +67,25 @@
           "h2": "Ce que cela change pour un vendeur",
           "p": [
             "Les obligations restent les mêmes : disposer du certificat avant toute publicité et le communiquer avant le compromis. Ce qui change, c’est la lecture qu’en fera un candidat acheteur : avec un certificat du nouveau modèle, il a sous les yeux une liste de travaux, leur ordre, et parfois un ordre de coût.",
-            "Mieux vaut donc connaître ce parcours avant les visites et pouvoir en parler simplement : ce qui a déjà été fait, ce qui reste à faire, ce qui relève d’un choix. Si votre certificat est ancien mais encore valable, rien ne vous oblige à le refaire ; en demander un nouveau est une décision à prendre au cas par cas, selon le bien et les travaux réalisés depuis."
+            "Mieux vaut donc connaître ce parcours avant les visites et pouvoir en parler simplement : ce qui a déjà été fait, ce qui reste à faire, ce qui relève d’un choix. Si votre certificat est ancien mais encore valable, vous pouvez le conserver ; en demander un nouveau est un choix à faire au cas par cas, selon le bien et les travaux réalisés depuis."
           ],
           "more": ["Le certificat PEB pour vendre : les règles", "/guides/certificat-peb-vente/"]
         },
         {
           "h2": "Ce que cela change pour un acheteur",
           "p": [
-            "Le nouveau certificat aide à comparer deux biens au-delà de leur label et à situer l’ampleur d’une rénovation. Il reste une orientation : avant de vous engager sur un budget, demandez des devis, et un audit Logement si vous prévoyez une rénovation importante."
+            "Le nouveau certificat aide à comparer deux biens au-delà de leur label et à situer l’ampleur d’une rénovation. Pour passer de cette orientation à un budget, demandez des devis, et un audit Logement si vous prévoyez une rénovation importante."
           ]
         }
       ],
       "faq": [
         [
           "Dois-je refaire mon certificat PEB pour vendre ?",
-          "Non, s’il est encore valable. Un certificat établi avant le 1er septembre 2026 reste utilisable jusqu’à son échéance."
+          "Un certificat encore valable suffit : établi avant le 1er septembre 2026, il reste utilisable jusqu’à son échéance."
         ],
         [
           "Le coût des travaux indiqué sur le certificat engage-t-il quelqu’un ?",
-          "Non. Il s’agit d’une estimation indicative, qui ne remplace pas un devis et n’impose aucun travail au vendeur ni à l’acheteur."
+          "C’est une estimation indicative : elle donne un ordre de grandeur, que des devis viennent préciser. Vendeur et acheteur restent libres de leurs travaux."
         ]
       ],
       "sources": [
@@ -165,8 +165,8 @@
         {
           "h2": "Rénover avant de vendre, ou vendre en l’état ?",
           "p": [
-            "Le nouveau régime ne tranche pas la question, mais il en déplace les termes. Le Rénopack suppose d’occuper le logement : il s’adresse à celui qui y vit ou viendra y vivre, pas à un propriétaire sur le départ. Pour un bien de label G, F ou E, c’est donc souvent l’acheteur qui pourra envisager ce financement, s’il en remplit les conditions.",
-            "Rien n’est acquis d’avance : chaque demande est examinée par l’organisme prêteur, et personne ne peut promettre une aide à un vendeur ou à un acheteur. Avant de lancer des travaux en vue d’une vente, faites le point sur ce qu’ils coûtent, sur ce que le label pèse réellement dans la valeur de votre bien, et sur votre calendrier."
+            "Le nouveau régime ne tranche pas la question, mais il en déplace les termes. Le Rénopack suppose d’occuper le logement : il s’adresse à celui qui y vit ou viendra y vivre. Pour un bien de label G, F ou E, c’est donc souvent l’acheteur qui pourra envisager ce financement, s’il en remplit les conditions.",
+            "Chaque demande est examinée par l’organisme prêteur, qui confirme l’éligibilité du ménage et du logement. Avant de lancer des travaux en vue d’une vente, faites le point sur ce qu’ils coûtent, sur ce que le label pèse réellement dans la valeur de votre bien, et sur votre calendrier."
           ],
           "more": ["L’estimation immobilière : comment elle se déroule", "/estimation-immobiliere/"]
         },
@@ -184,8 +184,8 @@
           "Le soutien annoncé vise les logements de label G, F ou E. Pour un autre label, renseignez-vous auprès d’un Guichet Énergie Wallonie sur les dispositifs qui vous restent ouverts."
         ],
         [
-          "Une aide est-elle garantie si mon logement a un mauvais label ?",
-          "Non. Le label ouvre la possibilité d’une demande ; l’octroi dépend des revenus, du projet de travaux, de l’audit et de l’examen du dossier par l’organisme prêteur."
+          "Mon logement a un label G ou F : comment savoir si j’obtiendrai un prêt ?",
+          "Le label ouvre la possibilité d’une demande ; l’octroi dépend des revenus, du projet de travaux, de l’audit et de l’examen du dossier par l’organisme prêteur."
         ]
       ],
       "sources": [
