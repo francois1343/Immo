@@ -94,7 +94,7 @@ test("the forecast is asked by the server only, and kept as long as the service 
   for (const h of JSON.parse(read("vercel.json")).headers)
     for (const x of h.headers) if (x.key === "Content-Security-Policy") assert.ok(!x.value.includes("met.no"));
   /* The source is credited where the forecast is shown. */
-  assert.ok(T.weatherBlock().includes("MET Norway"));
+  assert.ok(T.weatherBlock().includes("MET Norway") && T.skyBar().includes("MET Norway"));
 });
 
 test("the page script shows the hour of the visit and leaves the default line otherwise", async () => {
@@ -107,7 +107,7 @@ test("the page script shows the hour of the visit and leaves the default line ot
       location: { pathname: "/guides/x/", hash: "" },
       navigator: {},
       window: { addEventListener() {} },
-      document: { querySelector: (s) => (s === "[data-weather]" ? box : null) },
+      document: { querySelectorAll: (s) => (s === "[data-weather]" ? [box] : []) },
       fetch: async () => answer,
       Date: class extends RealDate {
         static now() {

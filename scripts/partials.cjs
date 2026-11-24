@@ -373,6 +373,7 @@ function blocks({ zones, pro }) {
   return {
     news: T.cards(T.latest({ articles, guides })),
     season: seasons ? T.seasonBlock(seasons) : "",
+    skybar: T.skyBar(),
     footer: footer(pro),
     topbar: topbar(pro),
     nav,

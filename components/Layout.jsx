@@ -29,6 +29,7 @@ function SiteLayout({ page }) {
         Aller au contenu
       </a>
       {page.draft && <div className="draft">Aperçu de travail · contenu à valider avant diffusion</div>}
+      {page.skybar && <Html>{page.skybar}</Html>}
       <div className="shell">
         {page.topbar && <Html>{page.topbar}</Html>}
         <header className="top">

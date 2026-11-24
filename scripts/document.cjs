@@ -46,12 +46,14 @@ function split(html, route) {
   const nav = /<nav aria-label="Navigation principale">[\s\S]*?<\/nav>/.exec(body[2]);
   if (!nav) fail(route, "navigation absente");
   const topbar = /<div class="topbar">[\s\S]*?<\/div>/.exec(body[2]);
+  const skybar = /<div class="skybar"[\s\S]*?<\/div>/.exec(body[2]);
   return {
     ...page,
     layout: "site",
     nav: nav[0],
     topbar: topbar ? topbar[0] : null,
     draft: body[2].includes('<div class="draft">'),
+    skybar: skybar ? skybar[0] : null,
     dock: body[2].includes('<nav class="mobile-contact"'),
   };
 }

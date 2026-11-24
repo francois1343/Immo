@@ -135,6 +135,14 @@ function weatherBlock({ link = true } = {}) {
 <p class="weather-credit" hidden>Prévisions : <a href="https://api.met.no/" rel="noopener noreferrer" target="_blank">MET Norway<span class="visually-hidden"> (nouvel onglet)</span></a></p>
 </div>`;
 }
+/* The same weather, on one line, in the bar above the header of every page. */
+const icons = () =>
+  `<span class="weather-icons" aria-hidden="true">${Object.keys(SKY)
+    .map((id) => `<svg class="weather-icon" data-for="${id}" viewBox="0 0 48 48">${SKY[id]}</svg>`)
+    .join("")}</span>`;
+function skyBar() {
+  return `<div class="skybar" data-weather="idle">${icons()}<p><strong>Lacs de l’Eau d’Heure</strong><span class="weather-now"></span><span class="weather-message">à quelques kilomètres de Barbençon</span><span class="weather-credit" hidden><a href="https://api.met.no/" rel="noopener noreferrer" target="_blank">MET Norway<span class="visually-hidden"> (source des prévisions, nouvel onglet)</span></a></span></p></div>`;
+}
 
 /* ── Controls ──────────────────────────────────────────────────────── */
 const WEATHER = /il neige|il pleut|il gèle|il fait (froid|chaud|beau)|aujourd’hui|ce matin|°C|degrés/i;
@@ -168,4 +176,4 @@ function validate({ articles = [], guides = [], seasons }) {
   return true;
 }
 
-module.exports = { INDEX, CATEGORIES, ICONS, SEASONS, SEASON_OF_MONTH, WEATHER, seasonOf, seasonBlock, weatherBlock, SKY, LAKES_GUIDE, stamp, stories, latest, card, cards, articleRoute, frDate, validate, svg };
+module.exports = { INDEX, CATEGORIES, ICONS, SEASONS, SEASON_OF_MONTH, WEATHER, seasonOf, seasonBlock, weatherBlock, skyBar, SKY, LAKES_GUIDE, stamp, stories, latest, card, cards, articleRoute, frDate, validate, svg };

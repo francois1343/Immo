@@ -2171,6 +2171,70 @@ label,
 .season-tip .button {
   flex: none;
 }
+/* Barre du haut : la météo des lacs sur une ligne, à hauteur fixe. */
+.skybar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 6px 16px;
+  background: var(--sand);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.skybar p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.skybar strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+.skybar .weather-message::before,
+.skybar .weather-credit::before {
+  content: " · ";
+}
+.skybar a {
+  color: inherit;
+}
+.skybar .weather-icons {
+  flex: none;
+  display: grid;
+  width: 24px;
+  height: 24px;
+}
+.skybar .weather-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.4;
+}
+.skybar[data-weather="idle"] .weather-icons {
+  display: none;
+}
+.skybar[data-weather="clear"] [data-for="clear"],
+.skybar[data-weather="night"] [data-for="night"],
+.skybar[data-weather="partly"] [data-for="partly"],
+.skybar[data-weather="cloudy"] [data-for="cloudy"],
+.skybar[data-weather="fog"] [data-for="fog"],
+.skybar[data-weather="rain"] [data-for="rain"],
+.skybar[data-weather="snow"] [data-for="snow"],
+.skybar[data-weather="thunder"] [data-for="thunder"] {
+  visibility: visible;
+}
+@media (max-width: 760px) {
+  .skybar[data-weather]:not([data-weather="idle"]) .weather-message {
+    display: none;
+  }
+}
+@media print {
+  .skybar {
+    display: none;
+  }
+}
 /* Météo des lacs : le bloc garde sa place avant comme après la réponse ; un
    seul pictogramme est visible. */
 .weather {
@@ -2192,10 +2256,12 @@ label,
   background: #fff;
 }
 .weather-icons {
-  grid-row: 1 / span 3;
   display: grid;
   width: 44px;
   height: 44px;
+}
+.weather > .weather-icons {
+  grid-row: 1 / span 3;
 }
 .weather[data-weather="idle"] .weather-icons {
   display: none;
