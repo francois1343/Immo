@@ -474,12 +474,22 @@ ${rows
   .join("\n")}
 </tbody></table></div>`;
 }
+/* A photograph of a section: the three files of public/assets (jpg, and webp
+   in two widths), its text alternative, and the credit its licence asks for. */
+const figure = (g) => `<figure class="photo">
+<picture>
+<source type="image/webp" srcset="${g.src}-640.webp 640w, ${g.src}-1120.webp 1120w" sizes="(max-width: 760px) 100vw, 720px" />
+<img src="${g.src}.jpg" width="${g.width}" height="${g.height}" loading="lazy" decoding="async" alt="${esc(g.alt)}" />
+</picture>
+<figcaption>${esc(g.caption)} Photo : ${ext(g.credit[1], g.credit[0])}, ${ext(g.licence[1], g.licence[0])}${g.change ? `, ${esc(g.change)}` : ""}.</figcaption>
+</figure>`;
 /* Body of a guide or of an article. `more` is a contextual link to a page of the site. */
 const editorialBody = (ctx, rows = []) =>
   rows
     .map(
       (s) => `<section class="block"><h2>${esc(s.h2)}</h2>
 ${paragraphs(s.p)}
+${s.figure ? figure(s.figure) : ""}
 ${s.steps ? steps(s.steps) : ""}
 ${s.list ? list(s.list.map(esc)) : ""}
 ${s.table === "urbanisme" ? urbanismeTable(ctx) : ""}

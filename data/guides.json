@@ -1805,6 +1805,22 @@
             "Deux barrages retiennent les lacs principaux : le premier à Silenrieux, sur l’Eau d’Heure, le second près de Boussu-lez-Walcourt, sur la Plate Taille. Ce dernier est le plus grand barrage de Belgique.",
             "Il se visite avec un guide, en une heure et demie : la maquette du site, 400 mètres de galerie à l’intérieur de l’ouvrage, la salle des machines, puis le Skywalk, une passerelle vitrée suspendue à 107 mètres du sol, d’où l’on voit l’ensemble des lacs."
           ],
+          "figure": {
+            "src": "/assets/lac-plate-taille",
+            "width": 1120,
+            "height": 747,
+            "alt": "Le lac de la Plate Taille au calme : un banc sur la berge et, à l’horizon, la tour du barrage",
+            "caption": "Le lac de la Plate Taille et la tour du barrage, vus de la berge à Froidchapelle.",
+            "credit": [
+              "Trougnouf (Benoit Brummer), Wikimedia Commons",
+              "https://commons.wikimedia.org/wiki/File:Lac_de_la_Plate_Taille_(DSC02373).jpg"
+            ],
+            "licence": [
+              "CC BY 4.0",
+              "https://creativecommons.org/licenses/by/4.0/deed.fr"
+            ],
+            "change": "redimensionnée"
+          },
           "more": [
             "Un bien à Boussu-lez-Walcourt",
             "/secteurs/froidchapelle/boussu-lez-walcourt/"

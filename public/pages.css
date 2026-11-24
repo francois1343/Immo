@@ -45,6 +45,34 @@
 .block {
   padding: 8px 0 20px;
 }
+/* Photographie d’une section, avec son crédit. */
+.photo {
+  max-width: 720px;
+  margin: 20px 0 8px;
+}
+.photo picture {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--sand);
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.photo figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.photo figcaption a {
+  color: inherit;
+}
 .block > h2 {
   margin: 22px 0 12px;
   font-size: 23px;
