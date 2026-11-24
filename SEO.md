@@ -80,3 +80,7 @@ Validation : `npm test`, puis `npm run build`.
 Règles : `updatedOn` n'est rempli que si le fond a changé ; les données structurées `Article` reprennent ces dates et ne nomment aucun auteur tant que `author` vaut `null` ; un lien `more` d'une section doit pointer vers une page du site, sinon le build échoue. Les nouvelles pages suivent la règle commune : complètes, phase 1, jamais indexables sans approbation dans `data/editorial.json`.
 
 Conseil de saison : saison du calendrier (hiver de décembre à février), jamais la météo ; le build refuse un texte qui décrit le temps qu'il fait. Les quatre conseils sont dans la page ; le build marque la saison de son jour (visible sans JavaScript) et `site.js` choisit celle du jour de la visite, sans déplacement de mise en page.
+
+## Vie locale (24 novembre 2026)
+
+Un guide de catégorie `local` présente un atout du secteur et le relie à la vente : `/guides/vendre-maison-lacs-eau-dheure/` (Lacs de l’Eau d’Heure). Chaque chiffre vient du site du domaine, cité dans `sources` ; les activités sont nommées par famille, sans horaires ni prix, qui changent. Les repères correspondants (barrage de la Plate Taille, lac, sentiers) sont dans `data/local.json` et nourrissent les pages de Froidchapelle, Boussu-lez-Walcourt, Erpion et Cerfontaine.

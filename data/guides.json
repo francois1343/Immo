@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedOn": "2026-11-20",
+  "updatedOn": "2026-11-24",
   "about": "Guides vendeurs. Chaque affirmation réglementaire s’appuie sur une source officielle citée dans `sources`. Un point non confirmé sur une source officielle n’est pas publié (montants d’amendes, coût communal des renseignements urbanistiques, etc.).",
   "guides": [
     {
@@ -1759,6 +1759,159 @@
         [
           "Wallonie — obtenir un certificat PEB",
           "https://www.wallonie.be/fr/demarches/vendreacheterlouer-obtenir-un-certificat-peb"
+        ],
+        [
+          "Wallonie (SPW) — carte de l’aléa d’inondation",
+          "https://environnement.wallonie.be/home/gestion-environnementale/risques-climatiques/inondations/urbanisme/cartes-inondations/carte-alea-inondation.html"
+        ]
+      ]
+    },
+    {
+      "publishedOn": "2026-11-24",
+      "updatedOn": "2026-11-24",
+      "author": null,
+      "slug": "vendre-maison-lacs-eau-dheure",
+      "category": "local",
+      "icon": "lake",
+      "short": "Vendre près des Lacs de l’Eau d’Heure",
+      "teaser": "Cinq lacs, le plus grand barrage de Belgique, plus de 100 km de sentiers : les atouts du secteur, et comment les présenter dans une vente.",
+      "title": "Vendre une maison près des Lacs de l’Eau d’Heure | Martin Snauwaert",
+      "h1": "Vendre une maison près des Lacs de l’Eau d’Heure : les atouts du secteur",
+      "description": "Cinq lacs, le plus grand barrage de Belgique, plus de 100 km de sentiers : les atouts des Lacs de l’Eau d’Heure pour vendre un bien à Froidchapelle ou à Cerfontaine.",
+      "eyebrow": "Vie locale · Lacs de l’Eau d’Heure",
+      "intro": "À quelques kilomètres de Barbençon, les Lacs de l’Eau d’Heure sont le grand espace de nature et de loisirs de la région. Pour un bien situé à Froidchapelle, à Cerfontaine ou dans les villages voisins, c’est un atout concret, qui se présente avec des faits précis.",
+      "related": [
+        "estimation",
+        "vendre-maison"
+      ],
+      "sections": [
+        {
+          "h2": "Le domaine en quelques repères",
+          "list": [
+            "Cinq lacs artificiels : la Plate Taille, l’Eau d’Heure, Falemprise, Féronval et le Ry Jaune.",
+            "Plus de 1 800 hectares de forêts, de prairies et de plans d’eau, au cœur des vallées de Froidchapelle et de Cerfontaine.",
+            "Près de 70 kilomètres de berges.",
+            "Le lac de la Plate Taille, 389 hectares, est le plus grand lac de Belgique.",
+            "Plus de 1,25 million de visiteurs par an, selon le domaine."
+          ],
+          "more": [
+            "Vendre ou faire estimer un bien à Froidchapelle",
+            "/secteurs/froidchapelle/"
+          ]
+        },
+        {
+          "h2": "Les barrages de l’Eau d’Heure et de la Plate Taille",
+          "p": [
+            "Deux barrages retiennent les lacs principaux : le premier à Silenrieux, sur l’Eau d’Heure, le second près de Boussu-lez-Walcourt, sur la Plate Taille. Ce dernier est le plus grand barrage de Belgique.",
+            "Il se visite avec un guide, en une heure et demie : la maquette du site, 400 mètres de galerie à l’intérieur de l’ouvrage, la salle des machines, puis le Skywalk, une passerelle vitrée suspendue à 107 mètres du sol, d’où l’on voit l’ensemble des lacs."
+          ],
+          "more": [
+            "Un bien à Boussu-lez-Walcourt",
+            "/secteurs/froidchapelle/boussu-lez-walcourt/"
+          ]
+        },
+        {
+          "h2": "Loisirs et activités autour des lacs",
+          "list": [
+            "Sur l’eau : voile, planche à voile, stand-up paddle, kayak, pédalos, bateaux électriques, téléski nautique.",
+            "Au bord de l’eau : plage, baignade aux endroits prévus par le domaine, pêche.",
+            "À pied : plus de 100 kilomètres de sentiers, dont dix balades balisées de 2 à 24 kilomètres, le GR 125 et le RAVeL.",
+            "À vélo : plus de 100 kilomètres de circuits balisés, avec deux boucles des lacs de 15 et 24 kilomètres et plusieurs points de location.",
+            "En famille : golf, parcours accrobranche et tyroliennes, bike park, plaines de jeux, amphibus.",
+            "Sur place : restaurants, hôtel et villages de vacances."
+          ],
+          "after": "Le programme, les périodes d’ouverture et les réservations sont à jour sur le site du domaine, cité dans les sources.",
+          "more": [
+            "Vendre ou faire estimer un bien à Cerfontaine",
+            "/secteurs/cerfontaine/"
+          ]
+        },
+        {
+          "h2": "Présenter cet atout dans une vente",
+          "steps": [
+            [
+              "Situer le bien avec précision",
+              "La distance réelle jusqu’au lac ou au départ de balade le plus proche, en kilomètres et en minutes, mesurée depuis votre adresse."
+            ],
+            [
+              "Montrer le cadre",
+              "Des photos du jardin, de la vue et des abords ; quand le bien s’y prête, des prises de vues aériennes par drone situent la maison dans son paysage."
+            ],
+            [
+              "Décrire ce qui sert au quotidien",
+              "Un abri pour les vélos, un garage pour une remorque ou un bateau, du stationnement pour recevoir : ces détails parlent aux amateurs de plein air."
+            ],
+            [
+              "Joindre les documents",
+              "La situation du bien sur la carte officielle de l’aléa d’inondation et les renseignements urbanistiques répondent d’avance aux questions des acheteurs."
+            ]
+          ],
+          "after": "L’estimation tient compte de la situation exacte du bien : chaque village, chaque rue a sa propre demande.",
+          "more": [
+            "Risque d’inondation : que vérifier",
+            "/guides/risque-inondation-avant-achat/"
+          ]
+        },
+        {
+          "h2": "Un bien loué aux vacanciers",
+          "p": [
+            "Dans un secteur touristique, certains biens sont proposés en location de vacances. En Wallonie, toute personne qui propose un hébergement touristique à la location s’enregistre auprès de Tourisme Wallonie avant la mise en location ; le dossier comprend notamment une attestation de sécurité-incendie.",
+            "Si votre bien est exploité ainsi, rassemblez le numéro d’enregistrement, l’attestation et le calendrier des réservations en cours : l’acheteur qui souhaite poursuivre l’activité y trouve ce qu’il lui faut, et celui qui achète pour y vivre connaît la date à laquelle le bien est libre."
+          ]
+        },
+        {
+          "h2": "Les villages autour des lacs",
+          "p": [
+            "Martin se déplace dans les villages des deux communes du domaine : Boussu-lez-Walcourt, Erpion, Vergnies, Fourbechies et Froidchapelle d’un côté ; Silenrieux, Soumoy, Cerfontaine, Daussois, Senzeilles et Villers-Deux-Églises de l’autre. Barbençon, où il est installé, est le village voisin de Vergnies et d’Erpion."
+          ],
+          "more": [
+            "Un bien à Silenrieux",
+            "/secteurs/cerfontaine/silenrieux/"
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "La proximité des lacs augmente-t-elle la valeur d’une maison ?",
+          "C’est un atout de situation parmi d’autres. L’état du bien, ses surfaces, son certificat PEB et son adresse précise restent la base de l’estimation, établie après une visite."
+        ],
+        [
+          "Faut-il mentionner les lacs dans l’annonce ?",
+          "Oui, avec une distance exacte et ce que l’on y fait : une information précise et vérifiable inspire confiance."
+        ],
+        [
+          "Martin se déplace-t-il autour des lacs ?",
+          "Oui. Installé à Barbençon, à proximité de Froidchapelle et de Cerfontaine, il se déplace chez vous sur rendez-vous."
+        ]
+      ],
+      "sources": [
+        [
+          "Lacs de l’Eau d’Heure — le domaine",
+          "https://www.lacsdeleaudheure.be/fr/le-domaine-des-lacs-de-leau-dheure"
+        ],
+        [
+          "Lacs de l’Eau d’Heure — les cinq lacs et leurs spécificités",
+          "https://www.lacsdeleaudheure.be/fr/les-5-lacs-et-leurs-specificites"
+        ],
+        [
+          "Lacs de l’Eau d’Heure — visite guidée du barrage",
+          "https://www.lacsdeleaudheure.be/fr/activites/visite-guidee-du-barrage"
+        ],
+        [
+          "Lacs de l’Eau d’Heure — activités",
+          "https://www.lacsdeleaudheure.be/fr/activites"
+        ],
+        [
+          "Lacs de l’Eau d’Heure — randonnées et balades nature",
+          "https://www.lacsdeleaudheure.be/fr/randonnees-et-balades-nature"
+        ],
+        [
+          "Lacs de l’Eau d’Heure — découvrir les lacs à vélo",
+          "https://www.lacsdeleaudheure.be/fr/decouvrir-les-lacs-de-leau-dheure-velo"
+        ],
+        [
+          "Tourisme Wallonie — gérer un hébergement touristique",
+          "https://www.tourismewallonie.be/hebergements/declaration-dexploitation/"
         ],
         [
           "Wallonie (SPW) — carte de l’aléa d’inondation",

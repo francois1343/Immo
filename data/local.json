@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "collectedOn": "2026-11-23",
+  "collectedOn": "2026-11-24",
   "about": "Repères locaux sourcés, par commune et par localité ciblée. Chaque valeur porte l’adresse de sa source ; une valeur non confirmée vaut null et n’est jamais affichée. Sources : Statbel (population au 1er janvier 2026, prix de l’immobilier 2025), Géoportail de la Wallonie (limites, communes voisines), Infrabel (gares), sites communaux, beauxvillages.be, et Wikipédia en dernier recours.",
   "communes": {
     "beaumont": {
@@ -137,6 +137,20 @@
           }
         },
         {
+          "text": "Barrage de la Plate Taille, le plus grand de Belgique, avec sa visite guidée et son Skywalk à 107 m du sol",
+          "locality": "Boussu-lez-Walcourt",
+          "source": "https://www.lacsdeleaudheure.be/fr/activites/visite-guidee-du-barrage",
+          "emblem": {
+            "icon": "dam",
+            "label": "Barrage de la Plate Taille"
+          }
+        },
+        {
+          "text": "Lac de la Plate Taille (389 ha), le plus grand lac de Belgique",
+          "locality": null,
+          "source": "https://www.lacsdeleaudheure.be/fr/les-5-lacs-et-leurs-specificites"
+        },
+        {
           "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
           "locality": null,
           "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
@@ -169,7 +183,7 @@
         },
         "Erpion": {
           "formerCommune": true,
-          "note": "Sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
+          "note": "Village situé au nord des barrages de l’Eau d’Heure, sur le territoire du Parc national de l’Entre-Sambre-et-Meuse",
           "source": "https://fr.wikipedia.org/wiki/Erpion"
         },
         "Fourbechies": {
@@ -841,6 +855,11 @@
             "icon": "dam",
             "label": "Barrage de l’Eau d’Heure"
           }
+        },
+        {
+          "text": "Plus de 100 km de sentiers autour des lacs, dont le GR 125 et le RAVeL",
+          "locality": null,
+          "source": "https://www.lacsdeleaudheure.be/fr/randonnees-et-balades-nature"
         },
         {
           "text": "Route nationale N978 Gerpinnes – Cerfontaine via Silenrieux, croisement avec la N589 à Cerfontaine",

@@ -36,7 +36,7 @@ test("live with phase 1 approved: only those pages are indexable and in the site
     const generated = G.build(out, { data });
     const phase1 = generated.quality.rows.filter((r) => r.phase === 1).map((r) => r.route),
       weak = generated.quality.rows.filter((r) => r.status !== "complete").map((r) => r.route);
-    assert.equal(phase1.length, 41);
+    assert.equal(phase1.length, 42);
     assert.equal(weak.length, 2);
     /* A reviewer approves phase 1, and by mistake two unfinished pages. */
     generated.quality = Q.evaluate(generated.pages, { approvedRoutes: [...phase1, ...weak.slice(0, 2)] });
@@ -44,7 +44,7 @@ test("live with phase 1 approved: only those pages are indexable and in the site
 
     assert.deepEqual([...seo.indexable].sort(), [...phase1].sort());
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
-    assert.equal((sitemap.match(/<loc>/g) || []).length, 41);
+    assert.equal((sitemap.match(/<loc>/g) || []).length, 42);
     assert.ok(sitemap.includes("https://exemple-immo.be/secteurs/beaumont/"));
     const robotsOf = (route) => {
       const html = fs.readFileSync(path.join(out, route.slice(1), "index.html"), "utf8");
