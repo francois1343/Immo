@@ -500,7 +500,7 @@ function guide(ctx, g) {
   const body = editorialBody(ctx, g.sections);
   return `${intro({ eyebrow: g.eyebrow || "Guide vendeur", h1: g.h1, lead: g.intro })}
 <div class="content wide">
-${g.publishedOn ? dateline(g) + "\n" : ""}${body}
+${g.publishedOn ? dateline(g) + "\n" : ""}${g.weather ? T.weatherBlock({ link: false }) + "\n" : ""}${body}
 ${faq((g.faq || []).map(([q, a]) => [q, esc(a)]))}
 ${src.length ? `<section class="block sources"><h2>Sources officielles</h2>\n<ul>\n${src.join("\n")}\n</ul>\n<p class="quiet">Guide d’information générale, mis à jour le ${esc(frDate(g.updatedOn))}. Il ne remplace pas l’avis de votre notaire pour votre situation.</p></section>` : ""}
 ${related.length ? `<section class="block"><h2>Prestations liées</h2>\n${chips(related)}\n</section>` : ""}

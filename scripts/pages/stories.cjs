@@ -105,6 +105,34 @@ ${svg(t.icon, "season-icon")}
 <div class="season-tips">
 ${tips.join("\n")}
 </div>
+${weatherBlock()}
+</div>`;
+}
+
+/* ── Weather at the lakes ──────────────────────────────────────────── */
+/* One pictogram per kind of weather (lib/weather.mjs). The block is complete
+   without script: a line that leads to the guide of the lakes. The script of
+   the page then shows the pictogram, the temperature and the message of the
+   hour, in the space the block already holds. */
+const SKY = {
+  clear: '<circle cx="24" cy="24" r="8" /><path d="M24 5v6M24 37v6M5 24h6M37 24h6M10.600 10.600l4.200 4.200M33.200 33.200l4.200 4.200M10.600 37.400l4.200-4.200M33.200 14.800l4.200-4.200" />',
+  night: '<path d="M36 28.500A14 14 0 0 1 19.500 12a14 14 0 1 0 16.500 16.500Z" /><path d="M33 9v5M30.500 11.500h5" />',
+  partly: '<circle cx="17" cy="15" r="5" /><path d="M17 4v3M6 15h3M9.200 7.200l2.100 2.100M24.800 7.200l-2.100 2.100" /><path d="M17 38h18a6.500 6.500 0 0 0 .700-12.950A9 9 0 0 0 19 24a7 7 0 0 0-2 14Z" />',
+  cloudy: '<path d="M14 30h21a7 7 0 0 0 .800-13.950A10 10 0 0 0 16.500 14 8 8 0 0 0 14 30Z" /><path d="M12 38h24" />',
+  fog: '<path d="M14 30h21a7 7 0 0 0 .800-13.950A10 10 0 0 0 16.500 14 8 8 0 0 0 14 30Z" /><path d="M9 36h30M13 42h22" />',
+  rain: '<path d="M14 30h21a7 7 0 0 0 .800-13.950A10 10 0 0 0 16.500 14 8 8 0 0 0 14 30Z" /><path d="M17 35l-2 6M25 35l-2 6M33 35l-2 6" />',
+  snow: '<path d="M14 30h21a7 7 0 0 0 .800-13.950A10 10 0 0 0 16.500 14 8 8 0 0 0 14 30Z" /><path d="M16 36v6M13.500 37.500l5 3M18.500 37.500l-5 3M32 36v6M29.500 37.500l5 3M34.500 37.500l-5 3" />',
+  thunder: '<path d="M14 30h21a7 7 0 0 0 .800-13.950A10 10 0 0 0 16.500 14 8 8 0 0 0 14 30Z" /><path d="M26 31l-5 7h6l-4 7" />',
+};
+const LAKES_GUIDE = "/guides/vendre-maison-lacs-eau-dheure/";
+function weatherBlock({ link = true } = {}) {
+  return `<div class="weather" data-weather="idle">
+<span class="weather-icons" aria-hidden="true">${Object.keys(SKY)
+    .map((id) => `<svg class="weather-icon" data-for="${id}" viewBox="0 0 48 48">${SKY[id]}</svg>`)
+    .join("")}</span>
+<p class="weather-line"><strong>Aux Lacs de l’Eau d’Heure</strong><span class="weather-now"></span></p>
+<p class="weather-text"><span class="weather-message">Cinq lacs, des sentiers et des pistes cyclables, à quelques kilomètres de Barbençon.</span>${link ? ` <a href="${LAKES_GUIDE}">Le guide du secteur <span aria-hidden="true">↗</span></a>` : ""}</p>
+<p class="weather-credit" hidden>Prévisions : <a href="https://api.met.no/" rel="noopener noreferrer" target="_blank">MET Norway<span class="visually-hidden"> (nouvel onglet)</span></a></p>
 </div>`;
 }
 
@@ -140,4 +168,4 @@ function validate({ articles = [], guides = [], seasons }) {
   return true;
 }
 
-module.exports = { INDEX, CATEGORIES, ICONS, SEASONS, SEASON_OF_MONTH, WEATHER, seasonOf, seasonBlock, stamp, stories, latest, card, cards, articleRoute, frDate, validate, svg };
+module.exports = { INDEX, CATEGORIES, ICONS, SEASONS, SEASON_OF_MONTH, WEATHER, seasonOf, seasonBlock, weatherBlock, SKY, LAKES_GUIDE, stamp, stories, latest, card, cards, articleRoute, frDate, validate, svg };

@@ -19,7 +19,7 @@
     "build": "node scripts/build.cjs",
     "start": "next start",
     "sync": "node scripts/sync.cjs",
-    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs tests/pages.test.cjs tests/publication.test.cjs tests/editorial.test.cjs",
+    "test": "node --test tests/site.test.cjs tests/seo.test.cjs tests/inquiry.test.mjs tests/zones.test.cjs tests/pages.test.cjs tests/publication.test.cjs tests/editorial.test.cjs tests/weather.test.mjs",
     "indexnow": "node scripts/indexnow.cjs",
     "editorial": "node scripts/editorial.cjs"
   }

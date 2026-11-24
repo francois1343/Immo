@@ -1917,7 +1917,8 @@
           "Wallonie (SPW) — carte de l’aléa d’inondation",
           "https://environnement.wallonie.be/home/gestion-environnementale/risques-climatiques/inondations/urbanisme/cartes-inondations/carte-alea-inondation.html"
         ]
-      ]
+      ],
+      "weather": true
     }
   ]
 }

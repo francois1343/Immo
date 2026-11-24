@@ -28,7 +28,7 @@ function shell(page, rendered) {
     <link rel="stylesheet" href="/site.css" />
     <link rel="stylesheet" href="/pages.css" />
     <link rel="stylesheet" href="/footer.css" />
-    <script src="/site.js" defer></script>
+    <script src="/site.js" defer></script>${page.main.includes("data-weather=") ? '\n    <script src="/meteo.js" defer></script>' : ""}
   </head>
   <body class="has-dock">
     <a class="skip" href="#main">Aller au contenu</a>

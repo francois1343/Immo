@@ -2171,6 +2171,77 @@ label,
 .season-tip .button {
   flex: none;
 }
+/* Météo des lacs : le bloc garde sa place avant comme après la réponse ; un
+   seul pictogramme est visible. */
+.weather {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  align-items: center;
+  min-height: 76px;
+  margin: 18px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+}
+.content > .weather {
+  margin: 0 0 28px;
+  padding: 16px 22px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 2px;
+  background: #fff;
+}
+.weather-icons {
+  grid-row: 1 / span 3;
+  display: grid;
+  width: 44px;
+  height: 44px;
+}
+.weather[data-weather="idle"] .weather-icons {
+  display: none;
+}
+.weather-icon {
+  grid-area: 1 / 1;
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: var(--orange-text);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  visibility: hidden;
+}
+.weather[data-weather="clear"] [data-for="clear"],
+.weather[data-weather="night"] [data-for="night"],
+.weather[data-weather="partly"] [data-for="partly"],
+.weather[data-weather="cloudy"] [data-for="cloudy"],
+.weather[data-weather="fog"] [data-for="fog"],
+.weather[data-weather="rain"] [data-for="rain"],
+.weather[data-weather="snow"] [data-for="snow"],
+.weather[data-weather="thunder"] [data-for="thunder"] {
+  visibility: visible;
+}
+.weather p {
+  grid-column: 2;
+  margin: 0;
+  max-width: 80ch;
+}
+.weather[data-weather="idle"] p {
+  grid-column: 1 / -1;
+}
+.weather-line {
+  font-size: var(--fs-s);
+  font-weight: 650;
+}
+.weather-text {
+  font-size: var(--fs-s);
+  line-height: 1.6;
+  color: var(--muted);
+}
+.weather-credit {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
 .dateline {
   margin: 0 0 4px;
   font-size: var(--fs-s);

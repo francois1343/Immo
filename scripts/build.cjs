@@ -17,6 +17,7 @@ const files = [
   "site.css",
   "pages.css",
   "site.js",
+  "meteo.js",
   "estimation.css",
   "estimation.js",
   "inquiry-core.js",

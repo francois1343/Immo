@@ -84,3 +84,7 @@ Conseil de saison : saison du calendrier (hiver de décembre à février), jamai
 ## Vie locale (24 novembre 2026)
 
 Un guide de catégorie `local` présente un atout du secteur et le relie à la vente : `/guides/vendre-maison-lacs-eau-dheure/` (Lacs de l’Eau d’Heure). Chaque chiffre vient du site du domaine, cité dans `sources` ; les activités sont nommées par famille, sans horaires ni prix, qui changent. Les repères correspondants (barrage de la Plate Taille, lac, sentiers) sont dans `data/local.json` et nourrissent les pages de Froidchapelle, Boussu-lez-Walcourt, Erpion et Cerfontaine.
+
+## Météo des lacs (24 novembre 2026)
+
+Le bloc « Aux Lacs de l’Eau d’Heure » (accueil, sous le conseil de saison, et guide des lacs) affiche un pictogramme, la température et un message selon le temps de l’heure. Les prévisions viennent de MET Norway (CC BY 4.0, source créditée dans le bloc) et sont lues par le serveur (`pages/api/meteo.js`, logique dans `lib/weather.mjs`) : le navigateur ne parle qu’au site, la politique de sécurité reste fermée, la réponse est gardée trois heures comme le demande le service. Sans script ou sans réponse, le bloc garde sa ligne par défaut, qui mène au guide. Le conseil de saison, lui, reste celui du calendrier. Les messages sont dans `messageOf` ; un guide reçoit le bloc avec `"weather": true`.
