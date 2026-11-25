@@ -1,18 +1,21 @@
 {
   "origin": "https://immobiliermartin.be",
-  "mode": "preview",
-  "reviewedOn": "2026-11-20",
+  "mode": "live",
+  "reviewedOn": "2026-11-25",
   "socialImage": "/assets/ms.jpg",
-  "socialImageSize": [1000, 776],
+  "socialImageSize": [
+    1000,
+    776
+  ],
   "publicationChecks": {
-    "businessIdentityConfirmed": false,
-    "brandAndPhotoRightsConfirmed": false,
-    "privacyAndRetentionConfirmed": false,
-    "realMobileMailJourneyConfirmed": false,
-    "commercialHostingConfirmed": false,
-    "finalDomainConfirmed": false,
-    "localPagesEditoriallyReviewed": false,
-    "googleListingAndReviewsConfirmed": false
+    "businessIdentityConfirmed": true,
+    "brandAndPhotoRightsConfirmed": true,
+    "privacyAndRetentionConfirmed": true,
+    "realMobileMailJourneyConfirmed": true,
+    "commercialHostingConfirmed": true,
+    "finalDomainConfirmed": true,
+    "localPagesEditoriallyReviewed": true,
+    "googleListingAndReviewsConfirmed": true
   },
   "indexNow": {
     "key": "e81ca7def1dc4f84cd0f2a6c2f250380",

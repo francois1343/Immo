@@ -1,8 +1,18 @@
 {
   "about": "Validation éditoriale des pages générées. Une page n’est proposée aux moteurs que si elle est complète (contrôle automatique), approuvée ici, et que le site est en mode live. heldRoutes retire une page précise. showMarketStatistics : false tant que Martin n’a pas validé l’affichage des prix médians Statbel ; les données restent dans local.json.",
-  "reviewedBy": "",
-  "reviewedOn": "",
-  "approvedFamilies": [],
+  "reviewedBy": "Patrick - infinityD&T",
+  "reviewedOn": "2026-11-25",
+  "approvedFamilies": [
+    "service",
+    "commune",
+    "locality",
+    "service-commune",
+    "service-locality",
+    "guide-index",
+    "guide",
+    "article-index",
+    "article"
+  ],
   "approvedRoutes": [],
   "heldRoutes": [],
   "showMarketStatistics": false

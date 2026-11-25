@@ -1,6 +1,6 @@
-# SEO local — état au 20 novembre 2026
+# SEO local — état au 25 novembre 2026
 
-Le site reste un **aperçu non indexable** : `noindex,nofollow` sur chaque page, en-tête `X-Robots-Tag` (`server.config.json`), `robots.txt` fermé, sitemap vide. Rien n'est soumis aux moteurs.
+Le site est **en ligne et indexable** sur `https://immobiliermartin.be` depuis le 25 novembre 2026 : mode `live`, `robots.txt` ouvert (seul `/api/` est fermé), sitemap de toutes les pages approuvées, plus d’en-tête `X-Robots-Tag`. Toutes les familles de pages sont approuvées dans `data/editorial.json` ; les pages légales, le plan du site et la page 404 restent `noindex`.
 
 ## Pages générées
 

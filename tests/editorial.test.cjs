@@ -37,14 +37,15 @@ test("every news article is dated, sourced on an official site, and names no aut
   assert.throws(() => T.validate({ articles: [{ ...data.articles[0], updatedOn: "2020-01-01" }] }));
 });
 
-test("the new pages are complete, in phase 1, and approved by nobody", () => {
+test("the new pages are complete, in phase 1, and approved with their family only", () => {
   const routes = [T.INDEX, ...data.articles.map(T.articleRoute), "/guides/vendre-maison-hiver/"];
   for (const route of routes) {
     const row = quality.rows.find((r) => r.route === route);
     assert.ok(row, route);
     assert.equal(row.status, "complete", route + " : " + row.issues.join(" ; "));
     assert.equal(row.phase, 1, route);
-    assert.equal(row.approved, false, route);
+    assert.equal(row.approved, true, route);
+    assert.equal(Q.evaluate(pages, {}).rows.find((r) => r.route === route).approved, false, route);
   }
   /* A news article does not repeat a permanent guide. */
   const peb = Q.shingles(Q.words(Q.text(page("/guides/certificat-peb-vente/").main))),
@@ -119,9 +120,11 @@ test("the home page shows the seasonal tip and three stories at most, in sync wi
   assert.ok(!/style=|<script|onclick/i.test(rendered.news + rendered.season));
 });
 
-test("the editorial lot leaves the reception, reCAPTCHA and IndexNow settings alone", () => {
+test("the site is open to the engines: live mode, no noindex header, robots.txt naming the sitemap", () => {
   const server = require("../server.config.json");
-  assert.ok(S.hasNoindexHeader(server));
-  assert.equal(config.mode, "preview");
-  assert.ok(read("public/robots.txt").includes("Disallow: /"));
+  assert.ok(!S.hasNoindexHeader(server));
+  assert.equal(config.mode, "live");
+  const robots = read("public/robots.txt");
+  assert.ok(robots.includes("Allow: /") && robots.includes("Disallow: /api/"));
+  assert.ok(robots.includes("Sitemap: https://immobiliermartin.be/sitemap.xml"));
 });

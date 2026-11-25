@@ -94,7 +94,7 @@ test("a local page without enough sourced facts stays to review, and nothing is 
   const rows = quality.rows;
   assert.ok(rows.some((r) => r.status === "complete"));
   assert.equal(sparseQuality.rows.find((r) => r.route === "/secteurs/thuin/biercee/").status, "to-review");
-  assert.equal(rows.filter((r) => r.approved).length, 0);
+  assert.equal(Q.evaluate(pages, {}).rows.filter((r) => r.approved).length, 0);
   /* Without local data every local page falls back to review, and no village
      declination is published at all. */
   const bare = C.plan({ ...data, local: { communes: {} } });
@@ -141,16 +141,18 @@ test("local data only describes configured places, and every displayed fact has 
 
 test("going live is refused until every check is confirmed and the noindex header removed", () => {
   const checks = Object.fromEntries(Object.keys(config.publicationChecks).map((k) => [k, true]));
-  assert.throws(() => S.validate({ ...config, mode: "live" }, server), /validations manquantes/);
-  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: checks }, server), /X-Robots-Tag/);
-  const open = { ...server, headers: server.headers.map((h) => ({ ...h, headers: h.headers.filter((x) => x.key !== "X-Robots-Tag") })) };
-  assert.equal(S.validate({ ...config, mode: "live", publicationChecks: checks }, open), true);
+  const pending = { ...checks, finalDomainConfirmed: false };
+  const closed = { ...server, headers: server.headers.map((h, i) => (i ? h : { ...h, headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, ...h.headers] })) };
+  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: pending }, server), /validations manquantes : finalDomainConfirmed/);
+  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: {} }, server), /validations manquantes/);
+  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: checks }, closed), /X-Robots-Tag/);
+  assert.equal(S.validate({ ...config, mode: "live", publicationChecks: checks }, server), true);
   const html = '<head><title>T</title></head><body><div class="draft">Aperçu</div></body>';
   const live = { ...config, mode: "live" };
   assert.match(S.enrich(html, { route: "/x/", description: "d", index: true }, live), /content="index,follow"/);
   assert.match(S.enrich(html, { route: "/x/", description: "d", index: false }, live), /content="noindex,follow"/);
   assert.ok(!S.enrich(html, { route: "/x/", description: "d", index: true }, live).includes('class="draft"'));
-  assert.match(S.enrich(html, { route: "/x/", description: "d", index: true }, config), /content="noindex,nofollow"/);
+  assert.match(S.enrich(html, { route: "/x/", description: "d", index: true }, { ...config, mode: "preview" }), /content="noindex,nofollow"/);
 });
 
 test("structured data carries verified details only: no rating, no review", () => {
@@ -182,7 +184,7 @@ test("reviews: no rating without a dated reading, no quote without consent, noth
 
 test("IndexNow sends nothing from a preview, a foreign address or without a key", () => {
   const url = [config.origin + "/"];
-  assert.equal(I.plan(config, url).allowed, false);
+  assert.equal(I.plan({ ...config, mode: "preview" }, url).allowed, false);
   const live = { ...config, mode: "live", indexNow: { key: "abcdef0123456789" } };
   const real = { ...live, origin: "https://exemple-immo.be" };
   assert.equal(I.plan(live, ["https://exemple-immo.be/"]).allowed, false, "URL outside the configured origin");

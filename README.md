@@ -37,11 +37,11 @@ Le site ne conserve rien : ni base de données, ni fichier. La route refuse ce q
 
 Variables, serveur, déploiement et validation finale : voir `MISE-EN-LIGNE.md`.
 
-## Aperçu et diffusion
+## Build et diffusion
 
-`npm run build` prépare les pages et leurs métadonnées, lance `next build` à partir de rien, puis contrôle le résultat : fichiers publics autorisés, pages attendues, absence de script en ligne et de runtime Next.js, liens internes ; les rapports vont dans `reports/`. `npm test` vérifie les anciens points d’entrée, le mode aperçu et le cache par route. `npm start` sert le site construit ; ne pas tester la PWA en `file://`.
+`npm run build` prépare les pages et leurs métadonnées, lance `next build` à partir de rien, puis contrôle le résultat : fichiers publics autorisés, pages attendues, absence de script en ligne et de runtime Next.js, liens internes ; les rapports vont dans `reports/`. `npm test` vérifie les anciens points d’entrée, les règles d’indexation et le cache par route. `npm start` sert le site construit ; ne pas tester la PWA en `file://`.
 
-Cette version reste un **aperçu non indexable**, avec mention visible. Le domaine définitif est `https://immobiliermartin.be`, servi par un VPS administré avec CloudPanel (voir `MISE-EN-LIGNE.md`). Le contenu légal (entité responsable, BCE/TVA, traitement et conservation des messages) et l’identité Connexion Immo doivent être validés avant diffusion commerciale. Le domaine canonique, le sitemap et l’indexation seront activés ensemble après validation ; ne pas simplement retirer noindex sans ces vérifications.
+Le site est **en ligne et indexable** sur `https://immobiliermartin.be`, servi par un VPS administré avec CloudPanel (voir `MISE-EN-LIGNE.md`). `seo.config.json` est en mode `live` : chaque validation de publication est confirmée et les pages approuvées dans `data/editorial.json` sont dans le sitemap. Repasser en aperçu demande de remettre ensemble le mode `preview` et l’en-tête `X-Robots-Tag: noindex, nofollow` dans `server.config.json` ; le build refuse toute combinaison incohérente.
 
 Le service worker ne force pas l’activation d’une nouvelle version et met en cache chaque route sous son propre chemin. Il ne stocke pas les champs du formulaire.
 
