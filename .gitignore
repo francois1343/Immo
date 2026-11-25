@@ -1,4 +1,4 @@
-.next/
+﻿.next/
 .site/
 public/vendor/
 public/sitemap.xml
@@ -8,5 +8,6 @@ public/*.txt
 next-env.d.ts
 node_modules/
 .env*
+!.env.example
 *.log
 reports/
