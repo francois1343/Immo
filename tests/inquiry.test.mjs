@@ -310,7 +310,9 @@ test("reCAPTCHA v3 is switched on by its two keys, loaded on the form page only,
   /* Google is allowed by the policy of the form page, and nowhere else. */
   const rules = JSON.parse(read("server.config.json")).headers;
   const withCsp = rules.filter((r) => r.headers.some((h) => h.key === "Content-Security-Policy"));
-  assert.deepEqual(withCsp.map((r) => r.source), ["/(.*)", "/estimation(/?)"]);
+  /* The sitemap holds no page content: its own policy only lets the browser
+     style its XML view, so that the file can be read on screen. */
+  assert.deepEqual(withCsp.map((r) => r.source), ["/(.*)", "/estimation(/?)", "/sitemap.xml"]);
   const strict = withCsp[0].headers.find((h) => h.key === "Content-Security-Policy").value,
     form = withCsp[1].headers.find((h) => h.key === "Content-Security-Policy").value;
   const directives = (csp) => Object.fromEntries(csp.split("; ").map((d) => [d.split(" ")[0], d.split(" ").slice(1).join(" ")]));
