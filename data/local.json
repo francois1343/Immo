@@ -46,6 +46,116 @@
           "text": "Route nationale N40 Mons – Philippeville",
           "locality": "Beaumont",
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_40_(Belgique)"
+        },
+        {
+          "text": "Grand feu de Barbençon, chef-d’œuvre du patrimoine oral et immatériel de la Fédération Wallonie-Bruxelles depuis 2018",
+          "locality": "Barbençon",
+          "source": "https://fr.wikipedia.org/wiki/Barben%C3%A7on"
+        },
+        {
+          "text": "Vestiges du château seigneurial, dont le châtelet d’entrée à deux tours",
+          "locality": "Barbençon",
+          "source": "https://fr.wikipedia.org/wiki/Barben%C3%A7on"
+        },
+        {
+          "text": "Église Saint-Servais, de style classique, construite de 1774 à 1778",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Beaumont_(Hainaut)"
+        },
+        {
+          "text": "Chapelle Saint-Julien l’Hospitalier, à flanc de coteau entre les remparts et la Hantes",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Beaumont_(Hainaut)"
+        },
+        {
+          "text": "Remparts de la ville, construits au XIIe siècle par Baudouin IV le Bâtisseur",
+          "locality": "Beaumont",
+          "source": "https://fr.wikipedia.org/wiki/Beaumont_(Hainaut)"
+        },
+        {
+          "text": "Église Saint-Martin, dont la tour de façade date de 1587",
+          "locality": "Leugnies",
+          "source": "https://fr.wikipedia.org/wiki/Leugnies"
+        },
+        {
+          "text": "Ancienne ferme abbatiale de Bonne-Espérance, bâtie de 1735 à 1846, rue Rousseaux",
+          "locality": "Leugnies",
+          "source": "https://fr.wikipedia.org/wiki/Leugnies"
+        },
+        {
+          "text": "Vestiges de l’industrie du marbre rouge au lieu-dit Haie des Saules",
+          "locality": "Leugnies",
+          "source": "https://fr.wikipedia.org/wiki/Leugnies"
+        },
+        {
+          "text": "Ruines de l’ancienne église romane Saint-Martin, classée en 1946 et incendiée par la foudre en 1967",
+          "locality": "Leval-Chaudeville",
+          "source": "https://fr.wikipedia.org/wiki/Leval-Chaudeville"
+        },
+        {
+          "text": "Tombe de l’aviateur Fernand Jacquet, as de la Première Guerre mondiale, au cimetière du village",
+          "locality": "Leval-Chaudeville",
+          "source": "https://fr.wikipedia.org/wiki/Leval-Chaudeville"
+        },
+        {
+          "text": "Église Saint-Martin de style gothique hennuyer, construite en 1572 et classée en 1942",
+          "locality": "Renlies",
+          "source": "https://fr.wikipedia.org/wiki/Renlies"
+        },
+        {
+          "text": "Chapelle Notre-Dame des Sept Douleurs, élevée en 1660 près du vieux pont sur la Hantes",
+          "locality": "Renlies",
+          "source": "https://fr.wikipedia.org/wiki/Renlies"
+        },
+        {
+          "text": "Ancien moulin du village, élevé en 1763, rue du Village",
+          "locality": "Renlies",
+          "source": "https://fr.wikipedia.org/wiki/Renlies"
+        },
+        {
+          "text": "RAVeL sur l’ancienne ligne ferroviaire Thuin – Chimay, avec un viaduc à sept arches sur la Hantes",
+          "locality": "Solre-Saint-Géry",
+          "source": "https://fr.wikipedia.org/wiki/Solre-Saint-G%C3%A9ry"
+        },
+        {
+          "text": "Chapelle Sainte-Anne de 1660, en pierre bleue, au plafond stuqué et peint du XVIIIe siècle",
+          "locality": "Solre-Saint-Géry",
+          "source": "https://fr.wikipedia.org/wiki/Solre-Saint-G%C3%A9ry"
+        },
+        {
+          "text": "Moulin de la Fabrique, bâtiment en pierre du milieu du XVIIIe siècle le long de la Hantes",
+          "locality": "Solre-Saint-Géry",
+          "source": "https://fr.wikipedia.org/wiki/Solre-Saint-G%C3%A9ry"
+        },
+        {
+          "text": "Église de la Sainte-Vierge, qui conserve la tour d’une ancienne église romane",
+          "locality": "Strée",
+          "source": "https://fr.wikipedia.org/wiki/Str%C3%A9e_(Beaumont)"
+        },
+        {
+          "text": "Ferme de la Salle, ensemble clôturé où la Cour de Strée rendit la justice de 1490 à 1764",
+          "locality": "Strée",
+          "source": "https://fr.wikipedia.org/wiki/Str%C3%A9e_(Beaumont)"
+        },
+        {
+          "text": "Ferme Semal, ancienne dépendance de l’abbaye de Lobbes, du dernier tiers du XVIIIe siècle",
+          "locality": "Strée",
+          "source": "https://fr.wikipedia.org/wiki/Str%C3%A9e_(Beaumont)"
+        },
+        {
+          "text": "Église Saint-Martin de style classique, datée de 1730 et de 1753",
+          "locality": "Thirimont",
+          "source": "https://fr.wikipedia.org/wiki/Thirimont_(Beaumont)"
+        },
+        {
+          "text": "Chapelle du Sacré-Cœur de 1866, rue du Tombois",
+          "locality": "Thirimont",
+          "source": "https://fr.wikipedia.org/wiki/Thirimont_(Beaumont)"
+        },
+        {
+          "text": "Village limitrophe, à l’ouest, de la commune française de Bousignies-sur-Roc",
+          "locality": "Thirimont",
+          "source": "https://fr.wikipedia.org/wiki/Thirimont_(Beaumont)"
         }
       ],
       "beauxVillages": [
@@ -164,6 +274,71 @@
           "text": "Église de la Sainte-Vierge de Fourbechies, de style gothique hennuyer, bâtie au début du XVIIe siècle",
           "locality": "Fourbechies",
           "source": "https://fr.wikipedia.org/wiki/Fourbechies"
+        },
+        {
+          "text": "Église Saint-Remy, bâtie en 1868 par l’architecte Piret, de Walcourt",
+          "locality": "Boussu-lez-Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-lez-Walcourt"
+        },
+        {
+          "text": "Marche folklorique dédiée au Saint-Sacrement, le dimanche de cette fête",
+          "locality": "Boussu-lez-Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-lez-Walcourt"
+        },
+        {
+          "text": "Ferme de Septanne, ancienne maison de maître de forge, au logis du XVIIIe siècle",
+          "locality": "Boussu-lez-Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-lez-Walcourt"
+        },
+        {
+          "text": "Église Sainte-Marie-Madeleine du XVIe siècle, de style gothique hennuyer",
+          "locality": "Erpion",
+          "source": "https://fr.wikipedia.org/wiki/Erpion"
+        },
+        {
+          "text": "Chapelle du Calvaire, édicule néo-classique de 1840, rue de Boussu",
+          "locality": "Erpion",
+          "source": "https://fr.wikipedia.org/wiki/Erpion"
+        },
+        {
+          "text": "Ancienne résidence de maître-verrier au hameau de Four à Verre",
+          "locality": "Erpion",
+          "source": "https://fr.wikipedia.org/wiki/Erpion"
+        },
+        {
+          "text": "Ancien ermitage Saint-Pierre, réédifié entre 1704 et 1720, rue de l’Ermitage",
+          "locality": "Fourbechies",
+          "source": "https://fr.wikipedia.org/wiki/Fourbechies"
+        },
+        {
+          "text": "Église Sainte-Aldegonde, édifiée en 1643, au chœur reconstruit en style classique en 1756",
+          "locality": "Froidchapelle",
+          "source": "https://fr.wikipedia.org/wiki/Froidchapelle"
+        },
+        {
+          "text": "Source de la Hantes, affluent de la Sambre, au lieu-dit Hurtau",
+          "locality": "Froidchapelle",
+          "source": "https://fr.wikipedia.org/wiki/Froidchapelle"
+        },
+        {
+          "text": "Laetare de Froidchapelle, cortège carnavalesque de la mi-Carême, trois semaines avant Pâques",
+          "locality": "Froidchapelle",
+          "source": "https://fr.wikipedia.org/wiki/Froidchapelle"
+        },
+        {
+          "text": "Église Saint-Martin, classée en 1941, au chœur à chevet plat du XIIIe siècle",
+          "locality": "Vergnies",
+          "source": "https://fr.wikipedia.org/wiki/Vergnies"
+        },
+        {
+          "text": "Château-ferme en quadrilatère fermé, remontant à la première moitié du XVIIe siècle",
+          "locality": "Vergnies",
+          "source": "https://fr.wikipedia.org/wiki/Vergnies"
+        },
+        {
+          "text": "Village traversé par les ruisseaux de Vergnies et de Buissignies",
+          "locality": "Vergnies",
+          "source": "https://fr.wikipedia.org/wiki/Vergnies"
         }
       ],
       "beauxVillages": [],
@@ -238,6 +413,81 @@
           "text": "Route nationale N53 Charleroi – Chimay",
           "locality": "Rance",
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Quentin, bâtie en deux temps au XVIIIe siècle : chœur de 1752, nef de 1786",
+          "locality": "Grandrieu",
+          "source": "https://fr.wikipedia.org/wiki/Grandrieu_(Belgique)"
+        },
+        {
+          "text": "Chapelle d’En-haut, petit édifice daté de 1741",
+          "locality": "Grandrieu",
+          "source": "https://fr.wikipedia.org/wiki/Grandrieu_(Belgique)"
+        },
+        {
+          "text": "Ferme Sainte-Aldegonde, ancienne dépendance du chapitre de Sainte-Aldegonde de Maubeuge",
+          "locality": "Grandrieu",
+          "source": "https://fr.wikipedia.org/wiki/Grandrieu_(Belgique)"
+        },
+        {
+          "text": "Château-ferme du XVIIe siècle, élément du patrimoine civil du village",
+          "locality": "Montbliart",
+          "source": "https://fr.wikipedia.org/wiki/Montbliart"
+        },
+        {
+          "text": "Chapelle de 1681 en pierre bleue locale, à niche en marbre de Rance",
+          "locality": "Montbliart",
+          "source": "https://fr.wikipedia.org/wiki/Montbliart"
+        },
+        {
+          "text": "Altitude de 251 m au seuil de l’église",
+          "locality": "Montbliart",
+          "source": "https://fr.wikipedia.org/wiki/Montbliart"
+        },
+        {
+          "text": "Musée national du marbre, installé dans l’ancien hôtel de ville",
+          "locality": "Rance",
+          "source": "https://fr.wikipedia.org/wiki/Rance_(Belgique)"
+        },
+        {
+          "text": "Église Sainte-Aldegonde de 1777, à trois nefs, riche en marbre local",
+          "locality": "Rance",
+          "source": "https://fr.wikipedia.org/wiki/Rance_(Belgique)"
+        },
+        {
+          "text": "Village au bord de l’Eau d’Eppe, à mi-chemin entre Beaumont et Chimay",
+          "locality": "Rance",
+          "source": "https://fr.wikipedia.org/wiki/Rance_(Belgique)"
+        },
+        {
+          "text": "Église Notre-Dame, construite en 1864 en style néo-gothique",
+          "locality": "Sautin",
+          "source": "https://fr.wikipedia.org/wiki/Sautin"
+        },
+        {
+          "text": "Maison communale construite en 1930 par l’architecte Robert Baily",
+          "locality": "Sautin",
+          "source": "https://fr.wikipedia.org/wiki/Sautin"
+        },
+        {
+          "text": "Ry de Fromont, lieu de détente en forêt, en direction de Rance",
+          "locality": "Sautin",
+          "source": "https://fr.wikipedia.org/wiki/Sautin"
+        },
+        {
+          "text": "Chapelle Notre-Dame-de-Là-Haut de 1643 et chapelle Saint-Roch de 1765",
+          "locality": "Sivry",
+          "source": "https://fr.wikipedia.org/wiki/Sivry_(Belgique)"
+        },
+        {
+          "text": "Étangs des Monts Rosés, avec leur digue de 1744",
+          "locality": "Sivry",
+          "source": "https://fr.wikipedia.org/wiki/Sivry_(Belgique)"
+        },
+        {
+          "text": "Territoire raviné par les nombreux rus qui forment la Thure",
+          "locality": "Sivry",
+          "source": "https://fr.wikipedia.org/wiki/Sivry_(Belgique)"
         }
       ],
       "beauxVillages": [],
@@ -327,6 +577,196 @@
           "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
           "locality": null,
           "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
+        },
+        {
+          "text": "Église Saint-Martin, édifice néo-classique en calcaire édifié en 1841",
+          "locality": "Baileux",
+          "source": "https://fr.wikipedia.org/wiki/Baileux"
+        },
+        {
+          "text": "Chapelle romane du hameau de Boutonville, à l’est du village, modifiée aux XVIe et XVIIIe siècles",
+          "locality": "Baileux",
+          "source": "https://fr.wikipedia.org/wiki/Baileux"
+        },
+        {
+          "text": "« Pierre qui tourne », pierre dressée à Boutonville, à la limite du Hainaut et du Namurois",
+          "locality": "Baileux",
+          "source": "https://fr.wikipedia.org/wiki/Baileux"
+        },
+        {
+          "text": "Église Saint-Joseph de style néo-roman, datée de 1894 au-dessus du portail",
+          "locality": "Bailièvre",
+          "source": "https://fr.wikipedia.org/wiki/Baili%C3%A8vre"
+        },
+        {
+          "text": "Ferme des Peupliers, ensemble clôturé de la première moitié du XVIIIe siècle, le long de l’Heppe",
+          "locality": "Bailièvre",
+          "source": "https://fr.wikipedia.org/wiki/Baili%C3%A8vre"
+        },
+        {
+          "text": "Église Saint-Michel, construite en 1870 et 1880 en remplacement d’un édifice détruit par un ouragan",
+          "locality": "Bourlers",
+          "source": "https://fr.wikipedia.org/wiki/Bourlers"
+        },
+        {
+          "text": "Chapelle Saint-Roch, oratoire néo-gothique reconstruit en 1920, place du Jeu de Balle",
+          "locality": "Bourlers",
+          "source": "https://fr.wikipedia.org/wiki/Bourlers"
+        },
+        {
+          "text": "Ancien prieuré de l’abbaye Saint-Michel en Thiérache, logis du XVIIIe siècle",
+          "locality": "Bourlers",
+          "source": "https://fr.wikipedia.org/wiki/Bourlers"
+        },
+        {
+          "text": "Collégiale Saints-Pierre-et-Paul, sur la Grand-Place, aux parties les plus anciennes du milieu du XIIIe siècle",
+          "locality": "Chimay",
+          "source": "https://fr.wikipedia.org/wiki/Chimay"
+        },
+        {
+          "text": "Hôtel de ville édifié en 1724, parmi les endroits à découvrir à Chimay",
+          "locality": "Chimay",
+          "source": "https://www.chimayville.be/loisirs/tourisme/anciennes-communes/chimay-1"
+        },
+        {
+          "text": "RAVeL de la ligne 156, cité parmi les curiosités de Chimay",
+          "locality": "Chimay",
+          "source": "https://fr.wikipedia.org/wiki/Chimay"
+        },
+        {
+          "text": "Église Saint-Georges, datant de 1810 et construite sur une butte",
+          "locality": "Forges",
+          "source": "https://fr.wikipedia.org/wiki/Forges_(Belgique)"
+        },
+        {
+          "text": "Ferme des Forges, cense fortifiée édifiée en 1577 par Michel Polchet",
+          "locality": "Forges",
+          "source": "https://fr.wikipedia.org/wiki/Forges_(Belgique)"
+        },
+        {
+          "text": "Chapelle de 1715 dédiée à Notre-Dame de Grâce, non loin de l’église",
+          "locality": "Forges",
+          "source": "https://fr.wikipedia.org/wiki/Forges_(Belgique)"
+        },
+        {
+          "text": "Point culminant de la province de Hainaut, situé sur le territoire du village",
+          "locality": "L’Escaillère",
+          "source": "https://fr.wikipedia.org/wiki/L'Escaill%C3%A8re"
+        },
+        {
+          "text": "Église Saint-Hilaire, sur la place communale, datant de 1878",
+          "locality": "L’Escaillère",
+          "source": "https://fr.wikipedia.org/wiki/L'Escaill%C3%A8re"
+        },
+        {
+          "text": "Réplique de la « borne des trois empires » de 1772, dressée à côté du cimetière",
+          "locality": "L’Escaillère",
+          "source": "https://fr.wikipedia.org/wiki/L'Escaill%C3%A8re"
+        },
+        {
+          "text": "Village au bord de l’Eau Blanche, inscrit depuis 1997 parmi les plus beaux villages de Wallonie",
+          "locality": "Lompret",
+          "source": "https://fr.wikipedia.org/wiki/Lompret_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Nicolas de style néo-gothique, construite en pierre calcaire en 1879",
+          "locality": "Lompret",
+          "source": "https://fr.wikipedia.org/wiki/Lompret_(Belgique)"
+        },
+        {
+          "text": "Franc Bois, à proximité du village, repris au patrimoine exceptionnel de la Wallonie",
+          "locality": "Lompret",
+          "source": "https://fr.wikipedia.org/wiki/Lompret_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Gorgon, édifiée en 1856 et 1896 en style néo-gothique, en briques et pierre bleue",
+          "locality": "Rièzes",
+          "source": "https://fr.wikipedia.org/wiki/Ri%C3%A8zes"
+        },
+        {
+          "text": "Eau Noire, rivière marquant la frontière entre la Belgique et la France",
+          "locality": "Rièzes",
+          "source": "https://fr.wikipedia.org/wiki/Ri%C3%A8zes"
+        },
+        {
+          "text": "Pistes de ski de fond sur les prairies et l’ancienne voie du tramway vicinal, selon la météo",
+          "locality": "Rièzes",
+          "source": "https://fr.wikipedia.org/wiki/Ri%C3%A8zes"
+        },
+        {
+          "text": "Église Saint-Nicolas néo-classique en calcaire de 1839, au chœur gothique du XVIIe siècle",
+          "locality": "Robechies",
+          "source": "https://fr.wikipedia.org/wiki/Robechies"
+        },
+        {
+          "text": "Nécropole belgo-romaine des Ier au IIIe siècles, découverte et fouillée en 1907",
+          "locality": "Robechies",
+          "source": "https://fr.wikipedia.org/wiki/Robechies"
+        },
+        {
+          "text": "Ferme de Thiérssart, manoir à deux tours et bâtiments agricoles, ancienne possession de l’abbaye du Jardinet",
+          "locality": "Saint-Remy",
+          "source": "https://fr.wikipedia.org/wiki/Saint-Remy_(Chimay)"
+        },
+        {
+          "text": "« Machine à l’iau » inaugurée en 1865, alimentant en eau l’agglomération de Chimay",
+          "locality": "Saint-Remy",
+          "source": "https://www.chimayville.be/loisirs/tourisme/anciennes-communes/saint-remy"
+        },
+        {
+          "text": "Vestiges d’un four à chaux montrant l’agencement intérieur de la maçonnerie",
+          "locality": "Saint-Remy",
+          "source": "https://www.chimayville.be/loisirs/tourisme/anciennes-communes/saint-remy"
+        },
+        {
+          "text": "Église Notre-Dame du XVIIIe siècle, à la tour de style Renaissance datée de 1868",
+          "locality": "Salles",
+          "source": "https://fr.wikipedia.org/wiki/Salles_(Chimay)"
+        },
+        {
+          "text": "Calvaire de style gothique, érigé en 1898",
+          "locality": "Salles",
+          "source": "https://fr.wikipedia.org/wiki/Salles_(Chimay)"
+        },
+        {
+          "text": "Ferme du Haut Desivier, dite de Cense Poireau, isolée dans une enclave au nord de Bailièvre",
+          "locality": "Salles",
+          "source": "https://fr.wikipedia.org/wiki/Salles_(Chimay)"
+        },
+        {
+          "text": "Vallée de l’Eau Blanche, citée parmi les endroits à visiter à Vaulx",
+          "locality": "Vaulx-lez-Chimay",
+          "source": "https://www.chimayville.be/loisirs/tourisme/anciennes-communes/vaulx"
+        },
+        {
+          "text": "Village baigné par l’Eau Blanche, entre Salles, Saint-Remy et Seloignes",
+          "locality": "Villers-la-Tour",
+          "source": "https://fr.wikipedia.org/wiki/Villers-la-Tour"
+        },
+        {
+          "text": "Ancien moulin édifié au XVIIIe siècle et remanié aux siècles suivants",
+          "locality": "Villers-la-Tour",
+          "source": "https://fr.wikipedia.org/wiki/Villers-la-Tour"
+        },
+        {
+          "text": "Chapelle du calvaire, datée de 1855, de style néo-classique",
+          "locality": "Villers-la-Tour",
+          "source": "https://fr.wikipedia.org/wiki/Villers-la-Tour"
+        },
+        {
+          "text": "Viaduc du bois de Blaimont, huit arches sur 165 mètres, érigé en 1856 pour la ligne 156",
+          "locality": "Virelles",
+          "source": "https://fr.wikipedia.org/wiki/Virelles"
+        },
+        {
+          "text": "Marche Notre-Dame de Lumière, marche folklorique créée en 1978",
+          "locality": "Virelles",
+          "source": "https://fr.wikipedia.org/wiki/Virelles"
+        },
+        {
+          "text": "« Vieux Château » de 1714, le long de l’Eau Blanche, à proximité de l’église",
+          "locality": "Virelles",
+          "source": "https://fr.wikipedia.org/wiki/Virelles"
         }
       ],
       "beauxVillages": [
@@ -479,6 +919,121 @@
           "text": "Route nationale N53 Charleroi – Chimay",
           "locality": "Gozée",
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_53_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Théodard de style contemporain, achevée en 1955 après la destruction de 1944",
+          "locality": "Biercée",
+          "source": "https://fr.wikipedia.org/wiki/Bierc%C3%A9e"
+        },
+        {
+          "text": "Ducasse aux cerises, tradition remontant à 1875, fêtée le deuxième dimanche de juillet",
+          "locality": "Biercée",
+          "source": "https://fr.wikipedia.org/wiki/Bierc%C3%A9e"
+        },
+        {
+          "text": "Ruisseau de Villers, qui prend sa source au hameau du Vieux Biercée",
+          "locality": "Biercée",
+          "source": "https://fr.wikipedia.org/wiki/Bierc%C3%A9e"
+        },
+        {
+          "text": "Église paroissiale Saint-Martin, de style néo-roman, construite en 1864",
+          "locality": "Biesme-sous-Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Biesme-sous-Thuin"
+        },
+        {
+          "text": "Chapelle Notre-Dame de Tongres, construite en 1770",
+          "locality": "Biesme-sous-Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Biesme-sous-Thuin"
+        },
+        {
+          "text": "Ferme du Moulin, sur la rive sud de la Biesmelle, datant probablement du XVIIe siècle",
+          "locality": "Biesme-sous-Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Biesme-sous-Thuin"
+        },
+        {
+          "text": "Église Saint-Étienne, construite en calcaire en 1763 et restaurée entre 1933 et 1938",
+          "locality": "Donstiennes",
+          "source": "https://fr.wikipedia.org/wiki/Donstiennes"
+        },
+        {
+          "text": "RAVeL aménagé sur l’ancienne ligne de chemin de fer 109 Mons – Chimay",
+          "locality": "Donstiennes",
+          "source": "https://fr.wikipedia.org/wiki/Donstiennes"
+        },
+        {
+          "text": "Ferme du Château des XVIIIe et XIXe siècles, sur l’emplacement d’un château de 1626",
+          "locality": "Donstiennes",
+          "source": "https://fr.wikipedia.org/wiki/Donstiennes"
+        },
+        {
+          "text": "Pierre de Zeupire, mégalithe en grès rose de 20 tonnes, sur la route de Beaumont",
+          "locality": "Gozée",
+          "source": "https://fr.wikipedia.org/wiki/Goz%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Géry, reconstruite en 1950 par l’architecte Marcel Leborgne",
+          "locality": "Gozée",
+          "source": "https://fr.wikipedia.org/wiki/Goz%C3%A9e"
+        },
+        {
+          "text": "Altitude allant de 103 m à l’abbaye d’Aulne à 215 m sur le plateau de Gozée",
+          "locality": "Gozée",
+          "source": "https://fr.wikipedia.org/wiki/Goz%C3%A9e"
+        },
+        {
+          "text": "Village traversé par le ruisseau du Moulin et le ruisseau de la Fontaine Clause",
+          "locality": "Leers-et-Fosteau",
+          "source": "https://fr.wikipedia.org/wiki/Leers-et-Fosteau"
+        },
+        {
+          "text": "Bois Planté et Bois Lyon, situés au nord de l’agglomération",
+          "locality": "Leers-et-Fosteau",
+          "source": "https://fr.wikipedia.org/wiki/Leers-et-Fosteau"
+        },
+        {
+          "text": "Village membre de l’association des plus beaux villages de Wallonie",
+          "locality": "Ragnies",
+          "source": "https://fr.wikipedia.org/wiki/Ragnies"
+        },
+        {
+          "text": "Église Saint-Martin en gothique hennuyer, dont la nef remonte au XIIe siècle",
+          "locality": "Ragnies",
+          "source": "https://fr.wikipedia.org/wiki/Ragnies"
+        },
+        {
+          "text": "Sambre longeant le territoire du village sur sa limite nord-est",
+          "locality": "Ragnies",
+          "source": "https://fr.wikipedia.org/wiki/Ragnies"
+        },
+        {
+          "text": "Église Notre-Dame de la Nativité, de style classique, construite en 1787",
+          "locality": "Thuillies",
+          "source": "https://fr.wikipedia.org/wiki/Thuillies"
+        },
+        {
+          "text": "Château d’Ossogne, construit en 1587, aux tours cylindriques",
+          "locality": "Thuillies",
+          "source": "https://fr.wikipedia.org/wiki/Thuillies"
+        },
+        {
+          "text": "Chapelle d’Ossogne, de style gothique, réédifiée vers 1600",
+          "locality": "Thuillies",
+          "source": "https://fr.wikipedia.org/wiki/Thuillies"
+        },
+        {
+          "text": "Église Notre-Dame d’El Vaux, à la ville basse, d’origine romane, transformée en gothique au XVIe siècle",
+          "locality": "Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Thuin"
+        },
+        {
+          "text": "Gare de Thuin sur la ligne 130A Charleroi – Erquelinnes, ouverte en 1852",
+          "locality": "Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Thuin"
+        },
+        {
+          "text": "Sambre traversant la ville au fond d’une vallée encaissée",
+          "locality": "Thuin",
+          "source": "https://fr.wikipedia.org/wiki/Thuin"
         }
       ],
       "beauxVillages": [
@@ -602,6 +1157,91 @@
           "text": "Vallée de l’Eau d’Heure, le long de laquelle se suivent Cour-sur-Heure, Beignée, Ham-sur-Heure et Jamioulx",
           "locality": null,
           "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure-Nalinnes"
+        },
+        {
+          "text": "Église Saint-Louis, dont la première pierre fut posée le 29 juin 1903",
+          "locality": "Beignée",
+          "source": "https://fr.wikipedia.org/wiki/Beign%C3%A9e"
+        },
+        {
+          "text": "Marche du Bienheureux Richard de Sainte-Anne, le dimanche 10 septembre ou le suivant",
+          "locality": "Beignée",
+          "source": "https://fr.wikipedia.org/wiki/Beign%C3%A9e"
+        },
+        {
+          "text": "Point d’arrêt ferroviaire sur la ligne 132 Charleroi – Mariembourg",
+          "locality": "Beignée",
+          "source": "https://fr.wikipedia.org/wiki/Beign%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Jean-Baptiste de style néo-roman, construite en 1905-1906",
+          "locality": "Cour-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Cour-sur-Heure"
+        },
+        {
+          "text": "Marche Saint-Jean-Baptiste, fêtée le dimanche le plus proche du 24 juin",
+          "locality": "Cour-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Cour-sur-Heure"
+        },
+        {
+          "text": "Eau d’Heure, ruisseau du Moulin et ruisseau de Péruwelz arrosant le village",
+          "locality": "Cour-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Cour-sur-Heure"
+        },
+        {
+          "text": "Marche Saint-Roch, le dimanche qui suit le 15 août, reconnue patrimoine immatériel de l’UNESCO",
+          "locality": "Ham-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure"
+        },
+        {
+          "text": "Église Saint-Martin, édifice néo-gothique construit entre 1876 et 1881",
+          "locality": "Ham-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure"
+        },
+        {
+          "text": "Chapelle Saint-Roch, ancien sanctuaire de la maison des Récollets",
+          "locality": "Ham-sur-Heure",
+          "source": "https://fr.wikipedia.org/wiki/Ham-sur-Heure"
+        },
+        {
+          "text": "Réserve naturelle domaniale de Jamioulx, ancienne carrière de calcaire avec fours à chaux",
+          "locality": "Jamioulx",
+          "source": "https://fr.wikipedia.org/wiki/Jamioulx"
+        },
+        {
+          "text": "Église Saint-André, de style néo-roman, construite en 1858",
+          "locality": "Jamioulx",
+          "source": "https://fr.wikipedia.org/wiki/Jamioulx"
+        },
+        {
+          "text": "Altitude variant de 120 m à 230 m, plus d’un tiers du territoire étant boisé",
+          "locality": "Jamioulx",
+          "source": "https://fr.wikipedia.org/wiki/Jamioulx"
+        },
+        {
+          "text": "Marche Saint-Christophe, chaque année le dernier dimanche de juillet",
+          "locality": "Marbaix-la-Tour",
+          "source": "https://fr.wikipedia.org/wiki/Marbaix-la-Tour"
+        },
+        {
+          "text": "Ruisseaux du Wachou, de Biersenrieu et de Marbisœul parcourant le village",
+          "locality": "Marbaix-la-Tour",
+          "source": "https://fr.wikipedia.org/wiki/Marbaix-la-Tour"
+        },
+        {
+          "text": "Église Notre-Dame de la Visitation, dont la partie la plus ancienne date du XIe siècle",
+          "locality": "Nalinnes",
+          "source": "https://fr.wikipedia.org/wiki/Nalinnes"
+        },
+        {
+          "text": "Marche Notre-Dame de Bon-Secours, chaque deuxième week-end de juillet",
+          "locality": "Nalinnes",
+          "source": "https://fr.wikipedia.org/wiki/Nalinnes"
+        },
+        {
+          "text": "Village établi à l’extrémité du plateau du Condroz, bordé de bois",
+          "locality": "Nalinnes",
+          "source": "https://fr.wikipedia.org/wiki/Nalinnes"
         }
       ],
       "beauxVillages": [],
@@ -725,6 +1365,211 @@
           "text": "Route nationale N978 Gerpinnes – Cerfontaine via Tarcienne, Somzée, Chastrès et Walcourt",
           "locality": null,
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_978_(Belgique)"
+        },
+        {
+          "text": "Château-fort dit château de Trazegnies, classé en 1974, vestiges des XIIIe ou XIVe siècles",
+          "locality": "Berzée",
+          "source": "https://fr.wikipedia.org/wiki/Berz%C3%A9e"
+        },
+        {
+          "text": "Église consacrée en 1584, classée par arrêté royal du 20 octobre 1947",
+          "locality": "Berzée",
+          "source": "https://fr.wikipedia.org/wiki/Berz%C3%A9e"
+        },
+        {
+          "text": "Marche Sainte-Marguerite, le dimanche le plus proche du 22 juillet",
+          "locality": "Berzée",
+          "source": "https://fr.wikipedia.org/wiki/Berz%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Martin de 1877-1879, dont la petite cloche fut fondue en 1551",
+          "locality": "Castillon",
+          "source": "https://fr.wikipedia.org/wiki/Castillon_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Martin, édifice gothique du XVIe siècle précédé d’une tour romane du XIIe siècle",
+          "locality": "Chastrès",
+          "source": "https://fr.wikipedia.org/wiki/Chastr%C3%A8s"
+        },
+        {
+          "text": "Marche Saint-Roch, relancée en 1974, le 15 août ou le dimanche suivant",
+          "locality": "Chastrès",
+          "source": "https://fr.wikipedia.org/wiki/Chastr%C3%A8s"
+        },
+        {
+          "text": "Chapelle Notre-Dame des Affligés, de style néo-classique, construite en 1859",
+          "locality": "Chastrès",
+          "source": "https://fr.wikipedia.org/wiki/Chastr%C3%A8s"
+        },
+        {
+          "text": "Chapelle du Calvaire, dite de l’Hermitage, datant de 1825, rue du Panorama",
+          "locality": "Clermont",
+          "source": "https://fr.wikipedia.org/wiki/Clermont_(Walcourt)"
+        },
+        {
+          "text": "Ferme de Buvernaux, propriété de l’abbaye d’Aulne du XIIe siècle à la Révolution française",
+          "locality": "Clermont",
+          "source": "https://fr.wikipedia.org/wiki/Clermont_(Walcourt)"
+        },
+        {
+          "text": "Chapelle Saint-Joseph, surnommée l’Agaisse, reconstruite en 1836",
+          "locality": "Clermont",
+          "source": "https://fr.wikipedia.org/wiki/Clermont_(Walcourt)"
+        },
+        {
+          "text": "Église Saint-Rémy, de style classique, reconstruite par l’abbaye d’Aulne en 1792",
+          "locality": "Fraire",
+          "source": "https://fr.wikipedia.org/wiki/Fraire"
+        },
+        {
+          "text": "Marche Saint-Ghislain, le troisième dimanche de juillet",
+          "locality": "Fraire",
+          "source": "https://fr.wikipedia.org/wiki/Fraire"
+        },
+        {
+          "text": "Route nationale N932 Annevoie-Rouillon – Fraire, qui traverse le village",
+          "locality": "Fraire",
+          "source": "https://fr.wikipedia.org/wiki/Fraire"
+        },
+        {
+          "text": "Église Saint-Remy, mêlant styles gothique et classique, construite du XVIe au XIXe siècle",
+          "locality": "Gourdinne",
+          "source": "https://fr.wikipedia.org/wiki/Gourdinne"
+        },
+        {
+          "text": "Marche Saint-Walhère, chaque année le troisième dimanche de juin",
+          "locality": "Gourdinne",
+          "source": "https://fr.wikipedia.org/wiki/Gourdinne"
+        },
+        {
+          "text": "Ancien presbytère de style classique, construit en 1782, rue du Trou Margot",
+          "locality": "Gourdinne",
+          "source": "https://fr.wikipedia.org/wiki/Gourdinne"
+        },
+        {
+          "text": "Église Saint-Lambert, de style classique, construite entre 1732 et 1740",
+          "locality": "Laneffe",
+          "source": "https://fr.wikipedia.org/wiki/Laneffe"
+        },
+        {
+          "text": "Marche Saint-Éloi, chaque année le quatrième dimanche de juin",
+          "locality": "Laneffe",
+          "source": "https://fr.wikipedia.org/wiki/Laneffe"
+        },
+        {
+          "text": "Vieux Château, manoir de la première moitié du XVIIIe siècle",
+          "locality": "Laneffe",
+          "source": "https://fr.wikipedia.org/wiki/Laneffe"
+        },
+        {
+          "text": "Altitude de 171 mètres au seuil de l’église du village",
+          "locality": "Pry",
+          "source": "https://fr.wikipedia.org/wiki/Pry"
+        },
+        {
+          "text": "Église Notre-Dame de la Visitation, de style néo-classique, datant de 1857",
+          "locality": "Rognée",
+          "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
+        },
+        {
+          "text": "Château de Rognée, quadrilatère du XIXe siècle, ancienne demeure de la famille Hubert",
+          "locality": "Rognée",
+          "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
+        },
+        {
+          "text": "Territoire accidenté, à 180 mètres d’altitude au seuil de l’église",
+          "locality": "Rognée",
+          "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Maurice, de style éclectique, construite en 1860",
+          "locality": "Somzée",
+          "source": "https://fr.wikipedia.org/wiki/Somz%C3%A9e"
+        },
+        {
+          "text": "Marche Notre-Dame de Beauraing, chaque année le deuxième dimanche de juillet",
+          "locality": "Somzée",
+          "source": "https://fr.wikipedia.org/wiki/Somz%C3%A9e"
+        },
+        {
+          "text": "Ferme des Trois Fontaines, ensemble en U des XVIIe, XVIIIe et XIXe siècles",
+          "locality": "Somzée",
+          "source": "https://fr.wikipedia.org/wiki/Somz%C3%A9e"
+        },
+        {
+          "text": "Marche Saint-Fiacre, le premier dimanche de mai, reconnue par l’UNESCO en 2012",
+          "locality": "Tarcienne",
+          "source": "https://fr.wikipedia.org/wiki/Tarcienne"
+        },
+        {
+          "text": "Cimetière militaire de la Première Guerre mondiale, au bois du Louvrois",
+          "locality": "Tarcienne",
+          "source": "https://fr.wikipedia.org/wiki/Tarcienne"
+        },
+        {
+          "text": "Château de Tarcienne, construit au dernier tiers du XVIIe siècle et remanié au XIXe",
+          "locality": "Tarcienne",
+          "source": "https://fr.wikipedia.org/wiki/Tarcienne"
+        },
+        {
+          "text": "Église Saints-Pierre-et-Paul, dont le porche et la haute tour sont classés depuis 1948",
+          "locality": "Thy-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Thy-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Marche Saints-Pierre-et-Paul, reconnue par l’UNESCO, le 29 juin ou le dimanche suivant",
+          "locality": "Thy-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Thy-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Ancienne ferme du Château des Seigneurs, au logis gothique de la seconde moitié du XVIe siècle",
+          "locality": "Thy-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Thy-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Église Saint-André, petit édifice de style classique datant de 1783",
+          "locality": "Vogenée",
+          "source": "https://fr.wikipedia.org/wiki/Vogen%C3%A9e"
+        },
+        {
+          "text": "Marche militaire Saint-André, créée en 1974, le premier dimanche d’août",
+          "locality": "Vogenée",
+          "source": "https://fr.wikipedia.org/wiki/Vogen%C3%A9e"
+        },
+        {
+          "text": "Ancienne abbaye du Jardinet, fondée au XIIIe siècle pour des moniales de Cîteaux",
+          "locality": "Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Walcourt"
+        },
+        {
+          "text": "Marche de la Trinité et son « Grand Tour », reconnue par l’UNESCO en 2012",
+          "locality": "Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Walcourt"
+        },
+        {
+          "text": "Gare desservie par la ligne ferroviaire 132 Charleroi – Couvin",
+          "locality": "Walcourt",
+          "source": "https://fr.wikipedia.org/wiki/Walcourt"
+        },
+        {
+          "text": "Ruisseau d’Yves, né dans les bois de Florennes, rejoignant l’Eau d’Heure à Walcourt",
+          "locality": "Yves-Gomezée",
+          "source": "https://fr.wikipedia.org/wiki/Yves-Gomez%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Remi, édifice de style ogival du XIVe siècle, modifié entre 1864 et 1868",
+          "locality": "Yves-Gomezée",
+          "source": "https://fr.wikipedia.org/wiki/Yves-Gomez%C3%A9e"
+        },
+        {
+          "text": "Ferme du Moulin, dans un méandre de l’Eau d’Yves, regroupant un ancien moulin",
+          "locality": "Yves-Gomezée",
+          "source": "https://fr.wikipedia.org/wiki/Yves-Gomez%C3%A9e"
+        },
+        {
+          "text": "Ruisseau de la Praille, qui prend sa source à Castillon et rejoint l’Eau d’Heure à Berzée",
+          "locality": "Castillon",
+          "source": "https://fr.wikipedia.org/wiki/Rogn%C3%A9e"
         }
       ],
       "beauxVillages": [],
@@ -870,6 +1715,96 @@
           "text": "Route nationale N40 Mons – Philippeville",
           "locality": "Silenrieux",
           "source": "https://fr.wikipedia.org/wiki/Route_nationale_40_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Lambert néo-gothique à clocher octogonal, consacrée en 1884",
+          "locality": "Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Cerfontaine_(Belgique)"
+        },
+        {
+          "text": "Ancienne gare classée, bâtie à cheval sur un pont",
+          "locality": "Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Cerfontaine_(Belgique)"
+        },
+        {
+          "text": "Kiosque classé, construit en 1930 à côté de l’ancienne maison communale",
+          "locality": "Cerfontaine",
+          "source": "https://fr.wikipedia.org/wiki/Cerfontaine_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Vaast à tour romane, classée en 1948, aux nefs du XVIe siècle",
+          "locality": "Daussois",
+          "source": "https://fr.wikipedia.org/wiki/Daussois"
+        },
+        {
+          "text": "Ruisseaux du Ri-jaune et du Mouligna, qui se jettent dans l’Eau d’Heure",
+          "locality": "Daussois",
+          "source": "https://fr.wikipedia.org/wiki/Daussois"
+        },
+        {
+          "text": "Marche du Saint-Sacrement, organisée chaque année le jour du Saint-Sacrement",
+          "locality": "Daussois",
+          "source": "https://fr.wikipedia.org/wiki/Daussois"
+        },
+        {
+          "text": "Château de Senzeilles, datant principalement du XVIe siècle, où les princes de Chimay installèrent leurs baillis",
+          "locality": "Senzeilles",
+          "source": "https://fr.wikipedia.org/wiki/Senzeille"
+        },
+        {
+          "text": "Horloge astronomique due à l’autodidacte Lucien Charloteaux (1870-1958)",
+          "locality": "Senzeilles",
+          "source": "https://fr.wikipedia.org/wiki/Senzeille"
+        },
+        {
+          "text": "Marche Saint-Martin, chaque année le dernier dimanche de septembre",
+          "locality": "Senzeilles",
+          "source": "https://fr.wikipedia.org/wiki/Senzeille"
+        },
+        {
+          "text": "Marche Sainte-Anne, attestée dès 1619 et reconnue par l’UNESCO depuis 2012",
+          "locality": "Silenrieux",
+          "source": "https://fr.wikipedia.org/wiki/Silenrieux"
+        },
+        {
+          "text": "Église Sainte-Anne de style néo-gothique, construite en 1866 par l’architecte Piret",
+          "locality": "Silenrieux",
+          "source": "https://fr.wikipedia.org/wiki/Silenrieux"
+        },
+        {
+          "text": "Village traversé du sud au nord par l’Eau d’Heure",
+          "locality": "Silenrieux",
+          "source": "https://fr.wikipedia.org/wiki/Silenrieux"
+        },
+        {
+          "text": "Château et ferme des Robaulx de Soumoy, ensemble de la première moitié du XVIIe siècle",
+          "locality": "Soumoy",
+          "source": "https://fr.wikipedia.org/wiki/Soumoy"
+        },
+        {
+          "text": "Église Saint-André, dont le chœur du XVIIe siècle était la chapelle castrale des seigneurs",
+          "locality": "Soumoy",
+          "source": "https://fr.wikipedia.org/wiki/Soumoy"
+        },
+        {
+          "text": "Marche folklorique Saint-André, organisée le dernier week-end du mois d’août",
+          "locality": "Soumoy",
+          "source": "https://fr.wikipedia.org/wiki/Soumoy"
+        },
+        {
+          "text": "Église Saint-Pierre, édifice néogothique en pierre bâti en 1891-1892",
+          "locality": "Villers-Deux-Églises",
+          "source": "https://fr.wikipedia.org/wiki/Villers-Deux-%C3%89glises"
+        },
+        {
+          "text": "Marche Saint-Pierre, reconnue en 2012 par l’UNESCO comme patrimoine immatériel de l’humanité",
+          "locality": "Villers-Deux-Églises",
+          "source": "https://fr.wikipedia.org/wiki/Villers-Deux-%C3%89glises"
+        },
+        {
+          "text": "Chapelle du cimetière, petit édifice néo-classique de 1867, rue de Jamiolle",
+          "locality": "Villers-Deux-Églises",
+          "source": "https://fr.wikipedia.org/wiki/Villers-Deux-%C3%89glises"
         }
       ],
       "beauxVillages": [],
@@ -968,6 +1903,226 @@
             "icon": "castle",
             "label": "Château fort de Fagnolle"
           }
+        },
+        {
+          "text": "Église Saint-Martin du XVIe siècle, remaniée au XVIIIe siècle",
+          "locality": "Fagnolle",
+          "source": "https://fr.wikipedia.org/wiki/Fagnolle"
+        },
+        {
+          "text": "Maisons de calcaire datant majoritairement des XVIIIe et XIXe siècles",
+          "locality": "Fagnolle",
+          "source": "https://fr.wikipedia.org/wiki/Fagnolle"
+        },
+        {
+          "text": "Ancienne maison du bailli, devenue presbytère, et lavoir du village",
+          "locality": "Fagnolle",
+          "source": "https://fr.wikipedia.org/wiki/Fagnolle"
+        },
+        {
+          "text": "Église Saint-Martin d’inspiration mosane, construite en 1875",
+          "locality": "Franchimont",
+          "source": "https://fr.wikipedia.org/wiki/Franchimont"
+        },
+        {
+          "text": "Carrière de Rochefontaine, équipée pour la plongée sous-marine",
+          "locality": "Franchimont",
+          "source": "https://fr.wikipedia.org/wiki/Franchimont"
+        },
+        {
+          "text": "Nouvelle église Saint-Martin consacrée en 2011, avec campanile abritant les deux cloches de l’ancienne",
+          "locality": "Jamagne",
+          "source": "https://fr.wikipedia.org/wiki/Jamagne_(Philippeville)"
+        },
+        {
+          "text": "Ligne ferroviaire 132 passant par le village depuis la construction des barrages de l’Eau d’Heure",
+          "locality": "Jamagne",
+          "source": "https://fr.wikipedia.org/wiki/Jamagne_(Philippeville)"
+        },
+        {
+          "text": "Cimetière mérovingien de 150 sépultures, fouillé en 1883",
+          "locality": "Jamiolle",
+          "source": "https://fr.wikipedia.org/wiki/Jamiolle"
+        },
+        {
+          "text": "Église Saint-Nicolas de 1906, qui abrite dix pierres tombales",
+          "locality": "Merlemont",
+          "source": "https://fr.wikipedia.org/wiki/Merlemont"
+        },
+        {
+          "text": "Ferme du château, ensemble du début du XVIIe siècle situé en contrebas du château",
+          "locality": "Merlemont",
+          "source": "https://fr.wikipedia.org/wiki/Merlemont"
+        },
+        {
+          "text": "Carrières de dolomie et de marbre sur le territoire du village",
+          "locality": "Merlemont",
+          "source": "https://fr.wikipedia.org/wiki/Merlemont"
+        },
+        {
+          "text": "Église Saint-Jean-Baptiste de style classique, bâtie de 1757 à 1760",
+          "locality": "Neuville",
+          "source": "https://fr.wikipedia.org/wiki/Neuville_(Philippeville)"
+        },
+        {
+          "text": "Ferme-château d’Auxbrebis, ensemble clos des XVIe et XVIIe siècles près du chevet de l’église",
+          "locality": "Neuville",
+          "source": "https://fr.wikipedia.org/wiki/Neuville_(Philippeville)"
+        },
+        {
+          "text": "Chapelle Saint-Hubert, édifice du XIXe siècle situé rue Saint-Hubert",
+          "locality": "Neuville",
+          "source": "https://fr.wikipedia.org/wiki/Neuville_(Philippeville)"
+        },
+        {
+          "text": "Église Saint-Feuillen, au chœur classique reconstruit peu avant 1716 et à la nef de 1840",
+          "locality": "Omezée",
+          "source": "https://fr.wikipedia.org/wiki/Omez%C3%A9e"
+        },
+        {
+          "text": "Château-ferme d’Omezée, complexe des XVIIIe et XIXe siècles au sud de l’église",
+          "locality": "Omezée",
+          "source": "https://fr.wikipedia.org/wiki/Omez%C3%A9e"
+        },
+        {
+          "text": "Église Saint-Philippe de style gothique, construite en 1556 et transformée en 1906",
+          "locality": "Philippeville",
+          "source": "https://fr.wikipedia.org/wiki/Philippeville"
+        },
+        {
+          "text": "Chapelle Notre-Dame des Remparts, bâtie au XVIIe siècle, boulevard de l’Enseignement",
+          "locality": "Philippeville",
+          "source": "https://fr.wikipedia.org/wiki/Philippeville"
+        },
+        {
+          "text": "Justice de paix de style néoclassique, édifiée en 1878 sur la place d’Armes",
+          "locality": "Philippeville",
+          "source": "https://fr.wikipedia.org/wiki/Philippeville"
+        },
+        {
+          "text": "Village classé comme site le 25 novembre 1977 pour son intérêt historique, architectural et scientifique",
+          "locality": "Roly",
+          "source": "https://fr.wikipedia.org/wiki/Roly"
+        },
+        {
+          "text": "Église Saint-Denis, construite peu avant 1769 et consacrée en 1772",
+          "locality": "Roly",
+          "source": "https://fr.wikipedia.org/wiki/Roly"
+        },
+        {
+          "text": "Marche Saint-Denis, chaque année le deuxième dimanche de mai",
+          "locality": "Roly",
+          "source": "https://fr.wikipedia.org/wiki/Roly"
+        },
+        {
+          "text": "Ancien moulin du XVIIe siècle, rue du Moulin, dans la vallée de la Chinelle",
+          "locality": "Romedenne",
+          "source": "https://fr.wikipedia.org/wiki/Romedenne"
+        },
+        {
+          "text": "Église Saint-Pierre, construite en 1880 et 1891, restaurée en 1922 et 1924",
+          "locality": "Romedenne",
+          "source": "https://fr.wikipedia.org/wiki/Romedenne"
+        },
+        {
+          "text": "Ancienne ligne de chemin de fer Morialmé – Givet, créée en 1862 et désaffectée en 1971",
+          "locality": "Romedenne",
+          "source": "https://fr.wikipedia.org/wiki/Romedenne"
+        },
+        {
+          "text": "Château-ferme de Samart, érigé en 1552, au porche armorié",
+          "locality": "Samart",
+          "source": "https://fr.wikipedia.org/wiki/Samart"
+        },
+        {
+          "text": "Source de l’Hermeton au sud du village, rivière de 32 km rejoignant la Meuse",
+          "locality": "Samart",
+          "source": "https://fr.wikipedia.org/wiki/Samart"
+        },
+        {
+          "text": "Ancien moulin de Samart, près du ruisseau de l’Hermeton",
+          "locality": "Samart",
+          "source": "https://fr.wikipedia.org/wiki/Samart"
+        },
+        {
+          "text": "Église Notre-Dame, reconstruite en 1966-1967 sur les murs de l’édifice néo-gothique de 1875",
+          "locality": "Sart-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Sart-en-Fagne"
+        },
+        {
+          "text": "Moulin de Sart-en-Fagne, ancienne propriété des Groesbeek, seigneurs de Roly au XVIIIe siècle",
+          "locality": "Sart-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Sart-en-Fagne"
+        },
+        {
+          "text": "Stèle de la rue Notre-Dame à la mémoire de huit zouaves tués le 15 mai 1940",
+          "locality": "Sart-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Sart-en-Fagne"
+        },
+        {
+          "text": "Église Saint-Lambert de style néo-classique, construite en 1840 et restaurée après un incendie en 1870",
+          "locality": "Sautour",
+          "source": "https://fr.wikipedia.org/wiki/Sautour"
+        },
+        {
+          "text": "Ferme du Vieux-Sautour, vaste ensemble isolé des XVIIe et XVIIIe siècles",
+          "locality": "Sautour",
+          "source": "https://fr.wikipedia.org/wiki/Sautour"
+        },
+        {
+          "text": "Presbytère du deuxième tiers du XVIIIe siècle, rue Haut-du-Village",
+          "locality": "Sautour",
+          "source": "https://fr.wikipedia.org/wiki/Sautour"
+        },
+        {
+          "text": "Château de Surice, construit en 1687, chemin de Soulme",
+          "locality": "Surice",
+          "source": "https://fr.wikipedia.org/wiki/Surice"
+        },
+        {
+          "text": "Église Saint-Lambert, reconstruite en 1924 dans un style néo-roman",
+          "locality": "Surice",
+          "source": "https://fr.wikipedia.org/wiki/Surice"
+        },
+        {
+          "text": "Presbytère de la seconde moitié du XVIIIe siècle, niché derrière l’église",
+          "locality": "Surice",
+          "source": "https://fr.wikipedia.org/wiki/Surice"
+        },
+        {
+          "text": "Stèle devant l’église à la mémoire des civils tués en août 1914",
+          "locality": "Villers-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Villers-en-Fagne"
+        },
+        {
+          "text": "Église Saint-Remi de style néo-gothique, construite en 1850 par l’architecte Piret",
+          "locality": "Villers-le-Gambon",
+          "source": "https://fr.wikipedia.org/wiki/Villers-le-Gambon"
+        },
+        {
+          "text": "Ancienne gare ouverte en 1862, sur la ligne de Châtelineau à Givet, aménagée en gîte",
+          "locality": "Villers-le-Gambon",
+          "source": "https://fr.wikipedia.org/wiki/Villers-le-Gambon"
+        },
+        {
+          "text": "Chapelle Saint-Roch de la première moitié du XIXe siècle, rue Père Heugens",
+          "locality": "Villers-le-Gambon",
+          "source": "https://fr.wikipedia.org/wiki/Villers-le-Gambon"
+        },
+        {
+          "text": "Église Sainte-Geneviève de style néo-roman, construite entre 1908 et 1909",
+          "locality": "Vodecée",
+          "source": "https://fr.wikipedia.org/wiki/Vodec%C3%A9e"
+        },
+        {
+          "text": "Ferme du Gaï, du XVIIe siècle, près du ruisseau des Gérinaux",
+          "locality": "Vodecée",
+          "source": "https://fr.wikipedia.org/wiki/Vodec%C3%A9e"
+        },
+        {
+          "text": "Ancien moulin Luc, rue de Sautour, dans la vallée du ruisseau des Gérinaux",
+          "locality": "Vodecée",
+          "source": "https://fr.wikipedia.org/wiki/Vodec%C3%A9e"
         }
       ],
       "beauxVillages": [
@@ -1124,6 +2279,61 @@
           "text": "Commune concernée par le Parc national de l’Entre-Sambre-et-Meuse",
           "locality": null,
           "source": "https://www.wallonie.be/fr/actualites/les-deux-parcs-nationaux-wallons-sont-connus"
+        },
+        {
+          "text": "Village situé sur un éperon dominant l’Eau Blanche",
+          "locality": "Aublain",
+          "source": "https://fr.wikipedia.org/wiki/Aublain"
+        },
+        {
+          "text": "Chapelle Notre-Dame du Rosaire, de la première moitié du XVIIe siècle, rue des Arzières",
+          "locality": "Aublain",
+          "source": "https://fr.wikipedia.org/wiki/Aublain"
+        },
+        {
+          "text": "Moulin d’Aublain, près de l’Eau Blanche, datant de la première moitié du XVIIIe siècle",
+          "locality": "Aublain",
+          "source": "https://fr.wikipedia.org/wiki/Aublain"
+        },
+        {
+          "text": "Village établi sur les rives de l’Eau Blanche",
+          "locality": "Boussu-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-en-Fagne"
+        },
+        {
+          "text": "Église Saint-Sulpice de style néo-gothique, bâtie en 1855 par l’architecte bruxellois Suys",
+          "locality": "Boussu-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-en-Fagne"
+        },
+        {
+          "text": "Manoir de la Motte, datant de la seconde moitié du XVIIe siècle",
+          "locality": "Boussu-en-Fagne",
+          "source": "https://fr.wikipedia.org/wiki/Boussu-en-Fagne"
+        },
+        {
+          "text": "Territoire traversé au sud par la N99, arrosé par l’Eau Blanche et le ruisseau d’Aine",
+          "locality": "Dailly",
+          "source": "https://fr.wikipedia.org/wiki/Dailly"
+        },
+        {
+          "text": "Église Saint-Quentin, probablement construite au XVIe siècle, augmentée d’un chœur au XVIIIe siècle",
+          "locality": "Dailly",
+          "source": "https://fr.wikipedia.org/wiki/Dailly"
+        },
+        {
+          "text": "RAVeL 2 sur l’ancienne ligne 156, reliant Mariembourg à Hastière et Dinant depuis 1997",
+          "locality": "Mariembourg",
+          "source": "https://fr.wikipedia.org/wiki/Mariembourg"
+        },
+        {
+          "text": "Marche Notre-Dame de la Brouffe, chaque année le 15 août",
+          "locality": "Mariembourg",
+          "source": "https://fr.wikipedia.org/wiki/Mariembourg"
+        },
+        {
+          "text": "Église royale Sainte-Madeleine, datant du XVIe siècle",
+          "locality": "Mariembourg",
+          "source": "https://fr.wikipedia.org/wiki/Mariembourg"
         }
       ],
       "beauxVillages": [],
@@ -1204,6 +2414,61 @@
             "icon": "river",
             "label": "La Sambre"
           }
+        },
+        {
+          "text": "Église Saint-Martin néo-gothique, construite en 1892 par l’architecte Mahieu, de Binche",
+          "locality": "Fontaine-Valmont",
+          "source": "https://fr.wikipedia.org/wiki/Fontaine-Valmont"
+        },
+        {
+          "text": "Château de la Roquette, aussi appelé château Durot, rebâti au XIXe siècle",
+          "locality": "Fontaine-Valmont",
+          "source": "https://fr.wikipedia.org/wiki/Fontaine-Valmont"
+        },
+        {
+          "text": "Site gallo-romain du plateau des Castellains : thermes et temples mis au jour en 1954",
+          "locality": "Fontaine-Valmont",
+          "source": "https://fr.wikipedia.org/wiki/Fontaine-Valmont"
+        },
+        {
+          "text": "Marais de Labuissière, au confluent de la Hantes et de la Sambre, en réserve naturelle de la Haute-Sambre",
+          "locality": "Labuissière",
+          "source": "https://fr.wikipedia.org/wiki/Labuissi%C3%A8re_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Martin néo-romane de 1878-1879, intégrant une tour de 1719",
+          "locality": "Labuissière",
+          "source": "https://fr.wikipedia.org/wiki/Labuissi%C3%A8re_(Belgique)"
+        },
+        {
+          "text": "Ancienne maison communale de 1875, en briques et pierres",
+          "locality": "Labuissière",
+          "source": "https://fr.wikipedia.org/wiki/Labuissi%C3%A8re_(Belgique)"
+        },
+        {
+          "text": "Église Saint-Martin, édifice classé de style gothique mosan, au clocher bulbeux",
+          "locality": "Merbes-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Château Puissant, construit en 1864, aujourd’hui maison communale",
+          "locality": "Merbes-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Ferme de l’abbaye Saint-Martin de Tournai, de la première moitié du XVIIIe siècle",
+          "locality": "Merbes-le-Château",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-le-Ch%C3%A2teau"
+        },
+        {
+          "text": "Église de la Sainte-Vierge, édifice classé, à tour défensive ornée de deux meurtrières",
+          "locality": "Merbes-Sainte-Marie",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-Sainte-Marie"
+        },
+        {
+          "text": "Procession du 15 août en l’honneur de l’Assomption de la Vierge Marie",
+          "locality": "Merbes-Sainte-Marie",
+          "source": "https://fr.wikipedia.org/wiki/Merbes-Sainte-Marie"
         }
       ],
       "beauxVillages": [],
@@ -1292,6 +2557,66 @@
             "icon": "abbey",
             "label": "Ancienne abbaye de la Thure"
           }
+        },
+        {
+          "text": "Territoire circonscrit à 80 % par la frontière française",
+          "locality": "Bersillies-l’Abbaye",
+          "source": "https://fr.wikipedia.org/wiki/Bersillies-l'Abbaye"
+        },
+        {
+          "text": "Église paroissiale Notre-Dame, de style néo-gothique, édifiée en 1895",
+          "locality": "Bersillies-l’Abbaye",
+          "source": "https://fr.wikipedia.org/wiki/Bersillies-l'Abbaye"
+        },
+        {
+          "text": "Ancien moulin, évoqué dès le début du XVIIe siècle",
+          "locality": "Bersillies-l’Abbaye",
+          "source": "https://fr.wikipedia.org/wiki/Bersillies-l'Abbaye"
+        },
+        {
+          "text": "Église Saint-Rémi, à tour-porche du XIIIe siècle, réaménagée en style classique en 1772",
+          "locality": "Hantes-Wihéries",
+          "source": "https://fr.wikipedia.org/wiki/Hantes-Wih%C3%A9ries"
+        },
+        {
+          "text": "Ancien château de Robaulx, daté de 1715, autrefois demeure des seigneurs de Hantes",
+          "locality": "Hantes-Wihéries",
+          "source": "https://fr.wikipedia.org/wiki/Hantes-Wih%C3%A9ries"
+        },
+        {
+          "text": "Ferme d’En-Haut, ancienne propriété de l’abbaye d’Aulne, en moellons de calcaire",
+          "locality": "Hantes-Wihéries",
+          "source": "https://fr.wikipedia.org/wiki/Hantes-Wih%C3%A9ries"
+        },
+        {
+          "text": "Église Saint-Christophe du XVe siècle, transformée au XIXe siècle dans un style néo-gothique",
+          "locality": "Montignies-Saint-Christophe",
+          "source": "https://fr.wikipedia.org/wiki/Montignies-Saint-Christophe"
+        },
+        {
+          "text": "Ruisseau du Sartiau, affluent de la Hantes venu de Thirimont, traversant le village",
+          "locality": "Montignies-Saint-Christophe",
+          "source": "https://fr.wikipedia.org/wiki/Montignies-Saint-Christophe"
+        },
+        {
+          "text": "Ancienne ferme Sainte-Anne, dite cense du Carmel, ensemble des XVIIIe et XIXe siècles",
+          "locality": "Montignies-Saint-Christophe",
+          "source": "https://fr.wikipedia.org/wiki/Montignies-Saint-Christophe"
+        },
+        {
+          "text": "Château fort de Solre-sur-Sambre, ancien siège d’une seigneurie des Barbençon",
+          "locality": "Solre-sur-Sambre",
+          "source": "https://fr.wikipedia.org/wiki/Solre-sur-Sambre"
+        },
+        {
+          "text": "Église Saint-Médard de style gothique, du début du XVIe siècle, aux fonts baptismaux de 1434",
+          "locality": "Solre-sur-Sambre",
+          "source": "https://fr.wikipedia.org/wiki/Solre-sur-Sambre"
+        },
+        {
+          "text": "Marche Saint-Médard, le deuxième dimanche de juin",
+          "locality": "Solre-sur-Sambre",
+          "source": "https://fr.wikipedia.org/wiki/Solre-sur-Sambre"
         }
       ],
       "beauxVillages": [],
@@ -1369,6 +2694,36 @@
             "icon": "towpath",
             "label": "Halage de la Sambre"
           }
+        },
+        {
+          "text": "Église Saint-Martin classée, à tour romane du Xe siècle et nef de 1518",
+          "locality": "Landelies",
+          "source": "https://fr.wikipedia.org/wiki/Landelies"
+        },
+        {
+          "text": "Écluse n° 9 de Landelies, construite en 1828 sous la période hollandaise",
+          "locality": "Landelies",
+          "source": "https://fr.wikipedia.org/wiki/Landelies"
+        },
+        {
+          "text": "Réserve naturelle de Landelies, 24 hectares sur un versant escarpé de la vallée de la Sambre",
+          "locality": "Landelies",
+          "source": "https://fr.wikipedia.org/wiki/Landelies"
+        },
+        {
+          "text": "Église Saint-Martin, aux voûtes datées de 1548 et 1556",
+          "locality": "Montigny-le-Tilleul",
+          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul"
+        },
+        {
+          "text": "Hôtel de ville installé depuis 1951 dans l’ancien château Wilmet",
+          "locality": "Montigny-le-Tilleul",
+          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul"
+        },
+        {
+          "text": "Commune bordée à l’est par l’Eau d’Heure, affluent de la Sambre",
+          "locality": "Montigny-le-Tilleul",
+          "source": "https://fr.wikipedia.org/wiki/Montigny-le-Tilleul"
         }
       ],
       "beauxVillages": [],

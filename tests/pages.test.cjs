@@ -17,6 +17,7 @@ const text = (p) => Q.text(p.main);
 /* The same site with one village left undocumented: its sourced note is missing. */
 const sparse = structuredClone(data);
 sparse.local.communes.thuin.localities["Biercée"].note = null;
+sparse.local.communes.thuin.landmarks = sparse.local.communes.thuin.landmarks.filter((x) => x.locality !== "Biercée");
 const sparsePages = C.plan(sparse).pages,
   sparseQuality = Q.evaluate(sparsePages, {});
 
@@ -171,12 +172,17 @@ test("structured data carries verified details only: no rating, no review", () =
 
 test("reviews: no rating without a dated reading, no quote without consent, nothing copied by default", () => {
   const r = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "reviews.json"), "utf8"));
-  assert.equal(r.rating, null);
+  /* The rating shown is the one read on the listing, with its date; no quote. */
+  assert.ok(r.rating >= 1 && r.rating <= 5 && r.count >= 1);
+  assert.match(r.ratingCheckedOn, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(r.quotes.length, 0);
   const html = P.reviews(r);
   assert.ok(html.includes("Voir nos avis") && html.includes(r.googleUrl));
-  assert.ok(!/\d\/5|étoile/.test(html));
-  assert.throws(() => P.validateReviews({ ...r, rating: 4.9 }));
+  assert.ok(html.includes(`${String(r.rating).replace(".", ",")}/5`) && html.includes(`${r.count} avis Google, relevé le`));
+  const unrated = P.reviews({ ...r, rating: null, count: null, ratingCheckedOn: "" });
+  assert.ok(!/\d\/5|étoile/.test(unrated));
+  assert.throws(() => P.validateReviews({ ...r, ratingCheckedOn: "" }));
+  assert.throws(() => P.validateReviews({ ...r, rating: 4.9, count: null }));
   assert.throws(() => P.validateReviews({ ...r, quotes: [{ text: "Très bien", author: "A." }] }));
   assert.throws(() => P.validateReviews({ ...r, googleUrl: "https://exemple.test/avis" }));
   assert.match(P.reviews({ ...r, rating: 4.8, count: 12, ratingCheckedOn: "2026-12-01" }), /4,8/);

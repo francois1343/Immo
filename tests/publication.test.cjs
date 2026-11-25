@@ -32,7 +32,10 @@ test("live with phase 1 approved: only those pages are indexable and in the site
       ["thuin", "Biercée"],
       ["walcourt", "Fraire"],
     ])
+{
       data.local.communes[commune].localities[village].note = null;
+      data.local.communes[commune].landmarks = data.local.communes[commune].landmarks.filter((x) => x.locality !== village);
+    }
     const generated = G.build(out, { data });
     const phase1 = generated.quality.rows.filter((r) => r.phase === 1).map((r) => r.route),
       weak = generated.quality.rows.filter((r) => r.status !== "complete").map((r) => r.route);
