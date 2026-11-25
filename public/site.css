@@ -2336,3 +2336,16 @@ label,
     display: none;
   }
 }
+
+/* The trade and the place open the main heading of the home page, in the
+   small capitals of an eyebrow: read first by engines, discreet on screen. */
+.hero h1 .h1-kicker {
+  display: block;
+  margin: 0 0 20px;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 750;
+  color: #99603a;
+}
