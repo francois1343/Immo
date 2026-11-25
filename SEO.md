@@ -1,6 +1,6 @@
 # SEO local — état au 20 novembre 2026
 
-Le site reste un **aperçu non indexable** : `noindex,nofollow` sur chaque page, en-tête Vercel `X-Robots-Tag`, `robots.txt` fermé, sitemap vide. Rien n'est soumis aux moteurs.
+Le site reste un **aperçu non indexable** : `noindex,nofollow` sur chaque page, en-tête `X-Robots-Tag` (`server.config.json`), `robots.txt` fermé, sitemap vide. Rien n'est soumis aux moteurs.
 
 ## Pages générées
 
@@ -48,18 +48,30 @@ Rapports écrits dans `reports/` (hors dépôt, hors export) : `pages.csv` et `p
 Un seul changement relu, dans le même commit :
 
 1. `seo.config.json` : `origin` définitive, `mode: "live"`, chaque entrée de `publicationChecks` à `true` ;
-2. `vercel.json` : retrait de l'en-tête `X-Robots-Tag` ;
+2. `server.config.json` : retrait de l'en-tête `X-Robots-Tag` ;
 3. `data/editorial.json` : familles ou pages approuvées, avec relecteur et date.
 
 Le build refuse le mode `live` tant qu'une validation manque ou que l'en-tête est présent. Il écrit alors le sitemap (pages indexables seulement), un `robots.txt` ouvert et retire le bandeau d'aperçu.
 
 ## Données structurées
 
-`RealEstateAgent` (accueil et page « Agent immobilier ») avec les seules valeurs `verified` de `data/professional.json`, et `BreadcrumbList` sur les pages générées. Ni note, ni avis, ni horaires. Pas de `FAQPage` : Google n'affiche plus ce résultat enrichi.
+Chaque page porte un seul bloc JSON-LD : un graphe dont les nœuds se référencent par `@id` (`scripts/seo.cjs`).
+
+| Nœud | Pages | Contenu |
+|---|---|---|
+| `WebSite` | toutes | nom du site, langue `fr-BE`, éditeur = l'agent |
+| `WebPage` (`ContactPage` pour `/estimation/`, `CollectionPage` pour les index) | toutes | titre, description, adresse canonique, fil d'Ariane, dates d'un contenu daté |
+| `RealEstateAgent` | toutes | les seules valeurs `verified` de `data/professional.json` : nom, adresse, téléphone, e-mail, TVA, IPI, réseau, profils sociaux (`sameAs`), communes et villages desservis |
+| `BreadcrumbList` | toutes sauf l'accueil | le fil d'Ariane de la page |
+| `Service` | prestations, communes, villages et leurs déclinaisons | prestation, prestataire, lieu desservi (le village, la commune, ou les villages ciblés quand le centre est exclu) |
+| `Article` | actualités et guides datés | dates réelles, image, aucun auteur tant que `author` vaut `null` |
+| `FAQPage` | pages qui affichent des questions | les questions et réponses lues dans la page elle-même, jamais d'autres |
+
+Ni note, ni avis, ni horaires, ni coordonnées GPS : aucun n'est établi. `FAQPage` ne donne plus de résultat enrichi dans Google pour ce type de site, mais reste lu par Bing et par les moteurs de réponse. Open Graph : `og:type` `article` et dates pour les contenus datés, dimensions de l'image sociale (`socialImageSize` dans `seo.config.json`). Le sitemap ne porte `lastmod` que pour les contenus datés. La langue déclarée des pages est `fr-BE`.
 
 ## IndexNow et Search Console
 
-La clé IndexNow est dans `seo.config.json` (`indexNow.key`, publique par nature) ; le build publie `/<clé>.txt` à la racine du site. `npm run indexnow` liste ce qui serait envoyé et n'envoie rien. `-- --send` n'envoie que si le site est en mode live, sur un domaine qui n'est pas `*.vercel.app`, avec une clé configurée dont le fichier répond en ligne. IndexNow sert Bing et les moteurs participants. Google passe par Search Console, le sitemap et l'exploration normale ; l'API Indexing de Google ne concerne pas ces pages.
+La clé IndexNow est dans `seo.config.json` (`indexNow.key`, publique par nature) ; le build publie `/<clé>.txt` à la racine du site. `npm run indexnow` liste ce qui serait envoyé et n'envoie rien. `-- --send` n'envoie que si le site est en mode live, avec une clé configurée dont le fichier répond en ligne. IndexNow sert Bing et les moteurs participants. Google passe par Search Console, le sitemap et l'exploration normale ; l'API Indexing de Google ne concerne pas ces pages.
 
 ## Mise à jour des données locales
 

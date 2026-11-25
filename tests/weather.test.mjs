@@ -91,7 +91,7 @@ test("the forecast is asked by the server only, and kept as long as the service 
   /* The page asks its own site: the content security policy stays closed. */
   const js = read("public/meteo.js");
   assert.ok(js.includes('fetch("/api/meteo/")') && !js.includes("met.no"));
-  for (const h of JSON.parse(read("vercel.json")).headers)
+  for (const h of JSON.parse(read("server.config.json")).headers)
     for (const x of h.headers) if (x.key === "Content-Security-Policy") assert.ok(!x.value.includes("met.no"));
   /* The source is credited where the forecast is shown. */
   assert.ok(T.weatherBlock().includes("MET Norway") && T.skyBar().includes("MET Norway"));

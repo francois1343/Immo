@@ -127,8 +127,8 @@ test("campaign links use stable sector ids and never name an excluded centre", (
 
 test("the legal page comes from the same data: verified host, third-party account named as such", () => {
   const html = read("content/mentions-legales.html");
-  assert.ok(html.includes("Vercel Inc."));
-  assert.ok(html.includes("440 N Barranca Avenue #4133, Covina, CA 91723"));
+  assert.ok(html.includes("Hostinger International Ltd."));
+  assert.ok(html.includes("61 Lordou Vironos Street, 6023 Larnaca"));
   assert.ok(!html.includes("[Nom de l") && !html.includes("[Adresse"), "placeholder left");
   const account = data.pro.fields.find((f) => f.key === "thirdPartyAccount");
   assert.deepEqual([...new Set(html.match(/\bBE\d{2}[ \d]{12,}\d/g))], [account.value], "only the third-party account");
@@ -154,5 +154,5 @@ test("the legal page comes from the same data: verified host, third-party accoun
   /* An unverified host is never printed. */
   const draft = structuredClone(data.pro);
   draft.fields.find((f) => f.key === "host").status = "to-confirm";
-  assert.ok(!P.blocks({ zones: data.zones, pro: draft })["legal-host"].includes("Vercel"));
+  assert.ok(!P.blocks({ zones: data.zones, pro: draft })["legal-host"].includes("Hostinger"));
 });

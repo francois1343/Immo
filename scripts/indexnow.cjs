@@ -12,7 +12,7 @@
    reports/indexnow-urls.txt (complete, approved, indexable pages only), an
    IndexNow key is configured in seo.config.json, its key file is published at
    the root of the live site, and every URL belongs to the configured origin.
-   A preview or *.vercel.app address is never submitted. */
+   A preview is never submitted. */
 const fs = require("node:fs"),
   path = require("node:path");
 const root = path.resolve(__dirname, "..");
@@ -24,7 +24,6 @@ function plan(config, urls) {
   const origin = new URL(config.origin);
   const key = (config.indexNow && config.indexNow.key) || "";
   if (config.mode !== "live") reasons.push("le site est en mode aperçu");
-  if (/\.vercel\.app$/.test(origin.hostname)) reasons.push("l’origine est une adresse de préproduction (*.vercel.app)");
   if (!/^[a-zA-Z0-9-]{8,128}$/.test(key)) reasons.push("aucune clé IndexNow valide dans seo.config.json (indexNow.key)");
   if (!urls.length) reasons.push("aucune URL indexable dans reports/indexnow-urls.txt");
   const foreign = urls.filter((u) => {

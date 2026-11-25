@@ -52,7 +52,9 @@ export default async function demande(req, res) {
     method: req.method,
     headers: req.headers,
     body: req.method === "POST" ? await rawBody(req) : "",
-    ip: String(req.headers["x-forwarded-for"] || req.socket.remoteAddress || "").split(",")[0].trim(),
+    /* nginx sets X-Real-IP to the address it saw; the first entry of
+       X-Forwarded-For is written by the visitor and could dodge the limit. */
+    ip: String(req.headers["x-real-ip"] || req.headers["x-forwarded-for"] || req.socket.remoteAddress || "").split(",")[0].trim(),
   });
   for (const [name, value] of Object.entries(out.headers)) res.setHeader(name, value);
   res.status(out.status).send(out.body);

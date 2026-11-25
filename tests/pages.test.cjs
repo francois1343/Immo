@@ -8,7 +8,7 @@ const { test } = require("node:test"),
   S = require("../scripts/seo.cjs"),
   I = require("../scripts/indexnow.cjs"),
   config = require("../seo.config.json"),
-  vercel = require("../vercel.json");
+  server = require("../server.config.json");
 
 const data = C.load(),
   { pages, setAside } = C.plan(data),
@@ -141,9 +141,9 @@ test("local data only describes configured places, and every displayed fact has 
 
 test("going live is refused until every check is confirmed and the noindex header removed", () => {
   const checks = Object.fromEntries(Object.keys(config.publicationChecks).map((k) => [k, true]));
-  assert.throws(() => S.validate({ ...config, mode: "live" }, vercel), /validations manquantes/);
-  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: checks }, vercel), /X-Robots-Tag/);
-  const open = { ...vercel, headers: vercel.headers.map((h) => ({ ...h, headers: h.headers.filter((x) => x.key !== "X-Robots-Tag") })) };
+  assert.throws(() => S.validate({ ...config, mode: "live" }, server), /validations manquantes/);
+  assert.throws(() => S.validate({ ...config, mode: "live", publicationChecks: checks }, server), /X-Robots-Tag/);
+  const open = { ...server, headers: server.headers.map((h) => ({ ...h, headers: h.headers.filter((x) => x.key !== "X-Robots-Tag") })) };
   assert.equal(S.validate({ ...config, mode: "live", publicationChecks: checks }, open), true);
   const html = '<head><title>T</title></head><body><div class="draft">Aperçu</div></body>';
   const live = { ...config, mode: "live" };
@@ -180,12 +180,12 @@ test("reviews: no rating without a dated reading, no quote without consent, noth
   assert.match(P.reviews({ ...r, rating: 4.8, count: 12, ratingCheckedOn: "2026-12-01" }), /4,8/);
 });
 
-test("IndexNow sends nothing from a preview, a preview address or without a key", () => {
+test("IndexNow sends nothing from a preview, a foreign address or without a key", () => {
   const url = [config.origin + "/"];
   assert.equal(I.plan(config, url).allowed, false);
   const live = { ...config, mode: "live", indexNow: { key: "abcdef0123456789" } };
-  assert.equal(I.plan(live, url).allowed, false, "*.vercel.app");
   const real = { ...live, origin: "https://exemple-immo.be" };
+  assert.equal(I.plan(live, ["https://exemple-immo.be/"]).allowed, false, "URL outside the configured origin");
   assert.equal(I.plan(real, ["https://exemple-immo.be/"]).allowed, true);
   assert.equal(I.plan(real, ["https://autre.be/"]).allowed, false);
   assert.equal(I.plan(real, []).allowed, false);

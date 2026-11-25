@@ -222,12 +222,12 @@ test("reception is switched on by the SMTP password alone, and the secret stays 
   /* The password is read from the environment only: no tracked file holds one. */
   const m = mailSettings({});
   assert.deepEqual([m.host, m.user, m.to, m.password], ["mail.immobiliermartin.be", "no-reply@immobiliermartin.be", "info@immobiliermartin.be", ""]);
-  for (const f of ["lib/inquiry-mail.mjs", "pages/api/demande.js", "scripts/prepare.cjs", "next.config.js", "vercel.json"])
+  for (const f of ["lib/inquiry-mail.mjs", "pages/api/demande.js", "scripts/prepare.cjs", "next.config.js", "server.config.json"])
     assert.ok(!/SMTP_PASSWORD\s*[:=]\s*["'][^"']/.test(read(f)), f);
   assert.ok(read(".gitignore").split(/\r?\n/).includes(".env*"));
   const out = fs.readdirSync(new URL("../public/", import.meta.url), { recursive: true }).map(String);
   assert.ok(!out.some((n) => /(^|[\\/])(lib|api|scripts|tests)[\\/]|inquiry-handler|inquiry-mail|\.env/.test(n)));
-  const config = JSON.parse(read("vercel.json"));
+  const config = JSON.parse(read("server.config.json"));
   const csp = config.headers[0].headers.find((h) => h.key === "Content-Security-Policy").value;
   assert.ok(csp.includes("connect-src 'self'") && csp.includes("script-src 'self';"));
   assert.ok(!csp.includes("challenges.cloudflare.com") && !csp.includes("google"));
@@ -308,7 +308,7 @@ test("reCAPTCHA v3 is switched on by its two keys, loaded on the form page only,
   assert.equal(limited.challenges.length, 1);
 
   /* Google is allowed by the policy of the form page, and nowhere else. */
-  const rules = JSON.parse(read("vercel.json")).headers;
+  const rules = JSON.parse(read("server.config.json")).headers;
   const withCsp = rules.filter((r) => r.headers.some((h) => h.key === "Content-Security-Policy"));
   assert.deepEqual(withCsp.map((r) => r.source), ["/(.*)", "/estimation(/?)"]);
   const strict = withCsp[0].headers.find((h) => h.key === "Content-Security-Policy").value,

@@ -16,7 +16,7 @@ export default class SiteDocument extends Document {
     const page = this.props.__NEXT_DATA__.props?.pageProps?.page;
     const bodyClass = page && page.bodyClass !== null ? page.bodyClass : undefined;
     return (
-      <Html lang="fr">
+      <Html lang="fr-BE">
         <Head>{assets(page?.head)}</Head>
         <body className={bodyClass}>
           <Main />

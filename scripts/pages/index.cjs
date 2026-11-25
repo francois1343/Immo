@@ -16,7 +16,7 @@ function breadcrumb(rows) {
 /* Shell shared with the hand-written pages: same head, header, footer, dock. */
 function shell(page, rendered) {
   return `<!doctype html>
-<html lang="fr">
+<html lang="fr-BE">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />

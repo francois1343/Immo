@@ -59,12 +59,14 @@ function prepare() {
     documents.set(G.fileOf(page), G.shell(page, generated.rendered));
 
   const pages = {},
-    indexable = [];
+    indexable = [],
+    lastmod = {};
   for (const entry of S.entries(config, generated)) {
     const address = addressOf(entry.file);
     if (pages[address]) throw Error("Adresse en double : " + address);
     pages[address] = D.split(S.enrich(documents.get(entry.file), entry, config), address);
     if (entry.index && live) indexable.push(entry.route);
+    if (entry.lastmod) lastmod[entry.route] = entry.lastmod;
   }
   indexable.sort();
 
@@ -75,7 +77,7 @@ function prepare() {
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(path.join(root, from), dest);
   }
-  fs.writeFileSync(path.join(pub, "sitemap.xml"), S.sitemap(config, indexable));
+  fs.writeFileSync(path.join(pub, "sitemap.xml"), S.sitemap(config, indexable, lastmod));
   if (live) fs.writeFileSync(path.join(pub, "robots.txt"), S.liveRobots(config));
   fs.writeFileSync(path.join(pub, "inquiry-config.js"), inquiryConfig());
   if (indexNowKey(config)) fs.writeFileSync(path.join(pub, indexNowKey(config) + ".txt"), indexNowKey(config));

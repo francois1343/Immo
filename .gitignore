@@ -7,7 +7,6 @@ public/*.txt
 !public/robots.txt
 next-env.d.ts
 node_modules/
-.vercel/
 .env*
 *.log
 reports/

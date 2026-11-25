@@ -10,7 +10,7 @@ const { test } = require("node:test"),
   G = require("../scripts/pages/index.cjs"),
   C = require("../scripts/pages/catalog.cjs"),
   config = require("../seo.config.json"),
-  vercel = require("../vercel.json");
+  server = require("../server.config.json");
 
 test("live with phase 1 approved: only those pages are indexable and in the sitemap", () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "immo-live-")),
@@ -23,8 +23,8 @@ test("live with phase 1 approved: only those pages are indexable and in the site
       JSON.stringify({ ...config, origin: "https://exemple-immo.be", mode: "live", publicationChecks: checks }),
     );
     fs.writeFileSync(
-      path.join(root, "vercel.json"),
-      JSON.stringify({ ...vercel, headers: vercel.headers.map((h) => ({ ...h, headers: h.headers.filter((x) => x.key !== "X-Robots-Tag") })) }),
+      path.join(root, "server.config.json"),
+      JSON.stringify({ ...server, headers: server.headers.map((h) => ({ ...h, headers: h.headers.filter((x) => x.key !== "X-Robots-Tag") })) }),
     );
     /* Two villages are left undocumented, to rehearse unfinished pages. */
     const data = structuredClone(C.load());

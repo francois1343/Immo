@@ -74,23 +74,8 @@ const renderedFile = (address) =>
   address === "/" ? "index.html" : address === "/404.html" ? "404.html" : address.replace(/^\/|\/$/g, "") + ".html";
 const html = addresses.map(fileOfAddress);
 const expected = new Set([...publicFiles, ...html]);
-/* Where the HTML of the pages ends up: .next/server/pages for a plain
-   `next build`; on Vercel, its adapter moves each page to
-   .next/output/functions/<page>.prerender-fallback.html. */
-const FALLBACK = ".prerender-fallback.html";
-const adapted = path.join(root, ".next", "output", "functions");
-const layout = fs.existsSync(path.join(rendered, "index.html"))
-  ? { dir: rendered, list: () => walk(rendered).filter((n) => n.endsWith(".html")), file: (name) => name }
-  : {
-      dir: adapted,
-      /* The adapter links its function folders: only plain files are read. */
-      list: () =>
-        (fs.existsSync(adapted) ? fs.readdirSync(adapted, { recursive: true, withFileTypes: true }) : [])
-          .filter((entry) => entry.isFile() && entry.name.endsWith(FALLBACK))
-          .map((entry) => path.relative(adapted, path.join(entry.parentPath, entry.name)).replaceAll("\\", "/"))
-          .map((n) => n.slice(0, -FALLBACK.length) + ".html"),
-      file: (name) => name.slice(0, -".html".length) + FALLBACK,
-    };
+/* Where `next build` writes the HTML of the pages. */
+const layout = { dir: rendered, list: () => walk(rendered).filter((n) => n.endsWith(".html")), file: (name) => name };
 const renderedPath = new Map(addresses.map((address) => [fileOfAddress(address), path.join(layout.dir, layout.file(renderedFile(address)))]));
 /* Next.js must have rendered exactly the prepared pages (500.html is its own
    error page). */
@@ -98,7 +83,7 @@ const wanted = new Set(addresses.map(renderedFile));
 for (const name of layout.list()) if (!wanted.has(name) && name !== "500.html") throw Error("Unexpected page: " + name);
 for (const name of wanted)
   if (!fs.existsSync(path.join(layout.dir, layout.file(name))))
-    throw Error(`Page not rendered: ${name} (looked in ${path.relative(root, layout.dir)}; if Next.js or its Vercel adapter moved its output, update scripts/build.cjs)`);
+    throw Error(`Page not rendered: ${name} (looked in ${path.relative(root, layout.dir)}; if Next.js moved its output, update scripts/build.cjs)`);
 /* Internal links: each must reach a file of the export; a page nobody links
    to is reported as orphan. */
 const routeOfFile = (f) => "/" + f.replace(/index\.html$/, "");

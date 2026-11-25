@@ -120,8 +120,8 @@ test("the home page shows the seasonal tip and three stories at most, in sync wi
 });
 
 test("the editorial lot leaves the reception, reCAPTCHA and IndexNow settings alone", () => {
-  const vercel = require("../vercel.json");
-  assert.ok(S.hasNoindexHeader(vercel));
+  const server = require("../server.config.json");
+  assert.ok(S.hasNoindexHeader(server));
   assert.equal(config.mode, "preview");
   assert.ok(read("public/robots.txt").includes("Disallow: /"));
 });

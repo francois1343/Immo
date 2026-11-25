@@ -1,8 +1,9 @@
 {
-  "origin": "https://martin-immo.vercel.app",
+  "origin": "https://immobiliermartin.be",
   "mode": "preview",
   "reviewedOn": "2026-11-20",
   "socialImage": "/assets/ms.jpg",
+  "socialImageSize": [1000, 776],
   "publicationChecks": {
     "businessIdentityConfirmed": false,
     "brandAndPhotoRightsConfirmed": false,
